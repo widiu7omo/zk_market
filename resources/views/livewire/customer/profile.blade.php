@@ -95,5 +95,11 @@
                 </a>
             </nav>
         </section>
+        <div class="mx-3 my-5" style="bottom: 27px">
+            <a href="{{route('orders')}}" class="btn btn-block px-3 py-3 btn-primary text-medium shadow-lg">Klik
+                disini untuk
+                melihat daftar
+                pesanan anda.</a>
+        </div>
     </main>
 </div>

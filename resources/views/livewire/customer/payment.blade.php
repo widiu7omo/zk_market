@@ -93,3 +93,8 @@
         </section>
     </main>
 </div>
+@push('script')
+    <script>
+        localStorage.clear();
+    </script>
+@endpush

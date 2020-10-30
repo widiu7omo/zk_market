@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
     </list>
@@ -186,12 +201,35 @@
       <option name="presentableId" value="Default" />
       <updated>1603933678578</updated>
       <workItem from="1603933679624" duration="31375000" />
-      <workItem from="1604042853408" duration="1217000" />
+      <workItem from="1604042853408" duration="1528000" />
     </task>
+    <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
+      <created>1604044239617</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604044239617</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Improve Payment, and add Profile Layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Payment, and add Profile Layout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603935249360">
@@ -202,6 +240,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604017783994" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604044243792">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604044243792" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
