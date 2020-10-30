@@ -28,12 +28,15 @@ class PaymentController extends Controller
     public function __construct()
     {
         $this->xenditApiKey = env('XENDIT_API', '');
-        Xendit::setApiKey($this->xenditApiKey);
         $this->linkAjaCallback = env('LINK_AJA_CALLBACK', '');
         $this->qrisCallback = env('QRIS_CALLBACK', '');
         $this->linkAjaRedirect = env('LINK_AJA_REDIRECT', '');
+        Xendit::setApiKey($this->xenditApiKey);
     }
 
+    private function initPayment()
+    {
+    }
 
     private function getBalance()
     {
@@ -47,7 +50,11 @@ class PaymentController extends Controller
 
     private function paymentQRIS($dataPayment, $pesananId)
     {
+//        $qr_code = \Xendit\QRCode::create($dataPayment);
+//        dd($qr_code);
         $response = QRCode::create($dataPayment);
+//        dd(session('payment'));
+//        dd($response);
         if (!isset($response['error_code'])) {
             //insert ke pembayaran
             $dataPembayaran = [
@@ -60,6 +67,7 @@ class PaymentController extends Controller
                 'status_expired' => $response['status'],
                 'pesanan_id' => $pesananId
             ];
+//            dd($dataPembayaran);
             $statusPembayaran = Pembayaran::create($dataPembayaran);
             $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
             DB::commit();

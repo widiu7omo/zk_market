@@ -2,20 +2,8 @@
 
 namespace App\Http\Livewire\Customer;
 
-use App\Models\DetailPesanan;
 use App\Models\Pembayaran;
-use App\Models\Pesanan;
-use App\Models\Produk;
-use App\Models\StatusBayar;
-use App\Models\StatusPesanan;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
-use Xendit\Balance;
-use Xendit\EWallets;
-use Xendit\Exceptions\ApiException;
-use Xendit\Xendit;
 
 class Payment extends Component
 {

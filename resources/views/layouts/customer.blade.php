@@ -41,14 +41,14 @@
 <!-- =============== screen-wrap =============== -->
 <div class="screen-wrap">
 
-    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'list' &&Route::current()->uri !== 'pick_address' && Route::current()->uri !== 'cart' && Route::current()->uri !== 'profile' && Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'address')
+    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'list' &&Route::current()->uri !== 'pick_address' && Route::current()->uri !== 'cart' && Route::current()->uri !== 'profile' && Route::current()->uri !== 'payment' && Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'address'&& Route::current()->uri !== 'orders'&& Route::current()->uri !== 'detail_order/{id}')
         @livewire('customer.components.header')
     @endif
 
     {{ $slot }}
 
 <!-- nav-bottom -->
-    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'address'&& Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'pick_address'&& Route::current()->uri !== 'cart')
+    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'address'&& Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'pick_address'&& Route::current()->uri !== 'cart'&& Route::current()->uri !== 'detail_order/{id}')
         @livewire('customer.components.navbar')
     @endif
 

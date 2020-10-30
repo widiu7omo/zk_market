@@ -12,17 +12,19 @@ class Pesanan extends Model
      * @var string
      */
     protected $table = 'pesanans';
-    protected $fillable = ['waktu_pesan','waktu_sampai','tanggal','total_bayar','catatan','status_pesanan_id','status_bayar_id','alamat_id','pegawai_id'];
+    protected $fillable = ['waktu_pesan', 'waktu_sampai', 'tanggal', 'total_bayar', 'catatan', 'status_pesanan_id', 'status_bayar_id', 'alamat_id', 'pegawai_id'];
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
+
     public function status_pesanan()
     {
         return $this->belongsTo('App\Models\StatusPesanan');
     }
+
     public function status_bayar()
     {
         return $this->belongsTo('App\Models\StatusBayar');
@@ -43,5 +45,15 @@ class Pesanan extends Model
     public function alamat()
     {
         return $this->belongsTo(\App\Models\Alamat::class, 'alamat_id');
+    }
+
+    public function detail_pesanans()
+    {
+        return $this->hasMany(DetailPesanan::class);
+    }
+
+    public function pembayaran()
+    {
+        return $this->hasOne(Pembayaran::class);
     }
 }

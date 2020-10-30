@@ -22,4 +22,9 @@ class Pembayaran extends Model
         'status_expired',
         'qrstring'
     ];
+
+    public function pesanan()
+    {
+        return $this->belongsTo(Pesanan::class,'pesanan_id');
+    }
 }

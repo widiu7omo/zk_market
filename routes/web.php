@@ -8,8 +8,10 @@ use App\Http\Controllers\Customer\ProdukController;
 use App\Http\Livewire\Customer\Address;
 use App\Http\Livewire\Customer\Cart;
 use App\Http\Livewire\Customer\Checkout;
+use App\Http\Livewire\Customer\DetailOrder;
 use App\Http\Livewire\Customer\DetailProduk;
 use App\Http\Livewire\Customer\Home;
+use App\Http\Livewire\Customer\ListOrder;
 use App\Http\Livewire\Customer\ListProduk;
 use App\Http\Livewire\Customer\NotFound;
 use App\Http\Livewire\Customer\Payment;
@@ -87,6 +89,8 @@ Route::get('/checkout', Checkout::class)->name('checkout');
 Route::get('/address', Address::class)->name('address');
 Route::get('/pick_address', PickAddress::class)->name('pick_address');
 Route::get('/payment', Payment::class)->name('payment');
+Route::get('/orders', ListOrder::class)->name('orders');
+Route::get('/detail_order/{id}', DetailOrder::class);
 
 
 Route::get('/home', 'HomeController@index')->name('home');
