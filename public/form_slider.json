@@ -1,0 +1,30 @@
+{
+    "fields": [
+        {
+            "name": "keterangan",
+            "type": "string"
+        },
+        {
+            "name": "url",
+            "type": "string"
+        },
+        {
+            "name": "file",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "keterangan",
+            "rules": "required"
+        },
+        {
+            "field": "url",
+            "rules": "required"
+        },
+        {
+            "field": "file",
+            "rules": "required"
+        }
+    ]
+}

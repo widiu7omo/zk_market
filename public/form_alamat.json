@@ -1,0 +1,58 @@
+{
+    "fields": [
+        {
+            "name": "alamat_lengkap",
+            "type": "string"
+        },
+        {
+            "name": "rincian_alamat",
+            "type": "string"
+        },
+        {
+            "name": "lat",
+            "type": "string"
+        },
+        {
+            "name": "long",
+            "type": "string"
+        },
+        {
+            "name": "customer_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "validations": [
+        {
+            "field": "alamat_lengkap",
+            "rules": "required"
+        },
+        {
+            "field": "rincian_alamat",
+            "rules": "required"
+        },
+        {
+            "field": "lat",
+            "rules": "required"
+        },
+        {
+            "field": "long",
+            "rules": "required"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "customer_id",
+            "references": "id",
+            "on": "customers",
+            "onDelete": "cascade",
+            "onUpdate": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "customer",
+            "type": "belongsTo",
+            "class": "App\\Models\\Customer"
+        }
+    ]
+}

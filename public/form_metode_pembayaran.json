@@ -1,0 +1,32 @@
+{
+    "fields": [
+        {
+            "name": "metode",
+            "type": "string"
+        },{
+            "name": "token",
+            "type": "string"
+        },{
+            "name": "api",
+            "type": "string"
+        },{
+            "name": "callback",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "metode",
+            "rules": "required"
+        },{
+            "field": "token",
+            "rules": "required"
+        },{
+            "field": "api",
+            "rules": "required"
+        },{
+            "field": "callback",
+            "rules": "required"
+        }
+    ]
+}

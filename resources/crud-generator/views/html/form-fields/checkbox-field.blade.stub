@@ -1,0 +1,12 @@
+<div class="flex items-center mr-4 mb-4">
+    <input type="checkbox" name="{{ %1$s }}" class="hidden" value="1" {{ (isset($%%crudNameSingular%%) && 1 == $%%crudNameSingular%%->%%itemName%%) ? 'checked' : '' }}/>
+    <label class="flex items-center cursor-pointer text-xl">
+     <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+     Ya</label>
+</div>
+<div class="flex items-center mr-4 mb-4">
+    <input type="checkbox" name="{{ %1$s }}" class="hidden" value="0" @if (isset($%%crudNameSingular%%)) {{ (0 == $%%crudNameSingular%%->%%itemName%%) ? 'checked' : '' }} @else {{ 'checked' }} @endif/>
+    <label class="flex items-center cursor-pointer text-xl">
+     <span class="w-8 h-8 inline-block mr-2 rounded-full border border-grey flex-no-shrink"></span>
+     Tidak</label>
+</div>

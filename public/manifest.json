@@ -1,0 +1,15 @@
+{
+    "name": "Zona Kopi Delivery",
+    "short_name": "Zona Kopi Delivery",
+    "description": "Zona Kopi Delivery Online",
+    "lang": "id",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#B09685",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png"
+        }
+    ],
+    "prefer_related_applications": true
+}

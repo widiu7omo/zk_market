@@ -1,0 +1,73 @@
+{
+    "fields": [
+        {
+            "name": "nama",
+            "type": "string"
+        },
+        {
+            "name": "harga",
+            "type": "number"
+        },
+        {
+            "name": "harga_promo",
+            "type": "number"
+        },
+        {
+            "name": "deskripsi",
+            "type": "text"
+        },
+        {
+            "name": "gambar",
+            "type": "string"
+        },
+        {
+            "name": "kategori_id",
+            "type": "select#integer#unsigned"
+        },
+        {
+            "name": "terlaris",
+            "type": "radio"
+        },
+        {
+            "name": "promosi",
+            "type": "radio"
+        },
+        {
+            "name": "status",
+            "type": "radio"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "kategori_id",
+            "references": "id",
+            "on": "kategoris",
+            "onDelete": "cascade",
+            "onUpdate": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "kategori",
+            "type": "belongsTo",
+            "class": "App\\Models\\Kategori"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nama",
+            "rules": "required|max:255"
+        },
+        {
+            "field": "deskripsi",
+            "rules": "required"
+        },
+        {
+            "field": "harga",
+            "rules": "required"
+        },{
+            "field": "status",
+            "rules": "required"
+        }
+    ]
+}

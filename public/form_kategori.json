@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "kategori",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kategori",
+            "rules": "required|max:255"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "fields": [
+        {
+            "name": "nama",
+            "type": "string"
+        },
+        {
+            "name": "jenis_kelamin",
+            "type": "string"
+        },
+        {
+            "name": "nohp",
+            "type": "string"
+        },
+        {
+            "name": "alamat",
+            "type": "string"
+        },
+        {
+            "name": "user_id",
+            "type": "number#unsigned"
+        }
+    ],
+    "validations": [
+        {
+            "field": "nama",
+            "rules": "required"
+        },
+        {
+            "field": "jenis_kelamin",
+            "rules": "required"
+        },
+        {
+            "field": "nohp",
+            "rules": "required"
+        },
+        {
+            "field": "alamat",
+            "rules": "required"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade",
+            "onUpdate": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\Models\\User"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "fields": [
+        {
+            "name": "pesanan_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "produk_id",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "jumlah",
+            "type": "string"
+        },
+        {
+            "name": "subtotal",
+            "type": "string"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "pesanan_id",
+            "references": "id",
+            "on": "pesanans",
+            "onDelete": "cascade",
+            "onUpdate": "cascade"
+        },
+        {
+            "column": "produk_id",
+            "references": "id",
+            "on": "produks",
+            "onDelete": "cascade",
+            "onUpdate": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "produk",
+            "type": "belongsTo",
+            "class": "App\\Models\\Produk"
+        },
+        {
+            "name": "pesanan",
+            "type": "belongsTo",
+            "class": "App\\Models\\Pesanan"
+        }
+    ],
+    "validations": [
+        {
+            "field": "pesanan_id",
+            "rules": "required"
+        },
+        {
+            "field": "produk_id",
+            "rules": "required"
+        },
+        {
+            "field": "jumlah",
+            "rules": "required"
+        },
+        {
+            "field": "subtotal",
+            "rules": "required"
+        }
+    ]
+}

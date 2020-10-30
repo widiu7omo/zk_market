@@ -1,0 +1,113 @@
+.icon-title {
+    font-size: 10px;
+}
+
+.title-app {
+    font-family: 'Unica One', cursive;
+    text-transform: uppercase;
+}
+
+.title-section {
+    font-size: 14px !important;
+}
+
+.title-section-end {
+    font-size: 14px !important;
+    font-weight: normal;
+    text-decoration: none;
+    color: #B09685
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 12px !important;
+}
+
+#cart-item {
+    top: 0;
+    font-size: 11px;
+    right: 10px;
+}
+
+.title-section-end {
+    font-size: 12px !important;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #bfaea8;
+    border-color: #b79780;
+}
+
+.text-primary {
+    color: #b79780 !important;
+
+}
+
+.custom-control-label::after {
+    position: absolute;
+    top: 0.07rem;
+    left: -1.7rem;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    border-color: #b79780;
+    background-color: #b79780;
+}
+.form-control{
+    border-radius: 4px;
+}
+.input-group-append > .btn{
+    border-radius: 4px;
+    border-color: #ced4da;
+    padding-bottom: 11px;
+}
+
+.text-medium{
+    font-size: 15px;
+}
+.text-helper{
+    font-size: 13px;
+}
+#btn-pilih{
+    border-radius: 4px;
+}
+.modal-content {
+    border-radius: 0 !important;
+}
+.modal-dialog{
+    margin: 0 !important;
+}
+.box-selection.active {
+    border-color: #b79780;
+}
+
+
+.btn-outline-light:hover {
+    color: #b79780;
+}
+
+.text-secondary {
+    color: #bfaea8 !important;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #bfaea8;
+    border-color: #b79780;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #bfaea8;
+    border-color: #b79780;
+}
+
+.form-control:focus {
+    border-color: #b79780;
+}
+
+.text-tiny {
+    font-size: 12px;
+}
+

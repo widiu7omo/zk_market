@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "status_pesanan",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "status_pesanan",
+            "rules": "required"
+        }
+    ]
+}

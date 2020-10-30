@@ -1,0 +1,8 @@
+<label class="inline-flex items-center mt-3">
+    <input type="radio" name="%%itemName%%" {{ (isset($%%crudNameSingular%%) && 1 == $%%crudNameSingular%%->%%itemName%%) ? 'checked' : '' }} value="1" class="form-radio h-5 w-5 text-blue-500">
+    <span class="ml-2 text-gray-700">Ya</span>
+</label>
+<label class="inline-flex items-center mt-3">
+    <input type="radio" name="%%itemName%%" {{ (isset($%%crudNameSingular%%) && 0 == $%%crudNameSingular%%->%%itemName%%) ? 'checked' : '' }} value="0" class="form-radio h-5 w-5 text-blue-500">
+    <span class="ml-2 text-gray-700">Tidak</span>
+</label>

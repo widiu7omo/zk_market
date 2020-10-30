@@ -1,0 +1,7 @@
+<div class="w-full lg:w-6/12 px-4">
+    <div class="relative w-full mb-3">
+        <label for="%1$s" class="block uppercase text-xs font-bold mb-2">{{ %2$s }}</label>
+        %3$s
+        {!! $errors->first('%1$s', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "fields": [
+        {
+            "name": "status_bayar",
+            "type": "string"
+        }
+    ],
+    "validations": [
+        {
+            "field": "status_bayar",
+            "rules": "required"
+        }
+    ]
+}
