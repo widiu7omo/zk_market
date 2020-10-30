@@ -1,18 +1,19 @@
 <div>
     {{-- The Master doesn't talk, he acts. --}}
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header"><i class="fa fa-arrow-left"></i></a>
+        <a href="javascript:history.go(-1)" class="btn-header"><i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
+        <h6 class="title-header"> Kategori </h6>
         <div class="header-right">
-            <a href="{{route('search')}}" class="btn-header"><i class="fa fa-search"></i></a>
+            <a href="{{route('search')}}" class="btn-header"><i data-eva="search" data-eva-fill="#fff"></i></a>
         </div>
     </header> <!-- section-header.// -->
 
     <div class="bg-primary padding-x padding-bottom">
-        <h3 class="title-page text-white">{{ucfirst($category??'NULL')}}</h3>
+        <h5 class="title-page text-white">{{ucfirst($category??'NULL')}}</h5>
     </div>
 
     <main class="app-content">
-        <section class="padding-x mt-5 d-flex justify-content-center align-items-stretch">
+        <section class="padding-x mt-3 d-flex justify-content-center align-items-stretch">
             @if(count($products) == 0)
                 <div class="flex-1 mt-10">
                     <h6 class="text-center flex-1 font-weight-normal">Ups. Maaf

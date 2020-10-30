@@ -9,7 +9,8 @@
     </header> <!-- section-header.// -->
     <main class="app-content">
         <section class="padding-top">
-            <h5 class="title-section padding-x">Status Pembayaran</h5>
+            <h5 class="title-section padding-x">Proses Pembayaran</h5>
+            <small class="ml-3 b-3 text-muted">Tanggal {{$payment->created_at->isoFormat('DD MMMM YYYY HH:mm')}}</small>
             @if(session('status'))
                 <div class="alert alert-{{session('status')['type']}} rounded-0 alert-dismissible fade show"
                      role="alert">
@@ -20,12 +21,12 @@
                     {{session('status')['message']}}
                 </div>
             @endif
-            <hr class="divider">
-            <div class="box-selection mx-3 my-3">
+            <div class="box-selection my-3 rounded-0">
                 @if(isset($payment))
                     @if($payment->metode_pembayaran === 'OVO')
-                        <h6 class="font-weight-bold text-center">Lakukan pembayaran pada aplikasi
-                            <strong>E-Wallet</strong></h6>
+                        <strong>E-Wallet</strong>
+                        <hr class="divider">
+                        <h6 class="font-weight-bold pt-3 pl-3">Lakukan pembayaran pada aplikasi</h6>
                         <div class="alert alert-dark border-0" role="alert">
                             <h5 class="alert-heading mb-3">Menuggu pembayaran</h5>
                             <div class="card mb-2 shadow">
