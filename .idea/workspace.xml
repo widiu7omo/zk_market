@@ -21,8 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +208,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603933678578</updated>
       <workItem from="1603933679624" duration="31375000" />
-      <workItem from="1604042853408" duration="1528000" />
+      <workItem from="1604042853408" duration="4387000" />
+      <workItem from="1604047341706" duration="2943000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -210,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604044239617</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add List Pesanan navigator to profile">
+      <created>1604044543250</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604044543250</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,10 +241,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Improve Payment, and add Profile Layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve Payment, and add Profile Layout" />
+    <MESSAGE value="Add List Pesanan navigator to profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add List Pesanan navigator to profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603935249360">
@@ -240,6 +257,22 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604017783994" />
+    <state width="1294" height="267" key="GridCell.Tab.0.bottom" timestamp="1604049707798">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state width="1294" height="267" key="GridCell.Tab.0.bottom/0.23.1920.987@0.23.1920.987" timestamp="1604049707798" />
+    <state width="1294" height="267" key="GridCell.Tab.0.center" timestamp="1604049707797">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state width="1294" height="267" key="GridCell.Tab.0.center/0.23.1920.987@0.23.1920.987" timestamp="1604049707797" />
+    <state width="1294" height="267" key="GridCell.Tab.0.left" timestamp="1604049707797">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state width="1294" height="267" key="GridCell.Tab.0.left/0.23.1920.987@0.23.1920.987" timestamp="1604049707797" />
+    <state width="1294" height="267" key="GridCell.Tab.0.right" timestamp="1604049707798">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state width="1294" height="267" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1604049707798" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604044243792">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -252,10 +285,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="1103" y="198" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604026243656" />
-    <state x="660" y="271" width="598" height="490" key="find.popup" timestamp="1604025460383">
+    <state x="660" y="271" width="598" height="490" key="find.popup" timestamp="1604048346692">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="660" y="271" width="598" height="490" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604025460383" />
+    <state x="660" y="271" width="598" height="490" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604048346692" />
     <state x="624" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1604041363414">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

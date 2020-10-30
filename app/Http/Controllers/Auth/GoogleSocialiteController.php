@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use Carbon\Carbon;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
@@ -25,20 +29,18 @@ class GoogleSocialiteController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return Application|RedirectResponse|Redirector|void
      */
     public function handleCallback()
     {
         try {
             $user = Socialite::driver('google')->user();
-
             $finduser = User::where('social_id', $user->id)->first();
-
             if ($finduser) {
-
                 Auth::login($finduser);
-
-                return redirect('/homepage');
+                $customer = Customer::whereUserId($finduser->id)->first();
+                session(['customer_id' => $customer->id]);
+                return $finduser->hasRole('Admin') ? redirect('/dashboard') : redirect('/homepage');
 
             } else {
                 $newUser = User::create([
@@ -49,10 +51,17 @@ class GoogleSocialiteController extends Controller
                     'social_type' => 'google',
                     'password' => Hash::make('my-google')
                 ]);
+                $newUser->setRole('Customer');
+                $newCustomer = Customer::create([
+                    'nama' => $user->getName(),
+                    'no_hp' => '-',
+                    'user_id' => $newUser->id
+                ]);
+                session(['customer_id' => $newCustomer->id]);
                 $newUser->markEmailAsVerified();
                 Auth::login($newUser);
 
-                return redirect('/homepage');
+                return redirect('/dashboard');
             }
 
         } catch (Exception $e) {

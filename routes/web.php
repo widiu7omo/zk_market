@@ -83,7 +83,7 @@ Route::get('/detail', DetailProduk::class)->name('detail');
 Route::get('/list/{name}', ListProduk::class);
 Route::get('/notfound', NotFound::class)->name('notfound');
 Route::get('/search', Search::class)->name('search');
-Route::get('/profile', Profile::class)->name('profile');
+Route::get('/profile', Profile::class);
 Route::get('/cart', Cart::class)->name('cart');
 Route::get('/checkout', Checkout::class)->name('checkout');
 Route::get('/address', Address::class)->name('address');
@@ -91,6 +91,3 @@ Route::get('/pick_address', PickAddress::class)->name('pick_address');
 Route::get('/payment', Payment::class)->name('payment');
 Route::get('/orders', ListOrder::class)->name('orders');
 Route::get('/detail_order/{id}', DetailOrder::class);
-
-
-Route::get('/home', 'HomeController@index')->name('home');

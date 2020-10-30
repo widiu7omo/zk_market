@@ -18,11 +18,13 @@ class Profile extends Component
 
     public function mount()
     {
-        $addresses = Alamat::whereCustomerId(session('customer_id'))->pluck('id');
-        $this->customer = Customer::findOrFail(session('customer_id'));
-        $this->unpaid = Pesanan::whereAlamatId($addresses)->whereStatusPesananId(StatusBayar::whereStatusBayar('belum bayar')->first()->id)->get();
-        $this->onProcess = Pesanan::whereAlamatId($addresses)->whereStatusPesananId(StatusPesanan::whereStatusPesanan('pembuatan')->first()->id)->get();
-        $this->onTheWay = Pesanan::whereAlamatId($addresses)->whereStatusPesananId(StatusPesanan::whereStatusPesanan('pengantaran')->first()->id)->get();
+        if (session('customer_id')) {
+            $addresses = Alamat::whereCustomerId(session('customer_id'))->pluck('id');
+            $this->customer = Customer::findOrFail(session('customer_id'));
+            $this->unpaid = Pesanan::where('status_bayar_id', StatusBayar::where('status_bayar', 'belum bayar')->first()->id)->whereIn('alamat_id', $addresses)->get();
+            $this->onProcess = Pesanan::whereIn('alamat_id', $addresses)->whereStatusPesananId(StatusPesanan::whereStatusPesanan('pembuatan')->first()->id)->get();
+            $this->onTheWay = Pesanan::whereIn('alamat_id', $addresses)->whereStatusPesananId(StatusPesanan::whereStatusPesanan('pengantaran')->first()->id)->get();
+        }
     }
 
     public function render()
