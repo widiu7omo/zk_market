@@ -19,11 +19,11 @@
                      src="https://ui-avatars.com/api/?background=random&name={{$customer->nama ??'Belum Login'}}">
                 <figcaption class="text">
                     <p class="h5 title">{{$customer->nama ?? 'Belum Login'}}</p>
-                    <p class="text-white-50">{{$customer->no_hp ??'Belum Login'}}</p>
+                    <p class="text-white-50">{{$customer->no_hp ??'-'}}</p>
                 </figcaption>
             </figure>
         </section>
-        @if($customer->no_hp == '-')
+        @if($customer->no_hp ?? '' == '-')
             <div class="alert alert-warning rounded-0 alert-dismissible fade show mb-0" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -97,17 +97,19 @@
         <hr class="divider">
         <section class="padding-top">
             @if(!Auth::user())
-            <div class="alert alert-warning-light alert-dismissible fade show rounded-0" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <strong class="pb-2">Informasi</strong><br>
-                Demi kenyamanan bertransaksi, silahkan <a href="{{route('login')}}"><strong>login</strong></a> atau <a
-                    href="{{route('register')}}"><strong>buat akun</strong></a> apabila belum mempunyai akun.
-                <br><small class="text-danger">* Silahkan datang ke toko ketika transaksi anda hilang karena anda tidak
-                    melakukan
-                    registrasi.</small>
-            </div>
+                <div class="alert alert-warning-light alert-dismissible fade show rounded-0" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong class="pb-2">Informasi</strong><br>
+                    Demi kenyamanan bertransaksi, silahkan <a href="{{route('login')}}"><strong>login</strong></a> atau
+                    <a
+                        href="{{route('register')}}"><strong>buat akun</strong></a> apabila belum mempunyai akun.
+                    <br><small class="text-danger">* Silahkan datang ke toko ketika transaksi anda hilang karena anda
+                        tidak
+                        melakukan
+                        registrasi.</small>
+                </div>
             @endif
             @if(Auth::user())
                 <h5 class="title-section padding-x">Personal</h5>
