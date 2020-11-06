@@ -41,7 +41,7 @@
 <!-- =============== screen-wrap =============== -->
 <div class="screen-wrap">
 
-    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'list/{name}' &&Route::current()->uri !== 'pick_address' && Route::current()->uri !== 'cart' && Route::current()->uri !== 'profile' && Route::current()->uri !== 'payment' && Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'address'&& Route::current()->uri !== 'orders'&& Route::current()->uri !== 'detail_order/{id}')
+    @if(Route::current()->uri !== 'detail'&& Route::current()->uri !== 'list/{name}' && Route::current()->uri !== 'list-address' &&Route::current()->uri !== 'pick_address' && Route::current()->uri !== 'cart' && Route::current()->uri !== 'profile' && Route::current()->uri !== 'payment' && Route::current()->uri !== 'checkout'&& Route::current()->uri !== 'address'&& Route::current()->uri !== 'orders'&& Route::current()->uri !== 'detail_order/{id}')
         @livewire('customer.components.header')
     @endif
 

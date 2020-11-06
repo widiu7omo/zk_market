@@ -11,7 +11,7 @@ class AddressController extends Controller
 {
     public function show($id, Alamat $address)
     {
-        return response()->json($address->exclude(['customer_id','updated_at','created_at'])->findOrFail($id));
+        return response()->json($address->exclude(['customer_id', 'updated_at', 'created_at'])->findOrFail($id));
     }
 
     public function store(Request $request)
@@ -36,4 +36,9 @@ class AddressController extends Controller
         return redirect()->route('address')->with('status', $status);
     }
 
+    public function destroy($id)
+    {
+        Alamat::findOrFail($id)->delete();
+        return redirect()->route('list-address')->with('status', ['type' => 'success', 'message' => 'Alamat berhasil di hapus']);
+    }
 }

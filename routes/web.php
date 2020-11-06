@@ -6,6 +6,7 @@ use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\OfflineController;
 use App\Http\Controllers\Customer\PaymentController;
 use App\Http\Controllers\Customer\ProdukController;
+use App\Http\Controllers\Customer\UpdateProfileController;
 use App\Http\Controllers\WebhooksController;
 use App\Http\Livewire\Customer\Address;
 use App\Http\Livewire\Customer\Cart;
@@ -13,6 +14,7 @@ use App\Http\Livewire\Customer\Checkout;
 use App\Http\Livewire\Customer\DetailOrder;
 use App\Http\Livewire\Customer\DetailProduk;
 use App\Http\Livewire\Customer\Home;
+use App\Http\Livewire\Customer\ListAddress;
 use App\Http\Livewire\Customer\ListOrder;
 use App\Http\Livewire\Customer\ListProduk;
 use App\Http\Livewire\Customer\NotFound;
@@ -75,6 +77,7 @@ Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
 
 Route::post('/cart_products', [ProdukController::class, 'getDataProduk']);
 Route::post('/address', [AddressController::class, 'store'])->name('store_address');
+Route::delete('/address/{id}', [AddressController::class, 'destroy']);
 Route::get('/address/{id}/show', [AddressController::class, 'show']);
 Route::post('/items', [CartController::class, 'retrieveItems']);
 Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
@@ -82,11 +85,13 @@ Route::post('/webhooks/ovo', [WebhooksController::class, 'ovo']);
 Route::post('/webhooks/linkaja', [WebhooksController::class, 'linkaja']);
 Route::post('/webhooks/qris', [WebhooksController::class, 'qris']);
 Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
+Route::post('/profile/set', [UpdateProfileController::class, 'setProfile'])->name('updateprofile');
 
 //LiveWire Customer
 Route::get('/homepage', Home::class)->name('homepage');
 Route::get('/detail', DetailProduk::class)->name('detail');
 Route::get('/list/{name}', ListProduk::class);
+Route::get('/list-address', ListAddress::class)->name('list-address');
 Route::get('/notfound', NotFound::class)->name('notfound');
 Route::get('/search', Search::class)->name('search');
 Route::get('/profile', Profile::class)->name('profile');

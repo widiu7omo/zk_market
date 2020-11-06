@@ -8,11 +8,10 @@
     </header> <!-- section-header.// -->
     <main class="app-content">
         <section class="padding-top">
-            <h5 class="title-section padding-x mb-2">Pilih Alamat</h5>
-            <small class="padding-x text-muted mb-2"><i>Sentuh kotak untuk memilih alamat</i></small>
+            <h5 class="title-section padding-x">Pilih Alamat</h5>
             @if(count($addresses) == 0)
                 <div class="d-flex p-5 mx-auto justify-content-center align-items-center">
-                    <h6 class="text-center">Belum ada alamat yang dipilih, Silahkan tambahkan alamat baru</h6>
+                    <h6 class="text-center">Belum ada data alamat, Silahkan tambahkan alamat baru</h6>
                 </div>
             @endif
             @foreach($addresses ?? [] as $key=> $address)
@@ -23,19 +22,16 @@
                         <span class="text-muted">
                             <small>{{$address->alamat_lengkap}}</small>
                             <small>{{$address->rincian_alamat}}</small>
-                        </span>
-                        <br>
+                        </span><br>
                         <form action="{{url('address/'.$address->id)}}" method="post">
                             @csrf
                             @method('delete')
                             <button type="submit" class="btn btn-sm btn-outline-danger float-right">Delete</button>
                         </form>
                     </label>
+
                 </div>
             @endforeach
-            <button id="btn-choose-address" class="btn rounded-0 mb-0 btn-primary btn-block fixed-bottom" type="button">
-                <i data-eva-fill="#fff" data-eva="checkmark-outline"></i> Konfirmasi
-            </button>
         </section>
     </main>
     <div class="modal fade" id="alamatModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
