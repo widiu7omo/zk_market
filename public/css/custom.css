@@ -23,6 +23,15 @@
     font-size: 12px !important;
 }
 
+.price-promo {
+    margin-top: 5px;
+    font-size: 12px !important;
+    color: #676767;
+}
+
+a[class*='product-']:hover .title {
+    color: #1f1f1f;
+}
 #cart-item {
     top: 0;
     font-size: 11px;
@@ -54,30 +63,37 @@
     border-color: #b79780;
     background-color: #b79780;
 }
-.form-control{
+
+.form-control {
     border-radius: 4px;
 }
-.input-group-append > .btn{
+
+.input-group-append > .btn {
     border-radius: 4px;
     border-color: #ced4da;
     padding-bottom: 11px;
 }
 
-.text-medium{
+.text-medium {
     font-size: 15px;
 }
-.text-helper{
+
+.text-helper {
     font-size: 13px;
 }
-#btn-pilih{
+
+#btn-pilih {
     border-radius: 4px;
 }
+
 .modal-content {
     border-radius: 0 !important;
 }
-.modal-dialog{
+
+.modal-dialog {
     margin: 0 !important;
 }
+
 .box-selection.active {
     border-color: #b79780;
 }

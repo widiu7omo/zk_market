@@ -19,14 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Fix Offline Route">
+    <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Fix Profile and Route Admin">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/ProfileController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/ListProduk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/ListProduk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Produk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Produk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_025543_create_produks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_025543_create_produks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,6 +171,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -209,7 +215,7 @@
       <workItem from="1604047341706" duration="5711000" />
       <workItem from="1604233325756" duration="498000" />
       <workItem from="1604538328638" duration="2613000" />
-      <workItem from="1604641294063" duration="9540000" />
+      <workItem from="1604641294063" duration="14935000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -288,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604660243522</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fix Profile and Route Admin">
+      <created>1604668020265</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1604668020265</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +330,8 @@
     <MESSAGE value="change to post webhooks" />
     <MESSAGE value="Exception for webhooks route" />
     <MESSAGE value="Fix Offline Route" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Offline Route" />
+    <MESSAGE value="Fix Profile and Route Admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Profile and Route Admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -344,18 +358,18 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="1294" height="267" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1604049707798" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604660247268">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604668024113">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604660247268" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604668024113" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1920.987@0.23.1920.987" timestamp="1603935507915" />
-    <state x="1103" y="198" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1604026243656">
+    <state x="1103" y="198" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1604668626997">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="1103" y="198" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604026243656" />
+    <state x="1103" y="198" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604668626997" />
     <state x="660" y="271" width="598" height="490" key="find.popup" timestamp="1604048346692">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

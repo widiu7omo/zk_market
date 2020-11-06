@@ -1,12 +1,23 @@
 <div>
     <header class="app-header header-search bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header"><i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
-        <input type="text" autofocus placeholder="Search" class="form-control input-dark border-0" wire:model="search">
+        <a href="javascript:window.location.href = '/'" class="btn-header">
+            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g data-name="Layer 2">
+                    <g data-name="arrow-back">
+                        <rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"/>
+                        <path
+                            d="M19 11H7.14l3.63-4.36a1 1 0 1 0-1.54-1.28l-5 6a1.19 1.19 0 0 0-.09.15c0 .05 0 .08-.07.13A1 1 0 0 0 4 12a1 1 0 0 0 .07.36c0 .05 0 .08.07.13a1.19 1.19 0 0 0 .09.15l5 6A1 1 0 0 0 10 19a1 1 0 0 0 .64-.23 1 1 0 0 0 .13-1.41L7.14 13H19a1 1 0 0 0 0-2z"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <input type="text" autofocus id="input-search" placeholder="Search" class="form-control input-dark border-0"
+               wire:model="search">
     </header> <!-- section-header.// -->
     <main class="app-content">
 
         <section class="padding-x">
-            <h6 class="title-sm">Pencarian Sebelumnya</h6>
+            <h6 class="title-sm">Pencarian {{$search}}</h6>
 
             <ul class="list-search-suggestion">
                 @forelse($products as $product)
@@ -33,29 +44,12 @@
 @push('script')
     <script>
         $(document).ready(function () {
-            {{--$('#input-pencarian').on('input', function () {--}}
-            {{--    var query = $(this).val();--}}
-            {{--    var newurl = encodeURI('<?php echo site_url("pencarian?query=") ?>' + query);--}}
-            {{--    window.history.pushState({path: newurl}, '', newurl);--}}
-            {{--    $.ajax({--}}
-            {{--        type: "POST",--}}
-            {{--        dataType: 'json',--}}
-            {{--        url: "<?php echo site_url('pencarian/temukan') ?>",--}}
-            {{--        data: {--}}
-            {{--            query--}}
-            {{--        },--}}
-            {{--        success: function (res) {--}}
-            {{--            if (res.data.length !== 0) {--}}
-            {{--                var resultHtml = res.data.map(function (result) {--}}
-            {{--                    return `<a href="<?php echo site_url('beranda/detail_produk/') ?>${result.slug_p}" class="text-dark"><div class="d-flex align-items-center border-bottom p-3"><img height="48px" width="48px" src="<?php echo base_url('file/') ?>${result.gambar}" class="img-fluid rounded shadow-sm mr-3"><span class="font-weight-bold">${result.nama_produk}<p class="small text-muted m-0">${result.deskripsi}</p></span></div></a>`;--}}
-            {{--                })--}}
-            {{--                $('#results').html(resultHtml).prop('style', '');--}}
-            {{--            } else {--}}
-            {{--                $('#results').html('<h6 style="text-align:center;">Tidak ditemukan untuk pencarian ' + query).prop('style', "height: 100vh;display: flex;align-items: center;justify-content: center;");--}}
-            {{--            }--}}
-            {{--        }--}}
-            {{--    });--}}
-            {{--})--}}
+            $('#input-search').on('input', function () {
+                var value = $(this).val();
+                var currentUri = '{{url("/search?q=")}}';
+                var newurl = encodeURI(currentUri + value);
+                window.history.pushState({path: newurl}, '', newurl);
+            })
         });
     </script>
 @endpush

@@ -21,11 +21,12 @@ class CreateProduksTable extends Migration
             $table->text('deskripsi')->nullable();
             $table->text('gambar')->nullable();
             $table->unsignedInteger('kategori_id');
-            $table->string('terlaris')->nullable();
-            $table->string('promosi')->nullable();
-            $table->string('status')->nullable();
+            $table->integer('terlaris')->nullable();
+            $table->integer('promosi')->nullable();
+            $table->integer('baru')->nullable();
+            $table->integer('status')->nullable();
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
-            });
+        });
     }
 
     /**

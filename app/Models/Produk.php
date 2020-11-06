@@ -25,8 +25,8 @@ class Produk extends Model
      *
      * @var array
      */
-    protected $fillable = ['nama', 'harga', 'harga_promo', 'deskripsi', 'gambar', 'kategori_id', 'terlaris', 'promosi', 'status'];
-    protected $columns = ['id', 'nama', 'harga', 'harga_promo', 'deskripsi', 'gambar', 'kategori_id', 'terlaris', 'promosi', 'status'];
+    protected $fillable = ['nama', 'harga', 'harga_promo', 'deskripsi', 'gambar', 'kategori_id', 'terlaris', 'promosi', 'status', 'baru'];
+    protected $columns = ['id', 'nama', 'harga', 'harga_promo', 'deskripsi', 'gambar', 'kategori_id', 'terlaris', 'promosi', 'status', 'baru'];
 
     public function kategori()
     {

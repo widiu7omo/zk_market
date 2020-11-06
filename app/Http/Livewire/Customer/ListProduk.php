@@ -13,9 +13,30 @@ class ListProduk extends Component
 
     public function mount($name)
     {
-        $this->category = $name;
-        $dataKategori = Kategori::whereKategori($name)->first();
-        $this->products = Produk::whereKategoriId($dataKategori->id)->get();
+        switch ($name) {
+            case 'baru':
+                $this->category = 'Menu Baru';
+                $this->products = Produk::whereBaru(1)->get();
+                break;
+            case 'terlaris':
+                $this->category = 'Terlaris';
+                $this->products = Produk::whereTerlaris(1)->get();
+                break;
+            case 'promo':
+                $this->category = 'Promo';
+                $this->products = Produk::wherePromosi(1)->get();
+                break;
+            default:
+                $this->category = $name;
+                $dataKategori = Kategori::whereKategori($name)->first();
+                $this->products = Produk::whereKategoriId($dataKategori->id)->get();
+        }
+        if ($name === 'baru' || $name === 'terlaris' || $name === 'promo') {
+
+        } else {
+
+        }
+
     }
 
     public function render()

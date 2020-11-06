@@ -3,7 +3,8 @@
     <main class="app-content">
 
         <div class="bg-primary padding-x padding-bottom">
-            <input type="text" placeholder="Mau pesan apa hari ini ?" class="form-control input-dark border-0">
+            <input type="text" placeholder="Mau pesan apa hari ini ?"
+                   onfocus="window.location.href='{{route('search')}}'" class="form-control input-dark border-0">
         </div>
 
         <section class="padding-around scroll-horizontal">
@@ -38,17 +39,39 @@
 
         <div class="d-flex justify-content-between">
             <h5 class="title-section">Menu Baru</h5>
-            <a href="" class="title-section-end">Lebih banyak...</a>
+            <a href="{{url('list/baru')}}" class="title-section-end">Lebih banyak...</a>
         </div>
         <section class="scroll-horizontal  padding-x">
-            @foreach($products->random(count($products)) as $product)
+            @foreach($newestProducts as $product)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
-                        <div class="img-wrap"><img src="{{asset('storage/'.json_decode($product->gambar)[0])}}"></div>
-                        <div class="text-wrap">
-                            <p class="title text-truncate">{{$product->produk}}</p>
-                            <div class="price">Rp. {{number_format($product->harga??0,0,',','.')}}</div>
-                            <!-- price-wrap.// -->
+                        <div class="img-wrap"><img style="position: relative"
+                                                   src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            <div style="position: absolute;top:3px;left: 3px;"
+                                 class="d-flex justify-content-start align-items-center">
+                                @if($product->promosi == 1)
+                                    <div class="badge badge-danger">Promo</div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="text-wrap position-relative">
+                            <p class="title text-truncate">
+                                @if($product->baru == 1)
+                                    <img style="height: 30px;top:-20px" class="position-absolute"
+                                         src="{{asset('images/new-label.svg')}}" alt="new-label">
+                                @endif
+                                {{$product->nama}}</p>
+                            @if($product->promosi == 1)
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga_promo??0,0,',','.')}}</div>
+                                <div class="price-promo">
+                                    <del>Rp. {{number_format($product->harga??0,0,',','.')}}</del>
+                                </div>
+                            @else
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga??0,0,',','.')}}</div>
+                        @endif
+                        <!-- price-wrap.// -->
                         </div>
                     </a>
                 </div>
@@ -58,18 +81,40 @@
         <hr class="divider my-3">
 
         <div class="d-flex justify-content-between">
-            <h5 class="title-section">Rekomendasi Buat Kamu</h5>
-            <a href="" class="title-section-end">Lebih banyak...</a>
+            <h5 class="title-section">Terlaris</h5>
+            <a href="{{url('list/terlaris')}}" class="title-section-end">Lebih banyak...</a>
         </div>
         <section class="scroll-horizontal padding-x">
-            @foreach($products as $product)
+            @foreach($mostBuyProducts as $product)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
-                        <div class="img-wrap"><img src="{{asset('storage/'.json_decode($product->gambar)[0])}}"></div>
-                        <div class="text-wrap">
-                            <p class="title text-truncate">{{$product->nama??'NULL'}}</p>
-                            <div class="price">Rp. {{number_format($product->harga??0,0,',','.')}}</div>
-                            <!-- price-wrap.// -->
+                        <div class="img-wrap" style="position: relative"><img
+                                src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            <div style="position: absolute;top:3px;left: 3px;"
+                                 class="d-flex justify-content-start align-items-center">
+                                @if($product->promosi == 1)
+                                    <div class="badge badge-danger">Promo</div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="text-wrap position-relative">
+                            <p class="title text-truncate">
+                                @if($product->baru == 1)
+                                    <img style="height: 30px;top:-20px" class="position-absolute"
+                                         src="{{asset('images/new-label.svg')}}" alt="new-label">
+                                @endif
+                                {{$product->nama??'NULL'}}</p>
+                            @if($product->promosi == 1)
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga_promo??0,0,',','.')}}</div>
+                                <div class="price-promo">
+                                    <del>Rp. {{number_format($product->harga??0,0,',','.')}}</del>
+                                </div>
+                            @else
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga??0,0,',','.')}}</div>
+                        @endif
+                        <!-- price-wrap.// -->
                         </div>
                     </a>
                 </div>
@@ -79,18 +124,39 @@
 
         <div class="d-flex justify-content-between">
             <h5 class="title-section">Sedang Promo Nih !!!</h5>
-            <a href="" class="title-section-end">Lebih banyak...</a>
+            <a href="{{url('list/promo')}}" class="title-section-end">Lebih banyak...</a>
 
         </div>
         <section class="scroll-horizontal padding-x">
-            @foreach($products as $product)
+            @foreach($promoProducts as $product)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
-                        <div class="img-wrap"><img src="{{asset('storage/'.json_decode($product->gambar)[0])}}"></div>
-                        <div class="text-wrap">
-                            <p class="title text-truncate">{{$product->nama??'NULL'}}</p>
-                            <div class="price">Rp. {{number_format($product->harga??0,0,',','.')}}</div>
-                            <!-- price-wrap.// -->
+                        <div class="img-wrap">
+                            <img style="position: relative"
+                                 src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            @if($product->promosi == 1)
+                                <span style="position: absolute;top:3px;left: 3px;" class="badge badge-danger">Promo
+                                </span>
+                            @endif
+                        </div>
+                        <div class="text-wrap position-relative">
+                            <p class="title text-truncate">
+                                @if($product->baru == 1)
+                                    <img style="height: 30px;top:-20px" class="position-absolute"
+                                         src="{{asset('images/new-label.svg')}}" alt="new-label">
+                                @endif
+                                {{$product->nama??'NULL'}}</p>
+                            @if($product->promosi == 1)
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga_promo??0,0,',','.')}}</div>
+                                <div class="price-promo">
+                                    <del>Rp. {{number_format($product->harga??0,0,',','.')}}</del>
+                                </div>
+                            @else
+                                <div class="price font-weight-bold">
+                                    Rp. {{number_format($product->harga??0,0,',','.')}}</div>
+                        @endif
+                        <!-- price-wrap.// -->
                         </div>
                     </a>
                 </div>

@@ -35,6 +35,19 @@
                             <th class="pl-6 w-5 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
                                 No.
                             </th>
+                            <th class="px-6 w-10 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
+                                <form method="GET" action="{{ url('/admin/produk') }}" accept-charset="UTF-8"
+                                      class="form-inline px-3 my-lg-0 float-right" role="search">
+                                    <div class="relative flex w-48 flex-wrap items-stretch">
+                                    <span
+                                        class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-5 pl-3 py-2"><i
+                                            class="fas fa-search"></i></span>
+                                        <input value="{{ request('search') }}" type="text" placeholder="Cari"
+                                               name="search"
+                                               class="px-3 py-2 placeholder-gray-400 bg-white focus:bg-white text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
+                                    </div>
+                                </form>
+                            </th>
                             <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
                                 Nama
                             </th>
@@ -54,21 +67,12 @@
                                 Promosi
                             </th>
                             <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
+                                Produk Terbaru
+                            </th>
+                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
                                 Status
                             </th>
-                            <th class="px-6 w-10 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                <form method="GET" action="{{ url('/admin/produk') }}" accept-charset="UTF-8"
-                                      class="form-inline px-3 my-lg-0 float-right" role="search">
-                                    <div class="relative flex w-48 flex-wrap items-stretch">
-                                    <span
-                                        class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-5 pl-3 py-2"><i
-                                            class="fas fa-search"></i></span>
-                                        <input value="{{ request('search') }}" type="text" placeholder="Cari"
-                                               name="search"
-                                               class="px-3 py-2 placeholder-gray-400 bg-white focus:bg-white text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                                    </div>
-                                </form>
-                            </th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -84,24 +88,6 @@
                             <tr>
                                 <td class="border-t-0 pl-6 align-middle border-l-0 border-r-0 whitespace-no-wrap p-4">
                                     {{ $loop->iteration }}
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->nama }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->deskripsi }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    Rp. {{ number_format($item->harga,'0',',','.') }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    Rp. {{ number_format($item->harga_promo,'0',',','.') }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    <span
-                                        class="bg-{{ $item->terlaris == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->terlaris == 1?'Ya':'Tidak' }}</span>
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    <span
-                                        class="bg-{{ $item->promosi == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->promosi == 1?'Ya':'Tidak' }}</span>
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    <span
-                                        class="bg-{{ $item->status == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->status == 1?'Ya':'Tidak' }}</span>
                                 </td>
                                 <td class="text-right pr-5">
                                     <a href="#" class="text-gray-600 block py-1 px-3"
@@ -129,6 +115,28 @@
                                             </button>
                                         </form>
                                     </div>
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->nama }}</td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->deskripsi }}</td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    Rp. {{ number_format($item->harga,'0',',','.') }}</td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    Rp. {{ number_format($item->harga_promo,'0',',','.') }}</td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    <span
+                                        class="bg-{{ $item->terlaris == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->terlaris == 1?'Ya':'Tidak' }}</span>
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    <span
+                                        class="bg-{{ $item->promosi == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->promosi == 1?'Ya':'Tidak' }}</span>
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    <span
+                                        class="bg-{{ $item->baru == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->baru == 1?'Ya':'Tidak' }}</span>
+                                </td>
+                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
+                                    <span
+                                        class="bg-{{ $item->status == 1?'green':'red' }}-500 rounded p-1 w-auto text-white">{{ $item->status == 1?'Ya':'Tidak' }}</span>
                                 </td>
                             </tr>
                         @endforeach

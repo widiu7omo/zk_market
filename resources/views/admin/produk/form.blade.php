@@ -123,6 +123,25 @@
 <div class='flex flex-wrap'>
     <div class="w-full lg:w-6/12 px-4">
         <div class="relative w-full mb-3">
+            <label for="status" class="block uppercase text-xs font-bold mb-2">{{ 'Produk baru' }}</label>
+            <label class="inline-flex items-center mt-3">
+                <input type="radio" name="baru"
+                       {{ (isset($produk) && 1 == $produk->baru) ? 'checked' : '' }} value="1"
+                       class="form-radio h-5 w-5 text-blue-500">
+                <span class="ml-2 text-gray-700">Ya</span>
+            </label>
+            <label class="inline-flex items-center mt-3">
+                <input type="radio" name="baru"
+                       {{ (isset($produk) && 0 == $produk->baru) ? 'checked' : '' }} value="0"
+                       class="form-radio h-5 w-5 text-blue-500">
+                <span class="ml-2 text-gray-700">Tidak</span>
+            </label>
+
+            {!! $errors->first('status', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
+        </div>
+    </div>
+    <div class="w-full lg:w-6/12 px-4">
+        <div class="relative w-full mb-3">
             <label for="status" class="block uppercase text-xs font-bold mb-2">{{ 'Status' }}</label>
             <label class="inline-flex items-center mt-3">
                 <input type="radio" name="status"
