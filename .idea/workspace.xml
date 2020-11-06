@@ -22,6 +22,10 @@
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Fix Offline Route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/GoogleSocialiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/ProfileController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +209,7 @@
       <workItem from="1604047341706" duration="5711000" />
       <workItem from="1604233325756" duration="498000" />
       <workItem from="1604538328638" duration="2613000" />
-      <workItem from="1604641294063" duration="7613000" />
+      <workItem from="1604641294063" duration="9540000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -320,10 +324,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.987@0.23.1920.987" timestamp="1604659760907" />
-    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604017783994">
+    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604667292107">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604017783994" />
+    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604667292107" />
     <state width="1294" height="267" key="GridCell.Tab.0.bottom" timestamp="1604049707798">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

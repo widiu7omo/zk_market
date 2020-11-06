@@ -15,7 +15,7 @@
             <span id="cart-item" class="badge badge-danger badge-pill absolute">0</span>
         </a>
 
-        <a href="{{url('profile')}}" class="nav-link {{$active== 'profile'?'active':null}}">
+        <a href="{{route('profile')}}" class="nav-link {{$active== 'profile'?'active':null}}">
             <i data-eva="person" data-eva-fill="{{$active== 'profile'?'#B09685':'#969696'}}"></i><span class="text">Profil</span>
         </a>
     </nav>

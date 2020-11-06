@@ -13,6 +13,7 @@ use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use Exception;
 use App\Models\User;
+use Laravel\Socialite\One\MissingVerifierException;
 
 class GoogleSocialiteController extends Controller
 {
@@ -60,11 +61,11 @@ class GoogleSocialiteController extends Controller
                 session(['customer_id' => $newCustomer->id]);
                 $newUser->markEmailAsVerified();
                 Auth::login($newUser);
-                return $finduser->hasRole('Customer') ? redirect('/homepage') : redirect('/dashboard');
+                return $newUser->hasRole('Customer') ? redirect('/homepage') : redirect('/dashboard');
             }
 
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return response('Terjadi kesalahan saat mengkoneksikan ke Socialite. Silahkan ulangi lagi.' . $e->getMessage());
         }
     }
 }

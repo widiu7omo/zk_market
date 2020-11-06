@@ -20,6 +20,7 @@ use App\Http\Livewire\Customer\Payment;
 use App\Http\Livewire\Customer\PickAddress;
 use App\Http\Livewire\Customer\Profile;
 use App\Http\Livewire\Customer\Search;
+use App\Http\Livewire\Customer\UserProfile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,7 +50,6 @@ Route::middleware(['auth'])->group(function () {
 //Basic Route
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
 //    Route::get('search', [\App\Http\Controllers\Customer\SearchController::class, 'index'])->name('search.index');
-//    Route::get('profile', [\App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('profile.index');
 //    Route::get('cart', [\App\Http\Controllers\Customer\CartController::class, 'index'])->name('cart.index');
     Route::get('admin/alamat/all/{id}', [App\Http\Controllers\Admin\AlamatController::class, 'all']);
     Route::get('admin/detail-pesanan/all/{id}', [App\Http\Controllers\Admin\DetailPesananController::class, 'all']);
@@ -89,7 +89,7 @@ Route::get('/detail', DetailProduk::class)->name('detail');
 Route::get('/list/{name}', ListProduk::class);
 Route::get('/notfound', NotFound::class)->name('notfound');
 Route::get('/search', Search::class)->name('search');
-Route::get('/profile', Profile::class);
+Route::get('/profile', Profile::class)->name('profile');
 Route::get('/cart', Cart::class)->name('cart');
 Route::get('/checkout', Checkout::class)->name('checkout');
 Route::get('/address', Address::class)->name('address');
