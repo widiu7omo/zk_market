@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\StatusBayar;
+use App\Models\StatusPesanan;
 use Database\Seeders\PengaturanSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
@@ -13,6 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call([UserSeeder::class,PengaturanSeeder::class]);
+        $this->call([
+            UserSeeder::class,
+            PengaturanSeeder::class,
+            StatusBayar::class,
+            StatusPesanan::class]);
     }
 }

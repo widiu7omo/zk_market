@@ -60,8 +60,7 @@ class GoogleSocialiteController extends Controller
                 session(['customer_id' => $newCustomer->id]);
                 $newUser->markEmailAsVerified();
                 Auth::login($newUser);
-
-                return redirect('/dashboard');
+                return $finduser->hasRole('Customer') ? redirect('/homepage') : redirect('/dashboard');
             }
 
         } catch (Exception $e) {
