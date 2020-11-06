@@ -6,8 +6,10 @@
             @if(Auth::user())
                 <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <button class="btn-header">Logout</button>
+                    <button class="btn btn-sm btn-outline-light">Logout</button>
                 </form>
+            @else
+                <a class="btn btn-sm btn-outline-light" href="{{route('login')}}">Login</a>
             @endif
         </div>
     </header> <!-- section-header.// -->
