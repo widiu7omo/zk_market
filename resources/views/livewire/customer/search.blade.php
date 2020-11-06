@@ -22,8 +22,9 @@
             <ul class="list-search-suggestion">
                 @forelse($products as $product)
                     <li>
-                        <a href="#" class="text">{{$product->nama}} </a>
-                        <a href="#" class="btn-control float-right"> <i class="fa fa-times"></i> </a>
+                        <a href="{{url('detail?product='.encrypt($product->id))}}"
+                           class="text">{{$product->nama}} </a>
+                        <a href="{{url('detail?product='.encrypt($product->id))}}" class="btn-control float-right"> <i class="fa fa-search"></i> </a>
                     </li>
                 @empty
                     <li>Produk tidak ditemukan</li>

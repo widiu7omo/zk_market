@@ -12,9 +12,9 @@
             <h6 class="border-bottom pb-1">Status Pemesanan</h6>
             @foreach($statusPemesanan as $status)
                 <div class="">
-                    <i data-eva="{{$status->id == $dataOrder->status_pesanan_id?'checkmark-circle-2':'close-circle'}}"
+                    <i data-eva="{{$status->id <= $dataOrder->status_pesanan_id?'checkmark-circle-2':'close-circle'}}"
                        data-eva-width="18px"
-                       data-eva-fill="{{$status->id == $dataOrder->status_pesanan_id?'#4dc90e':'#e82b13'}}"></i><small>&nbsp;{{ucfirst($status->status_pesanan)}}</small>
+                       data-eva-fill="{{$status->id <= $dataOrder->status_pesanan_id?'#4dc90e':'#e82b13'}}"></i><small>&nbsp;{{ucfirst($status->status_pesanan)}}</small>
                 </div>
             @endforeach
         </section>
