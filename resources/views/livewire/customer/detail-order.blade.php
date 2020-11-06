@@ -34,7 +34,7 @@
             <h6 class="border-bottom pb-1">Detail Pesanan</h6>
             <div class="d-flex justify-content-between text-muted">
                 <span><small>Tanggal</small></span>
-                <span><small>{{$dataOrder->created_at->isoFormat('HH:mm DD MMMM YYYY')}}</small></span>
+                <span><small>{{$dataOrder->created_at->isoFormat('DD MMMM YYYY HH:mm')}}</small></span>
             </div>
             <small class="font-weight-bold text-muted">Item</small>
             <div>

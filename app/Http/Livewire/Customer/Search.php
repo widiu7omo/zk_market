@@ -4,12 +4,10 @@ namespace App\Http\Livewire\Customer;
 
 use App\Models\Kategori;
 use App\Models\Produk;
-use Illuminate\Http\Request;
 use Livewire\Component;
 
 class Search extends Component
 {
-    public Kategori $category;
     public Produk $product;
     public string $search = '';
 

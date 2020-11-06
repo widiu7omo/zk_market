@@ -1,17 +1,17 @@
 <x-guest-layout>
-    <div class="min-h-screen flex flex-col justify-center sm:justify-end items-center pt-6 sm:pt-0 bg-gray-100">
+    <div class="min-h-screen flex flex-col justify-center sm:justify-end items-center pt-6 px-4 sm:pt-0 bg-gray-100 p-8">
         <div>
             <img style="height: 100px" src="{{asset('images/logo-zona-kopi.png')}}" alt="logo">
         </div>
         <div
-            class="w-full h-full items-center sm:w-m-3 sm:m-0 md:m-0 lg:m-0 sm:max-w-md mt-6 px-4 py-4 bg-gray-300 shadow-md overflow-hidden sm:rounded-lg">
-            <div class="relative h-full flex flex-col min-w-0 break-words w-full mb-6 rounded-lg border-0">
+            class="h-full w-full items-center sm:w-m-3 sm:m-0 md:m-0 lg:m-0 sm:max-w-md mt-6 px-4 py-4 rounded-lg bg-gray-300 shadow-md overflow-hidden sm:rounded-lg">
+            <div class="relative h-full flex flex-col min-w-0 break-words  mb-6 rounded-lg border-0">
                 @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
                         {{ session('status') }}
                     </div>
                 @endif
-                <div class="flex-auto lg:px-6 pt-0">
+                <div class="flex-auto px-6 pt-0">
                     <div class="text-gray-500 text-center mb-3 font-bold">
                         <small>Login dengan akun anda</small>
                     </div>

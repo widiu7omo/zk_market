@@ -1,0 +1,16 @@
+{
+    "fields": [
+        {
+            "name": "topic",
+            "type": "string"
+        },
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "string"
+        }
+    ]
+}

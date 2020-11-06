@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\GoogleSocialiteController;
 use App\Http\Controllers\Customer\AddressController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\OfflineController;
+use App\Http\Controllers\Customer\PaymentController;
 use App\Http\Controllers\Customer\ProdukController;
 use App\Http\Livewire\Customer\Address;
 use App\Http\Livewire\Customer\Cart;
@@ -47,7 +48,6 @@ Route::middleware(['auth'])->group(function () {
 //Basic Route
     Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
-    Route::post('/pay', [\App\Http\Controllers\Customer\PaymentController::class, 'pay'])->name('pay');
 //    Route::get('search', [\App\Http\Controllers\Customer\SearchController::class, 'index'])->name('search.index');
 //    Route::get('profile', [\App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('profile.index');
 //    Route::get('cart', [\App\Http\Controllers\Customer\CartController::class, 'index'])->name('cart.index');
@@ -67,6 +67,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');
     Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController');
     Route::resource('admin/detail-pesanan', 'App\Http\Controllers\Admin\DetailPesananController');
+    Route::resource('admin/bantuan', 'App\Http\Controllers\Admin\BantuanController');
 });
 Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -76,6 +77,7 @@ Route::post('/cart_products', [ProdukController::class, 'getDataProduk']);
 Route::post('/address', [AddressController::class, 'store'])->name('store_address');
 Route::get('/address/{id}/show', [AddressController::class, 'show']);
 Route::post('/items', [CartController::class, 'retrieveItems']);
+Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
 
 //LiveWire Customer
 Route::get('/homepage', Home::class)->name('homepage');
@@ -91,3 +93,4 @@ Route::get('/pick_address', PickAddress::class)->name('pick_address');
 Route::get('/payment', Payment::class)->name('payment');
 Route::get('/orders', ListOrder::class)->name('orders');
 Route::get('/detail_order/{id}', DetailOrder::class);
+

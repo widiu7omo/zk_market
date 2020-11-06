@@ -109,7 +109,7 @@
                 var place = localStorage.getItem('alamat');
                 if (place !== null) {
                     var decodedPlace = JSON.parse(place);
-                    modalAlamat.find('input[name="location"]').val(typeof decodedPlace.name === "undefined" ? 'Nama Tidak Dikenali' : decodedPlace.name);
+                    modalAlamat.find('input[name="location"]').val(typeof decodedPlace.name === "undefined" ? 'Alamat terpilih' : decodedPlace.name);
                     modalAlamat.find('input[name="lat"]').val(localStorage.getItem('lat'));
                     modalAlamat.find('input[name="long"]').val(localStorage.getItem('lng'));
                     modalAlamat.find('input[name="pemesan"]').val(localStorage.getItem('pemesan'));

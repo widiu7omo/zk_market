@@ -20,7 +20,7 @@
                         <label class="custom-control custom-radio pl-0">
                             <span
                                 class="title d-flex justify-content-between">Pesanan #{{$order->pesanan->id}} <span><small
-                                        class="text-muted">{{$order->created_at->isoFormat('HH:mm DD MMMM YYYY')}}</small></span>
+                                        class="text-muted">{{$order->created_at->isoFormat('DD MMMM YYYY HH:mm')}}</small></span>
                         </span><br>
                             <span class="text-muted mt-3">
                             <small>Total Rp. {{number_format($order->amount,0,',','.')}}</small>
@@ -30,7 +30,7 @@
                             <strong>{{$order->metode_pembayaran}}</strong></small><small
                                     class="badge badge-pill badge-{{strtoupper($order->pesanan->status_bayar->status_bayar)=='BELUM BAYAR'?'danger':'success'}}">{{strtoupper($order->pesanan->status_bayar->status_bayar)}}</small>
                         </span><br>
-                            <small>Catatan: {{$order->catatan}}</small>
+                            <small>Catatan: <br><span class="text-muted">{{$order->pesanan->catatan}}</span></small>
                         </label>
                     </div>
                 </a>
