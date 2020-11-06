@@ -47,7 +47,6 @@ Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register')
 
 Route::middleware(['auth'])->group(function () {
 //Basic Route
-    Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
 //    Route::get('search', [\App\Http\Controllers\Customer\SearchController::class, 'index'])->name('search.index');
 //    Route::get('profile', [\App\Http\Controllers\Customer\ProfileController::class, 'index'])->name('profile.index');
@@ -82,6 +81,7 @@ Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
 Route::post('/webhooks/ovo', [WebhooksController::class, 'ovo']);
 Route::post('/webhooks/linkaja', [WebhooksController::class, 'ovo']);
 Route::post('/webhooks/qris', [WebhooksController::class, 'ovo']);
+Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
 
 //LiveWire Customer
 Route::get('/homepage', Home::class)->name('homepage');
