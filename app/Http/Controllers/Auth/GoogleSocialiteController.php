@@ -51,7 +51,7 @@ class GoogleSocialiteController extends Controller
                     'social_type' => 'google',
                     'password' => Hash::make('my-google')
                 ]);
-                $newUser->setRole('Customer');
+                $newUser->assignRole('Customer');
                 $newCustomer = Customer::create([
                     'nama' => $user->getName(),
                     'no_hp' => '-',
