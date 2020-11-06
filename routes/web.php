@@ -79,9 +79,9 @@ Route::post('/address', [AddressController::class, 'store'])->name('store_addres
 Route::get('/address/{id}/show', [AddressController::class, 'show']);
 Route::post('/items', [CartController::class, 'retrieveItems']);
 Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
-Route::get('/webhooks/ovo', [WebhooksController::class, 'ovo']);
-Route::get('/webhooks/linkaja', [WebhooksController::class, 'ovo']);
-Route::get('/webhooks/qris', [WebhooksController::class, 'ovo']);
+Route::post('/webhooks/ovo', [WebhooksController::class, 'ovo']);
+Route::post('/webhooks/linkaja', [WebhooksController::class, 'ovo']);
+Route::post('/webhooks/qris', [WebhooksController::class, 'ovo']);
 
 //LiveWire Customer
 Route::get('/homepage', Home::class)->name('homepage');
