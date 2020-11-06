@@ -8,7 +8,7 @@
     </header> <!-- section-header.// -->
     <main class="app-content">
         <section class="padding-top">
-            <h5 class="title-section padding-x">Pilih Alamat</h5>
+            <h5 class="title-section padding-x">Daftar Alamat</h5>
             @if(count($addresses) == 0)
                 <div class="d-flex p-5 mx-auto justify-content-center align-items-center">
                     <h6 class="text-center">Belum ada data alamat, Silahkan tambahkan alamat baru</h6>

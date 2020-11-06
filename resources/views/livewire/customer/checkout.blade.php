@@ -21,12 +21,13 @@
             <section class="padding-top">
                 <h5 class="title-section">Data Pemesan</h5>
                 <div class="form-group px-3">
-                    <input type="text" id="pemesan" name="pemesan" class="form-control" placeholder="Nama Pemesan">
+                    <input type="text" id="pemesan" name="pemesan" class="form-control" placeholder="Nama Pemesan"
+                           value="{{$name}}">
                     <input type="hidden" id="cart" name="cart">
                 </div>
                 <div class="form-group px-3">
                     <input type="text" id="nohppemesan" name="nohppemesan" data-mask="0000-0000-0000"
-                           class="form-control"
+                           class="form-control" value="{{$nohp}}"
                            placeholder="Nomor Telepon">
                 </div>
             </section>
