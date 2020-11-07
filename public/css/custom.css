@@ -40,7 +40,7 @@
     display: block
 }
 .btn-card-icontop {
-    background-color: #ffeee3;
+    background-color: #ffeee3 !important;
 }
 a[class*='product-']:hover .title {
     color: #1f1f1f;
