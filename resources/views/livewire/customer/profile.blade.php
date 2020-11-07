@@ -44,7 +44,7 @@
                             </a>
                         </li>
                         <li class="col-4">
-                            <a href="{{route('orders')}}" class="btn-card-icontop btn">
+                            <a href="{{url('orders')}}" class="btn-card-icontop btn">
                                 <span class="icon"> <i style="color: #B09685" class="fa fa-shopping-basket"></i> </span>
                                 <small class="text text-center"> Transaksi</small>
                             </a>
@@ -63,15 +63,15 @@
             <section class="padding-top">
                 <h5 class="title-section padding-x">Daftar Pesanan</h5>
                 <nav class="nav-list">
-                    <a class="btn-list" href="#">
+                    <a class="btn-list" href="{{url('orders/process')}}">
                         <span class="float-right badge badge-warning">{{count($onProcess??[])}}</span>
                         <span class="text">Dalam Proses</span>
                     </a>
-                    <a class="btn-list" href="#">
+                    <a class="btn-list" href="{{url('orders/pengiriman')}}">
                         <span class="float-right badge badge-success">{{count($onTheWay??[])}}</span>
                         <span class="text">Pengiriman</span>
                     </a>
-                    <a class="btn-list" href="#">
+                    <a class="btn-list" href="{{url('orders/unpaid')}}">
                         <span class="float-right badge badge-secondary">{{count($unpaid??[])}}</span>
                         <small class="title"></small>
                         <span class="text">Belum Dibayar</span>
@@ -121,7 +121,7 @@
             </section>
             @if(!Auth::user())
                 <div class="mx-3 my-5" style="bottom: 27px">
-                    <a href="{{route('orders')}}" class="btn btn-block px-3 py-3 btn-primary text-medium shadow-lg">Klik
+                    <a href="{{url('orders')}}" class="btn btn-block px-3 py-3 btn-primary text-medium shadow-lg">Klik
                         disini untuk
                         melihat daftar
                         pesanan anda.</a>

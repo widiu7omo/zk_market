@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:window.location='{{route('orders')}}'" class="btn-header">
+        <a href="javascript:window.location='{{url('orders')}}'" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Konfirmasi Pembayaran </h6>
         <div class="header-right">
@@ -85,7 +85,7 @@
                 @endif
             </div>
             <div class="mx-3 my-5" style="bottom: 27px">
-                <a href="{{route('orders')}}" class="btn btn-block px-3 py-3 btn-primary text-medium shadow-lg">Klik
+                <a href="{{url('orders')}}" class="btn btn-block px-3 py-3 btn-primary text-medium shadow-lg">Klik
                     disini untuk
                     melihat daftar
                     pesanan anda.</a>
