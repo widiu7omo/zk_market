@@ -1,5 +1,5 @@
 <div>
-    <header class="app-header header-search bg-primary">
+    <header class="app-header header-search bg-primary" >
         <a href="javascript:window.location.href = '/'" class="btn-header">
             <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g data-name="Layer 2">
