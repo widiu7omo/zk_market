@@ -133,11 +133,14 @@ class PaymentController extends Controller
                     ]);
                     $total = $total + $subtotal;
                 }
+                //ongkir
+                $total = $total + ($request->ongkir ?? 0);
                 $dataPesanan = [
                     'waktu_pesan' => Carbon::now()->format('H:i:s'),
                     'waktu_sampai' => '',
                     'tanggal' => Carbon::now()->format('d-m-Y'),
                     'total_bayar' => $total,
+                    'total_ongkir' => $request->ongkir,
                     'catatan' => $request->catatan,
                     'status_pesanan_id' => StatusPesanan::whereStatusPesanan('pemesanan')->first()->id,
                     'status_bayar_id' => StatusBayar::whereStatusBayar('belum bayar')->first()->id,

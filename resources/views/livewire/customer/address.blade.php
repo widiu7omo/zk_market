@@ -106,7 +106,7 @@
             $('#btn-choose-address').on('click', function () {
                 var selectedAddress = $('input[name="address"]:checked').val();
                 if (!selectedAddress) {
-                    return Snackbar.show({text: 'Pilih alamat terlebih dahulu'})
+                    return Snackbar.show({actionTextColor:'#B09685',text: 'Pilih alamat terlebih dahulu'})
                 }
                 localStorage.setItem('selected_address', selectedAddress);
                 document.location.href = "{{route('checkout')}}";

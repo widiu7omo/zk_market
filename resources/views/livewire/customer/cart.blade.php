@@ -94,7 +94,7 @@
                 } else {
                     delete currentCart[inputFormItem.data('id')];
                     inputFormItem.parents('article.item-cart').remove();
-                    Snackbar.show({text: 'Barang di hapus dari keranjang belanja.'})
+                    Snackbar.show({actionTextColor:'#B09685',text: 'Barang di hapus dari keranjang belanja.'})
                     if (Object.keys(currentCart).length === 0) {
                         $('#rincian-total').hide();
                         containerItems.html('<h4>Keranjang Kosong</h4>');

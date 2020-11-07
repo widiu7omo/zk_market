@@ -40,6 +40,7 @@
                         <a href="{{route('address')}}" class="text-muted text-tiny" id="btn-address">Tambah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
                                 class="ml-2 icon-control fa fa-chevron-right"></i></a>
                         <input type="hidden" name="alamat">
+                        <input type="hidden" name="ongkir">
                     </div>
                     <div id="container-selected-address"
                          class="pl-3 btn-list d-flex justify-content-start flex-column align-items-start">
@@ -163,6 +164,7 @@
                                 } else {
                                     checkoutHelper.shippingFee = data.harga_ongkir;
                                 }
+                                $('input[name="ongkir"]').val(checkoutHelper.shippingFee);
                                 checkoutHelper.setOngkir();
                                 callback();
                             }
@@ -207,7 +209,10 @@
                         const resultsDistance = google.maps.geometry.spherical.computeDistanceBetween(userLokasi, tokoLokasi);
                         const distance = resultsDistance / 1000;
                         if (isNaN(distance.toFixed(1))) {
-                            return Snackbar.show({text: 'Alamat diluar jangkauan / Belum menentukan alamat'})
+                            return Snackbar.show({
+                                actionTextColor: '#B09685',
+                                text: 'Alamat diluar jangkauan / Belum menentukan alamat'
+                            })
                         }
                         console.log(distance.toFixed(1) + ' Km')
                         return distance.toFixed(1);
@@ -216,6 +221,33 @@
                 },
                 setOngkir() {
                     $('#total-ongkir').text('Rp. ' + $.number(checkoutHelper.shippingFee, 0, ',', '.'));
+                },
+                validationCheckout() {
+                    const payOption = $('input[name="pay_option"]:checked').val();
+                    if ($('input[name="pemesan"]').val() === '' && $('input[name="nohppemesan"]').val() === '') {
+                        Snackbar.show({actionTextColor: '#B09685', text: 'Data Pemesan tidak boleh kosong'});
+                        return false;
+                    }
+                    if ($('input[name="alamat"]').val() === '') {
+                        Snackbar.show({actionTextColor: '#B09685', text: 'Alamat belum di pilih'});
+                        return false;
+                    }
+                    console.log(payOption);
+                    if (payOption === '') {
+                        Snackbar.show({actionTextColor: '#B09685', text: 'Metode Pembayaran belum dipilih'});
+                        return false;
+                    } else {
+                        if (payOption !== 'qris') {
+                            if ($('input[name="nowallet"]').val() === '') {
+                                Snackbar.show({
+                                    actionTextColor: '#B09685',
+                                    text: 'Untuk OVO dan LINKAJA Nomor Wallet tidak boleh kosong.'
+                                });
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
                 }
             }
             $(document).ready(function () {
@@ -264,7 +296,7 @@
                 checkoutHelper.saveLocalStorage($(this).prop('id'), $(this).val());
             });
             $('#proses_pesanan').on('click', function () {
-                $('#form-checkout').submit();
+                checkoutHelper.validationCheckout() && $('#form-checkout').submit();
             })
         </script>
     @endpush

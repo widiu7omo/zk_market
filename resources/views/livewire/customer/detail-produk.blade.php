@@ -191,7 +191,7 @@
                     }
                     detailHelper.saveToCart(parsed);
                     detailHelper.updateCart();
-                    Snackbar.show({text: 'Anda telah memasukkan dalam keranjang',});
+                    Snackbar.show({actionTextColor:'#B09685',text: 'Anda telah memasukkan dalam keranjang',});
                 })
             })
         </script>

@@ -12,7 +12,7 @@ class Pesanan extends Model
      * @var string
      */
     protected $table = 'pesanans';
-    protected $fillable = ['waktu_pesan', 'waktu_sampai', 'tanggal', 'total_bayar', 'catatan', 'status_pesanan_id', 'status_bayar_id', 'alamat_id', 'pegawai_id'];
+    protected $fillable = ['waktu_pesan', 'waktu_sampai', 'tanggal', 'total_bayar', 'total_ongkir', 'catatan', 'status_pesanan_id', 'status_bayar_id', 'alamat_id', 'pegawai_id'];
     /**
      * The database primary key value.
      *

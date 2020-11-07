@@ -55,16 +55,16 @@
             function showError(error) {
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
-                        Snackbar.show({text: "User denied the request for Geolocation."});
+                        Snackbar.show({actionTextColor:'#B09685',text: "User denied the request for Geolocation."});
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        Snackbar.show({text: "Location information is unavailable."});
+                        Snackbar.show({actionTextColor:'#B09685',text: "Location information is unavailable."});
                         break;
                     case error.TIMEOUT:
-                        Snackbar.show({text: "The request to get user location timed out."});
+                        Snackbar.show({actionTextColor:'#B09685',text: "The request to get user location timed out."});
                         break;
                     case error.UNKNOWN_ERROR:
-                        Snackbar.show({text: "An unknown error occurred."});
+                        Snackbar.show({actionTextColor:'#B09685',text: "An unknown error occurred."});
                         break;
                 }
             }

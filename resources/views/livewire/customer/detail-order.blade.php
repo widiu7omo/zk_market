@@ -21,13 +21,13 @@
         <hr class="divider">
         <section class="padding-top px-3 py-0 m-3" id="alamat-pesanan">
             <h6 class="border-bottom pb-1">Alamat Pengantaran</h6>
-                <div class="text-muted">
-                    <i data-eva="pin"
-                       data-eva-width="18px"
-                       data-eva-fill="#B09685"></i>
-                    <small>&nbsp;{{$dataOrder->alamat->alamat_lengkap}}</small><br>
-                    <small>Keterangan : <br>{{$dataOrder->alamat->rincian_alamat}}</small>
-                </div>
+            <div class="text-muted">
+                <i data-eva="pin"
+                   data-eva-width="18px"
+                   data-eva-fill="#B09685"></i>
+                <small>&nbsp;{{$dataOrder->alamat->alamat_lengkap}}</small><br>
+                <small>Keterangan : <br>{{$dataOrder->alamat->rincian_alamat}}</small>
+            </div>
         </section>
         <hr class="divider">
         <section class="px-3 py-0 m-3">
@@ -52,7 +52,7 @@
                 @endforeach
                 <div class="d-flex justify-content-between text-muted border-bottom pb-1">
                     <span><small>Ongkir</small></span>
-                    <span><small>Rp. {{number_format(0,0,',','.')}}</small></span>
+                    <span><small>Rp. {{number_format($dataOrder->total_ongkir,0,',','.')}}</small></span>
                 </div>
                 <div class="d-flex justify-content-between font-weight-bold mt-4 mb-2">
                     <span class="text-medium">Total</span>

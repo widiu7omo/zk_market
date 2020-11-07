@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header">
+        <a href="javascript:window.location='{{route('orders')}}'" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Konfirmasi Pembayaran </h6>
         <div class="header-right">

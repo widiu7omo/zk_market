@@ -20,14 +20,15 @@ class CreatePesanansTable extends Migration
             $table->string('tanggal')->nullable();
             $table->string('lat')->nullable();
             $table->string('long')->nullable();
-            $table->string('total_bayar')->nullable();
+            $table->integer('total_bayar')->nullable();
+            $table->integer('total_ongkir')->default(0);
             $table->string('catatan')->nullable();
             $table->string('keterangan')->nullable();
             $table->integer('status_pesanan_id')->unsigned();
             $table->integer('status_bayar_id')->unsigned();
             $table->foreign('status_pesanan_id')->references('id')->on('status_pesanans')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('status_bayar_id')->references('id')->on('status_bayars')->onDelete('cascade')->onUpdate('cascade');
-            });
+        });
     }
 
     /**
