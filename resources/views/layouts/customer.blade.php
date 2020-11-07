@@ -85,6 +85,15 @@
     } else {
         localStorage.setItem('cart', JSON.stringify({}));
     }
+    $.ajax({
+        method: 'get',
+        url: '{{route('location-store')}}',
+        success(res) {
+            if (typeof res.lat != "undefined" && typeof res.long != "undefined") {
+                localStorage.setItem('store-location', JSON.stringify(res));
+            }
+        }
+    })
 </script>
 @stack('script')
 </body>

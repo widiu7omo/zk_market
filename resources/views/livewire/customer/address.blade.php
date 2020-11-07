@@ -17,18 +17,19 @@
             @endif
             @foreach($addresses ?? [] as $key=> $address)
                 <div class="box-selection mx-4">
-                    <label class="custom-control custom-radio pl-0 pb-4">
-                        <input type="radio" name="address" class="custom-control-input" value="{{$address->id}}">
+                    <label class="custom-control custom-radio pl-0 pb-5">
+                        <input type="radio" name="address" class="custom-control-input" value="{{$address->id}}"
+                               data-lat="{{$address->lat}}" data-lng="{{$address->long}}">
                         <span class="title">Alamat {{$key+1}}</span><br>
                         <span class="text-muted">
-                            <small>{{$address->alamat_lengkap}}</small>
+                            <small id="full-address">{{$address->alamat_lengkap}}</small>
                             <small>{{$address->rincian_alamat}}</small>
                         </span>
                         <br>
                         <form action="{{url('address/'.$address->id)}}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-sm btn-outline-danger float-right">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger float-right mt-2">Delete</button>
                         </form>
                     </label>
                 </div>
@@ -110,6 +111,10 @@
                 localStorage.setItem('selected_address', selectedAddress);
                 document.location.href = "{{route('checkout')}}";
             })
+            $('input[name="address"]').on('change', function () {
+                localStorage.setItem('lat',$(this).data('lat'));
+                localStorage.setItem('lng',$(this).data('lng'));
+            });
             if (window.location.href.indexOf('#alamatModal') !== -1) {
                 var modalAlamat = $('#alamatModal');
                 var place = localStorage.getItem('alamat');

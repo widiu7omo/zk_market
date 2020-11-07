@@ -1,6 +1,7 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header"><i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
+        <a href="javascript:window.location='{{url('/')}}'" class="btn-header"><i data-eva="arrow-back"
+                                                                                    data-eva-fill="#fff"></i></a>
         <h5 class="title-header"> Keranjang </h5>
         <div class="header-right"></div>
     </header> <!-- section-header.// -->
@@ -12,17 +13,9 @@
         <hr class="divider">
 
         <section id="rincian-total" style="display: none" class="padding-around">
-            <dl class="dlist-align text-muted">
-                <dt>Harga total</dt>
+            <dl class="dlist-align text-black-50">
+                <dt>Total Belanja</dt>
                 <dd class="text-right" id="price-item">Rp.</dd>
-            </dl>
-            <dl class="dlist-align text-muted">
-                <dt>Ongkos Kirim</dt>
-                <dd class="text-right" id="price-ongkir">Rp. 0</dd>
-            </dl>
-            <dl class="dlist-align">
-                <dt><strong>Total bayar</strong></dt>
-                <dd class="text-right" id="price-all"><strong>Rp. </strong></dd>
             </dl>
 
             <a href="{{route('checkout')}}" class="btn rounded-0 mb-0 btn-block btn-primary bottom-sticky fixed-bottom"> <span
@@ -130,7 +123,7 @@
                                     <figcaption class="info">
                                         <a href="#" class="title text-truncate">${item.nama}</a>
                                         <div class="price-wrap mb-3">
-                                            <small class="text-muted"><span class="price-tag">Rp. ${item.promosi !== '0' ? $.number(item.harga_promo, 0, ',', '.') : $.number(item.harga, 0, ',', '.')}</span> <span>${item.promosi !== '0' ? `<del>${item.harga}</del>` : ``}</span>/per item</small><br>
+                                            <small class="text-muted"><span class="price-tag font-weight-bold">Rp. ${item.promosi !== '0' ? $.number(item.harga_promo, 0, ',', '.') : $.number(item.harga, 0, ',', '.')}</span> <span>${item.promosi !== '0' ? `<del>Rp. ${$.number(item.harga, 0, ',', '.')}</del>` : ``}</span>/per item</small><br>
                                             <strong class="price">Rp. ${$.number(parseInt(currentItems[item.id].count) * (item.promosi !== '0' ? parseInt(item.harga_promo) : parseInt(item.harga)), 0, ',', '.')}</strong>
                                         </div>
                                     </figcaption>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Alamat;
 use App\Models\Customer;
+use App\Models\Pengaturan;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
@@ -40,5 +41,18 @@ class AddressController extends Controller
     {
         Alamat::findOrFail($id)->delete();
         return redirect()->route('list-address')->with('status', ['type' => 'success', 'message' => 'Alamat berhasil di hapus']);
+    }
+
+    public function getLocationStore()
+    {
+        $pengaturan = Pengaturan::first()->only(['lat', 'long']);
+        return response()->json($pengaturan);
+    }
+
+    public function getOngkir()
+    {
+        $pengaturan = Pengaturan::first()->only(['harga_ongkir','tipe_ongkir']);
+        return response()->json($pengaturan);
+
     }
 }

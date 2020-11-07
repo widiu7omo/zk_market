@@ -79,6 +79,8 @@ Route::post('/cart_products', [ProdukController::class, 'getDataProduk']);
 Route::post('/address', [AddressController::class, 'store'])->name('store_address');
 Route::delete('/address/{id}', [AddressController::class, 'destroy']);
 Route::get('/address/{id}/show', [AddressController::class, 'show']);
+Route::get('/location-store', [AddressController::class, 'getLocationStore'])->name('location-store');
+Route::get('/ongkir', [AddressController::class, 'getOngkir'])->name('ongkir');
 Route::post('/items', [CartController::class, 'retrieveItems']);
 Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
 Route::post('/webhooks/ovo', [WebhooksController::class, 'ovo']);

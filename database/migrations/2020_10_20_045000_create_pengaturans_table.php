@@ -19,6 +19,7 @@ class CreatePengaturansTable extends Migration
             $table->string('nama_bisnis')->nullable();
             $table->string('no_wa')->nullable();
             $table->string('tipe_ongkir')->nullable();
+            $table->string('harga_ongkir')->nullable();
             $table->string('alamat')->nullable();
             $table->string('lat')->nullable();
             $table->string('long')->nullable();

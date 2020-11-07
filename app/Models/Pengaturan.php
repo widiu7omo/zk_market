@@ -25,7 +25,7 @@ class Pengaturan extends Model
      *
      * @var array
      */
-    protected $fillable = ['nama_bisnis', 'no_wa', 'tipe_ongkir', 'alamat', 'lat', 'long', 'google_api', 'name'];
+    protected $fillable = ['nama_bisnis', 'no_wa', 'tipe_ongkir', 'alamat', 'lat', 'long', 'google_api', 'name', 'harga_ongkir'];
 
 
 }

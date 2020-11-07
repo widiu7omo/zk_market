@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header">
+        <a href="javascript:window.location='{{route('cart')}}'" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Konfirmasi Pemesanan </h6>
         <div class="header-right"></div>
@@ -115,8 +115,8 @@
                     <div id="container-item">
 
                     </div>
-                    <small class="font-weight-bold my-1 text-warning">Ongkos Kirim <span
-                            class="float-right my-1">Rp. 0</span></small>
+                    <small class="font-weight-bold my-1 text-warning">Ongkos Kirim <span id="total-ongkir"
+                                                                                         class="float-right my-1">Rp. 0</span></small>
                     <hr class="m-0">
                     <small class="title my-1 text-black-50" style="font-weight: bolder">Total <span class="float-right"
                                                                                                     id="total-items">Rp. 0</span></small>
@@ -129,9 +129,12 @@
         </button>
     </main>
     @push('script')
+        <script type="text/javascript"
+                src="https://maps.google.com/maps/api/js?sensor=false&v=3&libraries=geometry"></script>
         <script src="{{asset('vendor/jquery-mask/jquery.mask.min.js')}}"></script>
         <script>
             const checkoutHelper = {
+                shippingFee: 0,
                 saveLocalStorage(key, value) {
                     localStorage.setItem(key, value);
                 },
@@ -148,6 +151,23 @@
                             $('#btn-address').text('Ganti')
                         }
                     })
+                },
+                retrieveOngkir(callback) {
+                    if (localStorage.getItem('store-location')) {
+                        const latLongStore = JSON.parse(localStorage.getItem('store-location'));
+                        const distance = checkoutHelper.getDistance(latLongStore);
+                        $.get('{{route('ongkir')}}').then(function (data) {
+                            if (typeof data.harga_ongkir != "undefined" && typeof data.tipe_ongkir != "undefined") {
+                                if (data.tipe_ongkir === 'dinamis') {
+                                    checkoutHelper.shippingFee = distance * data.harga_ongkir;
+                                } else {
+                                    checkoutHelper.shippingFee = data.harga_ongkir;
+                                }
+                                checkoutHelper.setOngkir();
+                                callback();
+                            }
+                        })
+                    }
                 },
                 retrieveItems(items) {
                     const itemsCart = JSON.parse(items);
@@ -166,11 +186,36 @@
                                     return `<small class="title my-1">${item.nama} X ${itemsCart[item.id].count} <span class="float-right">Rp. ${$.number((item.harga * itemsCart[item.id].count), 0, ',', '.')}</span></small>
                                            ${item.promosi !== '0' ? ` <small class="title my-1">Promo <span class="float-right">- Rp. ${$.number((item.harga * itemsCart[item.id].count) - (item.harga_promo * itemsCart[item.id].count), 0, ',', '.')}</span></small>` : ''}`
                                 })
-                                $('#container-item').html(itemsHtml);
-                                $('#total-items').text(`Rp. ${$.number(total, 0, ',', '.')}`);
+                                checkoutHelper.retrieveOngkir(function () {
+                                    total = total + checkoutHelper.shippingFee;
+                                    $('#container-item').html(itemsHtml);
+                                    $('#total-items').text(`Rp. ${$.number(total, 0, ',', '.')}`);
+                                });
                             }
                         }
                     })
+                },
+                getDistance(lokasi_toko) {
+                    const lat = localStorage.getItem('lat');
+                    const lng = localStorage.getItem('lng');
+                    if (lat !== null && lng !== null) {
+                        const userLokasi = new google.maps.LatLng({lat: parseFloat(lat), lng: parseFloat(lng)});
+                        const tokoLokasi = new google.maps.LatLng({
+                            lat: parseFloat(lokasi_toko.lat),
+                            lng: parseFloat(lokasi_toko.long)
+                        })
+                        const resultsDistance = google.maps.geometry.spherical.computeDistanceBetween(userLokasi, tokoLokasi);
+                        const distance = resultsDistance / 1000;
+                        if (isNaN(distance.toFixed(1))) {
+                            return Snackbar.show({text: 'Alamat diluar jangkauan / Belum menentukan alamat'})
+                        }
+                        console.log(distance.toFixed(1) + ' Km')
+                        return distance.toFixed(1);
+                    }
+                    return 0;
+                },
+                setOngkir() {
+                    $('#total-ongkir').text('Rp. ' + $.number(checkoutHelper.shippingFee, 0, ',', '.'));
                 }
             }
             $(document).ready(function () {
@@ -200,6 +245,7 @@
                     checkoutHelper.retrieveAddress(localStorage.getItem('selected_address'))
                 }
                 if (localStorage.getItem('cart')) checkoutHelper.retrieveItems(localStorage.getItem('cart'))
+
             })
 
             $(document).on('change', 'input[name="pay_option"]', function () {
