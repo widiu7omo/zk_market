@@ -15,6 +15,7 @@
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
           integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
           rel="stylesheet"/>
+    @stack('style')
 </head>
 <body class="antialiased">
 <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -85,7 +86,7 @@
             @include('admin.sidebar')
         </div>
     </nav>
-    <div id="content" class="relative md:ml-64 bg-gray-100 ease-in-out transition-all duration-300">
+    <div id="content" class="relative md:ml-64 bg-white ease-in-out transition-all duration-300">
         <!-- TopBar -->
         <nav
             class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-no-wrap md:justify-start flex items-center p-4">
@@ -101,7 +102,7 @@
                                 <i class="fas fa-search text-gray-600"></i>
                             </span>
                         <input
-                            class="px-3 py-3 placeholder-gray-600 text-gray-700 relative focus:bg-gray-100 bg-gray-300 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                            class="px-3 py-3 placeholder-gray-600 text-gray-700 shadow-inner relative focus:bg-gray-100 bg-gray-200 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
                             placeholder="Search here..."
                             type="text"/>
                     </div>
@@ -146,12 +147,12 @@
         </div>
         <!-- End Bg Header -->
         <!-- Content-->
-        <main class="py-4">
+        <main class="py-4 bg-white h-full flex flex-1">
             @yield('content')
         </main>
         <!-- End Content-->
         <!-- Footer-->
-        <footer class="bottom-0 fixed pb-4 w-full right-0 left-0 bg-white">
+        <footer class="bottom-0 fixed mt-4 pb-4 w-full right-0 left-0 bg-white">
             <div class="">
                 <hr class="mb-4 border-b-1 border-gray-300"/>
                 <div class="flex flex-wrap items-center md:justify-between justify-center">
@@ -251,5 +252,6 @@
         isOpen = !isOpen;
     }
 </script>
+@stack('script')
 </body>
 </html>

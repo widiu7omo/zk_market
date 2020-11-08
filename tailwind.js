@@ -3,7 +3,9 @@ module.exports = {
         // removeDeprecatedGapUtilities: true,
         // purgeLayersByDefault: true,
     },
-    purge: [],
+    purge: [
+        'components'
+    ],
     theme: {
         extend: {
             colors: {
@@ -16,5 +18,7 @@ module.exports = {
         },
     },
     variants: {},
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/ui'),
+    ]
 }

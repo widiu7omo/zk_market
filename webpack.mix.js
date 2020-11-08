@@ -1,6 +1,5 @@
 const mix = require('laravel-mix');
 require('laravel-mix-tailwind');
-require('@tailwindcss/ui');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,6 +12,6 @@ require('@tailwindcss/ui');
  */
 
 mix.js('resources/js/app.js', 'public/js').sourceMaps()
-    .extract(['jquery','lodash','popper.js','@tailwindcss/ui'])
+    .extract(['jquery','lodash','popper.js'])
     .less('resources/less/app.less', 'public/css')
     .tailwind().version();

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="px-4 md:px-10 mx-auto w-full h-screen -m-24">
+<div class="px-4 md:px-10 mx-auto w-full h-full -mt-24">
         <div class="flex flex-wrap">
-            <div class="w-full xl:m-auto xl:w-full mb-12 xl:mb-0 px-4 h-full">
+            <div class="w-full xl:mx-auto xl:w-full mb-16 px-4 h-full">
                 <div class="relative flex flex-col min-w-0 break-words h-full w-full mb-6 shadow-lg rounded-lg bg-gray-100 w-full xl:max-w-screen-lg xl:mx-auto">
                     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                         <div class="flex flex-wrap items-center">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
-                        <table class="table-fixed rounded-2xl">
+                        <table class="table-fixed rounded-2xl w-full">
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-700 text-left font-light" colspan="2">#</th>
@@ -69,7 +69,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="" style="width: 100%">Data Empty</td>
+                                    <td colspan="4" class="p-4 text-center">Data Empty</td>
                                 </tr>
                             @endforelse
                             </tbody>
