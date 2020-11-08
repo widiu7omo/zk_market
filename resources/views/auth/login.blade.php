@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="min-h-screen flex flex-col justify-end sm:justify-center items-center pt-6 px-4 sm:pt-0 bg-gray-100 p-8">
+    <div class="min-h-screen flex flex-col justify-center items-center pt-6 px-4 sm:pt-0 bg-gray-100 p-8">
         <div>
             <img style="height: 100px" src="{{asset('images/logo-zona-kopi.png')}}" alt="logo">
         </div>
