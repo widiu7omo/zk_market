@@ -26,14 +26,8 @@ class PesananController extends Controller
             $pesanan = Pesanan::where('waktu_pesan', 'LIKE', "%$keyword%")
                 ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
                 ->orWhere('tanggal', 'LIKE', "%$keyword%")
-                ->orWhere('lat', 'LIKE', "%$keyword%")
-                ->orWhere('long', 'LIKE', "%$keyword%")
                 ->orWhere('total_bayar', 'LIKE', "%$keyword%")
                 ->orWhere('catatan', 'LIKE', "%$keyword%")
-                ->orWhere('keterangan', 'LIKE', "%$keyword%")
-                ->orWhere('customer_id', 'LIKE', "%$keyword%")
-                ->orWhere('status_pesanan_id', 'LIKE', "%$keyword%")
-                ->orWhere('status_bayar_id', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $pesanan = Pesanan::latest()->paginate($perPage);
