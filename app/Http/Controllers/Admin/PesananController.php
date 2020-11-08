@@ -59,11 +59,7 @@ class PesananController extends Controller
             'waktu_pesan' => 'required',
             'waktu_sampai' => 'required',
             'tanggal' => 'required',
-            'lat' => 'required',
-            'long' => 'required',
-            'total_bayar' => 'required',
             'catatan' => 'required',
-            'keterangan' => 'required'
         ]);
         $requestData = $request->all();
 
@@ -113,13 +109,8 @@ class PesananController extends Controller
     {
         $this->validate($request, [
             'waktu_pesan' => 'required',
-            'waktu_sampai' => 'required',
             'tanggal' => 'required',
-            'lat' => 'required',
-            'long' => 'required',
-            'total_bayar' => 'required',
             'catatan' => 'required',
-            'keterangan' => 'required'
         ]);
         $requestData = $request->all();
 

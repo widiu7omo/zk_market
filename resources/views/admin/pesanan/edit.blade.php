@@ -19,13 +19,6 @@
                                class="uppercase tracking-wide text-sm py-3 px-3 bg-red-500 hover:bg-red-400 shadow-lg rounded-lg text-white font-bold mr-2">Kembali</a>
                         </div>
                     </div>
-                    @if ($errors->any())
-                        <ul class="alert alert-danger">
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
                     <form method="POST" action="{{ url('/admin/pesanan/' . $pesanan->id) }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                                                 {{ method_field('PATCH') }}
                                                 {{ csrf_field() }}

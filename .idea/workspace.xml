@@ -22,8 +22,21 @@
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Ongkir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +228,7 @@
       <workItem from="1604538328638" duration="2613000" />
       <workItem from="1604641294063" duration="31287000" />
       <workItem from="1604710881940" duration="6535000" />
-      <workItem from="1604747355174" duration="19354000" />
+      <workItem from="1604747355174" duration="27086000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -378,7 +391,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604823972846</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Redesign layout rincian pesanan">
+      <created>1604827606893</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1604827606893</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Perbaikan layout login">
+      <created>1604833969913</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604833969913</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +456,9 @@
     <MESSAGE value="Sticky Navbar" />
     <MESSAGE value="Redesign Admin Layout" />
     <MESSAGE value="Improvement &amp; validation every page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improvement &amp; validation every page" />
+    <MESSAGE value="Redesign layout rincian pesanan" />
+    <MESSAGE value="Perbaikan layout login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Perbaikan layout login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -464,10 +493,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state width="1294" height="267" key="GridCell.Tab.0.right/0.23.1920.987@0.23.1920.987" timestamp="1604049707798" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604823976820">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604827609540">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604823976820" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604827609540" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -476,10 +505,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
-    <state x="400" y="164" width="770" height="668" key="find.popup" timestamp="1604819833847">
+    <state x="517" y="169" width="770" height="668" key="find.popup" timestamp="1604828807678">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="400" y="164" width="770" height="668" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604819833847" />
+    <state x="517" y="169" width="770" height="668" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604828807678" />
     <state x="759" y="410" key="scopes" timestamp="1604801893906">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

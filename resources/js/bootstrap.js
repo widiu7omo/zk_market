@@ -1,5 +1,6 @@
 window._ = require('lodash');
 window.$ = require('jquery');
+require('jquery-mask-plugin');
 import Popper from 'popper.js';
 window.Popper = Popper;
 /**

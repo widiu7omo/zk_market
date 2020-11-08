@@ -204,10 +204,7 @@
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
-<script src="{{ mix('js/app.js') }}"></script>
 <script>
-    console.log(window.$);
-
     function toggleNavbar(collapseID) {
         document.getElementById(collapseID).classList.toggle("hidden");
         document.getElementById(collapseID).classList.toggle("bg-white");
