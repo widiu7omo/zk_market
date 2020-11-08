@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <div class="min-h-screen flex flex-col justify-center sm:justify-end items-center pt-6 px-4 sm:pt-0 bg-gray-100 p-8">
+    <div class="min-h-screen flex flex-col justify-end sm:justify-center items-center pt-6 px-4 sm:pt-0 bg-gray-100 p-8">
         <div>
             <img style="height: 100px" src="{{asset('images/logo-zona-kopi.png')}}" alt="logo">
         </div>
         <div style="background-color: #B09685"
-            class="h-full w-full items-center sm:w-m-3 sm:m-0 md:m-0 lg:m-0 sm:max-w-md mt-10 px-4 py-4 rounded-lg shadow-md overflow-hidden sm:rounded-lg">
+            class="h-full w-full items-center sm:w-m-3 sm:mt-3 md:mt-3 lg:mt-3 sm:max-w-md mt-10 px-4 py-4 rounded-lg shadow-md overflow-hidden sm:rounded-lg">
             <div class="relative h-full flex flex-col min-w-0 break-words mb-6 rounded-lg border-0">
                 @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
