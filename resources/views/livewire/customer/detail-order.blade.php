@@ -41,7 +41,7 @@
                 @foreach($dataOrder->detail_pesanans as $item)
                     <div class="d-flex justify-content-between text-muted">
                         <span><small>{{$item->produk->nama}} x {{$item->jumlah}}</small></span>
-                        <span><small>Rp. {{number_format($item->subtotal,0,',','.')}}</small></span>
+                        <span><small>Rp. {{number_format($item->jumlah*$item->produk->harga,0,',','.')}}</small></span>
                     </div>
                     @if($item->produk->promosi == 1)
                         <div class="d-flex justify-content-between text-muted">

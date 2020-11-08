@@ -1,7 +1,7 @@
 <div>
     <header class="app-header bg-primary">
         <a href="javascript:window.location='{{url('/')}}'" class="btn-header"><i data-eva="arrow-back"
-                                                                                    data-eva-fill="#fff"></i></a>
+                                                                                  data-eva-fill="#fff"></i></a>
         <h5 class="title-header"> Keranjang </h5>
         <div class="header-right"></div>
     </header> <!-- section-header.// -->
@@ -94,7 +94,7 @@
                 } else {
                     delete currentCart[inputFormItem.data('id')];
                     inputFormItem.parents('article.item-cart').remove();
-                    Snackbar.show({actionTextColor:'#B09685',text: 'Barang di hapus dari keranjang belanja.'})
+                    Snackbar.show({actionTextColor: '#B09685', text: 'Barang di hapus dari keranjang belanja.'})
                     if (Object.keys(currentCart).length === 0) {
                         $('#rincian-total').hide();
                         containerItems.html('<h4>Keranjang Kosong</h4>');
@@ -123,8 +123,8 @@
                                     <figcaption class="info">
                                         <a href="#" class="title text-truncate">${item.nama}</a>
                                         <div class="price-wrap mb-3">
-                                            <small class="text-muted"><span class="price-tag font-weight-bold">Rp. ${item.promosi !== '0' ? $.number(item.harga_promo, 0, ',', '.') : $.number(item.harga, 0, ',', '.')}</span> <span>${item.promosi !== '0' ? `<del>Rp. ${$.number(item.harga, 0, ',', '.')}</del>` : ``}</span>/per item</small><br>
-                                            <strong class="price">Rp. ${$.number(parseInt(currentItems[item.id].count) * (item.promosi !== '0' ? parseInt(item.harga_promo) : parseInt(item.harga)), 0, ',', '.')}</strong>
+                                            <small class="text-muted"><span class="price-tag font-weight-bold">Rp. ${item.promosi === 1 ? $.number(item.harga_promo, 0, ',', '.') : $.number(item.harga, 0, ',', '.')}</span> <span>${item.promosi === 1 ? `<del>Rp. ${$.number(item.harga, 0, ',', '.')}</del>` : ``}</span>/per item</small><br>
+                                            <strong class="price">Rp. ${$.number(parseInt(currentItems[item.id].count) * (item.promosi === 1 ? parseInt(item.harga_promo) : parseInt(item.harga)), 0, ',', '.')}</strong>
                                         </div>
                                     </figcaption>
                                 </figure>

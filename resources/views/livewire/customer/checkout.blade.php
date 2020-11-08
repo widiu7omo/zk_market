@@ -184,9 +184,9 @@
                             if (typeof res.data !== "undefined") {
                                 var total = 0;
                                 const itemsHtml = res.data.map(function (item) {
-                                    total = total + (item.promosi === "0" ? (item.harga * itemsCart[item.id].count) : item.harga_promo * itemsCart[item.id].count)
+                                    total = total + (item.promosi === 1 ? (item.harga_promo * itemsCart[item.id].count) : (item.harga * itemsCart[item.id].count));
                                     return `<small class="title my-1">${item.nama} X ${itemsCart[item.id].count} <span class="float-right">Rp. ${$.number((item.harga * itemsCart[item.id].count), 0, ',', '.')}</span></small>
-                                           ${item.promosi !== '0' ? ` <small class="title my-1">Promo <span class="float-right">- Rp. ${$.number((item.harga * itemsCart[item.id].count) - (item.harga_promo * itemsCart[item.id].count), 0, ',', '.')}</span></small>` : ''}`
+                                           ${item.promosi === 1 ? ` <small class="title my-1">Promo <span class="float-right">- Rp. ${$.number((item.harga * itemsCart[item.id].count) - (item.harga_promo * itemsCart[item.id].count), 0, ',', '.')}</span></small>` : ''}`
                                 })
                                 checkoutHelper.retrieveOngkir(function () {
                                     total = total + checkoutHelper.shippingFee;
