@@ -168,7 +168,7 @@
                                         x {{$detail->jumlah}}
                                     </th>
                                     <td class="px-0 py-2 leading-snug text-gray-600 text-right text-sm font-bold">
-                                        Rp. {{ number_format($detail->subtotal,0,',','.') }} </td>
+                                        Rp. {{ number_format(($detail->produk->harga * $detail->jumlah) ,0,',','.') }} </td>
                                 </tr>
                                 @if($detail->produk->promosi == 1)
                                     <tr>
