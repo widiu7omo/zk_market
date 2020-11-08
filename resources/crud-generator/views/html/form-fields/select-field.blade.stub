@@ -1,4 +1,4 @@
-<select name="%%itemName%%" class="form-select mt-1 block w-full" id="%%itemName%%" %%required%%>
+<select name="%%itemName%%" id="%%itemName%%" %%required%% class="mt-1 text-gray-800 block form-select w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-200 ease-in-out sm:text-sm sm:leading-5">
     @foreach (json_decode('%%options%%', true) as $optionKey => $optionValue)
         <option value="{{ $optionKey }}" {{ (isset($%%crudNameSingular%%->%%itemName%%) && $%%crudNameSingular%%->%%itemName%% == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>
     @endforeach

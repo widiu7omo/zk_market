@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use \Illuminate\Database\Query\Builder;
 
@@ -29,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Builder::macro('search', function ($field, $string) {
             return $string ? $this->where($field, 'like', '%' . $string . '%') : $this;
         });
+        Paginator::useTailwind();
     }
 }

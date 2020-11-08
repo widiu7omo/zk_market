@@ -18,7 +18,7 @@ class BantuanController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $bantuan = Bantuan::where('topic', 'LIKE', "%$keyword%")
@@ -51,9 +51,9 @@ class BantuanController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $requestData = $request->all();
-        
+
         Bantuan::create($requestData);
 
         return redirect('admin/bantuan')->with('flash_message', 'Bantuan added!');
@@ -97,9 +97,9 @@ class BantuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $requestData = $request->all();
-        
+
         $bantuan = Bantuan::findOrFail($id);
         $bantuan->update($requestData);
 

@@ -1,120 +1,83 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pegawai') }}
-        </h2>
-    </x-slot>
-    @livewire('admin.components.navbar',['active'=>'Manajemen Pegawai'])
-    <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
-        <div class="px-4 md:px-10 mx-auto w-full">
-            @livewire('admin.components.widget',['show'=>false])
-        </div>
-    </div>
-    <div class="px-4 md:px-10 mx-auto w-full -m-24">
-        <div class="lg:w-full mb-12 px-4 mx-auto">
-            <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white">
-                <div class="rounded-t mb-0 px-4 py-3 border-0">
-                    <div class="flex flex-wrap items-center">
-                        <div class="relative w-full pr-4 max-w-full flex-grow flex-1 flex items-center">
-                            <h3 class="font-semibold text-lg text-gray-800"> Data Pegawai </h3>
-                        </div>
-                        <div>
-                            <a href="{{ url('/admin/pegawai/create') }}"
-                               class="bg-blue-600 text-white hover:bg-blue-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                               title="Tambah Pegawai">
-                                <i class="fa fa-plus" aria-hidden="true"></i> Tambah
-                            </a>
+@extends('layouts.app')
+
+@section('content')
+<div class="px-4 md:px-10 mx-auto w-full h-screen -m-24">
+        <div class="flex flex-wrap">
+            <div class="w-full xl:m-auto xl:w-full mb-12 xl:mb-0 px-4 h-full">
+                <div class="relative flex flex-col min-w-0 break-words h-full w-full mb-6 shadow-lg rounded-lg bg-gray-100 w-full xl:max-w-screen-lg xl:mx-auto">
+                    <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
+                        <div class="flex flex-wrap items-center">
+                            <div class="relative w-full max-w-full flex-grow flex-1">
+                                <h6 class="uppercase text-gray-900 mb-1 text-xs font-semibold">
+                                    Tabel
+                                </h6>
+                                <h2 class="text-gray-900 text-xl font-semibold">
+                                    Pegawai
+                                </h2>
+                            </div>
+                            <div class="relative flex flex-wrap items-stretch lg:w-3/12 block mr-5">
+                                <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-500 absolute bg-transparent rounded-lg text-base items-center justify-center w-8 pl-3 py-3">
+                                    <i class="fas fa-search text-gray-600"></i>
+                                </span>
+                                <form method="GET" action="{{ url('/admin/pegawai') }}" accept-charset="UTF-8" class="m-0 p-0 w-full">
+                                    <input name="search" autocomplete="off" class="px-3 py-3 placeholder-gray-600 text-gray-700 relative focus:bg-gray-100 bg-gray-300 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                                       placeholder="Cari data Pegawai"
+                                       type="text" value="{{ request('search') }}"/>
+                                </form>
+                            </div>
+                            <a class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
+                               href="{{ url('/admin/pegawai/create') }}">Add New Pegawai</a>
                         </div>
                     </div>
-                </div>
-                <div class="block w-full overflow-x-auto">
-                    <!-- Projects table -->
-                    <table class="items-center w-full bg-transparent border-collapse">
-                        <thead>
-                        <tr>
-                            <th class="pl-6 w-5 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                No.
-                            </th>
-                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                Nama
-                            </th>
-                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                Jenis Kelamin
-                            </th>
-                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                Nohp
-                            </th>
-                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                Alamat
-                            </th>
-                            <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                <form method="GET" action="{{ url('/admin/pegawai') }}" accept-charset="UTF-8"
-                                      class="form-inline px-3 my-lg-0 float-right" role="search">
-                                    <div class="relative flex w-48 flex-wrap items-stretch">
-                                    <span
-                                        class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-5 pl-3 py-2"><i
-                                            class="fas fa-search"></i></span>
-                                        <input value="{{ request('search') }}" type="text" placeholder="Cari"
-                                               name="search"
-                                               class="px-3 py-2 placeholder-gray-400 bg-white focus:bg-white text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10">
-                                    </div>
-                                </form>
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @if(count($pegawai) == 0)
+                    <div class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
+                        <table class="table-fixed rounded-2xl">
+                            <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
-                                <td colspan="0"
-                                    class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">
-                                    Belum ada data Pegawai
-                                </td>
+                                <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
+                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">Nama</th><th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">Jenis Kelamin</th><th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">Nohp</th>
                             </tr>
-                        @endif
-                        @foreach($pegawai as $item)
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                            @forelse($pegawai as $item)
                             <tr>
-                                <td class="border-t-0 pl-6 align-middle border-l-0 border-r-0 whitespace-no-wrap p-4">
-                                    {{ $loop->iteration }}
-                                </td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->nama }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->jenis_kelamin }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->nohp }}</td>
-                                <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 w-1/3 text-md whitespace-no-wrap p-4">{{ $item->alamat }}</td>
-                                <td class="text-right pr-5">
-                                    <a href="#" class="text-gray-600 block py-1 px-3"
-                                       onclick="openDropdown(event,'table-light-{{ $loop->iteration }}-dropdown')">
-                                        <i class="fas fa-ellipsis-v"></i>
-                                    </a>
-                                    <div
-                                        class="hidden bg-white text-base mx-auto z-50 py-2 list-none text-left rounded shadow-md min-w-64 rounded"
-                                        id="table-light-{{ $loop->iteration }}-dropdown">
-                                        <a href="{{ url('/admin/pegawai/' . $item->id . '/edit') }}"
-                                           class="text-left text-sm py-2 px-4 hover:text-white hover:bg-blue-500 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"><i
-                                                class="fa fa-pen"></i>&nbsp;Edit</a>
-                                        <a href="{{ url('/admin/pegawai/' . $item->id) }}"
-                                           class="text-left text-sm py-2 px-4 hover:text-white hover:bg-green-500 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"><i
-                                                class="fa fa-eye"></i>&nbsp;Lihat</a>
-                                        <form method="POST" action="{{ url('/admin/pegawai' . '/' . $item->id) }}"
-                                              accept-charset="UTF-8" style="display:inline">
-                                            {{ method_field('DELETE') }}
-                                            {{ csrf_field() }}
-                                            <button type="submit"
-                                                    class="w-full text-left px-4 py-2 hover:text-white hover:bg-red-500 text-decoration-none bg-white border-none text-sm font-normal text-gray-800"
-                                                    title="Delete Pegawai"
-                                                    onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                    class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete
-                                            </button>
+                                <td class="px-4 py-4 text-center whitespace-no-wrap">
+                                    <a class="bg-gray-200 text-gray-600 rounded p-2"
+                                       href="#" onclick="openTableOptions(event,'options-dropdown-{{ $loop->iteration }}')"><i
+                                            class="fas fa-ellipsis-v text-gray-600"></i></a>
+                                    <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
+                                         id="options-dropdown-{{ $loop->iteration }}"
+                                         style="min-width: 12rem;">
+                                        <a title="View Pegawai" class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                           href="{{ url('/admin/pegawai/' . $item->id) }}"><i class="fas fa-info-circle"></i>&nbsp; View</a>
+                                        <a title="Edit Pegawai" class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                           href="{{ url('/admin/pegawai/' . $item->id . '/edit') }}"><i class="fas fa-pen"></i>&nbsp; Edit</a>
+                                        <form method="POST" action="{{ url('/admin/pegawai' . '/' . $item->id) }}" accept-charset="UTF-8">
+                                           {{ method_field('DELETE') }}
+                                           {{ csrf_field() }}
+                                           <button type="submit" class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800" title="Delete Pegawai" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fas fa-trash"></i>&nbsp; Delete</button>
                                         </form>
+                                        <div class="h-0 my-2 border border-solid border-gray-200"></div>
+                                        <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                           href="#">Another
+                                            Operation</a>
                                     </div>
                                 </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    <div
-                        class="mx-6 my-4"> {!! $pegawai->appends(['search' => Request::get('search')])->render() !!} </div>
+                                <td class=" px-4 py-4 text-center">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-4">{{ $item->nama }}</td><td class="px-4 py-4">{{ $item->jenis_kelamin }}</td><td class="px-4 py-4">{{ $item->nohp }}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="" style="width: 100%">Data Empty</td>
+                                </tr>
+                            @endforelse
+                            </tbody>
+                        </table>
+                        <div class="px-3 py-4 float-right">
+                            {!! $pegawai->onEachSide(1)->links() !!}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

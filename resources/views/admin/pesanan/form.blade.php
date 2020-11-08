@@ -1,134 +1,93 @@
-<div class='flex flex-wrap'>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="waktu_pesan" class="block uppercase text-xs font-bold mb-2">{{ 'Waktu Pesan' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="waktu_pesan" type="text" id="waktu_pesan"
-                value="{{ isset($pesanan->waktu_pesan) ? $pesanan->waktu_pesan : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="waktu_pesan" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Waktu Pesan' }}
+        <input required type="text" id="waktu_pesan" name="waktu_pesan" placeholder="Input waktu_pesan" value="{{ isset($pesanan->waktu_pesan) ? $pesanan->waktu_pesan : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-            {!! $errors->first('waktu_pesan', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="waktu_sampai" class="block uppercase text-xs font-bold mb-2">{{ 'Waktu Sampai' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="waktu_sampai" type="text" id="waktu_sampai"
-                value="{{ isset($pesanan->waktu_sampai) ? $pesanan->waktu_sampai : ''}}" required>
-
-            {!! $errors->first('waktu_sampai', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+       {!! $errors->first('waktu_pesan', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class='flex flex-wrap'>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="tanggal" class="block uppercase text-xs font-bold mb-2">{{ 'Tanggal' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="tanggal" type="text" id="tanggal" value="{{ isset($pesanan->tanggal) ? $pesanan->tanggal : ''}}"
-                required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="waktu_sampai" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Waktu Sampai' }}
+        <input required type="text" id="waktu_sampai" name="waktu_sampai" placeholder="Input waktu_sampai" value="{{ isset($pesanan->waktu_sampai) ? $pesanan->waktu_sampai : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-            {!! $errors->first('tanggal', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="lat" class="block uppercase text-xs font-bold mb-2">{{ 'Lat' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="lat" type="text" id="lat" value="{{ isset($pesanan->lat) ? $pesanan->lat : ''}}" required>
-
-            {!! $errors->first('lat', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+       {!! $errors->first('waktu_sampai', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class='flex flex-wrap'>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="long" class="block uppercase text-xs font-bold mb-2">{{ 'Long' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="long" type="text" id="long" value="{{ isset($pesanan->long) ? $pesanan->long : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="tanggal" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Tanggal' }}
+        <input required type="text" id="tanggal" name="tanggal" placeholder="Input tanggal" value="{{ isset($pesanan->tanggal) ? $pesanan->tanggal : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-            {!! $errors->first('long', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="total_bayar" class="block uppercase text-xs font-bold mb-2">{{ 'Total Bayar' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="total_bayar" type="text" id="total_bayar"
-                value="{{ isset($pesanan->total_bayar) ? $pesanan->total_bayar : ''}}" required>
-
-            {!! $errors->first('total_bayar', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+       {!! $errors->first('tanggal', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class='flex flex-wrap'>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="catatan" class="block uppercase text-xs font-bold mb-2">{{ 'Catatan' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="catatan" type="text" id="catatan" value="{{ isset($pesanan->catatan) ? $pesanan->catatan : ''}}"
-                required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="lat" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Lat' }}
+        <input required type="text" id="lat" name="lat" placeholder="Input lat" value="{{ isset($pesanan->lat) ? $pesanan->lat : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-            {!! $errors->first('catatan', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="keterangan" class="block uppercase text-xs font-bold mb-2">{{ 'Keterangan' }}</label>
-            <input
-                class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-                name="keterangan" type="text" id="keterangan"
-                value="{{ isset($pesanan->keterangan) ? $pesanan->keterangan : ''}}" required>
-
-            {!! $errors->first('keterangan', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+       {!! $errors->first('lat', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class='flex flex-wrap'>
-    <input
-        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150"
-        name="customer_id" type="hidden" id="customer_id"
-        value="{{ isset($pesanan->customer_id) ? $pesanan->customer_id : ''}}">
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="long" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Long' }}
+        <input required type="text" id="long" name="long" placeholder="Input long" value="{{ isset($pesanan->long) ? $pesanan->long : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-    {!! $errors->first('customer_id', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="status_pesanan_id"
-                   class="block uppercase text-xs font-bold mb-2">{{ 'Status Pesananan Id' }}</label>
-            <select name="status_pesanan_id" class="form-select mt-1 block w-full" id="status_pesanan_id">
-                @foreach ($statusPesanan as $optionKey => $optionValue)
-                    <option
-                        value="{{ $optionValue->id }}" {{ (isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id == $optionValue->id) ? 'selected' : ''}}>{{ $optionValue->status_pesanan }}</option>
-                @endforeach
-            </select>
-            {!! $errors->first('status_pesanan_id', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+       {!! $errors->first('long', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class='flex flex-wrap'>
-    <div class="w-full lg:w-6/12 px-4">
-        <div class="relative w-full mb-3">
-            <label for="status_bayar_id" class="block uppercase text-xs font-bold mb-2">{{ 'Status Bayar Id' }}</label>
-            <select name="status_bayar_id" class="form-select mt-1 block w-full" id="status_pesanan_id">
-                @foreach ($statusPembayaran as $optionKey => $optionValue)
-                    <option
-                        value="{{ $optionValue->id }}" {{ (isset($statusPembayaran->status_bayar_id) && $statusPembayaran->status_bayar_id == $optionValue->id) ? 'selected' : ''}}>{{ $optionValue->status_bayar }}</option>
-                @endforeach
-            </select>
-            {!! $errors->first('status_bayar_id', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-        </div>
-    </div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="total_bayar" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Total Bayar' }}
+        <input required type="text" id="total_bayar" name="total_bayar" placeholder="Input total_bayar" value="{{ isset($pesanan->total_bayar) ? $pesanan->total_bayar : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('total_bayar', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="catatan" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Catatan' }}
+        <input required type="text" id="catatan" name="catatan" placeholder="Input catatan" value="{{ isset($pesanan->catatan) ? $pesanan->catatan : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('catatan', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="keterangan" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Keterangan' }}
+        <input required type="text" id="keterangan" name="keterangan" placeholder="Input keterangan" value="{{ isset($pesanan->keterangan) ? $pesanan->keterangan : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('keterangan', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="customer_id" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Customer Id' }}
+        <input  type="number" id="customer_id" name="customer_id" placeholder="Input customer_id" value="{{ isset($pesanan->customer_id) ? $pesanan->customer_id : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('customer_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="status_pesanan_id" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Status Pesanan Id' }}
+        <input  type="number" id="status_pesanan_id" name="status_pesanan_id" placeholder="Input status_pesanan_id" value="{{ isset($pesanan->status_pesanan_id) ? $pesanan->status_pesanan_id : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('status_pesanan_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="status_bayar_id" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Status Bayar Id' }}
+        <input  type="number" id="status_bayar_id" name="status_bayar_id" placeholder="Input status_bayar_id" value="{{ isset($pesanan->status_bayar_id) ? $pesanan->status_bayar_id : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+       {!! $errors->first('status_bayar_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
 
-<hr class="my-4 border-b-1 border-gray-400"/>
-<button
-    class="bg-green-400 text-white float-right active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-    type="submit">{{ $formMode === 'edit' ? 'Edit' : 'Simpan' }}</button>
+
+<div class="p-2 pt-0 w-full">
+    <input class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+</div>

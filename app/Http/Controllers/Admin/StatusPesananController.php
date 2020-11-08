@@ -3,22 +3,23 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
 
 use App\Models\StatusPesanan;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class StatusPesananController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @param Request $request
+     * @return View
      */
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $statuspesanan = StatusPesanan::where('status_pesanan', 'LIKE', "%$keyword%")
@@ -33,7 +34,7 @@ class StatusPesananController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function create()
     {
@@ -50,10 +51,10 @@ class StatusPesananController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'status_pesanan' => 'required'
-		]);
+            'status_pesanan' => 'required'
+        ]);
         $requestData = $request->all();
-        
+
         StatusPesanan::create($requestData);
 
         return redirect('admin/status-pesanan')->with('flash_message', 'StatusPesanan added!');
@@ -62,9 +63,9 @@ class StatusPesananController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function show($id)
     {
@@ -76,9 +77,9 @@ class StatusPesananController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function edit($id)
     {
@@ -91,17 +92,17 @@ class StatusPesananController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'status_pesanan' => 'required'
-		]);
+            'status_pesanan' => 'required'
+        ]);
         $requestData = $request->all();
-        
+
         $statuspesanan = StatusPesanan::findOrFail($id);
         $statuspesanan->update($requestData);
 
@@ -111,7 +112,7 @@ class StatusPesananController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

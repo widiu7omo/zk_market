@@ -18,7 +18,7 @@ class MetodePembayaranController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $metodepembayaran = MetodePembayaran::where('metode', 'LIKE', "%$keyword%")
@@ -59,7 +59,7 @@ class MetodePembayaranController extends Controller
 			'callback' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         MetodePembayaran::create($requestData);
 
         return redirect('admin/metode-pembayaran')->with('flash_message', 'MetodePembayaran added!');
@@ -110,7 +110,7 @@ class MetodePembayaranController extends Controller
 			'callback' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         $metodepembayaran = MetodePembayaran::findOrFail($id);
         $metodepembayaran->update($requestData);
 

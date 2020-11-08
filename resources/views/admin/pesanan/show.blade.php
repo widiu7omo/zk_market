@@ -1,126 +1,42 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pesanan') }}
-        </h2>
-    </x-slot>
-    @livewire('admin.components.navbar',['active'=>'Manajemen Pesanan'])
-    <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
-        <div class="px-4 md:px-10 mx-auto w-full">
-            @livewire('admin.components.widget',['show'=>false])
-        </div>
-    </div>
-    <div class="px-4 md:px-10 mx-auto w-full -m-24">
-        <div class="w-full lg:w-8/12 px-4 mx-auto">
-            <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0">
-                <div class="rounded-t bg-white mb-0 px-6 py-6">
-                    <div class="text-center flex justify-between">
-                        <h6 class="text-gray-800 text-xl font-bold">Detail Pesanan #{{ $pesanan->id }} </h6>
-                        <div>
-                            <a href="{{ url('/admin/pesanan') }}" title="Back">
-                                <button
-                                    class="bg-gray-500 text-white active:bg-gray-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
-                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                                    Kembali
-                                </button>
-                            </a>
-                            <a href="{{ url('/admin/pesanan/' . $pesanan->id . '/edit') }}" title="Edit Pesanan">
-                                <button
-                                    class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
-                                    <i class="fa fa-pencil-square-o"
-                                       aria-hidden="true"></i> Edit
-                                </button>
-                            </a>
-                            <form method="POST" action="{{ url('admin/pesanan' . '/' . $pesanan->id) }}"
-                                  accept-charset="UTF-8" style="display:inline">
-                                {{ method_field('DELETE') }}
-                                {{ csrf_field() }}
-                                <button type="submit"
-                                        class="bg-red-500 text-white active:bg-red-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
-                                        title="Delete Pesanan"
-                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
-                                                                                                 aria-hidden="true"></i>
-                                    Delete
-                                </button>
+@extends('layouts.app')
+
+@section('content')
+<div class="px-4 md:px-10 mx-auto w-full h-screen -m-24">
+        <div class="flex flex-wrap">
+            <div class="w-full xl:m-auto xl:w-full mb-12 xl:mb-0 px-4 h-full">
+                <div class="relative flex flex-col min-w-0 break-words h-full w-full mb-6 shadow-lg rounded-lg bg-gray-100 xl:max-w-screen-lg xl:mx-auto">
+                    <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
+                        <div class="flex flex-wrap items-center">
+                            <div class="relative w-full max-w-full flex-grow flex-1">
+                                <h6 class="uppercase text-gray-900 mb-1 text-xs font-semibold">
+                                    View
+                                </h6>
+                                <h2 class="text-gray-900 text-xl font-semibold">
+                                    Data Pesanan
+                                </h2>
+                            </div>
+                            <a href="{{ url('/admin/pesanan') }}"
+                               class="uppercase tracking-wide text-sm py-3 px-3 bg-red-500 hover:bg-red-400 shadow-lg rounded-lg text-white font-bold mr-2">Kembali</a>
+                            <a href="{{ url('/admin/pesanan/' . $pesanan->id . '/edit') }}"
+                               class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold mr-2">Edit</a>
+                            <form method="POST" action="{{ url('admin/pesanan' . '/' . $pesanan->id) }}" accept-charset="UTF-8" class="m-0 p-0">
+                               {{ method_field('DELETE') }}
+                               {{ csrf_field() }}
+                               <button type="submit" class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold" title="Delete Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                             </form>
                         </div>
                     </div>
-                    <div class="table-responsive">
-                        <table class="rounded">
-                            <tbody>
+                    <div class="flex flex-wrap p-3 justify-start flex-row m-3">
+                        <table class="table-fixed text-gray-900">
                             <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    ID
-                                </th>
-                                <td class="font-bold px-2">{{ $pesanan->id }}</td>
+                                <th class="w-3/12 border-r-2 text-left">ID#</th>
+                                <td class="px-4 py-2">{{ $pesanan->id }}</td>
                             </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Status Pemesanan
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->status_pesanan->status_pesanan }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Status Pembayaran
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->status_bayar->status_bayar }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Waktu Pesan
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->waktu_pesan }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Waktu Sampai
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->waktu_sampai }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Tanggal
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->tanggal }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Lokasi
-                                </th>
-                                <td class="font-bold px-2"> Latitude : {{ $pesanan->lat }} Longitude
-                                    : {{ $pesanan->long }} </td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Total Bayar
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->total_bayar }}</td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Catatan
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->catatan }}</td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Keterangan
-                                </th>
-                                <td class="font-bold px-2"> {{ $pesanan->keterangan }}</td>
-                            </tr>
-                            <tr>
-                                <th class="px-5 w-5 align-middle py-3 text-sm uppercase whitespace-no-wrap font-semibold text-left bg-gray-100 text-gray-600 border-gray-200">
-                                    Customer
-                                </th>
-                                <td class="font-bold px-2"> {{$pesanan->customer->nama}} </td>
-                            </tr>
-                            </tbody>
+                            <tr><th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Waktu Pesan </th><td class="px-4 py-2 leading-snug"> {{ $pesanan->waktu_pesan }} </td></tr><tr><th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Waktu Sampai </th><td class="px-4 py-2 leading-snug"> {{ $pesanan->waktu_sampai }} </td></tr><tr><th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Tanggal </th><td class="px-4 py-2 leading-snug"> {{ $pesanan->tanggal }} </td></tr>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

@@ -18,7 +18,7 @@ class AlamatController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $alamat = Alamat::where('alamat_lengkap', 'LIKE', "%$keyword%")

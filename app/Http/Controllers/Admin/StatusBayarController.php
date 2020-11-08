@@ -18,7 +18,7 @@ class StatusBayarController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 25;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $statusbayar = StatusBayar::where('status_bayar', 'LIKE', "%$keyword%")
@@ -53,7 +53,7 @@ class StatusBayarController extends Controller
 			'status_bayar' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         StatusBayar::create($requestData);
 
         return redirect('admin/status-bayar')->with('flash_message', 'StatusBayar added!');
@@ -101,7 +101,7 @@ class StatusBayarController extends Controller
 			'status_bayar' => 'required'
 		]);
         $requestData = $request->all();
-        
+
         $statusbayar = StatusBayar::findOrFail($id);
         $statusbayar->update($requestData);
 

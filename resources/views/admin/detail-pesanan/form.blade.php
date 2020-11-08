@@ -1,36 +1,37 @@
-<div class='flex flex-wrap'><div class="w-full lg:w-6/12 px-4">
-    <div class="relative w-full mb-3">
-        <label for="pesanan_id" class="block uppercase text-xs font-bold mb-2">{{ 'Pesanan Id' }}</label>
-        <input class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" name="pesanan_id" type="text" id="pesanan_id" value="{{ isset($detailpesanan->pesanan_id) ? $detailpesanan->pesanan_id : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="pesanan_id" class="tracking-wide uppercase text-sm font-bold text-white">{{ 'Pesanan Id' }}
+        <input required type="number" id="pesanan_id" name="pesanan_id" placeholder="Input pesanan_id" value="{{ isset($detailpesanan->pesanan_id) ? $detailpesanan->pesanan_id : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-        {!! $errors->first('pesanan_id', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-    </div>
+       {!! $errors->first('pesanan_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class="w-full lg:w-6/12 px-4">
-    <div class="relative w-full mb-3">
-        <label for="produk_id" class="block uppercase text-xs font-bold mb-2">{{ 'Produk Id' }}</label>
-        <input class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" name="produk_id" type="text" id="produk_id" value="{{ isset($detailpesanan->produk_id) ? $detailpesanan->produk_id : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="produk_id" class="tracking-wide uppercase text-sm font-bold text-white">{{ 'Produk Id' }}
+        <input required type="number" id="produk_id" name="produk_id" placeholder="Input produk_id" value="{{ isset($detailpesanan->produk_id) ? $detailpesanan->produk_id : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-        {!! $errors->first('produk_id', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-    </div>
+       {!! $errors->first('produk_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-</div><div class='flex flex-wrap'><div class="w-full lg:w-6/12 px-4">
-    <div class="relative w-full mb-3">
-        <label for="jumlah" class="block uppercase text-xs font-bold mb-2">{{ 'Jumlah' }}</label>
-        <input class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" name="jumlah" type="text" id="jumlah" value="{{ isset($detailpesanan->jumlah) ? $detailpesanan->jumlah : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="jumlah" class="tracking-wide uppercase text-sm font-bold text-white">{{ 'Jumlah' }}
+        <input required type="text" id="jumlah" name="jumlah" placeholder="Input jumlah" value="{{ isset($detailpesanan->jumlah) ? $detailpesanan->jumlah : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-        {!! $errors->first('jumlah', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-    </div>
+       {!! $errors->first('jumlah', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
-<div class="w-full lg:w-6/12 px-4">
-    <div class="relative w-full mb-3">
-        <label for="subtotal" class="block uppercase text-xs font-bold mb-2">{{ 'Subtotal' }}</label>
-        <input class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full ease-linear transition-all duration-150" name="subtotal" type="text" id="subtotal" value="{{ isset($detailpesanan->subtotal) ? $detailpesanan->subtotal : ''}}" required>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="subtotal" class="tracking-wide uppercase text-sm font-bold text-white">{{ 'Subtotal' }}
+        <input required type="text" id="subtotal" name="subtotal" placeholder="Input subtotal" value="{{ isset($detailpesanan->subtotal) ? $detailpesanan->subtotal : ''}}"
+class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('%1$s') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('%1$s') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
 
-        {!! $errors->first('subtotal', '<p class="text-sm mt-2 text-red-500">:message</p>') !!}
-    </div>
-</div>
+       {!! $errors->first('subtotal', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
 </div>
 
-<hr class="my-4 border-b-1 border-gray-400"/>
-    <button class="bg-green-400 text-white float-right active:bg-green-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="submit">{{ $formMode === 'edit' ? 'Edit' : 'Simpan' }}</button>
+
+<div class="p-2 pt-0 w-full">
+    <input class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+</div>

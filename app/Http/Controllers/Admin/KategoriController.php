@@ -19,7 +19,7 @@ class KategoriController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
-        $perPage = 10;
+        $perPage = 6;
 
         if (!empty($keyword)) {
             $kategori = Kategori::where('kategori', 'LIKE', "%$keyword%")

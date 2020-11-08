@@ -104,4 +104,3 @@ Route::get('/pick_address', PickAddress::class)->name('pick_address');
 Route::get('/payment', Payment::class)->name('payment');
 Route::get('/orders/{order?}', ListOrder::class);
 Route::get('/detail_order/{id}', DetailOrder::class);
-
