@@ -20,67 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Ongkir">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/form.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/KategoriController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/KategoriController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/html/create.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/html/create.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/html/edit.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/html/edit.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/html/index.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/html/index.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/html/show.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/html/show.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/create.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/create.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/edit.blade.stub" beforeDir="false" afterPath="$PROJECT_DIR$/resources/crud-generator/views/laravelcollective/edit.blade.stub" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,26 +179,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/crud-generator/views/html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/crud-generator/views/html" />
-      <recent name="$PROJECT_DIR$/resources" />
-      <recent name="$PROJECT_DIR$/public/images/icons" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Customer" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/resources/crud-generator/views/html" />
+      <recent name="$PROJECT_DIR$/resources" />
+      <recent name="$PROJECT_DIR$/public/images/icons" />
+      <recent name="$PROJECT_DIR$/public/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -276,7 +226,7 @@
       <workItem from="1604842646015" duration="2343000" />
       <workItem from="1604848874444" duration="4374000" />
       <workItem from="1604853920722" duration="8982000" />
-      <workItem from="1604915558062" duration="1344000" />
+      <workItem from="1604915558062" duration="4488000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -481,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604848953460</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fix table layout">
+      <created>1604917198876</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1604917198876</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,7 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix undefined no_hp" />
     <MESSAGE value="Last Update" />
     <MESSAGE value="Add Bantuan" />
     <MESSAGE value="Realtime pencarian" />
@@ -535,17 +491,18 @@
     <MESSAGE value="Center Login form on mobile" />
     <MESSAGE value="Fix Missed Condition for promo" />
     <MESSAGE value="Admin rincian pesanan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin rincian pesanan" />
+    <MESSAGE value="Fix table layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix table layout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.987@0.23.1920.987" timestamp="1604659760907" />
-    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604702248508">
+    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604920576401">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604702248508" />
+    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604920576401" />
     <state x="100" y="123" width="1720" height="787" key="DiffContextDialog" timestamp="1604714752195">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -574,10 +531,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604848906957">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604917203434">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604848906957" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604917203434" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

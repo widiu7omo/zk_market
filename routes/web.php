@@ -70,6 +70,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController');
     Route::resource('admin/detail-pesanan', 'App\Http\Controllers\Admin\DetailPesananController');
     Route::resource('admin/bantuan', 'App\Http\Controllers\Admin\BantuanController');
+    Route::resource('admin/pembayaran', 'App\Http\Controllers\Admin\PembayaranController');
 });
 Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

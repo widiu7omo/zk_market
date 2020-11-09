@@ -67,7 +67,7 @@
         </li>
         <li class="items-center">
             <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='pembayaran.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
-               href="{{route('pesanan.index')}}"><i class="fas fa-dollar-sign mr-2 text-sm"></i>
+               href="{{route('pembayaran.index')}}"><i class="fas fa-dollar-sign mr-2 text-sm"></i>
                 Pembayaran</a>
         </li>
     </ul>
