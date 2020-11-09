@@ -14,12 +14,12 @@
                         <br />
 
                         @if ($errors->any())
-                            <ul class="alert alert-danger">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                        <ul class="bg-red-100 p-2 mx-3 rounded-lg">
+                            @foreach ($errors->all() as $error)
+                                <li class="text-red-600">{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
                         {!! Form::open(['url' => '/%%routeGroup%%%%viewName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
 

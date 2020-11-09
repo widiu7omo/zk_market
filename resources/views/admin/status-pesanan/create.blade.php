@@ -20,9 +20,9 @@
                         </div>
                     </div>
                     @if ($errors->any())
-                        <ul class="alert alert-danger">
+                        <ul class="bg-red-100 p-2 mx-3 rounded-lg">
                             @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                                <li class="text-red-600">{{ $error }}</li>
                             @endforeach
                         </ul>
                     @endif

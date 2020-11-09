@@ -26,7 +26,7 @@
                                 {{ csrf_field() }}
                                 <button type="submit"
                                         class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
-                                        title="Delete Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                        title="Delete Pesanan" onclick="return confirmModal(this)"><i
                                         class="fa fa-trash-o" aria-hidden="true"></i> Delete
                                 </button>
                             </form>
@@ -36,7 +36,7 @@
                         <div class="w-full">
                             <div class="pl-3 m-0 pb-0 text-sm font-bold text-gray-500 uppercase">Info Pesanan</div>
                             <div class="flex flex-wrap p-3 pt-0 justify-start flex-row m-3 border-2 rounded-lg">
-                                <table class="table-fixed text-gray-900">
+                                <table class="table-responsive text-gray-900">
                                     <tr>
                                         <th class="w-12/12 mr-2 text-left">ID#</th>
                                         <td class="px-4 py-2">{{ $pesanan->id }}</td>
@@ -72,7 +72,7 @@
                         <div class="w-full">
                             <div class="p-3 pb-0 text-sm font-bold text-gray-500 uppercase">Detail Pemesan</div>
                             <div class="flex flex-wrap p-3 pt-0 justify-start flex-row m-3 border-2 rounded-lg">
-                                <table class="table-fixed text-gray-900">
+                                <table class="table-responsive text-gray-900">
                                     <tr>
                                         <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Nama
                                             Pemesan
@@ -90,7 +90,7 @@
                     </div>
                     <div class="p-3 pb-0 text-sm font-bold text-gray-500 uppercase">Pembayaran</div>
                     <div class="flex flex-wrap p-3 pt-0 justify-start flex-row m-3 border-2 rounded-lg">
-                        <table class="table-fixed text-gray-900">
+                        <table class="table-responsive text-gray-900">
                             <tr>
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Metode Pembayaran
                                 </th>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="p-3 pb-0 text-sm font-bold text-gray-500 uppercase">Alamat Pengantaran</div>
                     <div class="flex flex-wrap p-3 pt-0 justify-start flex-row m-3 border-2 rounded-lg">
-                        <table class="table-fixed text-gray-900">
+                        <table class="table-responsive text-gray-900">
                             <tr>
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Alamat
                                     Lengkap
@@ -125,6 +125,12 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Keterangan
                                 </th>
                                 <td class="px-4 py-2 leading-snug"> {{ $pesanan->alamat->rincian_alamant == ''?'Tidak ada keterangan tambahan':$pesanan->alamat->rincian_alamant}} </td>
+                            </tr>
+                            <tr>
+                                <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase">
+                                    Pengantar
+                                </th>
+                                <td class="px-4 py-2 leading-snug"> {{ $pesanan->pegawai->nama}} </td>
                             </tr>
                             <tr>
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider flex justify-start uppercase">
@@ -161,7 +167,7 @@
                     </div>
                     <div class="p-3 pb-0 text-sm font-bold text-gray-500 uppercase">Produk dibeli</div>
                     <div class="flex flex-wrap p-3 pt-0 justify-start flex-row m-3 border-2 rounded-lg">
-                        <table class="table-fixed text-gray-900 w-full">
+                        <table class="table-responsive text-gray-900 w-full">
                             @foreach($pesanan->detail_pesanans ?? [] as $detail)
                                 <tr>
                                     <th class="w-12/12 text-left mr-2 tracking-wide text-gray-600 text-sm"> {{$detail->produk->nama}}

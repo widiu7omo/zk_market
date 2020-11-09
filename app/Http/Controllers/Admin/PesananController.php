@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
+use App\Models\Pegawai;
 use App\Models\Pesanan;
 use App\Models\StatusBayar;
 use App\Models\StatusPesanan;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -26,6 +28,7 @@ class PesananController extends Controller
             $pesanan = Pesanan::where('waktu_pesan', 'LIKE', "%$keyword%")
                 ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
                 ->orWhere('tanggal', 'LIKE', "%$keyword%")
+                ->orWhere('id', 'LIKE', "%$keyword%")
                 ->orWhere('total_bayar', 'LIKE', "%$keyword%")
                 ->orWhere('catatan', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
@@ -43,7 +46,8 @@ class PesananController extends Controller
      */
     public function create()
     {
-        return view('admin.pesanan.create');
+        $pegawai = Pegawai::all();
+        return view('admin.pesanan.create', compact('pegawai'));
     }
 
     /**
@@ -94,7 +98,11 @@ class PesananController extends Controller
         $pesanan = Pesanan::findOrFail($id);
         $statusPesanan = StatusPesanan::all();
         $statusPembayaran = StatusBayar::all();
-        return view('admin.pesanan.edit')->with(compact('pesanan'))->with(compact('statusPesanan'))->with(compact('statusPembayaran'));
+        $userWhoPegawaiRole = User::whereHas('roles', function ($q) {
+            return $q->where('name', 'Pegawai');
+        })->get();
+        $pegawai = Pegawai::whereIn('user_id', $userWhoPegawaiRole->pluck('id'))->get();
+        return view('admin.pesanan.edit')->with(compact('pegawai'))->with(compact('pesanan'))->with(compact('statusPesanan'))->with(compact('statusPembayaran'));
     }
 
     /**

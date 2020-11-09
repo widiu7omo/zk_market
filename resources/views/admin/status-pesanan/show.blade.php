@@ -27,7 +27,7 @@
                                 <button type="submit"
                                         class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
                                         title="Delete StatusPesanan"
-                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o"
+                                        onclick="return confirmModal(this)"><i class="fa fa-trash-o"
                                                                                                  aria-hidden="true"></i>
                                     Delete
                                 </button>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap p-3 justify-start flex-row m-3">
-                        <table class="table-fixed text-gray-900">
+                        <table class="table-responsive text-gray-900">
                             <tr>
                                 <th class="w-12/12 border-r-2 text-left">ID#</th>
                                 <td class="px-4 py-2">{{ $statuspesanan->id }}</td>

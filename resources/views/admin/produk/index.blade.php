@@ -33,9 +33,8 @@
                                href="{{ url('/admin/produk/create') }}">Tambah Produk Baru</a>
                         </div>
                     </div>
-                    <div
-                        class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
-                        <table class="table-fixed rounded-2xl w-full">
+                    <div class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
+                        <table class="table-responsive rounded-2xl w-full">
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
@@ -80,7 +79,7 @@
                                                 <button type="submit"
                                                         class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                         title="Delete Produk"
-                                                        onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                                        onclick="return confirmModal(this)"><i
                                                         class="fas fa-trash"></i>&nbsp; Delete
                                                 </button>
                                             </form>
@@ -90,11 +89,11 @@
                                                 Operation</a>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-4 text-center">{{ $loop->iteration }}</td>
-                                    <td class="px-4 py-4">{{ $item->nama }}</td>
-                                    <td class="px-4 py-4">{{ $item->kategori->kategori }}</td>
-                                    <td class="px-4 py-4">Rp. {{ number_format($item->harga,0,',','.') }}</td>
-                                    <td class="px-4 py-4">Rp. {{ number_format($item->harga_promo,0,',','.') }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->nama }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->kategori->kategori }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">Rp. {{ number_format($item->harga,0,',','.') }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">Rp. {{ number_format($item->harga_promo,0,',','.') }}</td>
                                 </tr>
                             @empty
                                 <tr>

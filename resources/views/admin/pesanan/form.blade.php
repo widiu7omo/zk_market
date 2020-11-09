@@ -44,15 +44,33 @@
         {!! $errors->first('catatan', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
     </label>
 </div>
+<div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="pegawai_id" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Pegawai' }}
+        <select name="pegawai_id" id="pegawai_id"
+                class="mt-1 text-gray-800 block form-select w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-200 ease-in-out sm:text-sm sm:leading-5">
+            <option value="">Pilih Pegawai Pengantar</option>
+            @forelse($pegawai ?? [] as $optionKey => $optionValue)
+                <option
+                    value="{{ $optionValue->id }}" {{ (isset($pesanan->pegawai_id) && $pesanan->pegawai_id == $optionValue->id) ? 'selected' : ''}}>{{ $optionValue->nama }}</option>
+            @empty
+                <option value="">Tidak ada data pegawai</option>
+            @endforelse
+        </select>
+
+        {!! $errors->first('kategori_id', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+    </label>
+</div>
 <fieldset class="p-2 pt-0 w-full md:w-6/12">
     <legend class="text-base leading-6 font-medium uppercase">{{ 'Status Pesanan' }}</legend>
     <div class="my-4 flex flex-row flex-wrap w-full">
         @foreach($statusPesanan ?? [] as $status)
-            <div class="flex items-center m-2 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'bg-gray-400':'bg-gray-200'}} p-3 rounded-lg">
+            <div
+                class="flex items-center m-2 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'bg-gray-400':'bg-gray-200'}} p-3 rounded-lg">
                 <input id="{{$status->status_pesanan}}" name="status_pesanan_id" type="radio" value="{{$status->id}}"
                        class="form-radio h-4 w-4 text-brown transition duration-200 ease-in-out" {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'checked':''}}>
                 <label for="{{$status->status_pesanan}}" class="ml-3">
-                    <span class="block text-sm leading-5 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'text-white':'text-gray-500'}} font-bold uppercase">{{$status->status_pesanan}}</span>
+                    <span
+                        class="block text-sm leading-5 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'text-white':'text-gray-500'}} font-bold uppercase">{{$status->status_pesanan}}</span>
                 </label>
             </div>
         @endforeach
@@ -62,11 +80,13 @@
     <legend class="text-base leading-6 font-medium uppercase">{{ 'Status Bayar' }}</legend>
     <div class="my-4 flex flex-row flex-wrap w-full">
         @foreach($statusPembayaran ?? [] as $status)
-            <div class="flex items-center m-2 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'bg-gray-400':'bg-gray-200'}} p-3 rounded-lg">
+            <div
+                class="flex items-center m-2 {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'bg-gray-400':'bg-gray-200'}} p-3 rounded-lg">
                 <input id="{{$status->status_bayar}}" name="status_bayar_id" type="radio" value="{{$status->id}}"
                        class="form-radio h-4 w-4 text-brown transition duration-200 ease-in-out" {{ isset($pesanan->status_bayar_id) && $pesanan->status_bayar_id === $status->id?'checked':''}}>
                 <label for="{{$status->status_bayar}}" class="ml-3">
-                    <span class="block text-sm leading-5 font-bold {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'text-white':'text-gray-500'}} uppercase">{{$status->status_bayar}}</span>
+                    <span
+                        class="block text-sm leading-5 font-bold {{ isset($pesanan->status_pesanan_id) && $pesanan->status_pesanan_id === $status->id?'text-white':'text-gray-500'}} uppercase">{{$status->status_bayar}}</span>
                 </label>
             </div>
         @endforeach

@@ -22,12 +22,12 @@
                 <h5 class="title-section">Data Pemesan</h5>
                 <div class="form-group px-3">
                     <input type="text" id="pemesan" name="pemesan" class="form-control" placeholder="Nama Pemesan"
-                           value="{{$name}}">
+                           value="{{$name}}" {{$name?'readonly':''}}>
                     <input type="hidden" id="cart" name="cart">
                 </div>
                 <div class="form-group px-3">
                     <input type="text" id="nohppemesan" name="nohppemesan" data-mask="0000-0000-0000"
-                           class="form-control" value="{{$nohp}}"
+                           class="form-control" value="{{$nohp}}" {{$nohp?'readonly':''}}
                            placeholder="Nomor Telepon">
                 </div>
             </section>
@@ -296,6 +296,7 @@
                 checkoutHelper.saveLocalStorage($(this).prop('id'), $(this).val());
             });
             $('#proses_pesanan').on('click', function () {
+                $(this).prop('disabled', true);
                 checkoutHelper.validationCheckout() && $('#form-checkout').submit();
             })
         </script>
