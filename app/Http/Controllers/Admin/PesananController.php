@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
 use App\Models\Pegawai;
+use App\Models\Pengaturan;
 use App\Models\Pesanan;
 use App\Models\StatusBayar;
 use App\Models\StatusPesanan;
@@ -82,8 +83,8 @@ class PesananController extends Controller
     public function show($id)
     {
         $pesanan = Pesanan::findOrFail($id);
-
-        return view('admin.pesanan.show', compact('pesanan'));
+        $pengaturan = Pengaturan::first();
+        return view('admin.pesanan.show', compact('pesanan'))->with(compact('pengaturan'));
     }
 
     /**

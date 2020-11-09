@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests;
-
 use App\Models\Kategori;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 
 class KategoriController extends Controller
 {
@@ -14,7 +15,7 @@ class KategoriController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function index(Request $request)
     {
@@ -34,7 +35,7 @@ class KategoriController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function create()
     {
@@ -44,9 +45,9 @@ class KategoriController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function store(Request $request)
     {
@@ -69,7 +70,7 @@ class KategoriController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function show($id)
     {
@@ -83,7 +84,7 @@ class KategoriController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function edit($id)
     {
@@ -95,10 +96,10 @@ class KategoriController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function update(Request $request, $id)
     {
@@ -122,7 +123,7 @@ class KategoriController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function destroy($id)
     {

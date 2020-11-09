@@ -138,7 +138,7 @@
                                 </th>
                                 <td class="px-4 py-2 leading-snug">
                                     <div>
-                                        <a href="{{url('')}}"
+                                        <a href="{{url('https://www.google.com/maps/dir/-'.$pengaturan->lat.','.$pengaturan->long.'/-'.$pesanan->alamat->lat.','.$pesanan->alamat->long)}}"
                                            class="p-2 bg-blue-400 rounded mb-2 font-bold hover:bg-blue-800 hover:text-white"><i
                                                 class="fa fa-map"></i>&nbsp;Direction Map</a>
                                         <div class="mt-2">
