@@ -96,4 +96,14 @@
                 Data Status Pesanan</a>
         </li>
     </ul>
+    <h6 class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+        Pengaturan
+    </h6>
+    <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='pengaturan.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
+               href="{{route('pengaturan.index')}}"><i class="fas fa-dice-d6 mr-2 text-sm"></i>
+                General</a>
+        </li>
+    </ul>
 </div>
