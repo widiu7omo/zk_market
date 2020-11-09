@@ -12,7 +12,7 @@
                                     View
                                 </h6>
                                 <h2 class="text-gray-900 text-xl font-semibold">
-                                    Data StatusBayar
+                                    Data Status Bayar
                                 </h2>
                             </div>
                             <a href="{{ url('/admin/status-bayar') }}"
@@ -30,9 +30,9 @@
                         <table class="table-responsive text-gray-900">
                             <tr>
                                 <th class="w-3/12 border-r-2 text-left">ID#</th>
-                                <td class="px-4 py-2">{{ $statusbayar->id }}</td>
+                                <td class="px-4 py-2 ">{{ $statusbayar->id }}</td>
                             </tr>
-                            <tr><th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Status Bayar </th><td class="px-4 py-2 leading-snug"> {{ $statusbayar->status_bayar }} </td></tr>
+                            <tr><th class="w-3/12 border-r-2 font-bold whitespace-no-wrap tracking-wider uppercase"> Status Bayar </th><td class="px-4 py-2 leading-snug uppercase"> {{ $statusbayar->status_bayar }} </td></tr>
                         </table>
                     </div>
                 </div>

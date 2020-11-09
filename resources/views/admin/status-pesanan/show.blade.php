@@ -42,7 +42,7 @@
                             </tr>
                             <tr>
                                 <th class="w-12/12 border-r-2 font-bold tracking-wider uppercase"> Status Pesanan</th>
-                                <td class="px-4 py-2 leading-snug"> {{ $statuspesanan->status_pesanan }} </td>
+                                <td class="px-4 py-2 leading-snug whitespace-no-wrap uppercase"> {{ $statuspesanan->status_pesanan }} </td>
                             </tr>
                         </table>
                     </div>

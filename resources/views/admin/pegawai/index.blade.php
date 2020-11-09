@@ -39,13 +39,13 @@
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-4/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Nama
                                 </th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider whitespace-no-wrap font-light uppercase text-sm">
                                     Jenis Kelamin
                                 </th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Nohp
                                 </th>
                             </tr>
