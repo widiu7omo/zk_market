@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Ongkir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +217,8 @@
       <workItem from="1604842646015" duration="2343000" />
       <workItem from="1604848874444" duration="4374000" />
       <workItem from="1604853920722" duration="8982000" />
-      <workItem from="1604915558062" duration="4993000" />
+      <workItem from="1604915558062" duration="5192000" />
+      <workItem from="1604922610366" duration="81000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -447,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604921451754</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fix Table Status">
+      <created>1604922018077</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1604922018077</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +480,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Realtime pencarian" />
     <MESSAGE value="change to post webhooks" />
     <MESSAGE value="Exception for webhooks route" />
     <MESSAGE value="Fix Offline Route" />
@@ -501,7 +504,8 @@
     <MESSAGE value="Fix table layout" />
     <MESSAGE value="Add View And Table Pembayaran" />
     <MESSAGE value="Add map direction to map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add map direction to map" />
+    <MESSAGE value="Fix Table Status" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Table Status" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -540,10 +544,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604921456025">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604922021898">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604921456025" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604922021898" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

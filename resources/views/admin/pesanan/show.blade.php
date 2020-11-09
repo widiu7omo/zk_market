@@ -130,7 +130,7 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase">
                                     Pengantar
                                 </th>
-                                <td class="px-4 py-2 leading-snug"> {{ $pesanan->pegawai->nama}} </td>
+                                <td class="px-4 py-2 leading-snug"> {{ $pesanan->pegawai->nama ?? 'Belum di tentukan'}} </td>
                             </tr>
                             <tr>
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider flex justify-start uppercase">
