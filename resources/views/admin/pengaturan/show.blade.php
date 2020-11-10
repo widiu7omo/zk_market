@@ -16,8 +16,6 @@
                                     Data Pengaturan
                                 </h2>
                             </div>
-                            <a href="{{ url('/admin/pengaturan') }}"
-                               class="uppercase tracking-wide text-sm py-3 px-3 bg-red-500 hover:bg-red-400 shadow-lg rounded-lg text-white font-bold mr-2">Kembali</a>
                             <a href="{{ url('/admin/pengaturan/' . $pengaturan->id . '/edit') }}"
                                class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold mr-2">Edit</a>
                         </div>
