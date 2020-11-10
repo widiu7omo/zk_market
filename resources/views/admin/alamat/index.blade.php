@@ -29,8 +29,10 @@
                                            type="text" value="{{ request('search') }}"/>
                                 </form>
                             </div>
-                            <a class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
-                               href="{{ url('/admin/alamat/create') }}">Tambah Alamat Baru</a>
+                            @if(strpos(request()->route()->getName() ,'customer') !== false)
+                                <a class="uppercase tracking-wide text-sm py-3 px-3 bg-red-200 hover:bg-red-300 shadow rounded-lg text-red-500 font-bold"
+                                   href="{{ url('/admin/customer') }}">Kembali</a>
+                            @endif
                         </div>
                     </div>
                     <div
@@ -85,8 +87,8 @@
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->alamat_lengkap }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->rincian_alamat }}</td>
+                                    <td class="px-4 py-4">{{ $item->alamat_lengkap }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->rincian_alamat == ''?'Tidak ada detail alamat':$item->rincian_alamat }}</td>
                                 </tr>
                             @empty
                                 <tr>

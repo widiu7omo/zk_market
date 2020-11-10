@@ -80,8 +80,14 @@
                                             </form>
                                             <div class="h-0 my-2 border border-solid border-gray-200"></div>
                                             <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                               href="#">Another
-                                                Operation</a>
+                                               href="{{route("admin/customer/alamat/{id}",$item->id)}}"><i
+                                                    class="fa fa-address-book"></i>&nbsp;
+                                                Data Alamat Customer</a><a
+                                                class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                href="{{route("admin/customer/pesanan/{id}",$item->id)}}"><i
+                                                    class="fa fa-money-bill"></i>&nbsp;
+                                                Data Transaksi
+                                                Customer</a>
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>

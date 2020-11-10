@@ -29,8 +29,10 @@
                                            type="text" value="{{ request('search') }}"/>
                                 </form>
                             </div>
-                            {{--                            <a class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"--}}
-                            {{--                               href="{{ url('/admin/pesanan/create') }}">Tambah Pesanan Baru</a>--}}
+                            @if(strpos(request()->route()->getName() ,'customer') !== false)
+                                <a class="uppercase tracking-wide text-sm py-3 px-3 bg-red-200 hover:bg-red-300 shadow rounded-lg text-red-500 font-bold"
+                                   href="{{ url('/admin/customer') }}">Kembali</a>
+                            @endif
                         </div>
                     </div>
                     <div
@@ -97,7 +99,8 @@
                                                   accept-charset="UTF-8">
                                                 {{ method_field('PATCH') }}
                                                 {{ csrf_field() }}
-                                                <input type="hidden" name="status_pesanan_id" value="{{$statusPembuatanId}}">
+                                                <input type="hidden" name="status_pesanan_id"
+                                                       value="{{$statusPembuatanId}}">
                                                 <button type="submit"
                                                         class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                         title="Delete Pesanan"
@@ -111,7 +114,8 @@
                                                   accept-charset="UTF-8">
                                                 {{ method_field('PATCH') }}
                                                 {{ csrf_field() }}
-                                                <input type="hidden" name="status_pesanan_id" value="{{$statusSelesaiId}}">
+                                                <input type="hidden" name="status_pesanan_id"
+                                                       value="{{$statusSelesaiId}}">
                                                 <button type="submit"
                                                         class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                         title="Delete Pesanan"

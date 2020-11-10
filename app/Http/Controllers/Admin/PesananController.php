@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 
+use App\Models\Alamat;
 use App\Models\Pegawai;
 use App\Models\Pengaturan;
 use App\Models\Pesanan;
@@ -18,6 +19,7 @@ class PesananController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\View\View
      */
     public function index(Request $request)
@@ -72,6 +74,28 @@ class PesananController extends Controller
         Pesanan::create($requestData);
 
         return redirect('admin/pesanan')->with('flash_message', 'Pesanan added!');
+    }
+
+    public function showByCustomer($id, Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 6;
+        $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
+        $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
+        $address = Alamat::whereCustomerId($id)->get()->pluck('id');
+        if (!empty($keyword)) {
+            $pesanan = Pesanan::whereIn('alamat_id', $address)->orWhere('waktu_pesan', 'LIKE', "%$keyword%")
+                ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
+                ->orWhere('tanggal', 'LIKE', "%$keyword%")
+                ->orWhere('id', 'LIKE', "%$keyword%")
+                ->orWhere('total_bayar', 'LIKE', "%$keyword%")
+                ->orWhere('catatan', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+        } else {
+            $pesanan = Pesanan::whereIn('alamat_id', $address)->paginate($perPage);
+        }
+
+        return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));
     }
 
     /**

@@ -66,8 +66,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('admin/status-bayar', 'App\Http\Controllers\Admin\StatusBayarController');
     Route::resource('admin/status-pesanan', 'App\Http\Controllers\Admin\StatusPesananController');
     Route::resource('admin/alamat', 'App\Http\Controllers\Admin\AlamatController');
+    Route::get('admin/customer/alamat/{id}', 'App\Http\Controllers\Admin\AlamatController@showByCustomer')->name('admin/customer/alamat/{id}');
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');
     Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController');
+    Route::get('admin/customer/pesanan/{id}', [App\Http\Controllers\Admin\PesananController::class, 'showByCustomer'])->name('admin/customer/pesanan/{id}');
     Route::resource('admin/detail-pesanan', 'App\Http\Controllers\Admin\DetailPesananController');
     Route::resource('admin/bantuan', 'App\Http\Controllers\Admin\BantuanController');
     Route::resource('admin/pembayaran', 'App\Http\Controllers\Admin\PembayaranController');

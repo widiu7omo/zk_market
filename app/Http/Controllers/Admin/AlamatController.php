@@ -34,9 +34,10 @@ class AlamatController extends Controller
         return view('admin.alamat.index', compact('alamat'));
     }
 
-    public function all($id){
+    public function all($id)
+    {
         $alamat = Alamat::whereCustomerId($id)->paginate(25);
-        return view('admin.alamat.index',compact('alamat'));
+        return view('admin.alamat.index', compact('alamat'));
     }
 
     /**
@@ -59,11 +60,11 @@ class AlamatController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'alamat_lengkap' => 'required',
-			'rincian_alamat' => 'required',
-			'lat' => 'required',
-			'long' => 'required'
-		]);
+            'alamat_lengkap' => 'required',
+            'rincian_alamat' => 'required',
+            'lat' => 'required',
+            'long' => 'required'
+        ]);
         $requestData = $request->all();
 
         Alamat::create($requestData);
@@ -71,10 +72,29 @@ class AlamatController extends Controller
         return redirect('admin/alamat')->with('flash_message', 'Alamat added!');
     }
 
+    public function showByCustomer($id, Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 6;
+
+        if (!empty($keyword)) {
+            $alamat = Alamat::whereCustomerId($id)->orWhere('alamat_lengkap', 'LIKE', "%$keyword%")
+                ->orWhere('rincian_alamat', 'LIKE', "%$keyword%")
+                ->orWhere('lat', 'LIKE', "%$keyword%")
+                ->orWhere('long', 'LIKE', "%$keyword%")
+                ->orWhere('customer_id', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+        } else {
+            $alamat = Alamat::whereCustomerId($id)->paginate($perPage);
+        }
+
+        return view('admin.alamat.index', compact('alamat'));
+    }
+
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -89,7 +109,7 @@ class AlamatController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -104,18 +124,18 @@ class AlamatController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'alamat_lengkap' => 'required',
-			'rincian_alamat' => 'required',
-			'lat' => 'required',
-			'long' => 'required'
-		]);
+            'alamat_lengkap' => 'required',
+            'rincian_alamat' => 'required',
+            'lat' => 'required',
+            'long' => 'required'
+        ]);
         $requestData = $request->all();
 
         $alamat = Alamat::findOrFail($id);
@@ -127,7 +147,7 @@ class AlamatController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

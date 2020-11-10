@@ -21,10 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Ongkir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PengaturanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PengaturanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AlamatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AlamatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +227,7 @@
       <workItem from="1604922610366" duration="298000" />
       <workItem from="1604930129176" duration="3806000" />
       <workItem from="1604963127277" duration="29000" />
-      <workItem from="1604964707262" duration="4376000" />
+      <workItem from="1604964707262" duration="8237000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -471,7 +474,28 @@
       <option name="project" value="LOCAL" />
       <updated>1604939832629</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Tambah edit peta bisnis di pengaturan">
+      <created>1604969951126</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1604969951126</updated>
+    </task>
+    <task id="LOCAL-00037" summary="hapus tombol kembali di pengaturan index">
+      <created>1604970148344</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1604970148344</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan">
+      <created>1604971937270</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1604971937270</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,9 +524,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix Offline Route" />
-    <MESSAGE value="Fix Profile and Route Admin" />
-    <MESSAGE value="Improve Homescreen &amp; SearchScreen" />
     <MESSAGE value="Recolor &amp; redesign Login screen" />
     <MESSAGE value="Tambahan List address dan Edit Profile" />
     <MESSAGE value="Autofill pemesan ketika user mempunyai akun" />
@@ -525,7 +546,10 @@
     <MESSAGE value="Fix Table Status" />
     <MESSAGE value="handling name not defined" />
     <MESSAGE value="Add map on pengaturan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add map on pengaturan" />
+    <MESSAGE value="Tambah edit peta bisnis di pengaturan" />
+    <MESSAGE value="hapus tombol kembali di pengaturan index" />
+    <MESSAGE value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -564,10 +588,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604939836153">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1604969954423">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604939836153" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1604969954423" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
