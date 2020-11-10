@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Pegawai;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -25,8 +26,6 @@ class UserSeeder extends Seeder
         Role::create(['name' => 'Customer']);
         Role::create(['name' => 'Pegawai']);
         Role::create(['name' => 'Admin']);
-//        $user = factory(\App\User::class)->create();
-//        $user->assignRole('user');
         $admin = User::create([
             'name' => 'Admin',
             'email' => 'admin@zk.com',
@@ -37,5 +36,12 @@ class UserSeeder extends Seeder
         ]);
         $admin->assignRole('Admin');
         $admin->givePermissionTo('Administer roles & permissions');
+        Pegawai::create([
+            'nama' => 'Admin',
+            'jenis_kelamin' => '-',
+            'nohp' => '0822222222',
+            'alamat' => 'Pelaihari',
+            'user_id' => $admin->id
+        ]);
     }
 }

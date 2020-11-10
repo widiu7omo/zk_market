@@ -17,7 +17,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         if (!Auth::user()->hasRole('Admin')) {
-            return redirect()->route('homepage')->with('status', 'You\'re not allow to access those page.');
+            return abort(401);
         }
         return $next($request);
     }

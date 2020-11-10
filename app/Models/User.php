@@ -43,4 +43,9 @@ class User extends Authenticatable
     {
         return $this->hasOne("\App\Models\Customer");
     }
+
+    public function pegawai()
+    {
+        return $this->hasOne(Pegawai::class);
+    }
 }

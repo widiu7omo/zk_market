@@ -47,12 +47,12 @@
         </li>
         <li class="items-center">
             <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='slider.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
-               href="{{route('slider.index')}}"><i class="fas fa-ticket-alt mr-2 text-sm"></i>
+               href="{{route('admin.slider.index')}}"><i class="fas fa-ticket-alt mr-2 text-sm"></i>
                 Slider</a>
         </li>
         <li class="items-center">
             <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='produk.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
-               href="{{route('produk.index')}}"><i class="fas fa-pizza-slice mr-2 text-sm"></i>
+               href="{{route('admin.produk.index')}}"><i class="fas fa-pizza-slice mr-2 text-sm"></i>
                 Produk</a>
         </li>
     </ul>
@@ -62,7 +62,7 @@
     <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
             <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='pesanan.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
-               href="{{route('pesanan.index')}}"><i class="fas fa-money-check mr-2 text-sm"></i>
+               href="{{route('admin.pesanan.index')}}"><i class="fas fa-money-check mr-2 text-sm"></i>
                 Pesanan</a>
         </li>
         <li class="items-center">

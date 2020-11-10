@@ -59,6 +59,22 @@
         {!! $errors->first('email', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
     </label>
 </div>
+<fieldset class="p-2 pt-0 w-full md:w-6/12">
+    <legend class="tracking-wide uppercase text-sm font-bold text-gray-700">{{ 'Role' }}</legend>
+    <div class="my-2 flex flex-row flex-wrap w-full">
+        @foreach($roles ?? [] as $role)
+            <div class="flex items-center m-2 p-3 rounded-lg bg-gray-200">
+                <input id="{{$role->name}}" name="role_id[]" type="checkbox"
+                       value="{{$role->name}}"
+                       class="form-check h-4 w-4 text-brown transition duration-200 ease-in-out" {{ isset($pegawai->user) && in_array($role->id,$pegawai->user->roles->pluck('id')->toArray() ?? [])?'checked':''}}>
+                <label for="{{$role->name}}" class="ml-3">
+                    <span class="block text-sm leading-5 font-bold text-gray-500 uppercase">{{$role->name}}</span>
+                </label>
+            </div>
+        @endforeach
+    </div>
+    {!! $errors->first('jenis_kelamin', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+</fieldset>
 <p class="w-full border-b border-gray-200 text-sm font-bold uppercase text-gray-400 my-2">Ganti Password</p>
 <small class="text-gray-400 text-xs w-full"><i>Kosongkan jika tidak ingin mengganti password</i></small>
 <div class="p-2 pt-0 w-full md:w-6/12">

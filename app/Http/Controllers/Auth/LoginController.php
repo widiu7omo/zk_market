@@ -21,14 +21,15 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
     protected function authenticated(Request $request, $user)
     {
-        if ( $user->hasRole('Admin') ) {
+        if ($user->hasRole('Admin') || $user->hasRole('Pegawai')) {
             return redirect()->route('dashboard');
         }
-
         return redirect('/homepage');
     }
+
     /**
      * Where to redirect users after login.
      *

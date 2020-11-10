@@ -43,6 +43,9 @@
                                     Nama
                                 </th>
                                 <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider whitespace-no-wrap font-light uppercase text-sm">
+                                    Role
+                                </th>
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider whitespace-no-wrap font-light uppercase text-sm">
                                     Jenis Kelamin
                                 </th>
                                 <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
@@ -88,6 +91,7 @@
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 uppercase py-4">{{ $item->nama }}</td>
+                                    <td class="whitespace-no-wrap px-4 uppercase py-4">{{ $item->user->roles->pluck('name') }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->jenis_kelamin }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->nohp }}</td>
                                 </tr>

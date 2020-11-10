@@ -83,7 +83,11 @@
                     </div>
                 </li>
             </ul>
-            @include('admin.sidebar')
+            @if(Auth::user()->hasRole('Admin'))
+                @include('admin.sidebar')
+            @else
+                @include('pegawai.sidebar')
+            @endif
         </div>
     </nav>
     <div id="content" class="relative md:ml-64 bg-white ease-in-out transition-all duration-300">
@@ -152,8 +156,8 @@
         </main>
         <!-- End Content-->
         <!-- Footer-->
-        @include('admin.footer')
-        <!-- End Footer-->
+    @include('admin.footer')
+    <!-- End Footer-->
         <!-- Modal Delete-->
         <div id="modal-switch" class="fixed z-50 inset-0 overflow-y-auto hidden">
             <div

@@ -9,6 +9,7 @@ use App\Models\Pegawai;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class PegawaiController extends Controller
 {
@@ -43,7 +44,8 @@ class PegawaiController extends Controller
      */
     public function create()
     {
-        return view('admin.pegawai.create');
+        $roles = Role::all();
+        return view('admin.pegawai.create', compact('roles'));
     }
 
     /**
@@ -70,11 +72,12 @@ class PegawaiController extends Controller
             'password' => Hash::make($requestData['password'])
         ];
         $requestData['email_verified_at'] = now();
-        $user_id = User::insert($dataUser);
+        $user = User::create($dataUser);
+        $user->assignRole($requestData['role_id']);
         unset($requestData['email']);
         unset($requestData['password']);
         unset($requestData['email_verified_at']);
-        $requestData['user_id'] = $user_id;
+        $requestData['user_id'] = $user->id;
         Pegawai::create($requestData);
 
         return redirect('admin/pegawai')->with('flash_message', 'Pegawai added!');
@@ -103,10 +106,11 @@ class PegawaiController extends Controller
      */
     public function edit($id)
     {
+        $roles = Role::all();
 
         $pegawai = Pegawai::findOrFail($id);
 
-        return view('admin.pegawai.edit', compact('pegawai'));
+        return view('admin.pegawai.edit', compact('pegawai'))->with(compact('roles'));
     }
 
     /**
@@ -137,6 +141,8 @@ class PegawaiController extends Controller
             $user->update(['password' => Hash::make($requestData['password'])]);
 
         }
+        $user = User::whereEmail($requestData['email'])->first();
+        $user->syncRoles($requestData['role_id']);
         unset($requestData['email']);
         unset($requestData['password']);
         $pegawai = Pegawai::findOrFail($id);

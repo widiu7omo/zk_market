@@ -53,12 +53,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
     Route::get('admin/alamat/all/{id}', [App\Http\Controllers\Admin\AlamatController::class, 'all']);
     Route::get('admin/detail-pesanan/all/{id}', [App\Http\Controllers\Admin\DetailPesananController::class, 'all']);
-    Route::resource('admin/produk', 'App\Http\Controllers\Admin\ProdukController');
+    Route::resource('admin/produk', 'App\Http\Controllers\Admin\ProdukController')->names('admin.produk');
     Route::resource('admin/kategori', 'App\Http\Controllers\Admin\KategoriController');
     Route::resource('admin/pegawai', 'App\Http\Controllers\Admin\PegawaiController');
     Route::resource('admin/pengaturan', 'App\Http\Controllers\Admin\PengaturanController');
     Route::resource('admin/metode-pembayaran', 'App\Http\Controllers\Admin\MetodePembayaranController');
-    Route::resource('admin/slider', 'App\Http\Controllers\Admin\SliderController');
+    Route::resource('admin/slider', 'App\Http\Controllers\Admin\SliderController')->names('admin.slider');
     Route::resource('admin/pegawai', 'App\Http\Controllers\Admin\PegawaiController');
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');
     Route::resource('admin/status-bayar', 'App\Http\Controllers\Admin\StatusBayarController');
@@ -66,7 +66,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('admin/alamat', 'App\Http\Controllers\Admin\AlamatController');
     Route::get('admin/customer/alamat/{id}', 'App\Http\Controllers\Admin\AlamatController@showByCustomer')->name('admin/customer/alamat/{id}');
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');
-    Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController');
+    Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController')->names('admin.pesanan');
     Route::get('admin/customer/pesanan/{id}', [App\Http\Controllers\Admin\PesananController::class, 'showByCustomer'])->name('admin/customer/pesanan/{id}');
     Route::get('admin/pegawai/pesanan/{id}', [\App\Http\Controllers\Admin\PesananController::class, 'showByPegawai'])->name('admin.pegawai.pesanan.{id}');
     Route::resource('admin/detail-pesanan', 'App\Http\Controllers\Admin\DetailPesananController');
@@ -74,7 +74,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('admin/pembayaran', 'App\Http\Controllers\Admin\PembayaranController');
 });
 Route::middleware(['auth', 'pegawai'])->group(function () {
-    Route::get('pegawai/pesanan/{id}', [\App\Http\Controllers\Admin\PesananController::class, 'showByPegawai'])->name('pegawai.pesanan.{id}');
+    Route::resource('pegawai/pesanan', "App\Http\Controllers\Pegawai\PesananController");
+    Route::resource('pegawai/slider', 'App\Http\Controllers\Admin\SliderController')->names('pegawai.slider');
+    Route::resource('pegawai/produk', 'App\Http\Controllers\Admin\ProdukController')->names('pegawai.produk');
 });
 Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
