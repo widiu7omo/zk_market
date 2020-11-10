@@ -92,10 +92,34 @@
                                                 </button>
                                             </form>
                                             <div class="h-0 my-2 border border-solid border-gray-200"></div>
-                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                               href="javascript:void(0)" onclick="confirmModal(this)"><i
-                                                    class="fa fa-sync-alt"></i>&nbsp;
-                                                Proses Pembuatan</a>
+                                            <form method="POST"
+                                                  action="{{ url('/admin/pesanan/' . $item->id) }}"
+                                                  accept-charset="UTF-8">
+                                                {{ method_field('PATCH') }}
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="status_pesanan_id" value="{{$statusPembuatanId}}">
+                                                <button type="submit"
+                                                        class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                        title="Delete Pesanan"
+                                                        onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin melanjutkan ke proses pembuatan ?','Yups :D')">
+                                                    <i
+                                                        class="fas fa-sync-alt"></i>&nbsp; Proses Pembuatan
+                                                </button>
+                                            </form>
+                                            <form method="POST"
+                                                  action="{{ url('/admin/pesanan/' . $item->id) }}"
+                                                  accept-charset="UTF-8">
+                                                {{ method_field('PATCH') }}
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="status_pesanan_id" value="{{$statusSelesaiId}}">
+                                                <button type="submit"
+                                                        class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                        title="Delete Pesanan"
+                                                        onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin ingin menyelesaikan pemesanan ?','Selesai Kaka :D')">
+                                                    <i
+                                                        class="fas fa-check"></i>&nbsp; Pesanan Selesai
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>

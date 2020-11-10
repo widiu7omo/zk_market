@@ -24,7 +24,8 @@ class PesananController extends Controller
     {
         $keyword = $request->get('search');
         $perPage = 6;
-
+        $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
+        $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
         if (!empty($keyword)) {
             $pesanan = Pesanan::where('waktu_pesan', 'LIKE', "%$keyword%")
                 ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
@@ -37,7 +38,7 @@ class PesananController extends Controller
             $pesanan = Pesanan::latest()->paginate($perPage);
         }
 
-        return view('admin.pesanan.index', compact('pesanan'));
+        return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));
     }
 
     /**
@@ -116,11 +117,14 @@ class PesananController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'waktu_pesan' => 'required',
-            'tanggal' => 'required',
-            'catatan' => 'required',
-        ]);
+        if (isset($request->tanggal) && !isset($request->status_pesanan_id)) {
+            $this->validate($request, [
+                'waktu_pesan' => 'required',
+                'tanggal' => 'required',
+                'catatan' => 'required',
+            ]);
+        }
+
         $requestData = $request->all();
 
         $pesanan = Pesanan::findOrFail($id);

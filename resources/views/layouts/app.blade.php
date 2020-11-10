@@ -225,7 +225,7 @@
                                     Peringatan
                                 </h3>
                                 <div class="mt-2">
-                                    <p class="text-sm leading-5 text-gray-500">
+                                    <p class="text-sm leading-5 text-gray-500" id="modal-content">
                                         Apakah anda yakin ingin menghapus data ini ?
                                     </p>
                                 </div>
@@ -234,7 +234,7 @@
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                     <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                      <button type="button"
+                      <button type="button" id="modal-btn-confirm"
                               class="inline-flex btn-ok justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                         Hapus
                       </button>
@@ -269,8 +269,11 @@
     })
     var popperElement;
 
-    function confirmModal(thisElement) {
+    function confirmModal(thisElement, title, content, btn) {
         $('#modal-switch').toggleClass('hidden');
+        typeof title !== "undefined" && $('#modal-headline').text(title);
+        typeof content !== "undefined" && $('#modal-content').text(content);
+        typeof btn !== "undefined" && $('#modal-btn-confirm').text(btn);
         $this = thisElement;
         return false;
     }
