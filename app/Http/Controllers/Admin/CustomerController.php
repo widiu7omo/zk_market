@@ -55,7 +55,9 @@ class CustomerController extends Controller
     {
         $this->validate($request, [
             'nama' => 'required',
-            'no_hp' => 'required'
+            'no_hp' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:6'
         ]);
         $requestData = $request->all();
         $dataUser = [
@@ -116,10 +118,15 @@ class CustomerController extends Controller
             'nama' => 'required',
             'no_hp' => 'required'
         ]);
+        if ($request->password !== null) {
+            $this->validate($request, [
+                'password' => 'required|confirmed|min:6'
+            ]);
+        }
         $requestData = $request->all();
-        if ($request->password != '') {
+        if ($request->password != null) {
             $user = User::whereEmail($requestData['email']);
-            $user->update(['password' => $requestData['password']]);
+            $user->update(['password' => Hash::make($requestData['password'])]);
 
         }
         unset($requestData['email']);

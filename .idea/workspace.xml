@@ -21,13 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Ongkir">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AlamatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AlamatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PegawaiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PegawaiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +226,7 @@
       <workItem from="1604922610366" duration="298000" />
       <workItem from="1604930129176" duration="3806000" />
       <workItem from="1604963127277" duration="29000" />
-      <workItem from="1604964707262" duration="8237000" />
+      <workItem from="1604964707262" duration="12160000" />
     </task>
     <task id="LOCAL-00001" summary="Improve Payment, and add Profile Layout">
       <created>1604044239617</created>
@@ -495,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604971937270</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="halaman customer, penambahan melihat transaksi dan alamat per customer">
+      <created>1604974056091</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1604974056091</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +530,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Recolor &amp; redesign Login screen" />
     <MESSAGE value="Tambahan List address dan Edit Profile" />
     <MESSAGE value="Autofill pemesan ketika user mempunyai akun" />
     <MESSAGE value="Add Ongkir" />
@@ -549,7 +554,8 @@
     <MESSAGE value="Tambah edit peta bisnis di pengaturan" />
     <MESSAGE value="hapus tombol kembali di pengaturan index" />
     <MESSAGE value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
+    <MESSAGE value="halaman customer, penambahan melihat transaksi dan alamat per customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="halaman customer, penambahan melihat transaksi dan alamat per customer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">

@@ -18,14 +18,14 @@
             <section class="padding-x pb-3 bg-primary text-white">
                 <figure class="icontext align-items-center mr-4" style="max-width: 300px;">
                     <img class="icon icon-md rounded-circle"
-                         src="https://ui-avatars.com/api/?background=random&name={{$customer->nama ??'Belum Login'}}">
+                         src="https://ui-avatars.com/api/?background=random&name={{Auth::user()->customer->nama ??'Belum Login'}}">
                     <figcaption class="text">
-                        <p class="h5 title">{{$customer->nama ?? 'Belum Login'}}</p>
-                        <p class="text-white-50">{{$customer->no_hp ??'-'}}</p>
+                        <p class="h5 title text-uppercase">{{Auth::user()->customer->nama ?? 'Belum Login'}}</p>
+                        <p class="text-white-50">{{Auth::user()->customer->no_hp ??'Belum di atur'}}</p>
                     </figcaption>
                 </figure>
             </section>
-            @if(isset($customer->no_hp) && $customer->no_hp == '-')
+            @if(isset($customer->no_hp) && $customer->no_hp == 'Belum di atur')
                 <div class="alert alert-warning rounded-0 alert-dismissible fade show mb-0" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -104,7 +104,7 @@
                         <a class="btn-list" href="#" id="akun">
                             <i class="icon-action fa fa-pen"></i>
                             <small class="title">Nama Akun</small>
-                            <span class="text">{{Auth::user()->name}}</span>
+                            <span class="text text-uppercase">{{Auth::user()->name}}</span>
                         </a>
                         <a class="btn-list" href="#" id="email">
                             <i class="icon-action fa fa-pen"></i>
@@ -114,7 +114,7 @@
                         <a class="btn-list" href="#" id="nohp">
                             <i class="icon-action fa fa-pen"></i>
                             <small class="title">Nomor HP</small>
-                            <span class="text">{{$customer->no_hp}}</span>
+                            <span class="text">{{Auth::user()->customer->no_hp ?? 'Belum di atur'}}</span>
                         </a>
                     </nav>
                 @endif

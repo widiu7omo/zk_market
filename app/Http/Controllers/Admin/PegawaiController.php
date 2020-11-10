@@ -59,7 +59,9 @@ class PegawaiController extends Controller
             'nama' => 'required',
             'jenis_kelamin' => 'required',
             'nohp' => 'required',
-            'alamat' => 'required'
+            'alamat' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:6'
         ]);
         $requestData = $request->all();
         $dataUser = [
@@ -123,11 +125,16 @@ class PegawaiController extends Controller
             'nohp' => 'required',
             'alamat' => 'required'
         ]);
+        if ($request->password !== null) {
+            $this->validate($request, [
+                'password' => 'required|confirmed|min:6'
+            ]);
+        }
         $requestData = $request->all();
 
-        if($request->password != ''){
+        if ($request->password != null) {
             $user = User::whereEmail($requestData['email']);
-            $user->update(['password'=>$requestData['password']]);
+            $user->update(['password' => Hash::make($requestData['password'])]);
 
         }
         unset($requestData['email']);
