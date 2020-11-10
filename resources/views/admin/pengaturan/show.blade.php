@@ -63,9 +63,11 @@
                 </div>
             </div>
         </div>
-        <p class="font-bold text-gray-500 text-sm uppercase ml-10 mb-4">Lokasi Peta Bisnis</p>
-        <div class="mb-24 shadow-lg xl:max-w-screen-lg xl:mx-auto" style="height: 400px;border-radius: 12px"
+        <div class="xl:max-w-screen-lg xl:mx-auto">
+        <p class="font-bold text-gray-500 text-sm uppercase mb-4">Lokasi Peta Bisnis</p>
+        <div class="mb-24 shadow-lg " style="height: 400px;border-radius: 12px"
              id="map"></div>
+        </div>
     </div>
     @push('script')
         <script

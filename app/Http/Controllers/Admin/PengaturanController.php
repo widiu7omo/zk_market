@@ -107,6 +107,7 @@ class PengaturanController extends Controller
         $requestData = $request->all();
 
         $pengaturan = Pengaturan::findOrFail($id);
+        $requestData['harga_ongkir'] = preg_replace('/[^0-9]/', '', $requestData['harga_ongkir']);
         $pengaturan->update($requestData);
 
         return redirect('admin/pengaturan')->with('flash_message', 'Pengaturan updated!');
