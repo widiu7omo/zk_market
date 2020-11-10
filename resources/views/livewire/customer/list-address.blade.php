@@ -56,10 +56,12 @@
                                     <input type="hidden" name="long">
                                     <input type="hidden" name="pemesan">
                                     <input type="hidden" name="nohppemesan">
+                                    <input type="hidden" name="from" value="list-address">
                                     <input type="hidden" name="customer_id"
                                            value="{{session('customer_id')?session('customer_id'):''}}">
                                     <div class="input-group-append">
-                                        <a href="{{route('pick_address')}}" id="button-addon2" type="button"
+                                        <a href="{{route('pick_address',['source'=>'list-address'])}}"
+                                           id="button-addon2" type="button"
                                            class="btn btn-outline-secondary"><i data-eva="pin"
                                                                                 data-eva-fill="#b79780"></i></a>
                                     </div>
@@ -101,7 +103,7 @@
             $('#btn-choose-address').on('click', function () {
                 var selectedAddress = $('input[name="address"]:checked').val();
                 if (!selectedAddress) {
-                    return Snackbar.show({actionTextColor:'#B09685',text: 'Pilih alamat terlebih dahulu'})
+                    return Snackbar.show({actionTextColor: '#B09685', text: 'Pilih alamat terlebih dahulu'})
                 }
                 localStorage.setItem('selected_address', selectedAddress);
                 document.location.href = "{{route('checkout')}}";

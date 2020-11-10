@@ -34,6 +34,9 @@ class AddressController extends Controller
             session(['customer_id' => $customer->id]);
         }
         $status = Alamat::create($dataRequest) ? ['type' => 'success', 'message' => 'Alamat berhasil disimpan'] : ['type' => 'danger', 'message' => 'Alamat gagal disimpan'];
+        if (isset($dataRequest['from']) && $dataRequest['from'] == 'list-address') {
+            return redirect()->route('list-address')->with('status', $status);
+        }
         return redirect()->route('address')->with('status', $status);
     }
 
@@ -51,7 +54,7 @@ class AddressController extends Controller
 
     public function getOngkir()
     {
-        $pengaturan = Pengaturan::first()->only(['harga_ongkir','tipe_ongkir']);
+        $pengaturan = Pengaturan::first()->only(['harga_ongkir', 'tipe_ongkir']);
         return response()->json($pengaturan);
 
     }

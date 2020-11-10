@@ -55,16 +55,19 @@
             function showError(error) {
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
-                        Snackbar.show({actionTextColor:'#B09685',text: "User denied the request for Geolocation."});
+                        Snackbar.show({actionTextColor: '#B09685', text: "User denied the request for Geolocation."});
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        Snackbar.show({actionTextColor:'#B09685',text: "Location information is unavailable."});
+                        Snackbar.show({actionTextColor: '#B09685', text: "Location information is unavailable."});
                         break;
                     case error.TIMEOUT:
-                        Snackbar.show({actionTextColor:'#B09685',text: "The request to get user location timed out."});
+                        Snackbar.show({
+                            actionTextColor: '#B09685',
+                            text: "The request to get user location timed out."
+                        });
                         break;
                     case error.UNKNOWN_ERROR:
-                        Snackbar.show({actionTextColor:'#B09685',text: "An unknown error occurred."});
+                        Snackbar.show({actionTextColor: '#B09685', text: "An unknown error occurred."});
                         break;
                 }
             }
@@ -198,7 +201,7 @@
                                 position: latlng,
                                 map: map
                             });
-                            infowindow.setContent(`${results[0].formatted_address}<br><a id="btn-pilih" href="{{url('address#alamatModal')}}" class="btn btn-sm btn-primary mt-2 p-1">Pilih</a>`);
+                            infowindow.setContent(`${results[0].formatted_address}<br><a id="btn-pilih" href="{{url(request('source')?'list-address#alamatModal':'address#alamatModal')}}" class="btn btn-sm btn-primary mt-2 p-1">Pilih</a>`);
                             localStorage.setItem('alamat', JSON.stringify(results[0]));
                             infowindow.open(map, marker);
                         } else {
