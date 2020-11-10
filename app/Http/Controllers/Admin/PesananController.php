@@ -98,6 +98,28 @@ class PesananController extends Controller
         return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));
     }
 
+    public function showByPegawai($id, Request $request)
+    {
+        $keyword = $request->get('search');
+        $perPage = 6;
+        $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
+        $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
+        $address = Alamat::whereCustomerId($id)->get()->pluck('id');
+        if (!empty($keyword)) {
+            $pesanan = Pesanan::wherePegawaiId($id)->orWhere('waktu_pesan', 'LIKE', "%$keyword%")
+                ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
+                ->orWhere('tanggal', 'LIKE', "%$keyword%")
+                ->orWhere('id', 'LIKE', "%$keyword%")
+                ->orWhere('total_bayar', 'LIKE', "%$keyword%")
+                ->orWhere('catatan', 'LIKE', "%$keyword%")
+                ->latest()->paginate($perPage);
+        } else {
+            $pesanan = Pesanan::wherePegawaiId($id)->paginate($perPage);
+        }
+
+        return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));
+    }
+
     /**
      * Display the specified resource.
      *

@@ -48,7 +48,7 @@ Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
 
-Route::middleware(['auth','admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
 //Basic Route
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
     Route::get('admin/alamat/all/{id}', [App\Http\Controllers\Admin\AlamatController::class, 'all']);
@@ -68,9 +68,13 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');
     Route::resource('admin/pesanan', 'App\Http\Controllers\Admin\PesananController');
     Route::get('admin/customer/pesanan/{id}', [App\Http\Controllers\Admin\PesananController::class, 'showByCustomer'])->name('admin/customer/pesanan/{id}');
+    Route::get('admin/pegawai/pesanan/{id}', [\App\Http\Controllers\Admin\PesananController::class, 'showByPegawai'])->name('admin.pegawai.pesanan.{id}');
     Route::resource('admin/detail-pesanan', 'App\Http\Controllers\Admin\DetailPesananController');
     Route::resource('admin/bantuan', 'App\Http\Controllers\Admin\BantuanController');
     Route::resource('admin/pembayaran', 'App\Http\Controllers\Admin\PembayaranController');
+});
+Route::middleware(['auth', 'pegawai'])->group(function () {
+    Route::get('pegawai/pesanan/{id}', [\App\Http\Controllers\Admin\PesananController::class, 'showByPegawai'])->name('pegawai.pesanan.{id}');
 });
 Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

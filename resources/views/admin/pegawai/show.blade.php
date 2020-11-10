@@ -43,11 +43,21 @@
                                 <td class="px-4 py-2 leading-snug"> {{ $pegawai->nama }} </td>
                             </tr>
                             <tr>
-                                <th class="w-3/12 border-r-2 font-bold tracking-wider text-left uppercase whitespace-no-wrap"> Jenis Kelamin</th>
+                                <th class="w-3/12 border-r-2 font-bold tracking-wider text-left uppercase whitespace-no-wrap">
+                                    Jenis Kelamin
+                                </th>
                                 <td class="px-4 py-2 leading-snug"> {{ $pegawai->jenis_kelamin }} </td>
                             </tr>
                             <tr>
-                                <th class="w-3/12 border-r-2 font-bold text-left tracking-wider uppercase whitespace-no-wrap"> Nohp</th>
+                                <th class="w-3/12 border-r-2 font-bold text-left tracking-wider uppercase whitespace-no-wrap">
+                                    E-mail
+                                </th>
+                                <td class="px-4 py-2 leading-snug"> {{ $pegawai->user->email }} </td>
+                            </tr>
+                            <tr>
+                                <th class="w-3/12 border-r-2 font-bold text-left tracking-wider uppercase whitespace-no-wrap">
+                                    Nohp
+                                </th>
                                 <td class="px-4 py-2 leading-snug"> {{ $pegawai->nohp }} </td>
                             </tr>
                         </table>
