@@ -6,7 +6,10 @@
             <input type="text" placeholder="Mau pesan apa hari ini ?"
                    onfocus="window.location.href='{{route('search')}}'" class="form-control input-dark border-0">
         </div>
-
+        @if(session('status'))
+            <div class="p-2 bg-red-100 rounded text-sm text-center font-bold text-red-500 my-2">{{session('status')}}</div>
+            <hr class="divider my-3">
+        @endif
         <section class="padding-around scroll-horizontal">
             @foreach($sliders as $slider)
                 <a href="#" class="item-slider card-banner rounded mr-2">

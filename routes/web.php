@@ -48,11 +48,9 @@ Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name(
 Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','admin'])->group(function () {
 //Basic Route
     Route::get('/home', [App\Http\Controllers\Customer\HomeController::class, 'index'])->name('home.index');
-//    Route::get('search', [\App\Http\Controllers\Customer\SearchController::class, 'index'])->name('search.index');
-//    Route::get('cart', [\App\Http\Controllers\Customer\CartController::class, 'index'])->name('cart.index');
     Route::get('admin/alamat/all/{id}', [App\Http\Controllers\Admin\AlamatController::class, 'all']);
     Route::get('admin/detail-pesanan/all/{id}', [App\Http\Controllers\Admin\DetailPesananController::class, 'all']);
     Route::resource('admin/produk', 'App\Http\Controllers\Admin\ProdukController');
