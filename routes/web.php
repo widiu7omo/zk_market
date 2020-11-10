@@ -75,8 +75,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 Route::middleware(['auth', 'pegawai'])->group(function () {
     Route::resource('pegawai/pesanan', "App\Http\Controllers\Pegawai\PesananController");
-    Route::resource('pegawai/slider', 'App\Http\Controllers\Admin\SliderController')->names('pegawai.slider');
-    Route::resource('pegawai/produk', 'App\Http\Controllers\Admin\ProdukController')->names('pegawai.produk');
+    Route::resource('pegawai/slider', 'App\Http\Controllers\Pegawai\SliderController')->names('pegawai.slider');
+    Route::resource('pegawai/produk', 'App\Http\Controllers\Pegawai\ProdukController')->names('pegawai.produk');
 });
 Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
