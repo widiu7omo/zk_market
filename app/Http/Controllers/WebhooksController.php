@@ -35,7 +35,7 @@ class WebhooksController extends Controller
         ];
         if ($pembayaran->whereExternalId($response_xendit->external_id)->update($dataUpdatePembayaran)) {
             $dataPembayaran = $pembayaran->whereExternalId($response_xendit->external_id)->first();
-            if ($response_xendit->status === 'COMPLETED') {
+            if ($response_xendit->status === 'SUCCESS_COMPLETED') {
                 Pesanan::whereId($dataPembayaran->pesanan_id)->update(['status_bayar_id' => StatusBayar::whereStatusBayar('sudah bayar')->first()->id]);
             } elseif ($response_xendit->status === 'EXPIRED') {
                 Pesanan::whereId($dataPembayaran->pesanan_id)->update(['status_bayar_id' => StatusBayar::whereStatusBayar('kedaluwarsa')->first()->id]);
