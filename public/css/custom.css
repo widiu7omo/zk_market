@@ -39,9 +39,11 @@
     margin-bottom: 5px;
     display: block
 }
+
 .btn-card-icontop {
     background-color: #ffeee3 !important;
 }
+
 a[class*='product-']:hover .title {
     color: #1f1f1f;
 }
@@ -141,3 +143,30 @@ a[class*='product-']:hover .title {
     font-size: 12px;
 }
 
+#total-cart {
+    font-size: 14px !important;
+}
+#btn-add-cart{
+    font-size: 15px !important;
+}
+#btn-add {
+    background-color: #b79780 !important;
+    border-top-right-radius: 0.5rem !important;
+    border-bottom-right-radius: 0.5rem !important;
+    border: 0;
+}
+
+#btn-rem {
+    border-top-left-radius: 0.5rem !important;
+    border-bottom-left-radius: 0.5rem !important;
+    background-color: #b79780 !important;
+    border: 0;
+}
+
+#btn-rem > svg {
+    fill: #fff !important;
+}
+
+#btn-add > svg {
+    fill: #fff !important;
+}
