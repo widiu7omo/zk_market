@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header">
+        <a href="javascript:window.location = '{{route('profile')}}'" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Alamat </h6>
         <div class="header-right"><a href="#alamatModal" class="btn btn-outline-light btn-sm"
@@ -9,6 +9,14 @@
     <main class="app-content">
         <section class="padding-top">
             <h5 class="title-section padding-x">Daftar Alamat</h5>
+            @if(session('status'))
+                <div class="alert alert-{{session('status')['type']}} alert-dismissible fade show m-4" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <small>{{session('status')['message']}}</small>
+                </div>
+            @endif
             @if(count($addresses) == 0)
                 <div class="d-flex p-5 mx-auto justify-content-center align-items-center">
                     <h6 class="text-center">Belum ada data alamat, Silahkan tambahkan alamat baru</h6>

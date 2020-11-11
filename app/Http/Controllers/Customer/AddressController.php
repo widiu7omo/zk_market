@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Alamat;
 use App\Models\Customer;
 use App\Models\Pengaturan;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller
@@ -42,7 +43,17 @@ class AddressController extends Controller
 
     public function destroy($id)
     {
-        Alamat::findOrFail($id)->delete();
+
+        try {
+            Alamat::findOrFail($id)->delete();
+        } catch (QueryException $queryException) {
+            switch ($queryException->getCode()) {
+                case 23000:
+                    return redirect()->route(isset($dataRequest['from']) && $dataRequest['from'] == 'list-address' ? $dataRequest['from'] : 'address')->with('status', ['type' => 'danger', 'message' => 'Alamat tidak dapat dihapus, terdapat transaksi yang memakai alamat tersebut.']);
+                default:
+                    return redirect()->route('list-address');
+            }
+        }
         return redirect()->route('list-address')->with('status', ['type' => 'success', 'message' => 'Alamat berhasil di hapus']);
     }
 

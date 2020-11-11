@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header">
+        <a href="javascript:window.location = '{{route('checkout')}}'" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Alamat </h6>
         <div class="header-right"><a href="#alamatModal" class="btn btn-outline-light btn-sm"
@@ -10,6 +10,14 @@
         <section class="padding-top">
             <h5 class="title-section padding-x mb-2">Pilih Alamat</h5>
             <small class="padding-x text-muted mb-2"><i>Sentuh kotak untuk memilih alamat</i></small>
+            @if(session('status'))
+                <div class="alert alert-{{session('status')['type']}} alert-dismissible fade show m-4" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <small>{{session('status')['message']}}</small>
+                </div>
+            @endif
             @if(count($addresses) == 0)
                 <div class="d-flex p-5 mx-auto justify-content-center align-items-center">
                     <h6 class="text-center">Belum ada alamat yang dipilih, Silahkan tambahkan alamat baru</h6>
@@ -56,7 +64,9 @@
                             <div class="col-md-12 form-group">
                                 <label class="form-label">Pin Peta</label>
                                 <div class="input-group">
-                                    <input placeholder="Pin Peta" type="text" name="location" class="form-control">
+                                    <input placeholder="Pin Peta"
+                                           onfocus="window.location.href='{{route('pick_address')}}'" type="text"
+                                           name="location" class="form-control">
                                     <input type="hidden" name="lat">
                                     <input type="hidden" name="long">
                                     <input type="hidden" name="pemesan">
@@ -106,14 +116,14 @@
             $('#btn-choose-address').on('click', function () {
                 var selectedAddress = $('input[name="address"]:checked').val();
                 if (!selectedAddress) {
-                    return Snackbar.show({actionTextColor:'#B09685',text: 'Pilih alamat terlebih dahulu'})
+                    return Snackbar.show({actionTextColor: '#B09685', text: 'Pilih alamat terlebih dahulu'})
                 }
                 localStorage.setItem('selected_address', selectedAddress);
                 document.location.href = "{{route('checkout')}}";
             })
             $('input[name="address"]').on('change', function () {
-                localStorage.setItem('lat',$(this).data('lat'));
-                localStorage.setItem('lng',$(this).data('lng'));
+                localStorage.setItem('lat', $(this).data('lat'));
+                localStorage.setItem('lng', $(this).data('lng'));
             });
             if (window.location.href.indexOf('#alamatModal') !== -1) {
                 var modalAlamat = $('#alamatModal');

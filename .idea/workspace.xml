@@ -21,8 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/AddressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/address.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-address.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +225,7 @@
       <workItem from="1604963127277" duration="29000" />
       <workItem from="1604964707262" duration="25151000" />
       <workItem from="1605049567595" duration="2415000" />
-      <workItem from="1605054495008" duration="5382000" />
-    </task>
-    <task id="LOCAL-00004" summary="Fix undefined no_hp">
-      <created>1604050476995</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1604050476995</updated>
+      <workItem from="1605054495008" duration="6571000" />
     </task>
     <task id="LOCAL-00005" summary="Realtime pencarian">
       <created>1604062321197</created>
@@ -569,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605061164137</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Tambah tooltip untuk memerintah user melakukan reload halaman">
+      <created>1605061919809</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1605061919810</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +599,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Center Login form on mobile" />
     <MESSAGE value="Fix Missed Condition for promo" />
     <MESSAGE value="Admin rincian pesanan" />
     <MESSAGE value="Fix table layout" />
@@ -623,7 +623,8 @@
     <MESSAGE value="Webhooks for ovo" />
     <MESSAGE value="Add status bayar &amp;&amp; callback linkaja" />
     <MESSAGE value="Change status color on pembayaran orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change status color on pembayaran orders" />
+    <MESSAGE value="Tambah tooltip untuk memerintah user melakukan reload halaman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tambah tooltip untuk memerintah user melakukan reload halaman" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
