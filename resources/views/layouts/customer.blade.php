@@ -61,6 +61,9 @@
 <script type="text/javascript">
     /// some script
     eva.replace();
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
     // jquery ready start
     $(document).ready(function () {
         $.ajaxSetup({

@@ -17,6 +17,10 @@
                        data-eva-fill="{{$status->id <= $dataOrder->status_pesanan_id?'#4dc90e':'#e82b13'}}"></i><small>&nbsp;{{ucfirst($status->status_pesanan)}}</small>
                 </div>
             @endforeach
+            <small class="text-tiny text-muted pt-3 mt-4 ml-2" data-toggle="tooltip" data-placement="top" title="Silahkan reload halaman untuk melihat status pembayaran jika
+                    sudah selesai
+                    melakukan pembayaran. Tarik kebawah untuk reload halaman."><i
+                    class="fa fa-info-circle"></i>&nbsp;<i>Klik disini untuk informasi pembayaran</i></small>
         </section>
         <hr class="divider">
         <section class="padding-top px-3 py-0 m-3" id="alamat-pesanan">
