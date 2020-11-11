@@ -28,7 +28,7 @@
                             <span class="d-flex justify-content-between">
                         <small>Pembayaran
                             <strong>{{$order->metode_pembayaran}}</strong></small><small
-                                    class="badge badge-pill badge-{{strtoupper($order->pesanan->status_bayar->status_bayar)=='BELUM BAYAR'?'danger':'success'}}">{{strtoupper($order->pesanan->status_bayar->status_bayar)}}</small>
+                                    class="badge badge-pill badge-{{strtoupper($order->pesanan->status_bayar->status_bayar)=='BELUM BAYAR'|| strtoupper($order->pesanan->status_bayar->status_bayar)=='GAGAL BAYAR'?'danger':(strtoupper($order->pesanan->status_bayar->status_bayar)=='KEDALUWARSA'?'warning':'success')}}">{{strtoupper($order->pesanan->status_bayar->status_bayar)}}</small>
                         </span><br>
                             <small>Catatan: <br><span class="text-muted">{{$order->pesanan->catatan}}</span></small>
                         </label>
