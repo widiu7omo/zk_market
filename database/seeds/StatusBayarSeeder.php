@@ -14,7 +14,9 @@ class StatusBayarSeeder extends Seeder
     {
         DB::table('status_bayars')->insert([
             ['status_bayar'=>'belum bayar'],
-            ['status_bayar'=>'sudah bayar']
+            ['status_bayar'=>'sudah bayar'],
+            ['status_bayar'=>'kedaluwarsa'],
+            ['status_bayar'=>'gagal bayar'],
         ]);
     }
 }
