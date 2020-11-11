@@ -47,8 +47,19 @@ class WebhooksController extends Controller
 
     }
 
-    public function qris()
+    public function qris(Request $request, Pembayaran $pembayaran)
     {
+        $response_xendit = json_decode($request->getContent());
+        $dataUpdatePembayaran = [
+            'status_pembayaran' => $response_xendit->status,
+        ];
+        if ($pembayaran->whereExternalId($response_xendit->qr_code->external_id)->update($dataUpdatePembayaran)) {
+            $dataPembayaran = $pembayaran->whereExternalId($response_xendit->qr_code->external_id)->first();
+            if ($response_xendit->status === 'COMPLETED') {
+                Pesanan::whereId($dataPembayaran->pesanan_id)->update(['status_bayar_id' => StatusBayar::whereStatusBayar('sudah bayar')->first()->id]);
+                $pembayaran->whereExternalId($response_xendit->qr_code->external_id)->update(['status_expired' => 'PAID']);
+            }
+        }
         return response()->json(['status' => 'success']);
 
     }
