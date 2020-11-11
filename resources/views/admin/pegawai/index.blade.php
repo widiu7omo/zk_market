@@ -91,7 +91,10 @@
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 uppercase py-4">{{ $item->nama }}</td>
-                                    <td class="whitespace-no-wrap px-4 uppercase py-4">{{ $item->user->roles->pluck('name') }}</td>
+                                    <td class="whitespace-no-wrap px-4 uppercase py-4">{!!
+                                    $item->user->roles->map(function($item){
+                                                            return '<span class="p-1 bg-red-100 leading-3 text-xs font-bold rounded text-white bg-red-500">'.$item->name.'<span>';
+                                                            })->join('')  !!}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->jenis_kelamin }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->nohp }}</td>
                                 </tr>

@@ -66,7 +66,7 @@
             <div class="flex items-center m-2 p-3 rounded-lg bg-gray-200">
                 <input id="{{$role->name}}" name="role_id[]" type="checkbox"
                        value="{{$role->name}}"
-                       class="form-check h-4 w-4 text-brown transition duration-200 ease-in-out" {{ isset($pegawai->user) && in_array($role->id,$pegawai->user->roles->pluck('id')->toArray() ?? [])?'checked':''}}>
+                       class="form-checkbox h-4 w-4 text-brown transition duration-200 ease-in-out" {{ isset($pegawai->user) && in_array($role->id,$pegawai->user->roles->pluck('id')->toArray() ?? [])?'checked':''}}>
                 <label for="{{$role->name}}" class="ml-3">
                     <span class="block text-sm leading-5 font-bold text-gray-500 uppercase">{{$role->name}}</span>
                 </label>
