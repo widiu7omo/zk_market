@@ -38,12 +38,6 @@
                 <section class="padding-around">
                     <ul class="row">
                         <li class="col-4">
-                            <a href="#" class="btn-card-icontop btn">
-                                <span class="icon"> <i style="color: #B09685" class="fa fa-heart"></i> </span>
-                                <small class="text text-center"> Wishlist </small>
-                            </a>
-                        </li>
-                        <li class="col-4">
                             <a href="{{url('orders')}}" class="btn-card-icontop btn">
                                 <span class="icon"> <i style="color: #B09685" class="fa fa-shopping-basket"></i> </span>
                                 <small class="text text-center"> Transaksi</small>
@@ -53,6 +47,12 @@
                             <a href="{{route('list-address')}}" class="btn-card-icontop btn">
                                 <span class="icon"> <i style="color: #B09685" class="fa fa-map-pin"></i> </span>
                                 <small class="text text-center"> Alamat</small>
+                            </a>
+                        </li>
+                        <li class="col-4">
+                            <a href="#" class="btn-card-icontop btn">
+                                <span class="icon"> <i style="color: #B09685" class="fa fa-question-circle"></i> </span>
+                                <small class="text text-center"> Bantuan </small>
                             </a>
                         </li>
                     </ul>
@@ -118,6 +118,11 @@
                         </a>
                     </nav>
                 @endif
+                <hr class="divider"/>
+                <a class="padding-x btn-list" href="#">
+                    <small class="title"></small>
+                    <span class="text padding-x text-black-50">Tentang Aplikasi Zona Kopi Delivery</span>
+                </a>
             </section>
             @if(!Auth::user())
                 <div class="mx-3 my-5" style="bottom: 27px">

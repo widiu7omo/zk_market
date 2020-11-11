@@ -44,7 +44,6 @@ class WebhooksController extends Controller
             }
         }
         return response()->json(['status' => 'success']);
-
     }
 
     public function qris(Request $request, Pembayaran $pembayaran)

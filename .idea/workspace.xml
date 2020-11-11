@@ -21,9 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/AddressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/AddressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/address.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-address.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-address.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebhooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebhooksController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/DetailProduk.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/DetailProduk.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/detail-produk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/detail-produk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,21 +227,7 @@
       <workItem from="1604963127277" duration="29000" />
       <workItem from="1604964707262" duration="25151000" />
       <workItem from="1605049567595" duration="2415000" />
-      <workItem from="1605054495008" duration="6571000" />
-    </task>
-    <task id="LOCAL-00005" summary="Realtime pencarian">
-      <created>1604062321197</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1604062321197</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Last Update">
-      <created>1604656845780</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1604656845780</updated>
+      <workItem from="1605054495008" duration="9393000" />
     </task>
     <task id="LOCAL-00007" summary="Add Bantuan">
       <created>1604656860673</created>
@@ -570,7 +558,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605061919810</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Event Handler hapus alamat">
+      <created>1605063123958</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1605063123958</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Callback Qris Code">
+      <created>1605064357473</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1605064357473</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,8 +601,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix Missed Condition for promo" />
-    <MESSAGE value="Admin rincian pesanan" />
     <MESSAGE value="Fix table layout" />
     <MESSAGE value="Add View And Table Pembayaran" />
     <MESSAGE value="Add map direction to map" />
@@ -624,7 +624,9 @@
     <MESSAGE value="Add status bayar &amp;&amp; callback linkaja" />
     <MESSAGE value="Change status color on pembayaran orders" />
     <MESSAGE value="Tambah tooltip untuk memerintah user melakukan reload halaman" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tambah tooltip untuk memerintah user melakukan reload halaman" />
+    <MESSAGE value="Event Handler hapus alamat" />
+    <MESSAGE value="Callback Qris Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Callback Qris Code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -663,10 +665,10 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605061167769">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605064359585">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605061167769" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605064359585" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

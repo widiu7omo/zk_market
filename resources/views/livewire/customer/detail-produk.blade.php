@@ -89,40 +89,46 @@
         </section>
 
         <hr class="divider my-3">
-
-        {{--        <h5 class="title-section padding-x">Reviews (3)</h5>--}}
-        {{--        <section class="padding-x">--}}
-
-        {{--            <article>--}}
-        {{--                <div class="icontext mb-2">--}}
-        {{--                    <span class="icon"> <img src="images/avatars/1.jpg" class="icon-sm rounded-circle" alt=""> </span>--}}
-        {{--                    <div><p>Michael John <span class="text-muted">- Purchased</span></p>--}}
-        {{--                        <span class="text-warning">Good!</span>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--                <p class="text-muted">Good! Tello Edu drone is an ideal companion for anyone engaged Lorem ipsum dolor--}}
-        {{--                    sit amet--}}
-        {{--                    <a href="#">...Read more</a></p>--}}
-        {{--            </article>--}}
-        {{--            <hr>--}}
-        {{--            <article>--}}
-        {{--                <div class="icontext mb-2">--}}
-        {{--                    <span class="icon"> <img src="images/avatars/2.jpg" class="icon-sm rounded-circle" alt=""> </span>--}}
-        {{--                    <div><p>Alexandra K. <span class="text-muted">- Purchased</span></p>--}}
-        {{--                        <span class="text-warning">Best!</span>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--                <p class="text-muted">I liked this Tello Edu drone is an ideal companion for anyone engaged Lorem ipsum--}}
-        {{--                    dolor sit amet--}}
-        {{--                    <a href="#">...Read more</a></p>--}}
-        {{--            </article>--}}
-        {{--        </section>--}}
-
-        {{--        <br>--}}
-        {{--        <p class="text-center my-4"><a href="index.html" class="btn btn-light"> <i class="fa fa-arrow-left"></i> <span--}}
-        {{--                    class="text">More pages</span></a></p>--}}
-        {{--        <br>--}}
-
+        <div class="d-flex justify-content-between">
+            <h5 class="title-section">Produk terkait</h5>
+            <a href="{{url('list/terlaris')}}" class="title-section-end">Lebih banyak...</a>
+        </div>
+        <section class="scroll-horizontal padding-x mb-4">
+            @foreach($related_products ?? [] as $product)
+                <div class="item">
+                    <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
+                        <div class="img-wrap" style="position: relative;height: 100px"><img
+                                src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            <div style="position: absolute;top:3px;left: 3px;"
+                                 class="d-flex justify-content-start align-items-center">
+                                @if($product->promosi == 1)
+                                    <div class="badge badge-danger">Promo</div>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="text-wrap position-relative">
+                            <p class="title text-truncate" style="font-size: 13px">
+                                @if($product->baru == 1)
+                                    <img style="height: 30px;top:-20px" class="position-absolute"
+                                         src="{{asset('images/new-label.svg')}}" alt="new-label">
+                                @endif
+                                {{$product->nama??'NULL'}}</p>
+                            @if($product->promosi == 1)
+                                <div class="price font-weight-bold" style="font-size: 12px">
+                                    Rp. {{number_format($product->harga_promo??0,0,',','.')}}</div>
+                                <div class="price-promo" style="font-size: 12px">
+                                    <del>Rp. {{number_format($product->harga??0,0,',','.')}}</del>
+                                </div>
+                            @else
+                                <div class="price font-weight-bold" style="font-size: 12px">
+                                    Rp. {{number_format($product->harga??0,0,',','.')}}</div>
+                        @endif
+                        <!-- price-wrap.// -->
+                        </div>
+                    </a>
+                </div>
+            @endforeach
+        </section>
     </main>
     <nav class="bar-bottom">
         <div>
@@ -191,7 +197,7 @@
                     }
                     detailHelper.saveToCart(parsed);
                     detailHelper.updateCart();
-                    Snackbar.show({actionTextColor:'#B09685',text: 'Anda telah memasukkan dalam keranjang',});
+                    Snackbar.show({actionTextColor: '#B09685', text: 'Anda telah memasukkan dalam keranjang',});
                 })
             })
         </script>

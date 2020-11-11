@@ -16,7 +16,7 @@
             @endif
             @foreach($orders ?? [] as $key=> $order)
                 <a href="{{url('detail_order/'.$order->pesanan->id)}}">
-                    <div class="box-selection mx-3" style="border:rosybrown 1px solid">
+                    <div class="box-selection mx-3" style="border:#B09685 2px solid">
                         <label class="custom-control custom-radio pl-0">
                             <span
                                 class="title d-flex justify-content-between">Pesanan #{{$order->pesanan->id}} <span><small
@@ -35,10 +35,6 @@
                     </div>
                 </a>
             @endforeach
-            {{--            <button id="btn-choose-address" class="btn rounded-0 mb-0 btn-primary btn-block fixed-bottom" type="button">--}}
-            {{--                <i--}}
-            {{--                    data-eva-fill="#fff" data-eva="checkmark-outline"></i> Konfirmasi--}}
-            {{--            </button>--}}
         </section>
     </main>
 </div>
