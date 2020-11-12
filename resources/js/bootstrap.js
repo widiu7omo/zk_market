@@ -1,7 +1,10 @@
 window._ = require('lodash');
 window.$ = require('jquery');
 require('jquery-mask-plugin');
+require('moment')
+require('daterangepicker')
 import Popper from 'popper.js';
+
 window.Popper = Popper;
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

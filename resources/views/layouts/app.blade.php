@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Zona Kopi Delivery') }}</title>
-
+    <link href="{{asset('vendor/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css"/>
     <!-- Styles -->
     <link href="{{mix('css/app.css')}}" rel="stylesheet">
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -113,12 +113,25 @@
                 </form>
                 {{-- Profile Panel--}}
                 <div class="flex-col md:flex-row list-none items-center hidden md:flex">
+{{--                    <div class="inline-block relative">--}}
+{{--                        <a class="text-white block py-1 px-3" href="javascript:void(0)"--}}
+{{--                           onclick="openDropdown(event,'notification-dropdown-desktop')"><i--}}
+{{--                                class="fas fa-bell text-xl"></i></a>--}}
+{{--                        <div--}}
+{{--                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"--}}
+{{--                            id="notification-dropdown-desktop" style="min-width: 12rem;">--}}
+{{--                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+{{--                               href="#">8--}}
+{{--                                Notifications</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <a class="text-gray-600 block" href="#" onclick="openDropdown(event,'user-dropdown')">
                         <div class="items-center flex">
                                 <span
                                     class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"><img
                                         alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
-                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=random"/></span>
+                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=random"/>
+                                </span>
                         </div>
                     </a>
                     <div
@@ -158,6 +171,42 @@
         <!-- Footer-->
     @include('admin.footer')
     <!-- End Footer-->
+        <div id="toast-notification" class="fixed z-50 inset-0 overflow-y-auto hidden">
+            <div class="flex ease-out items-end justify-end min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div id="toast-component"
+                     class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95 ease-out duration-300 inline-block float-right align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                     role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                    <div class="bg-white">
+                        <div class="sm:flex sm:items-start h-20">
+                            <div class="px-4 pt-5 pb-4 sm:p-4 sm:pb-4 w-full flex flex-no-wrap">
+                                <div
+                                    class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                         viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                    </svg>
+                                </div>
+                                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="toast-headline">
+                                        Notifikasi
+                                    </h3>
+                                    <div class="mt-2">
+                                        <p class="text-sm leading-5 text-gray-500" id="toast-content">
+                                            Pesanan masuk.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" id="toast-action-view"
+                               class="border-l h-full flex justify-center items-center w-2/12 border-gray-200 text-gray-500 hover:bg-gray-100">
+                                <span class="inline-block align-middle">Lihat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Modal Delete-->
         <div id="modal-switch" class="fixed z-50 inset-0 overflow-y-auto hidden">
             <div
@@ -214,9 +263,31 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{asset('vendor/snackbar/snackbar.min.js')}}" type="text/javascript"></script>
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('b0027c9771ffa6e14a00', {
+        cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('pesanan');
+    channel.bind('pesanan-masuk', function (data) {
+        $('#toast-notification').removeClass('hidden');
+        $('#toast-component').removeClass('opacity-0').addClass('opacity-100');
+        $('#toast-action-view').prop('href', data.uri);
+        setTimeout(function () {
+            $('#toast-notification').addClass('hidden');
+            $('#toast-component').removeClass('opacity-100').addClass('opacity-0');
+        }, 5000);
+    });
+</script>
 <script>
     var $this;
     $(document).ready(function () {
@@ -282,6 +353,66 @@
         content.classList.add(isOpen ? 'md:ml-64' : 'md:ml-0');
         isOpen = !isOpen;
     }
+</script>
+<script>
+    $('input#range_date').daterangepicker({
+        'locale': {
+            "format": "DD-MM-YYYY",
+            "separator": " - ",
+            "applyLabel": "Terapkan",
+            "cancelLabel": "Batal",
+            "fromLabel": "Dari",
+            "toLabel": "Sampai",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Mg",
+                "Sn",
+                "Sl",
+                "Rb",
+                "Km",
+                "Jm",
+                "Sa"
+            ],
+            "monthNames": [
+                "Januari",
+                "Februari",
+                "Maret",
+                "April",
+                "Mei",
+                "Juni",
+                "Juli",
+                "Agustus",
+                "September",
+                "Oktober",
+                "November",
+                "Desember"
+            ],
+            "firstDay": 1
+        },
+        applyButtonClasses: 'p-2 text-white uppercase bg-brown-lighter rounded hover:bg-brown',
+        cancelButtonClasses: 'p-2 text-white uppercase bg-red-100 text-red-500 rounded hover:bg-red-200'
+    }).on('apply.daterangepicker', function (e, picker) {
+        const start = picker.startDate.format('YYYY-MM-DD');
+        const end = picker.endDate.format('YYYY-MM-DD');
+        const currentHref = window.location.href;
+        const isDoingSearch = currentHref.includes('search');
+        const isFilterDate = currentHref.includes('start');
+        const pathName = window.location.pathname;
+        const origin = window.location.origin;
+        const search = window.location.search;
+        var newPath = origin + pathName;
+        if ((isDoingSearch && isFilterDate) || (isDoingSearch && !isFilterDate)) {
+            if (search.includes('start')) {
+                newPath = newPath + '?start=' + start + '&end=' + end;
+            } else {
+                newPath = newPath + search + '&start=' + start + '&end=' + end;
+            }
+        } else {
+            newPath = newPath + '?start=' + start + '&end=' + end;
+        }
+        window.location.href = newPath;
+    });
 </script>
 @stack('script')
 </body>

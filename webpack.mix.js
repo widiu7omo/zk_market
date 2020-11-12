@@ -12,6 +12,6 @@ require('laravel-mix-tailwind');
  */
 
 mix.js('resources/js/app.js', 'public/js').sourceMaps()
-    .extract(['jquery','lodash','popper.js','jquery-mask-plugin'])
+    .extract(['jquery','lodash','popper.js','jquery-mask-plugin','moment','daterangepicker'])
     .less('resources/less/app.less', 'public/css')
     .tailwind().version();

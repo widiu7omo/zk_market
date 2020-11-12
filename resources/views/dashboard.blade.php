@@ -8,8 +8,8 @@
                     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                         <div class="flex flex-wrap items-center">
                             <div class="relative w-full max-w-full flex-grow flex-1">
-                                <h6 class="uppercase text-gray-900 mb-1 text-xs font-semibold"> Overview </h6>
-                                <h2 class="text-white text-xl font-semibold"> Sales value </h2>
+                                <h6 class="uppercase text-white mb-1 text-xs font-semibold"> Overview </h6>
+                                <h2 class="text-white text-xl font-semibold"> Nilai Penjualan </h2>
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                         <div class="flex flex-wrap items-center">
                             <div class="relative w-full max-w-full flex-grow flex-1">
                                 <h6 class="uppercase text-gray-500 mb-1 text-xs font-semibold"> Performance </h6>
-                                <h2 class="text-gray-800 text-xl font-semibold"> Total orders </h2>
+                                <h2 class="text-gray-800 text-xl font-semibold"> Total Transaksi </h2>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                     <div class="rounded-t mb-0 px-4 py-3 border-0">
                         <div class="flex flex-wrap items-center">
                             <div class="relative w-full px-4 max-w-full flex-grow flex-1">
-                                <h3 class="font-semibold text-base text-gray-800"> Page visits </h3>
+                                <h3 class="font-semibold text-base text-gray-800"> Produk paling banyak di beli </h3>
                             </div>
                             <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                                 <button

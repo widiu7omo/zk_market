@@ -46,12 +46,12 @@
                 Kategori</a>
         </li>
         <li class="items-center">
-            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='slider.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
+            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='admin.slider.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
                href="{{route('admin.slider.index')}}"><i class="fas fa-ticket-alt mr-2 text-sm"></i>
                 Slider</a>
         </li>
         <li class="items-center">
-            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='produk.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
+            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='admin.produk.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
                href="{{route('admin.produk.index')}}"><i class="fas fa-pizza-slice mr-2 text-sm"></i>
                 Produk</a>
         </li>
@@ -61,7 +61,7 @@
     </h6>
     <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
-            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='pesanan.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
+            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='admin.pesanan.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
                href="{{route('admin.pesanan.index')}}"><i class="fas fa-money-check mr-2 text-sm"></i>
                 Pesanan</a>
         </li>

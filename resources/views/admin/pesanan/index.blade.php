@@ -7,8 +7,8 @@
                 <div
                     class="relative flex flex-col min-w-0 break-words h-full w-full mb-6 shadow-lg rounded-lg bg-gray-100 w-full xl:mx-auto">
                     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
-                        <div class="flex flex-wrap items-center">
-                            <div class="relative w-full max-w-full flex-grow flex-1">
+                        <div class="flex flex-wrap items-center flex-col lg:flex-row">
+                            <div class="relative w-full max-w-full flex-grow w-full xl:w-8/12">
                                 <h6 class="uppercase text-gray-900 mb-1 text-xs font-semibold">
                                     Tabel
                                 </h6>
@@ -16,18 +16,28 @@
                                     Pesanan
                                 </h2>
                             </div>
-                            <div class="relative flex flex-wrap items-stretch lg:w-3/12 block mr-5">
+                            <div class="relative flex flex-no-wrap w-full xl:w-4/12 space-x-2">
+                                <div class="w-full">
+                                <span
+                                    class="z-10 h-full leading-snug font-normal absolute text-center text-gray-500 absolute bg-transparent rounded-lg text-base items-center justify-center w-8 pl-3 py-3">
+                                    <i class="fas fa-calendar-alt text-gray-600"></i>
+                                </span>
+                                    <input type="text" id="range_date"
+                                           class="px-3 font-bold py-3 placeholder-gray-600 text-gray-700 relative focus:bg-gray-100 bg-gray-300 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline pl-10">
+                                </div>
+                                <div class="w-full">
                                 <span
                                     class="z-10 h-full leading-snug font-normal absolute text-center text-gray-500 absolute bg-transparent rounded-lg text-base items-center justify-center w-8 pl-3 py-3">
                                     <i class="fas fa-search text-gray-600"></i>
                                 </span>
-                                <form method="GET" action="{{ url('/admin/pesanan') }}" accept-charset="UTF-8"
-                                      class="m-0 p-0 w-full">
-                                    <input name="search" autocomplete="off"
-                                           class="px-3 py-3 placeholder-gray-600 text-gray-700 relative focus:bg-gray-100 bg-gray-300 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
-                                           placeholder="Cari data Pesanan"
-                                           type="text" value="{{ request('search') }}"/>
-                                </form>
+                                    <form method="GET" action="{{ url('/admin/pesanan') }}" accept-charset="UTF-8"
+                                          class="m-0 p-0 w-full">
+                                        <input name="search" autocomplete="off"
+                                               class="px-3 py-3 placeholder-gray-600 text-gray-700 relative focus:bg-gray-100 bg-gray-300 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                                               placeholder="Cari data Pesanan"
+                                               type="text" value="{{ request('search') }}"/>
+                                    </form>
+                                </div>
                             </div>
                             @if(strpos(request()->route()->getName() ,'customer') !== false)
                                 <a class="uppercase tracking-wide text-sm py-3 px-3 bg-red-200 hover:bg-red-300 shadow rounded-lg text-red-500 font-bold"
@@ -81,7 +91,7 @@
                                                class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                href="{{ url('/admin/pesanan/' . $item->id . '/edit') }}"><i
                                                     class="fas fa-pen"></i>&nbsp; Edit</a>
-                                            <form id="form-delete" method="POST"
+                                            <form method="POST"
                                                   action="{{ url('/admin/pesanan' . '/' . $item->id) }}"
                                                   accept-charset="UTF-8">
                                                 {{ method_field('DELETE') }}

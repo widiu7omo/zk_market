@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "jquery-mask-plugin": "^1.14.16"
+        "daterangepicker": "^3.1.0",
+        "jquery-mask-plugin": "^1.14.16",
+        "moment": "^2.29.1"
     }
 }

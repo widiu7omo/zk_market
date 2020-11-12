@@ -25,6 +25,8 @@ class PesananController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
+        $dateStart = $request->get('start');
+        $dateEnd = $request->get('end');
         $perPage = 6;
         $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
         $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
@@ -36,8 +38,22 @@ class PesananController extends Controller
                 ->orWhere('total_bayar', 'LIKE', "%$keyword%")
                 ->orWhere('catatan', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
+            if (!empty($dateStart)) {
+                $pesanan = Pesanan::where('waktu_pesan', 'LIKE', "%$keyword%")
+                    ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
+                    ->orWhere('tanggal', 'LIKE', "%$keyword%")
+                    ->orWhere('id', 'LIKE', "%$keyword%")
+                    ->orWhere('total_bayar', 'LIKE', "%$keyword%")
+                    ->orWhere('catatan', 'LIKE', "%$keyword%")
+                    ->orWhereBetween('created_at', [$dateStart, $dateEnd])
+                    ->latest()->paginate($perPage);
+            }
         } else {
             $pesanan = Pesanan::latest()->paginate($perPage);
+            if (!empty($dateStart)) {
+                $pesanan = Pesanan::whereBetween('created_at', [$dateStart, $dateEnd])
+                    ->latest()->paginate($perPage);
+            }
         }
 
         return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));

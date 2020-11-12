@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Pembayaran;
+use App\Models\Pesanan;
+use App\Models\StatusBayar;
+use App\Models\StatusPesanan;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -21,6 +24,8 @@ class PembayaranController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->get('search');
+        $dateStart = $request->get('start');
+        $dateEnd = $request->get('end');
         $perPage = 6;
 
         if (!empty($keyword)) {
@@ -28,11 +33,46 @@ class PembayaranController extends Controller
                 ->orWhere('status_pembayaran', 'LIKE', "%$keyword%")
                 ->orWhere('amount', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
+            if (!empty($dateStart)) {
+                $pembayaran = Pembayaran::where('metode_pembayaran', 'LIKE', "%$keyword%")
+                    ->orWhere('status_pembayaran', 'LIKE', "%$keyword%")
+                    ->orWhere('amount', 'LIKE', "%$keyword%")->orWhereBetween('created_at', [$dateStart, $dateEnd])
+                    ->latest()->paginate($perPage);
+            }
         } else {
             $pembayaran = Pembayaran::latest()->paginate($perPage);
+            if (!empty($dateStart)) {
+                $pembayaran = Pembayaran::whereBetween('created_at', [$dateStart, $dateEnd])
+                    ->latest()->paginate($perPage);
+            }
         }
 
-        return view('admin.pembayaran.index', compact('pembayaran'));
+        //widget
+        $pesanan = Pesanan::all();
+        $sudahBayarId = StatusBayar::where('status_bayar', 'sudah bayar')->first()->id;
+        $belumBayarId = StatusBayar::where('status_bayar', 'belum bayar')->first()->id;
+        $sudahBayar = $pesanan->filter(function ($pesanan) use ($sudahBayarId) {
+            return $pesanan->status_bayar_id == $sudahBayarId;
+        })->pluck('total_bayar')->toArray();
+        $belumBayar = $pesanan->filter(function ($pesanan) use ($belumBayarId) {
+            return $pesanan->status_bayar_id == $belumBayarId;
+        })->pluck('total_bayar')->toArray();
+        $pesananDibayar['jumlah'] = count($sudahBayar);
+        $pesananDibayar['total'] = array_sum($sudahBayar);
+        $pesananTertunda['jumlah'] = count($belumBayar);
+        $pesananTertunda['total'] = array_sum($belumBayar);
+
+        $eWallet = $pesanan->filter(function ($pesanan) {
+            return $pesanan->pembayaran->metode_pembayaran != 'QRIS';
+        })->pluck('id')->toArray();
+        $qrCode = $pesanan->filter(function ($pesanan){
+            return $pesanan->pembayaran->metode_pembayaran == 'QRIS';
+        })->pluck('id')->toArray();
+
+        $metodePembayaran['ewallet'] = count($eWallet);
+        $metodePembayaran['qr'] = count($qrCode);
+        $metodePembayaran['total_transaksi'] = count($pesanan);
+        return view('admin.pembayaran.index', compact('pembayaran'))->with(compact('pesananDibayar'))->with(compact('pesananTertunda'))->with(compact('metodePembayaran'));
     }
 
     /**

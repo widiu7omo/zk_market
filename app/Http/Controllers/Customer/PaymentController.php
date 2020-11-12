@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Events\PesananMasukEvent;
 use App\Http\Controllers\Controller;
 use App\Models\DetailPesanan;
 use App\Models\Pembayaran;
@@ -71,6 +72,11 @@ class PaymentController extends Controller
             $statusPembayaran = Pembayaran::create($dataPembayaran);
             $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
             DB::commit();
+            $dataDetailPesanan = new PesananMasukEvent(url('admin/pesanan/' . $pesananId));
+            //save to db if you willing
+            //Not yet implemented
+            //create event and broadcast to admin panel
+            event($dataDetailPesanan);
             session(['payment' => $statusPembayaran->id]);
             return redirect()->route('payment')->with('status', $status);
         }
@@ -94,6 +100,11 @@ class PaymentController extends Controller
             $statusPembayaran = Pembayaran::create($dataPembayaran);
             $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
             DB::commit();
+            $dataDetailPesanan = new PesananMasukEvent(url('admin/pesanan/' . $pesananId));
+            //save to db if you willing
+            //Not yet implemented
+            //create event and broadcast to admin panel
+            event($dataDetailPesanan);
             session(['payment' => $statusPembayaran->id]);
             return redirect()->route('payment')->with('status', $status);
         }
@@ -102,6 +113,7 @@ class PaymentController extends Controller
 
     public function pay(Request $request)
     {
+
         if ($request->pay_option == 'ovo' || $request->pay_option == 'linkaja') {
             if (!isset($request->nowallet)) {
                 return redirect('/checkout')->with('status', ['type' => 'danger', 'message' => 'Nomor telepon E-wallet tidak boleh kosong untuk pembayaran E-wallet']);
