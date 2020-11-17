@@ -147,8 +147,8 @@
                                     <td class="px-4 py-4 whitespace-no-wrap">
                                         <div class="text-sm text-gray-500">#{{$item->id}}</div>
                                         <div
-                                            class="text-sm uppercase font-bold">{{ $item->alamat->customer->nama}}</div>
-                                        <div class="text-sm font-italic">{{ $item->alamat->customer->no_hp}}</div>
+                                            class="text-sm uppercase font-bold">{{ $item->alamat->customer->nama ?? ''}}</div>
+                                        <div class="text-sm font-italic">{{ $item->alamat->customer->no_hp ?? ''}}</div>
                                     </td>
                                     <td class="px-4 py-4 whitespace-no-wrap text-sm uppercase leading-5 font-bold">{!! $item->pegawai->nama??'<span class="p-2 rounded-lg bg-red-500 text-white">Belum ditentukan</span>'!!} </td>
                                     <td class="px-4 py-4 whitespace-no-wrap text-sm">{{ $item->catatan == ''?'Tidak ada catatan':$item->catatan }}</td>
