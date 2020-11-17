@@ -25,7 +25,7 @@
                     </figcaption>
                 </figure>
             </section>
-            @if(isset($customer->no_hp) && $customer->no_hp == 'Belum di atur')
+            @if(isset($customer->no_hp) && $customer->no_hp == '-')
                 <div class="alert alert-warning rounded-0 alert-dismissible fade show mb-0" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

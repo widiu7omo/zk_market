@@ -18,6 +18,17 @@
                     <small>{{session('status')['message']}}</small>
                 </div>
             @endif
+            @if($nohp == '-')
+                <div class="alert alert-warning alert-dismissible rounded-0 fade show"
+                     role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Informasi</strong><br>
+                    <small>Bagi pelanggan yang mempunyai akun, untuk mengganti nomor handphone, silahkan edit melalui menu
+                        profil.</small>
+                </div>
+            @endif
             <section class="padding-top">
                 <h5 class="title-section">Data Pemesan</h5>
                 <div class="form-group px-3">
