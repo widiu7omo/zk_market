@@ -5,6 +5,7 @@
         <h5 class="title-header"> Keranjang </h5>
         <div class="header-right"></div>
     </header> <!-- section-header.// -->
+    @include('livewire.customer.components.alertbrowser')
     <main class="app-content">
         <section class="section-products padding-around">
             <h4>Keranjang Kosong</h4>
@@ -22,7 +23,6 @@
                     class="text"> Proses Pesanan </span>
                 <i data-eva="arrow-ios-forward" data-eva-fill="#fff"></i></a>
         </section>
-
     </main>
 </div>
 @push('script')

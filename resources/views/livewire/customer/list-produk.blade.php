@@ -11,7 +11,7 @@
     <div class="bg-primary padding-x padding-bottom">
         <h5 class="title-page text-white">{{ucfirst($category??'NULL')}}</h5>
     </div>
-
+    @include('livewire.customer.components.alertbrowser')
     <main class="app-content">
         <section class="padding-x mt-3 d-flex justify-content-center align-items-stretch">
             @if(count($products) == 0)

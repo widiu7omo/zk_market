@@ -3,7 +3,8 @@
     <main class="app-content">
 
         <div class="bg-primary padding-x padding-bottom">
-            <input type="text" placeholder="Mau pesan apa hari ini ?"
+            <input type="text"
+                   placeholder="{{isset(Auth::user()->name)? 'Hai, '.Auth::user()->name.' ':''}}Mau pesan apa hari ini ?"
                    onfocus="window.location.href='{{route('search')}}'" class="form-control input-dark border-0">
         </div>
         @include('livewire.customer.components.alertbrowser')

@@ -14,6 +14,7 @@
         <input type="text" autofocus id="input-search" placeholder="Search" class="form-control input-dark border-0"
                wire:model="search">
     </header> <!-- section-header.// -->
+    @include('livewire.customer.components.alertbrowser')
     <main class="app-content">
 
         <section class="padding-x">

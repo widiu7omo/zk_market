@@ -60,7 +60,7 @@
                                 <span
                                     class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"><img
                                         alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
-                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=random"/></span>
+                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name={{Auth::user()->name ?? 'ramd'}}"/></span>
                         </div>
                     </a>
                     <div
@@ -133,8 +133,12 @@
                                 <span
                                     class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"><img
                                         alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
-                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=random"/>
+                                        src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name={{Auth::user()->name ?? 'ramd'}}"/>
                                 </span>
+                            <div>
+                                <div class="font-bold uppercase ml-3 text-white">{{substr(Auth::user()->name,0,7) ?? 'ramd'}}</div>
+                                <div class="font-light ml-3 font-xs font-sm text-white">{{Auth::user()->roles[0]->name}}</div>
+                            </div>
                         </div>
                     </a>
                     <div

@@ -23,15 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/alertbrowser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Customer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zonakopi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zonakopi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,21 +243,7 @@
       <workItem from="1605135908474" duration="14907000" />
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
-      <workItem from="1606293200423" duration="5978000" />
-    </task>
-    <task id="LOCAL-00013" summary="Improve Homescreen &amp; SearchScreen">
-      <created>1604673571503</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1604673571503</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Recolor &amp; redesign Login screen">
-      <created>1604676714116</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1604676714116</updated>
+      <workItem from="1606293200423" duration="9099000" />
     </task>
     <task id="LOCAL-00015" summary="Tambahan List address dan Edit Profile">
       <created>1604703348328</created>
@@ -586,7 +574,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605623606610</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Notif untuk browser bukan chrome">
+      <created>1606302321553</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302321554</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Improve search untuk algolia">
+      <created>1606302352699</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1606302352700</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,8 +617,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tambah edit peta bisnis di pengaturan" />
-    <MESSAGE value="hapus tombol kembali di pengaturan index" />
     <MESSAGE value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
     <MESSAGE value="halaman customer, penambahan melihat transaksi dan alamat per customer" />
     <MESSAGE value="Halaman Customer" />
@@ -640,7 +640,9 @@
     <MESSAGE value="Handling error on pesanan" />
     <MESSAGE value="Add schematics" />
     <MESSAGE value="Alert untuk mengisi nomor hp di profil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alert untuk mengisi nomor hp di profil" />
+    <MESSAGE value="Notif untuk browser bukan chrome" />
+    <MESSAGE value="Improve search untuk algolia" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve search untuk algolia" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">

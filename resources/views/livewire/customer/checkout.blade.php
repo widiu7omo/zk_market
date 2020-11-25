@@ -5,6 +5,7 @@
         <h6 class="title-header"> Konfirmasi Pemesanan </h6>
         <div class="header-right"></div>
     </header> <!-- section-header.// -->
+    @include('livewire.customer.components.alertbrowser')
     <main class="app-content">
         <form action="{{route('pay')}}" id="form-checkout" method="POST">
             @csrf

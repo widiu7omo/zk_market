@@ -6,6 +6,7 @@
         <div class="header-right">
         </div>
     </header> <!-- section-header.// -->
+    @include('livewire.customer.components.alertbrowser')
     <main class="app-content">
         <section class="padding-top">
             <h5 class="title-section padding-x">Transaksi</h5>
