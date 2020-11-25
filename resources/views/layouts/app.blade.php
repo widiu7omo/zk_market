@@ -39,19 +39,19 @@
                 <li class="inline-block relative">
                     <a class="text-gray-600 block py-1 px-3" href="#"
                        onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>
-                    <div
-                        class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
-                        id="notification-dropdown" style="min-width: 12rem;">
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">8
-                            Notifications</a>
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">Bla
-                            bla</a>
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">Bloo
-                            Boooo</a>
-                    </div>
+                    {{--                                        <div--}}
+                    {{--                                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"--}}
+                    {{--                                            id="notification-dropdown" style="min-width: 12rem;">--}}
+                    {{--                                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                    {{--                                               href="#">8--}}
+                    {{--                                                Notifications</a>--}}
+                    {{--                                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                    {{--                                               href="#">Bla--}}
+                    {{--                                                bla</a>--}}
+                    {{--                                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                    {{--                                               href="#">Bloo--}}
+                    {{--                                                Boooo</a>--}}
+                    {{--                                        </div>--}}
                 </li>
                 <li class="inline-block relative">
                     <a class="text-gray-600 block" href="#"
@@ -66,13 +66,12 @@
                     <div
                         class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
                         id="user-responsive-dropdown" style="min-width: 12rem;">
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">Profile</a>
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">Settings</a>
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">About</a>
-                        <div class="h-0 my-2 border border-solid border-gray-200"></div>
+                        {{--                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                           href="#">Profile</a>--}}
+                        {{--                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                           href="#">Settings</a>--}}
+                        {{--                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                           href="#">About</a>--}}
                         <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                            href="{{ url('/logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
@@ -105,26 +104,30 @@
                                 class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded-lg text-base items-center justify-center w-8 pl-3 py-3">
                                 <i class="fas fa-search text-gray-600"></i>
                             </span>
-                        <input
-                            class="px-3 py-3 placeholder-gray-600 text-gray-700 shadow-inner relative focus:bg-gray-100 bg-gray-200 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
-                            placeholder="Search here..."
-                            type="text"/>
+                        <input id="search-desktop"
+                               class="px-3 py-3 placeholder-gray-600 text-gray-700 shadow-inner relative focus:bg-gray-100 bg-gray-200 rounded-lg text-sm outline-none focus:outline-none focus:shadow-outline w-full pl-10"
+                               placeholder="Cari menu disini..." onblur="showSearchCard()"
+                               type="text"/>
+                        <div
+                            class="hidden bg-white absolute top-12 text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
+                            id="search-dropdown" style="min-width: 12rem;width: 100%">
+                        </div>
                     </div>
                 </form>
                 {{-- Profile Panel--}}
                 <div class="flex-col md:flex-row list-none items-center hidden md:flex">
-{{--                    <div class="inline-block relative">--}}
-{{--                        <a class="text-white block py-1 px-3" href="javascript:void(0)"--}}
-{{--                           onclick="openDropdown(event,'notification-dropdown-desktop')"><i--}}
-{{--                                class="fas fa-bell text-xl"></i></a>--}}
-{{--                        <div--}}
-{{--                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"--}}
-{{--                            id="notification-dropdown-desktop" style="min-width: 12rem;">--}}
-{{--                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
-{{--                               href="#">8--}}
-{{--                                Notifications</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="inline-block relative">--}}
+                    {{--                        <a class="text-white block py-1 px-3" href="javascript:void(0)"--}}
+                    {{--                           onclick="openDropdown(event,'notification-dropdown-desktop')"><i--}}
+                    {{--                                class="fas fa-bell text-xl"></i></a>--}}
+                    {{--                        <div--}}
+                    {{--                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"--}}
+                    {{--                            id="notification-dropdown-desktop" style="min-width: 12rem;">--}}
+                    {{--                            <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                    {{--                               href="#">8--}}
+                    {{--                                Notifications</a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                     <a class="text-gray-600 block" href="#" onclick="openDropdown(event,'user-dropdown')">
                         <div class="items-center flex">
                                 <span
@@ -137,13 +140,12 @@
                     <div
                         class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
                         id="user-dropdown" style="min-width: 12rem;">
-                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                           href="#">Profile</a><a
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                            href="#">Settings</a><a
-                            class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-                            href="#">About</a>
-                        <div class="h-0 my-2 border border-solid border-gray-200"></div>
+                        {{--                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                           href="#">Profile</a><a--}}
+                        {{--                            class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                            href="#">Settings</a><a--}}
+                        {{--                            class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
+                        {{--                            href="#">About</a>--}}
                         <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                            href="{{ url('/logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
@@ -267,6 +269,39 @@
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ mix('js/manifest.js') }}"></script>
 <script src="{{ mix('js/vendor.js') }}"></script>
+<!-- for the search only version -->
+<script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+
+<script>
+    const algoClient = algoliasearch("V1TUEEFSS0", "0fd1fa55744e2731341dd06faf2df93f")
+    const index = algoClient.initIndex('zk_menu');
+    const searchDropDown = $('#search-dropdown');
+
+    $('#search-mobile,#search-desktop').on('input', function (e) {
+        searchDropDown.html(`<a class="text-sm py-2 px-4 font-bold font-normal text-center block w-full whitespace-no-wrap bg-transparent text-gray-800"
+                               href="#">Sedang mencari...</a>`).show();
+        index.search($(this).val()).then(function ({hits}) {
+            let htmlResult = hits.map(function (result) {
+                return `<a class="text-sm py-2 px-4 hover:bg-brown-lighter font-bold hover:shadow-md hover:text-white font-normal block uppercase w-full whitespace-no-wrap bg-transparent text-gray-800"
+                               href="{!! url('/') !!}${result.uri}">${result.menu}</a>`;
+            });
+            if (hits.length === 0) {
+                htmlResult = `<a class="text-sm py-2 px-4 font-bold font-normal text-center block w-full whitespace-no-wrap bg-transparent text-gray-800"
+                               href="#">Pencarian tidak ditemukan</a>`;
+            }
+            searchDropDown.html(htmlResult)
+        })
+    })
+
+    function showSearchCard() {
+        var hoveredChild = [];
+        searchDropDown.children('a').each(function (index, item) {
+            hoveredChild[index] = $(item).is(':hover');
+        })
+        $.inArray(true, hoveredChild) < 0 && searchDropDown.hide();
+    }
+</script>
+
 <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 <script>
 
