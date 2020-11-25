@@ -19,15 +19,6 @@
             </div>
         </div>
     </div>
-    <form class="mt-6 mb-4 md:hidden">
-        <div class="mb-3 pt-0">
-            <input
-                class="px-3 py-2 h-12 border border-solid border-gray-600 placeholder-gray-400 text-gray-700 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
-                placeholder="Search"
-                type="text"/>
-        </div>
-    </form>
-    <hr class="my-4 md:min-w-full"/>
     @php $routeName = request()->route()->getName()@endphp
     <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">

@@ -53,13 +53,16 @@ class MetodePembayaranController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'metode' => 'required',
-			'token' => 'required',
-			'api' => 'required',
-			'callback' => 'required'
-		]);
+            'metode' => 'required',
+            'desc' => 'required',
+            'file' => 'required',
+        ]);
         $requestData = $request->all();
-
+        if ($request->hasFile('file')) {
+            $name = time() . "-" . $request->file('file')->getClientOriginalName();
+            $request->file('file')->move(storage_path('app/public'), $name);
+            $requestData['icon'] = $name;
+        }
         MetodePembayaran::create($requestData);
 
         return redirect('admin/metode-pembayaran')->with('flash_message', 'MetodePembayaran added!');
@@ -68,7 +71,7 @@ class MetodePembayaranController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -82,7 +85,7 @@ class MetodePembayaranController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\View\View
      */
@@ -97,20 +100,22 @@ class MetodePembayaranController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'metode' => 'required',
-			'token' => 'required',
-			'api' => 'required',
-			'callback' => 'required'
-		]);
+            'metode' => 'required',
+            'desc' => 'required',
+        ]);
         $requestData = $request->all();
-
+        if ($request->hasFile('file')) {
+            $name = time() . "-" . $request->file('file')->getClientOriginalName();
+            $request->file('file')->move(storage_path('app/public'), $name);
+            $requestData['icon'] = $name;
+        }
         $metodepembayaran = MetodePembayaran::findOrFail($id);
         $metodepembayaran->update($requestData);
 
@@ -120,7 +125,7 @@ class MetodePembayaranController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -129,5 +134,19 @@ class MetodePembayaranController extends Controller
         MetodePembayaran::destroy($id);
 
         return redirect('admin/metode-pembayaran')->with('flash_message', 'MetodePembayaran deleted!');
+    }
+
+    public function aktif($id)
+    {
+        $metode = MetodePembayaran::findOrFail($id);
+        $metode->update(['status'=>'1']);
+        return redirect('admin/metode-pembayaran')->with('flash_message', 'MetodePembayaran updated!');
+    }
+
+    public function nonaktif($id)
+    {
+        $metode = MetodePembayaran::findOrFail($id);
+        $metode->update(['status'=>'0']);
+        return redirect('admin/metode-pembayaran')->with('flash_message', 'MetodePembayaran updated!');
     }
 }

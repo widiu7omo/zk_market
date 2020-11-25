@@ -16,10 +16,11 @@ class CreateMetodePembayaransTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('metode')->nullable();
-            $table->string('token')->nullable();
-            $table->string('api')->nullable();
-            $table->string('callback')->nullable();
-            });
+            $table->text('desc')->nullable();
+            $table->string('kode')->nullable();
+            $table->text('icon')->nullable();
+            $table->enum('status',['0','1'])->default('1');
+        });
     }
 
     /**

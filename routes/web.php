@@ -58,6 +58,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('admin/pegawai', 'App\Http\Controllers\Admin\PegawaiController');
     Route::resource('admin/pengaturan', 'App\Http\Controllers\Admin\PengaturanController');
     Route::resource('admin/metode-pembayaran', 'App\Http\Controllers\Admin\MetodePembayaranController');
+    Route::get('admin/metode-pembayaran/{id}/aktif', 'App\Http\Controllers\Admin\MetodePembayaranController@aktif');
+    Route::get('admin/metode-pembayaran/{id}/nonaktif', 'App\Http\Controllers\Admin\MetodePembayaranController@nonaktif');
     Route::resource('admin/slider', 'App\Http\Controllers\Admin\SliderController')->names('admin.slider');
     Route::resource('admin/pegawai', 'App\Http\Controllers\Admin\PegawaiController');
     Route::resource('admin/customer', 'App\Http\Controllers\Admin\CustomerController');

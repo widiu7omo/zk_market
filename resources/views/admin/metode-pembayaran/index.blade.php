@@ -30,7 +30,7 @@
                                 </form>
                             </div>
                             <a class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
-                               href="{{ url('/admin/metode-pembayaran/create') }}">Add New MetodePembayaran</a>
+                               href="{{ url('/admin/metode-pembayaran/create') }}">Tambah Metode Pembayaran Baru</a>
                         </div>
                     </div>
                     <div
@@ -43,10 +43,13 @@
                                     Metode
                                 </th>
                                 <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
-                                    Token
+                                    Status
                                 </th>
                                 <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
-                                    Api
+                                    Deskripsi
+                                </th>
+                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                    Kode
                                 </th>
                             </tr>
                             </thead>
@@ -62,11 +65,11 @@
                                             class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
                                             id="options-dropdown-{{ $loop->iteration }}"
                                             style="min-width: 12rem;">
-                                            <a title="View MetodePembayaran"
+                                            <a title="View Metode Pembayaran"
                                                class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                href="{{ url('/admin/metode-pembayaran/' . $item->id) }}"><i
                                                     class="fas fa-info-circle"></i>&nbsp; View</a>
-                                            <a title="Edit MetodePembayaran"
+                                            <a title="Edit Metode Pembayaran"
                                                class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
                                                href="{{ url('/admin/metode-pembayaran/' . $item->id . '/edit') }}"><i
                                                     class="fas fa-pen"></i>&nbsp; Edit</a>
@@ -83,19 +86,22 @@
                                                 </button>
                                             </form>
                                             <div class="h-0 my-2 border border-solid border-gray-200"></div>
-                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                               href="#">Another
-                                                Operation</a>
+                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:text-white uppercase font-bold hover:bg-green-500 m-2 rounded text-gray-800"
+                                               href="{{ url('/admin/metode-pembayaran/' . $item->id . '/aktif') }}">Aktifkan</a>
+                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:text-white uppercase font-bold hover:bg-red-500 m-2 rounded text-gray-800"
+                                               href="{{ url('/admin/metode-pembayaran/' . $item->id . '/nonaktif') }}">Non
+                                                Aktifkan</a>
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->metode }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->token }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->api }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{!! $item->status == '0'?'<div class="p-2 bg-red-100 text-red-500 font-bold uppercase rounded-lg">Tidak Aktif</div>':'<div class="p-2 bg-green-100 text-green-500 font-bold uppercase rounded-lg">Aktif</div>'  !!}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->desc }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->kode == ''?'Tidak ada Kode':$item->kode }}</td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="3" class="p-4 text-center">Data Empty</td>
+                                    <td colspan="5" class="p-4 text-center">Data Empty</td>
                                 </tr>
                             @endforelse
                             </tbody>

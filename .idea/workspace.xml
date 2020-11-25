@@ -23,16 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MetodePembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MetodePembayaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-produk.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pegawai/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pegawai/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,21 +247,7 @@
       <workItem from="1605135908474" duration="14907000" />
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
-      <workItem from="1606293200423" duration="9099000" />
-    </task>
-    <task id="LOCAL-00015" summary="Tambahan List address dan Edit Profile">
-      <created>1604703348328</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1604703348328</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Autofill pemesan ketika user mempunyai akun">
-      <created>1604703697901</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1604703697902</updated>
+      <workItem from="1606293200423" duration="14338000" />
     </task>
     <task id="LOCAL-00017" summary="Add Ongkir">
       <created>1604709824685</created>
@@ -588,7 +578,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606302352700</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Penambahan peringantan untuk browser di halaman lain">
+      <created>1606342826877</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1606342826877</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer">
+      <created>1606342856573</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1606342856573</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,8 +621,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
-    <MESSAGE value="halaman customer, penambahan melihat transaksi dan alamat per customer" />
     <MESSAGE value="Halaman Customer" />
     <MESSAGE value="Fix View Pegawai" />
     <MESSAGE value="Add Ongkir" />
@@ -642,7 +644,9 @@
     <MESSAGE value="Alert untuk mengisi nomor hp di profil" />
     <MESSAGE value="Notif untuk browser bukan chrome" />
     <MESSAGE value="Improve search untuk algolia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve search untuk algolia" />
+    <MESSAGE value="Penambahan peringantan untuk browser di halaman lain" />
+    <MESSAGE value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -690,14 +694,16 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1920.987@0.23.1920.987" timestamp="1603935507915" />
-    <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1604714523016">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606346066776">
+      <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
-    <state x="517" y="169" width="770" height="668" key="find.popup" timestamp="1604968074950">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606346066776" />
+    <state x="517" y="170" width="815" height="662" key="find.popup" timestamp="1606343475936">
+      <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="517" y="169" width="770" height="668" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604968074950" />
+    <state x="517" y="170" width="815" height="662" key="find.popup/0.25.1920.978@0.25.1920.978" timestamp="1606343475936" />
     <state x="759" y="410" key="scopes" timestamp="1604801893906">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

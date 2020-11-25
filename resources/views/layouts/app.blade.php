@@ -37,8 +37,8 @@
             {{-- Notifications Panel--}}
             <ul class="md:hidden items-center flex flex-wrap list-none">
                 <li class="inline-block relative">
-                    <a class="text-gray-600 block py-1 px-3" href="#"
-                       onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>
+{{--                    <a class="text-gray-600 block py-1 px-3" href="#"--}}
+{{--                       onclick="openDropdown(event,'notification-dropdown')"><i class="fas fa-bell"></i></a>--}}
                     {{--                                        <div--}}
                     {{--                                            class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"--}}
                     {{--                                            id="notification-dropdown" style="min-width: 12rem;">--}}
@@ -72,6 +72,9 @@
                         {{--                           href="#">Settings</a>--}}
                         {{--                        <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
                         {{--                           href="#">About</a>--}}
+                        <a class="text-sm font-bold center py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
+                           href="#">Hai, {{Auth::user()->name ?? 'User'}}</a>
+                        <div class="h-0 my-2 border border-solid border-gray-200"></div>
                         <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                            href="{{ url('/logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
@@ -136,8 +139,10 @@
                                         src="https://ui-avatars.com/api/?background=0D8ABC&color=fff&name={{Auth::user()->name ?? 'ramd'}}"/>
                                 </span>
                             <div>
-                                <div class="font-bold uppercase ml-3 text-white">{{substr(Auth::user()->name,0,7) ?? 'ramd'}}</div>
-                                <div class="font-light ml-3 font-xs font-sm text-white">{{Auth::user()->roles[0]->name}}</div>
+                                <div
+                                    class="font-bold uppercase ml-3 text-white">{{substr(Auth::user()->name,0,7) ?? 'ramd'}}</div>
+                                <div
+                                    class="font-light ml-3 font-xs font-sm text-white">{{Auth::user()->roles[0]->name}}</div>
                             </div>
                         </div>
                     </a>
@@ -150,6 +155,9 @@
                         {{--                            href="#">Settings</a><a--}}
                         {{--                            class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"--}}
                         {{--                            href="#">About</a>--}}
+                        <a class="text-sm font-bold center py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
+                           href="#">Hai, {{Auth::user()->name ?? 'User'}}</a>
+                        <div class="h-0 my-2 border border-solid border-gray-200"></div>
                         <a class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
                            href="{{ url('/logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>

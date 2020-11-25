@@ -96,5 +96,10 @@
                href="{{route('pengaturan.index')}}"><i class="fas fa-dice-d6 mr-2 text-sm"></i>
                 General</a>
         </li>
+        <li class="items-center">
+            <a class="my-1 hover:shadow-md text-gray-800 hover:text-white rounded-lg px-4 {{$routeName==='metode-pembayaran.index'?'bg-brown-lighter':''}} hover:bg-brown-lighter text-xs uppercase py-3 font-bold block"
+               href="{{route('metode-pembayaran.index')}}"><i class="fas fa-money-bill-wave mr-2 text-sm"></i>
+                Metode Pembayaran</a>
+        </li>
     </ul>
 </div>
