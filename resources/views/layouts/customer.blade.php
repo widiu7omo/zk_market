@@ -57,6 +57,14 @@
 
 <script src="{{asset('vendor/snackbar/snackbar.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('vendor/jquery-plugin/jquery.number.min.js')}}"></script>
+<script src="{{asset('vendor/uaparser/ua-parser.min.js')}}"></script>
+<script>
+    const parser = new UAParser();
+    const browserName = parser.getBrowser().name;
+    if (browserName !== 'Chrome') {
+        $('#alert-browser').html(`<p class="m-0">Sangat direkomendasikan untuk menggunakan browser <strong>Google Chrome</strong> demi kelancaran bertransaksi.</p>`).show();
+    }
+</script>
 @livewireScripts
 <script type="text/javascript">
     /// some script

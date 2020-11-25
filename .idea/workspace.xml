@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,7 +23,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/alertbrowser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/zonakopi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zonakopi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/components/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +167,7 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/mtolhuys/laravel-schematics" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jWxWEvqRkYo0zhHSpQ5ARQb7Wq" />
@@ -172,7 +184,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.4" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Pegawai" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -227,21 +239,9 @@
       <workItem from="1605049567595" duration="2415000" />
       <workItem from="1605054495008" duration="11842000" />
       <workItem from="1605135908474" duration="14907000" />
-      <workItem from="1605619824541" duration="457000" />
-    </task>
-    <task id="LOCAL-00011" summary="Fix Offline Route">
-      <created>1604660243522</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1604660243522</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Fix Profile and Route Admin">
-      <created>1604668020265</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1604668020265</updated>
+      <workItem from="1605619824541" duration="2420000" />
+      <workItem from="1606277066071" duration="1196000" />
+      <workItem from="1606293200423" duration="5978000" />
     </task>
     <task id="LOCAL-00013" summary="Improve Homescreen &amp; SearchScreen">
       <created>1604673571503</created>
@@ -572,7 +572,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605620104375</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Add schematics">
+      <created>1605620441282</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1605620441282</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Alert untuk mengisi nomor hp di profil">
+      <created>1605623606610</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1605623606610</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,8 +615,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="handling name not defined" />
-    <MESSAGE value="Add map on pengaturan" />
     <MESSAGE value="Tambah edit peta bisnis di pengaturan" />
     <MESSAGE value="hapus tombol kembali di pengaturan index" />
     <MESSAGE value="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan" />
@@ -626,7 +638,9 @@
     <MESSAGE value="Redesign Button Plus &amp; Minus Detail Produk" />
     <MESSAGE value="Add notifikasi untuk pesanan masuk" />
     <MESSAGE value="Handling error on pesanan" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handling error on pesanan" />
+    <MESSAGE value="Add schematics" />
+    <MESSAGE value="Alert untuk mengisi nomor hp di profil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alert untuk mengisi nomor hp di profil" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -665,10 +679,11 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605154545277">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="560" y="254" key="Vcs.Push.Dialog.v2" timestamp="1605623618932">
+      <screen x="0" y="25" width="1920" height="970" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
+    <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -685,9 +700,11 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="759" y="410" key="scopes/0.23.1920.987@0.23.1920.987" timestamp="1604801893906" />
-    <state x="624" y="240" width="670" height="676" key="search.everywhere.popup" timestamp="1604966571424">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="624" y="239" width="670" height="670" key="search.everywhere.popup" timestamp="1606301546760">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="624" y="240" width="670" height="676" key="search.everywhere.popup/0.23.1920.987@0.23.1920.987" timestamp="1604966571424" />
+    <state x="624" y="238" width="670" height="665" key="search.everywhere.popup/0.25.1920.970@0.25.1920.970" timestamp="1605623448332" />
+    <state x="624" y="239" width="670" height="670" key="search.everywhere.popup/0.25.1920.976@0.25.1920.976" timestamp="1606301546760" />
   </component>
 </project>

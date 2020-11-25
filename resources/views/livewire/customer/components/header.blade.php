@@ -9,5 +9,5 @@ z-index: 999;
         <div class="header-right">
             <a href="#" class="btn-header"> <i data-eva="question-mark-circle" data-eva-fill="#fff"></i> </a>
         </div>
-    </header> <!-- section-header.// -->
+    </header>
 </div>
