@@ -82,6 +82,23 @@ Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['customer'])->group(function(){
+//LiveWire Customer
+    Route::get('/homepage', Home::class)->name('homepage');
+    Route::get('/detail', DetailProduk::class)->name('detail');
+    Route::get('/list/{name}', ListProduk::class);
+    Route::get('/list-address', ListAddress::class)->name('list-address');
+    Route::get('/notfound', NotFound::class)->name('notfound');
+    Route::get('/search', Search::class)->name('search');
+    Route::get('/profile', Profile::class)->name('profile');
+    Route::get('/cart', Cart::class)->name('cart');
+    Route::get('/checkout', Checkout::class)->name('checkout');
+    Route::get('/address', Address::class)->name('address');
+    Route::get('/pick_address', PickAddress::class)->name('pick_address');
+    Route::get('/payment', Payment::class)->name('payment');
+    Route::get('/orders/{order?}', ListOrder::class);
+    Route::get('/detail_order/{id}', DetailOrder::class);
+});
 Route::post('/cart_products', [ProdukController::class, 'getDataProduk']);
 Route::post('/address', [AddressController::class, 'store'])->name('store_address');
 Route::delete('/address/{id}', [AddressController::class, 'destroy']);
@@ -95,19 +112,3 @@ Route::post('/webhooks/linkaja', [WebhooksController::class, 'linkaja']);
 Route::post('/webhooks/qris', [WebhooksController::class, 'qris']);
 Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
 Route::post('/profile/set', [UpdateProfileController::class, 'setProfile'])->name('updateprofile');
-
-//LiveWire Customer
-Route::get('/homepage', Home::class)->name('homepage');
-Route::get('/detail', DetailProduk::class)->name('detail');
-Route::get('/list/{name}', ListProduk::class);
-Route::get('/list-address', ListAddress::class)->name('list-address');
-Route::get('/notfound', NotFound::class)->name('notfound');
-Route::get('/search', Search::class)->name('search');
-Route::get('/profile', Profile::class)->name('profile');
-Route::get('/cart', Cart::class)->name('cart');
-Route::get('/checkout', Checkout::class)->name('checkout');
-Route::get('/address', Address::class)->name('address');
-Route::get('/pick_address', PickAddress::class)->name('pick_address');
-Route::get('/payment', Payment::class)->name('payment');
-Route::get('/orders/{order?}', ListOrder::class);
-Route::get('/detail_order/{id}', DetailOrder::class);
