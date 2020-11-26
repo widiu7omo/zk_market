@@ -134,37 +134,6 @@ class PembayaranController extends Controller
                         } else {
                             return 'Payment you choose are not in query';
                         }
-//                        switch (strtoupper($request->pay_option)) {
-//                            case 'OVO':
-//                                $params = [
-//                                    'external_id' => 'ewallet-ovo-' . time(),
-//                                    'amount' => $total,
-//                                    'phone' => str_replace('-', '', $request->nowallet),
-//                                    'ewallet_type' => 'OVO'
-//                                ];
-//                                return $this->paymentEwallet($params, $newPesananId);
-//                            case 'LINKAJA':
-//                                $params = [
-//                                    'external_id' => 'ewallet-linkaja-' . time(),
-//                                    'amount' => $total,
-//                                    'phone' => str_replace('-', '', $request->nowallet),
-//                                    'items' => $itemsDetail,
-//                                    'callback_url' => $this->linkAjaCallback,
-//                                    'redirect_url' => $this->linkAjaRedirect . '/' . $newPesananId,
-//                                    'ewallet_type' => 'LINKAJA'
-//                                ];
-//                                return $this->paymentEwallet($params, $newPesananId);
-//                            case 'QRIS':
-//                                $params = [
-//                                    'external_id' => 'qr-qris-' . time(),
-//                                    'amount' => $total,
-//                                    'type' => 'DYNAMIC',
-//                                    'callback_url' => $this->qrisCallback,
-//                                ];
-//                                return $this->paymentQRIS($params, $newPesananId);
-//                            default:
-//                                return 'Payment you choose are not in query';
-//                        }
                     }
                 }
             } catch (\Exception $e) {
