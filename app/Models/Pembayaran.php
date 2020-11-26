@@ -19,6 +19,7 @@ class Pembayaran extends Model
         'callback',
         'external_id',
         'pesanan_id',
+        'bukti',
         'status_expired',
         'qrstring'
     ];

@@ -44,6 +44,10 @@
                                 <td class="px-4 py-2 leading-snug"> {{ $metodepembayaran->metode }} </td>
                             </tr>
                             <tr>
+                                <th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Pemegang Rekening</th>
+                                <td class="px-4 py-2 leading-snug"> {{ $metodepembayaran->holder }} </td>
+                            </tr>
+                            <tr>
                                 <th class="w-3/12 border-r-2 font-bold tracking-wider uppercase"> Deskripsi</th>
                                 <td class="px-4 py-2 leading-snug"> {{ $metodepembayaran->desc }} </td>
                             </tr>

@@ -15,5 +15,6 @@ class VerifyCsrfToken extends Middleware
         '/webhooks/ovo',
         '/webhooks/linkaja',
         '/webhooks/qris',
+        '/upload'
     ];
 }

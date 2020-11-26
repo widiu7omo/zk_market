@@ -28,12 +28,12 @@
     <!-- custom style -->
     <link href="{{asset('css/mobile.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" type="text/css"/>
+    @stack('style')
     @livewireStyles
 
     <!-- custom javascript -->
     <script src="https://unpkg.com/eva-icons"></script>
     <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
-
 </head>
 <body>
 

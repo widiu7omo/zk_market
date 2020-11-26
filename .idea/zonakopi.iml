@@ -126,5 +126,7 @@
     <orderEntry type="library" name="font-awesome" level="application" />
     <orderEntry type="library" name="daterangepicker" level="application" />
     <orderEntry type="library" name="algoliasearch" level="application" />
+    <orderEntry type="library" name="uppy" level="application" />
+    <orderEntry type="library" name="id_ID" level="application" />
   </component>
 </module>

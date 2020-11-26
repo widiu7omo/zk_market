@@ -110,6 +110,7 @@ Route::get('/location-store', [AddressController::class, 'getLocationStore'])->n
 Route::get('/ongkir', [AddressController::class, 'getOngkir'])->name('ongkir');
 Route::post('/items', [CartController::class, 'retrieveItems']);
 Route::post('/pay', [PembayaranController::class, 'pay'])->name('pay');
+Route::post('/upload', [PembayaranController::class, 'uploadBuktiTransfer'])->name('upload');
 Route::post('/webhooks/ovo', [WebhooksController::class, 'ovo']);
 Route::post('/webhooks/linkaja', [WebhooksController::class, 'linkaja']);
 Route::post('/webhooks/qris', [WebhooksController::class, 'qris']);

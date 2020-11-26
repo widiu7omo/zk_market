@@ -39,16 +39,19 @@
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-2/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Metode
                                 </th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                    Holder
+                                </th>
+                                <th class="px-4 py-2 w-2/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Status
                                 </th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Deskripsi
                                 </th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-1/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Kode
                                 </th>
                             </tr>
@@ -95,8 +98,9 @@
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->metode }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->holder == ''?'Tidak ada holder':$item->holder }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{!! $item->status == '0'?'<div class="p-2 bg-red-100 text-red-500 font-bold uppercase rounded-lg">Tidak Aktif</div>':'<div class="p-2 bg-green-100 text-green-500 font-bold uppercase rounded-lg">Aktif</div>'  !!}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{{ $item->desc }}</td>
+                                    <td class="px-4 py-4">{{ $item->desc }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->kode == ''?'Tidak ada Kode':$item->kode }}</td>
                                 </tr>
                             @empty

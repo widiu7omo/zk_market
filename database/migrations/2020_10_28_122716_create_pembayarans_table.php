@@ -32,6 +32,7 @@ class CreatePembayaransTable extends Migration
             $table->string('callback', 255)->nullable();
             $table->string('status_expired', 255)->nullable();
             $table->text('qrstring')->nullable();
+            $table->text('bukti')->nullable();
             $table->string('external_id', 255)->nullable();
             $table->unsignedInteger('pesanan_id')->nullable();
             $table->foreign('pesanan_id')->references('id')->on('pesanans')->onUpdate('cascade')->onDelete('cascade');

@@ -17,6 +17,16 @@
     </label>
 </div>
 <div class="p-2 pt-0 w-full md:w-6/12">
+    <label for="kode" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Holder' }}
+        <input type="text" id="holder" name="holder" placeholder="Input nama pemegang rekening (Opsional)"
+               value="{{ isset($metodepembayaran->holder) ? $metodepembayaran->holder : ''}}"
+               class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('holder') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('holder') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out"/>
+
+        {!! $errors->first('kode', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}
+        <small class="font-normal mt-1 normal-case">Atas nama pemegang rekening. Hanya berlaku untuk bank. Bisa dikosongkan jika untuk metode pembayaran lain selain transfer.</small>
+    </label>
+</div>
+<div class="p-2 pt-0 w-full md:w-6/12">
     <label for="Deskripsi" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ '*Deskripsi' }}
         <textarea rows="4" required id="Deskripsi" name="desc"
                   class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('desc') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('desc') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out">{{ isset($metodepembayaran->desc) ? $metodepembayaran->desc : ''}}</textarea>

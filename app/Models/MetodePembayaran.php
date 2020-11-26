@@ -25,7 +25,7 @@ class MetodePembayaran extends Model
      *
      * @var array
      */
-    protected $fillable = ['metode', 'desc', 'kode','icon','status'];
+    protected $fillable = ['metode', 'desc', 'kode','icon','status','holder'];
 
 
 }

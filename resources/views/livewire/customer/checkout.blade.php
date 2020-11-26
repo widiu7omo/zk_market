@@ -140,7 +140,7 @@
                         success(res) {
                             var address = [];
                             address.push(`<small class="text-muted">${res.alamat_lengkap}</small>`);
-                            address.push(`<small class="text-muted mt-1">${res.rincian_alamat}</small>`);
+                            address.push(`<small class="text-muted mt-1">${res.rincian_alamat !== null ? res.rincian_alamat : ''}</small>`);
                             $('#container-selected-address').html(address.join(''));
                             $('#btn-address').text('Ganti')
                         }

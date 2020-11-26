@@ -19,6 +19,7 @@ class CreateMetodePembayaransTable extends Migration
             $table->text('desc')->nullable();
             $table->string('kode')->nullable();
             $table->text('icon')->nullable();
+            $table->text('holder')->nullable();
             $table->enum('status',['0','1'])->default('1');
         });
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{algoliasearch, daterangepicker, font-awesome}" />
+    <file url="PROJECT" libraries="{algoliasearch, daterangepicker, font-awesome, id_ID, uppy}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>

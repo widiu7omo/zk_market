@@ -30,7 +30,7 @@
                    data-eva-width="18px"
                    data-eva-fill="#B09685"></i>
                 <small>&nbsp;{{$dataOrder->alamat->alamat_lengkap}}</small><br>
-                <small>Keterangan : <br>{{$dataOrder->alamat->rincian_alamat}}</small>
+                <small>Keterangan : <br>{{$dataOrder->alamat->rincian_alamat != ''?$dataOrder->alamat->rincian_alamat:'Tidak ada keterangan'}}</small>
             </div>
         </section>
         <hr class="divider">

@@ -14,17 +14,22 @@ use App\Models\StatusPesanan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Xendit\Balance;
-use Xendit\EWallets;
-use Xendit\Exceptions\ApiException;
-use Xendit\QRCode;
-use Xendit\Xendit;
 
 class PembayaranController extends Controller
 {
 
     public function __construct()
     {
+    }
+
+    public function uploadBuktiTransfer(Request $request)
+    {
+        if (session('payment') && $request->hasFile('file')) {
+            $name = time() . "-" . $request->file('file')->getClientOriginalName();
+            $request->file('file')->move(storage_path('app/public'), $name);
+            $payment = Pembayaran::findOrFail(session('payment'));
+            $payment->update(['bukti' => $name]);
+        }
     }
 
     private function paymentTransfer($params, $pesananId)
@@ -36,7 +41,6 @@ class PembayaranController extends Controller
             'external_id' => $params['external_id'],
             'pesanan_id' => $pesananId
         ];
-//            dd($dataPembayaran);
         $statusPembayaran = Pembayaran::create($dataPembayaran);
         $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
         DB::commit();
