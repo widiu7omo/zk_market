@@ -113,10 +113,37 @@
                                                        value="{{$statusPembuatanId}}">
                                                 <button type="submit"
                                                         class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                                        title="Delete Pesanan"
+                                                        title="Proses Pembuatan"
+                                                        onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin kembali ke proses pemesanan ?','Yups :D')">
+                                                    <i class="fas fa-undo-alt"></i>&nbsp; Proses Pemesanan
+                                                </button>
+                                            </form>
+                                            <form method="POST"
+                                                  action="{{ url('/admin/pesanan/' . $item->id) }}"
+                                                  accept-charset="UTF-8">
+                                                {{ method_field('PATCH') }}
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="status_pesanan_id"
+                                                       value="{{$statusPembuatanId}}">
+                                                <button type="submit"
+                                                        class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                        title="Proses Pembuatan"
                                                         onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin melanjutkan ke proses pembuatan ?','Yups :D')">
-                                                    <i
-                                                        class="fas fa-sync-alt"></i>&nbsp; Proses Pembuatan
+                                                    <i class="fas fa-sync-alt"></i>&nbsp; Proses Pembuatan
+                                                </button>
+                                            </form>
+                                            <form method="POST"
+                                                  action="{{ url('/admin/pesanan/' . $item->id) }}"
+                                                  accept-charset="UTF-8">
+                                                {{ method_field('PATCH') }}
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="status_pesanan_id"
+                                                       value="{{$statusPengantaranId}}">
+                                                <button type="submit"
+                                                        class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                        title="Proses Pengantaran"
+                                                        onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin melakukan proses pengantaran oleh kurir ?','Antar Dong :D')">
+                                                    <i class="fas fa-people-carry"></i>&nbsp;Proses Pengantaran
                                                 </button>
                                             </form>
                                             <form method="POST"
@@ -128,10 +155,23 @@
                                                        value="{{$statusSelesaiId}}">
                                                 <button type="submit"
                                                         class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                                        title="Delete Pesanan"
+                                                        title="Pesanan Selesai"
                                                         onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin ingin menyelesaikan pemesanan ?','Selesai Kaka :D')">
-                                                    <i
-                                                        class="fas fa-check"></i>&nbsp; Pesanan Selesai
+                                                    <i class="fas fa-check"></i>&nbsp; Pesanan Selesai
+                                                </button>
+                                            </form>
+                                            <form method="POST"
+                                                  action="{{ url('/admin/pesanan/' . $item->id) }}"
+                                                  accept-charset="UTF-8">
+                                                {{ method_field('PATCH') }}
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="status_pesanan_id"
+                                                       value="{{$statusBatalId}}">
+                                                <button type="submit"
+                                                        class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
+                                                        title="Batalkan Pesanan"
+                                                        onclick="return confirmModal(this,'Konfirmasi','Apakah anda yakin ingin membatalkan pemesanan ?','Iya, Batal Kaka :D')">
+                                                    <i class="fas fa-trash"></i>&nbsp; Pesanan Batal
                                                 </button>
                                             </form>
                                         </div>
@@ -139,7 +179,14 @@
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="px-4 py-4 whitespace-no-wrap">
                                         <span
-                                            class="px-2 py-1 text-white text-sm shadow-lg font-bold  uppercase bg-brown rounded">{{ $item->status_pesanan->status_pesanan }}</span><br>
+                                            class="px-2 py-1 text-white text-sm shadow-lg font-bold  uppercase bg-{{
+                                                $item->status_pesanan->status_pesanan == 'pemesanan'?'brown':
+                                                    ($item->status_pesanan->status_pesanan == 'pembuatan'?'orange-400':
+                                                        ($item->status_pesanan->status_pesanan == 'pengantaran'?'blue-400':
+                                                            ($item->status_pesanan->status_pesanan == 'sampai'?'green-400':'red-400')
+                                                        )
+                                                    )
+                                                }} rounded">{{ $item->status_pesanan->status_pesanan }}</span><br>
                                         <small class="text-gray-500 text-sm">Pembayaran:</small><br>
                                         <span
                                             class="px-2 py-1 text-white text-sm shadow-lg font-bold  uppercase {{$item->status_bayar->status_bayar=='belum bayar'?'bg-red-500':'bg-green-500'}} rounded">{{ $item->status_bayar->status_bayar }}</span>

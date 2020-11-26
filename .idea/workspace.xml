@@ -23,27 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zonakopi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zonakopi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Pembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pembayaran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_122716_create_pembayarans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_28_122716_create_pembayarans_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/form.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,14 +248,8 @@
       <workItem from="1605135908474" duration="14907000" />
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
-      <workItem from="1606293200423" duration="24073000" />
-    </task>
-    <task id="LOCAL-00020" summary="Override Background grid color on profile">
-      <created>1604716189434</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1604716189434</updated>
+      <workItem from="1606293200423" duration="24293000" />
+      <workItem from="1606402328829" duration="3401000" />
     </task>
     <task id="LOCAL-00021" summary="Sticky Navbar">
       <created>1604716651635</created>
@@ -598,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606350176088</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Penambahan metode pembayaran transfer dan upload bukti transfer">
+      <created>1606361124687</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1606361124688</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +623,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Ongkir" />
     <MESSAGE value="Add admin middle ware and fix footer" />
     <MESSAGE value="Add Middleware for pegawai" />
     <MESSAGE value="Fix Route and add role on pegawai + migration" />
@@ -652,7 +647,8 @@
     <MESSAGE value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
     <MESSAGE value="Dinamis metode pembayaran" />
     <MESSAGE value="Ganti Payment gateway dengan metode pembayaran manual" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ganti Payment gateway dengan metode pembayaran manual" />
+    <MESSAGE value="Penambahan metode pembayaran transfer dan upload bukti transfer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Penambahan metode pembayaran transfer dan upload bukti transfer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -691,11 +687,12 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="254" key="Vcs.Push.Dialog.v2" timestamp="1605623618932">
-      <screen x="0" y="25" width="1920" height="970" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606361129848">
+      <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
     <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606361129848" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>

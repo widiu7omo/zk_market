@@ -33,7 +33,7 @@
 <div class="p-2 pt-0 w-full">
     <input
         class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-white font-bold"
-        type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+        type="submit" value="{{ 'Simpan' }}">
 </div>
 @push('style')
     <link rel="stylesheet" type="text/css"

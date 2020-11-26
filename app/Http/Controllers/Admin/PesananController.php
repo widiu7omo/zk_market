@@ -12,7 +12,11 @@ use App\Models\Pesanan;
 use App\Models\StatusBayar;
 use App\Models\StatusPesanan;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
+use Illuminate\Validation\ValidationException;
+use Illuminate\View\View;
 
 class PesananController extends Controller
 {
@@ -20,7 +24,7 @@ class PesananController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function index(Request $request)
     {
@@ -28,8 +32,11 @@ class PesananController extends Controller
         $dateStart = $request->get('start');
         $dateEnd = $request->get('end');
         $perPage = 6;
+        $statusPemesananId = StatusPesanan::whereStatusPesanan('pemesanan')->first()->id;
         $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
+        $statusPengantaranId = StatusPesanan::whereStatusPesanan('pengantaran')->first()->id;
         $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
+        $statusBatalId = StatusPesanan::whereStatusPesanan('batal')->first()->id;
         if (!empty($keyword)) {
             $pesanan = Pesanan::where('waktu_pesan', 'LIKE', "%$keyword%")
                 ->orWhere('waktu_sampai', 'LIKE', "%$keyword%")
@@ -56,13 +63,18 @@ class PesananController extends Controller
             }
         }
 
-        return view('admin.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusSelesaiId'));
+        return view('admin.pesanan.index', compact('pesanan'))
+            ->with(compact('statusPemesananId'))
+            ->with(compact('statusPembuatanId'))
+            ->with(compact('statusSelesaiId'))
+            ->with(compact('statusBatalId'))
+            ->with(compact('statusPengantaranId'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function create()
     {
@@ -73,9 +85,10 @@ class PesananController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
+     * @throws ValidationException
      */
     public function store(Request $request)
     {
@@ -141,7 +154,7 @@ class PesananController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function show($id)
     {
@@ -155,7 +168,7 @@ class PesananController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function edit($id)
     {
@@ -172,10 +185,10 @@ class PesananController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function update(Request $request, $id)
     {
@@ -200,7 +213,7 @@ class PesananController extends Controller
      *
      * @param int $id
      *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return RedirectResponse|Redirector
      */
     public function destroy($id)
     {

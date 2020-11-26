@@ -121,7 +121,7 @@
 <div class="p-2 pt-0 w-full">
     <input
         class="uppercase tracking-wide text-sm py-3 px-3 bg-brown-lighter hover:bg-brown-dark shadow-lg rounded-lg text-gray-100 font-bold"
-        type="submit" value="{{ $formMode === 'edit' ? 'Simpan' : 'Create' }}">
+        type="submit" value="{{ 'Simpan' }}">
 </div>
 @push('style')
     <link href="{{asset('vendor/snackbar/snackbar.min.css')}}" rel="stylesheet" type="text/css"/>
