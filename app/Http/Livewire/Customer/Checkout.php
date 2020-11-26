@@ -3,12 +3,14 @@
 namespace App\Http\Livewire\Customer;
 
 use App\Models\Customer;
+use App\Models\MetodePembayaran;
 use Livewire\Component;
 
 class Checkout extends Component
 {
     public $name;
     public $nohp;
+    public $pembayaran;
 
     public function mount()
     {
@@ -17,6 +19,7 @@ class Checkout extends Component
             $this->name = $customer->nama;
             $this->nohp = $customer->no_hp;
         }
+        $this->pembayaran = MetodePembayaran::whereStatus('1')->get();
     }
 
     public function render()

@@ -23,20 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MetodePembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MetodePembayaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_045025_create_metode_pembayarans_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/metode-pembayaran/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pegawai/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pegawai/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -247,14 +236,7 @@
       <workItem from="1605135908474" duration="14907000" />
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
-      <workItem from="1606293200423" duration="14338000" />
-    </task>
-    <task id="LOCAL-00017" summary="Add Ongkir">
-      <created>1604709824685</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1604709824685</updated>
+      <workItem from="1606293200423" duration="16257000" />
     </task>
     <task id="LOCAL-00018" summary="Change color snackbar action text and add ongkir on detail transaksi">
       <created>1604713617194</created>
@@ -592,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606342856573</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Dinamis metode pembayaran">
+      <created>1606348110024</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1606348110025</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +610,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Halaman Customer" />
     <MESSAGE value="Fix View Pegawai" />
     <MESSAGE value="Add Ongkir" />
     <MESSAGE value="Add admin middle ware and fix footer" />
@@ -646,7 +634,8 @@
     <MESSAGE value="Improve search untuk algolia" />
     <MESSAGE value="Penambahan peringantan untuk browser di halaman lain" />
     <MESSAGE value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
+    <MESSAGE value="Dinamis metode pembayaran" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dinamis metode pembayaran" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">

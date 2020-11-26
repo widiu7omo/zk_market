@@ -26,7 +26,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <strong>Informasi</strong><br>
-                    <small>Bagi pelanggan yang mempunyai akun, untuk mengganti nomor handphone, silahkan edit melalui menu
+                    <small>Bagi pelanggan yang mempunyai akun, untuk mengganti nomor handphone, silahkan edit melalui
+                        menu
                         profil.</small>
                 </div>
             @endif
@@ -73,37 +74,17 @@
                 </nav>
                 <div class="collapse" id="collapseExample">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <label class="custom-control custom-radio">
-                                <input type="radio" value="ovo" name="pay_option" class="custom-control-input">
-                                <span class="custom-control-label font-weight-bold">
-                                <img height="28px" src="{{asset('images/ovo.svg')}}" alt="OVO"> &nbsp;OVO </span>
-                            </label>
-                        </li>
-                        <li class="list-group-item">
-                            <label class="custom-control custom-radio">
-                                <input type="radio" value="linkaja" name="pay_option" class="custom-control-input">
-                                <span class="custom-control-label font-weight-bold"><img height="28px"
-                                                                                         src="{{asset('images/linkaja.svg')}}"
-                                                                                         alt="LINKAJA"> &nbsp;LINKAJA </span>
-                            </label>
-                        </li>
-                        <li class="list-group-item">
-                            <label class="custom-control custom-radio">
-                                <input type="radio" value="qris" name="pay_option" class="custom-control-input">
-                                <span class="custom-control-label font-weight-bold"><img height="40px"
-                                                                                         src="{{asset('images/qris.png')}}"
-                                                                                         alt="QRIS"> &nbsp;Scan QRIS </span>
-                            </label>
-                        </li>
+                        @foreach($pembayaran ?? [] as $metode)
+                            <li class="list-group-item">
+                                <label class="custom-control custom-radio">
+                                    <input type="radio" value="{{$metode->metode}}" name="pay_option"
+                                           class="custom-control-input">
+                                    <span class="custom-control-label font-weight-bold">
+                                <img height="28px" src="{{asset('storage/'.$metode->icon)}}" alt="{{$metode->metode}}"> &nbsp;{{$metode->metode}} </span>
+                                </label>
+                            </li>
+                        @endforeach
                     </ul>
-                    <div id="addtional-payment" class="form-group px-3">
-                        <input type="text" id="nowallet" name="nowallet" data-mask="0000-0000-0000"
-                               class="form-control form-control-sm mt-2 mb-1" readonly
-                               placeholder="Nomor Telepon">
-                        <small class="text-muted text-justify">Pastikan nomor telepon yang anda masukkan sudah terdaftar
-                            pada dompet digital yang telah anda pilih</small>
-                    </div>
                     <div id="addtional-payment-qr" class="form-group px-3 mt-2" style="display: none">
                         <small class="text-muted text-justify font-weight-bold">Anda akan mendapatkan QR Code untuk
                             discan setelah
@@ -244,20 +225,9 @@
                         Snackbar.show({actionTextColor: '#B09685', text: 'Alamat belum di pilih'});
                         return false;
                     }
-                    console.log(payOption);
                     if (payOption === '') {
                         Snackbar.show({actionTextColor: '#B09685', text: 'Metode Pembayaran belum dipilih'});
                         return false;
-                    } else {
-                        if (payOption !== 'qris') {
-                            if ($('input[name="nowallet"]').val() === '') {
-                                Snackbar.show({
-                                    actionTextColor: '#B09685',
-                                    text: 'Untuk OVO dan LINKAJA Nomor Wallet tidak boleh kosong.'
-                                });
-                                return false;
-                            }
-                        }
                     }
                     return true;
                 }
@@ -265,7 +235,6 @@
             $(document).ready(function () {
                 if (localStorage.getItem('pemesan')) $('#pemesan').val(localStorage.getItem('pemesan'));
                 if (localStorage.getItem('nohppemesan')) $('#nohppemesan').val(localStorage.getItem('nohppemesan'));
-                if (localStorage.getItem('nowallet')) $('#nowallet').prop('readonly', false).val(localStorage.getItem('nowallet'));
                 if (localStorage.getItem('cart')) $('#cart').prop('readonly', false).val(localStorage.getItem('cart'));
                 if (localStorage.getItem('catatan')) $('#catatan').prop('readonly', false).val(localStorage.getItem('catatan'));
                 if (localStorage.getItem('pay_option')) {
@@ -275,7 +244,6 @@
                                 $('#addtional-payment').hide();
                                 $('#addtional-payment-qr').show();
                             } else {
-                                $('#nowallet').prop('readonly', false).prop('placeholder', 'Nomor Telepon');
                                 $('#addtional-payment').show();
                                 $('#addtional-payment-qr').hide();
                             }
@@ -295,8 +263,6 @@
             $(document).on('change', 'input[name="pay_option"]', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('name'), $(this).val());
                 if ($(this).val() !== 'qris') {
-                    var $selectedWallet = $(this).parent('label').text().replace(/ +?/g, '');
-                    $('#nowallet').prop('readonly', false).prop('placeholder', 'Nomor Telepon ' + $selectedWallet);
                     $('#addtional-payment').show();
                     $('#addtional-payment-qr').hide();
                 } else {
@@ -304,7 +270,7 @@
                     $('#addtional-payment-qr').show();
                 }
             })
-            $('input#pemesan,input#nohppemesan,input#nowallet,textarea#catatan').on('blur', function () {
+            $('input#pemesan,input#nohppemesan,textarea#catatan').on('blur', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('id'), $(this).val());
             });
             $('#proses_pesanan').on('click', function () {
