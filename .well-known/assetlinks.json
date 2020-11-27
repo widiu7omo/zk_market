@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "com.diocreation.zonakopi",
+        "sha256_cert_fingerprints": ["47:22:8C:8B:F9:76:FA:C7:A9:A9:96:BA:6C:1E:8A:4C:65:22:37:34:F6:1E:4B:67:3C:25:87:44:86:C9:8E:CA"] }
+}]
