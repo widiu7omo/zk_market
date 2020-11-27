@@ -53,7 +53,12 @@
                                             Pemesanan
                                         </th>
                                         <td class="px-4 py-2 leading-snug"><span
-                                                class="p-2 bg-brown uppercase rounded text-white font-bold">{{ $pesanan->status_pesanan->status_pesanan }}</span>
+                                                class="p-2 bg-{{$pesanan->status_pesanan->status_pesanan == 'pemesanan'?'brown':
+                                                    ($pesanan->status_pesanan->status_pesanan == 'pembuatan'?'orange-400':
+                                                        ($pesanan->status_pesanan->status_pesanan == 'pengantaran'?'blue-400':
+                                                            ($pesanan->status_pesanan->status_pesanan == 'sampai'?'green-400':'red-400')
+                                                        )
+                                                    )}} uppercase rounded text-white font-bold">{{ $pesanan->status_pesanan->status_pesanan }}</span>
                                         </td>
                                     </tr>
                                 </table>
@@ -90,7 +95,7 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Status Pembayaran
                                 </th>
                                 <td class="px-4 py-2 leading-snug"><span
-                                        class="p-2 font-bold uppercase text-white rounded {{ $pesanan->pembayaran->status_pembayaran == 'PENDING'?'bg-red-500':'bg-brown'}}">{{ $pesanan->pembayaran->status_pembayaran}}</span>
+                                        class="p-2 font-bold uppercase text-white rounded {{$pesanan->status_bayar->status_bayar=='belum bayar'?'bg-brown':($pesanan->status_bayar->status_bayar == 'gagal bayar'?'bg-red-500':'bg-green-500')}}">{{ $pesanan->pembayaran->status_pembayaran}}</span>
                                 </td>
                             </tr>
                             <tr>

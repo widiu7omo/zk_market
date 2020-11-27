@@ -31,6 +31,8 @@ class PesananController extends Controller
         $perPage = 6;
         $statusPembuatanId = StatusPesanan::whereStatusPesanan('pembuatan')->first()->id;
         $statusPengantaranId = StatusPesanan::whereStatusPesanan('pengantaran')->first()->id;
+        $statusSelesaiId = StatusPesanan::whereStatusPesanan('sampai')->first()->id;
+        $statusBatalId = StatusPesanan::whereStatusPesanan('batal')->first()->id;
 
         if (!empty($keyword)) {
             $pesanan = Pesanan::wherePegawaiId(Auth::user()->pegawai->id)->orWhere('waktu_pesan', 'LIKE', "%$keyword%")
@@ -44,7 +46,11 @@ class PesananController extends Controller
             $pesanan = Pesanan::wherePegawaiId(Auth::user()->pegawai->id)->paginate($perPage);
         }
 
-        return view('pegawai.pesanan.index', compact('pesanan'))->with(compact('statusPembuatanId'))->with(compact('statusPengantaranId'));
+        return view('pegawai.pesanan.index', compact('pesanan'))
+            ->with(compact('statusPembuatanId'))
+            ->with(compact('statusSelesaiId'))
+            ->with(compact('statusBatalId'))
+            ->with(compact('statusPengantaranId'));
     }
 
     /**

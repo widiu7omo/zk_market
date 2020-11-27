@@ -63,7 +63,12 @@
                                             Pemesanan
                                         </th>
                                         <td class="px-4 py-2 leading-snug"><span
-                                                class="p-2 bg-brown uppercase rounded text-white font-bold">{{ $pesanan->status_pesanan->status_pesanan }}</span>
+                                                class="p-2 bg-{{$pesanan->status_pesanan->status_pesanan == 'pemesanan'?'brown':
+                                                    ($pesanan->status_pesanan->status_pesanan == 'pembuatan'?'orange-400':
+                                                        ($pesanan->status_pesanan->status_pesanan == 'pengantaran'?'blue-400':
+                                                            ($pesanan->status_pesanan->status_pesanan == 'sampai'?'green-400':'red-400')
+                                                        )
+                                                    )}} uppercase rounded text-white font-bold">{{ $pesanan->status_pesanan->status_pesanan }}</span>
                                         </td>
                                     </tr>
                                 </table>
