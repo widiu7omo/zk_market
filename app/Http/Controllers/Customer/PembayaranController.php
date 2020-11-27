@@ -32,14 +32,15 @@ class PembayaranController extends Controller
         }
     }
 
-    private function paymentTransfer($params, $pesananId)
+    private function paymentTransfer($params, $pesananId, $metodeId)
     {
         $dataPembayaran = [
             'metode_pembayaran' => $params['metode'],
             'status_pembayaran' => 'PENDING',
             'amount' => $params['amount'],
             'external_id' => $params['external_id'],
-            'pesanan_id' => $pesananId
+            'pesanan_id' => $pesananId,
+            'metode_id' => $metodeId
         ];
         $statusPembayaran = Pembayaran::create($dataPembayaran);
         $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
@@ -52,12 +53,14 @@ class PembayaranController extends Controller
 
     private function paymentCOD($params, $pesananId)
     {
+        $metodePembayaran = MetodePembayaran::whereMetode('COD')->first();
         $dataPembayaran = [
             'metode_pembayaran' => "COD",
             'status_pembayaran' => 'PENDING',
             'amount' => $params['amount'],
             'external_id' => $params['external_id'],
-            'pesanan_id' => $pesananId
+            'pesanan_id' => $pesananId,
+            'metode_id' => $metodePembayaran->id
         ];
         $statusPembayaran = Pembayaran::create($dataPembayaran);
         $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
@@ -133,7 +136,7 @@ class PembayaranController extends Controller
                                     'amount' => $total,
                                     'metode' => $request->pay_option
                                 ];
-                                return $this->paymentTransfer($params, $newPesananId);
+                                return $this->paymentTransfer($params, $newPesananId, $request->metode_id);
                             }
                         } else {
                             return 'Payment you choose are not in query';

@@ -67,7 +67,9 @@
                                        class="btn btn-primary btn-sm btn-block mb-1">{{$isPaid?'Anda sudah mengupload bukti transfer':'Upload bukti transfer'}}</a>
                                 </div>
                                 <div class="d-flex justify-content-between px-3 mb-3 text-muted">
-                                    <small class="text-muted">Klik untuk memilih foto bukti transfer</small>
+                                    @if(!$isPaid)
+                                        <small class="text-muted">Klik untuk memilih foto bukti transfer</small>
+                                    @endif
                                 </div>
 
                             </div>

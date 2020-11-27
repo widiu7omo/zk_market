@@ -38,7 +38,7 @@
 </div>
 <div class="p-2 pt-0 w-full md:w-6/12">
     <label for="catatan" class="tracking-wide uppercase text-sm font-bold text-gray-900">{{ 'Catatan' }}
-        <textarea required type="text" id="catatan" name="catatan" placeholder="Input catatan"
+        <textarea type="text" id="catatan" name="catatan" placeholder="Input catatan"
                   class="px-3 py-3 mt-2 placeholder-gray-400 {{ $errors->has('catatan') ? 'text-red-700' : 'text-gray-700'}} relative bg-white rounded text-sm shadow focus:outline-none border-2 {{ $errors->has('catatan') ? 'border-red-600' : 'border-white'}} focus:border-transparent w-full transition duration-200 ease-in-out">{{ isset($pesanan->catatan) ? $pesanan->catatan : ''}}</textarea>
 
         {!! $errors->first('catatan', '<small class="normal-case font-normal text-red-600 leading-5">:message</small>') !!}

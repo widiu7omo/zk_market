@@ -100,7 +100,7 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Status Pembayaran
                                 </th>
                                 <td class="px-4 py-2 leading-snug"><span
-                                        class="p-2 font-bold uppercase text-white rounded {{ $pesanan->pembayaran->status_pembayaran == 'PENDING'?'bg-red-500':'bg-brown'}}">{{ $pesanan->pembayaran->status_pembayaran}}</span>
+                                        class="p-2 font-bold uppercase text-white rounded {{ $pesanan->status_bayar->status_bayar == 'belum bayar'?'bg-brown':($pesanan->status_bayar->status_bayar == 'gagal bayar'?'bg-red-500':'bg-green-500')}}">{{ $pesanan->status_bayar->status_bayar}}</span>
                                 </td>
                             </tr>
                             <tr>
@@ -110,6 +110,18 @@
                                 <td class="px-4 py-2 leading-snug font-bold">
                                     Rp. {{ number_format($pesanan->pembayaran->amount,0,',','.') }} </td>
                             </tr>
+                            @if($pesanan->pembayaran->bukti != null)
+                                <tr>
+                                    <th class="w-12/12 text-left mr-2 font-bold tracking-wider  uppercase">
+                                        Bukti Pembayaran
+                                    </th>
+                                    <td class="px-4 py-2 leading-snug font-bold">
+                                        <button class="p-2 bg-green-200 text-green-500 rounded font-bold uppercase"
+                                                id="btn-modal-bukti">Lihat Bukti Transfer
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endif
                         </table>
                     </div>
                     <div class="p-3 pb-0 text-sm font-bold text-gray-500 uppercase">Alamat Pengantaran</div>
@@ -205,4 +217,43 @@
                 </div>
             </div>
         </div>
+        @include('admin.pesanan.modal_bukti_pembayaran')
+        @push('script')
+            <script>
+                $(document).ready(function () {
+                    const modalSwitch = $('#modal-bukti');
+                    const btnModalBukti = $('#btn-modal-bukti');
+                    btnModalBukti.on('click', function () {
+                        modalSwitch.find('.container-bukti').html('<img src="{{asset('storage/'.$pesanan->pembayaran->bukti)}}" alt="{{$pesanan->pembayaran->bukti}}"/>')
+                        modalSwitch.toggleClass('hidden');
+                    })
+                    modalSwitch.find('.btn-cancel').on('click', function () {
+                        $.ajax({
+                            url: "{{url('admin/pembayaran/'.$pesanan->id)}}",
+                            method: 'POST',
+                            data: {
+                                _method: 'PATCH',
+                                status: 'gagal bayar'
+                            },
+                            success() {
+                                document.location.reload()
+                            }
+                        })
+                    })
+                    modalSwitch.find('.btn-ok').on('click', function () {
+                        $.ajax({
+                            url: "{{url('admin/pembayaran/'.$pesanan->id)}}",
+                            method: 'POST',
+                            data: {
+                                _method: 'PATCH',
+                                status: 'sudah bayar'
+                            },
+                            success() {
+                                document.location.reload()
+                            }
+                        })
+                    })
+                })
+            </script>
+    @endpush
 @endsection

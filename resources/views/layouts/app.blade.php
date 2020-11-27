@@ -285,6 +285,11 @@
 <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
 
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     const algoClient = algoliasearch("V1TUEEFSS0", "0fd1fa55744e2731341dd06faf2df93f")
     const index = algoClient.initIndex('zk_menu');
     const searchDropDown = $('#search-dropdown');

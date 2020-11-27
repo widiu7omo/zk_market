@@ -76,18 +76,30 @@
                     <ul class="list-group list-group-flush">
                         @foreach($pembayaran ?? [] as $metode)
                             <li class="list-group-item">
-                                <label class="custom-control custom-radio">
-                                    <input type="radio" value="{{$metode->metode}}" name="pay_option"
+                                <label
+                                    class="custom-control custom-radio d-flex align-items-center justify-content-start">
+                                    <input type="radio" value="{{$metode->metode}}-{{$metode->id}}" name="pay_method"
                                            class="custom-control-input">
+                                    <input type="hidden" name="pay_option" value="{{$metode->metode}}">
+                                    <input type="hidden" name="metode_id" value="{{$metode->id}}">
                                     <span class="custom-control-label font-weight-bold">
-                                <img height="28px" src="{{asset('storage/'.$metode->icon)}}" alt="{{$metode->metode}}"> &nbsp;{{$metode->metode}} </span>
+                                <img height="28px" class="mr-4" src="{{asset('storage/'.$metode->icon)}}"
+                                     alt="{{$metode->metode}}"></span>
+                                    @if($metode->metode !== 'COD')
+                                        <div class="row d-inline-block text-left">
+                                            <span class="text-left col-6">Atas Nama: </span>
+                                            <span class="col-6">{{$metode->holder}}</span>
+                                        </div>
+                                    @else
+                                        <span class="uppercase">Bayar ditempat</span>
+                                    @endif
                                 </label>
                             </li>
                         @endforeach
                     </ul>
-                    <div id="addtional-payment-qr" class="form-group px-3 mt-2" style="display: none">
-                        <small class="text-muted text-justify font-weight-bold">Anda akan mendapatkan QR Code untuk
-                            discan setelah
+                    <div class="form-group px-3 mt-2">
+                        <small class="text-muted text-justify font-weight-bold">Untuk pembayaran melalui bank, rekening
+                            akan muncul setelah
                             menekan tombol Proses Pembayaran</small>
                     </div>
                 </div>
@@ -182,7 +194,7 @@
                                            ${item.promosi === 1 ? ` <small class="title my-1">Promo <span class="float-right">- Rp. ${$.number((item.harga * itemsCart[item.id].count) - (item.harga_promo * itemsCart[item.id].count), 0, ',', '.')}</span></small>` : ''}`
                                 })
                                 checkoutHelper.retrieveOngkir(function () {
-                                    total = total + checkoutHelper.shippingFee;
+                                    total = total + parseFloat(checkoutHelper.shippingFee);
                                     $('#container-item').html(itemsHtml);
                                     $('#total-items').text(`Rp. ${$.number(total, 0, ',', '.')}`);
                                 });
@@ -216,7 +228,7 @@
                     $('#total-ongkir').text('Rp. ' + $.number(checkoutHelper.shippingFee, 0, ',', '.'));
                 },
                 validationCheckout() {
-                    const payOption = $('input[name="pay_option"]:checked').val();
+                    const payOption = $('input[name="pay_method"]:checked').val();
                     if ($('input[name="pemesan"]').val() === '' && $('input[name="nohppemesan"]').val() === '') {
                         Snackbar.show({actionTextColor: '#B09685', text: 'Data Pemesan tidak boleh kosong'});
                         return false;
@@ -237,9 +249,9 @@
                 if (localStorage.getItem('nohppemesan')) $('#nohppemesan').val(localStorage.getItem('nohppemesan'));
                 if (localStorage.getItem('cart')) $('#cart').prop('readonly', false).val(localStorage.getItem('cart'));
                 if (localStorage.getItem('catatan')) $('#catatan').prop('readonly', false).val(localStorage.getItem('catatan'));
-                if (localStorage.getItem('pay_option')) {
-                    $('input[name="pay_option"]').map(function (index, item) {
-                        if ($(item).val() === localStorage.getItem('pay_option')) {
+                if (localStorage.getItem('pay_method')) {
+                    $('input[name="pay_method"]').map(function (index, item) {
+                        if ($(item).val() === localStorage.getItem('pay_method')) {
                             if ($(item).val() === 'qris') {
                                 $('#addtional-payment').hide();
                                 $('#addtional-payment-qr').show();
@@ -260,7 +272,7 @@
 
             })
 
-            $(document).on('change', 'input[name="pay_option"]', function () {
+            $(document).on('change', 'input[name="pay_method"]', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('name'), $(this).val());
                 if ($(this).val() !== 'qris') {
                     $('#addtional-payment').show();

@@ -31,6 +31,10 @@
                             <strong>{{$order->metode_pembayaran}}</strong></small><small
                                     class="badge badge-pill badge-{{strtoupper($order->pesanan->status_bayar->status_bayar)=='BELUM BAYAR'|| strtoupper($order->pesanan->status_bayar->status_bayar)=='GAGAL BAYAR'?'danger':(strtoupper($order->pesanan->status_bayar->status_bayar)=='KEDALUWARSA'?'warning':'success')}}">{{strtoupper($order->pesanan->status_bayar->status_bayar)}}</small>
                         </span><br>
+                            @if($order->bukti !== null)
+                                <small class="text-muted"><i>Sudah upload bukti transfer, menunggu konfirmasi Pegawai.</i></small>
+                                <br>
+                            @endif
                             <small>Catatan: <br><span class="text-muted">{{$order->pesanan->catatan}}</span></small>
                         </label>
                     </div>

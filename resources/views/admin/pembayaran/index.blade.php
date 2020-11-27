@@ -87,18 +87,20 @@
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">{!! $item->metode_pembayaran == 'OVO'?'<img style="height:40px" src="'.asset('images/ovo.png').'"/>':($item->metode_pembayaran == 'LINKAJA'?'<img style="height:40px" src="'.asset('images/linkaja.png').'"/>':'<img style="height:60px" src="'.asset('images/qris.png').'"/>') !!}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4"><img style="height:40px"
+                                                                                  src="{{asset('storage/'.$item->metode->icon)}}"/>
+                                    </td>
                                     <td class="whitespace-no-wrap px-4 py-4">Pesanan #{{ $item->pesanan->id }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{$item->created_at->isoFormat('DD MMMM YYYY')}}</td>
                                     <td class="whitespace-no-wrap px-4 py-4"><span
-                                            class="p-2 text-white text-sm rounded-lg shadow-lg font-bold leading-5 {{ $item->status_pembayaran=='PENDING'?'bg-red-500':'bg-green-500' }}">{{ $item->status_pembayaran }}</span>
+                                            class="p-2 text-white text-sm rounded-lg shadow-lg font-bold leading-5 {{ $item->status_pembayaran=='PENDING'?'bg-brown':($item->status_pembayaran === 'SUCCESS'?'bg-green-500':'bg-red-500') }}">{{ $item->status_pembayaran }}</span>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4">
                                         Rp. {{ number_format($item->amount,0,',','.') }}</td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="p-4 text-center">Data Empty</td>
+                                    <td colspan="7" class="p-4 text-center">Data Empty</td>
                                 </tr>
                             @endforelse
                             </tbody>
@@ -156,50 +158,55 @@
                                         </p></div>
                                 </div>
                             </div>
-                            <div class="w-full px-4 mb-3">
-                                <div
-                                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-                                    <div class="flex-auto p-4">
-                                        <div class="flex flex-wrap">
-                                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
-                                                    class="text-gray-500 uppercase font-bold text-xs">E-wallet</h5><span
-                                                    class="font-semibold text-xl text-gray-800">{{$metodePembayaran['ewallet']}}</span>
+                            @if($metodePembayaran['total_transaksi'] !== 0)
+                                <div class="w-full px-4 mb-3">
+                                    <div
+                                        class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+                                        <div class="flex-auto p-4">
+                                            <div class="flex flex-wrap">
+                                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
+                                                        class="text-gray-500 uppercase font-bold text-xs">E-wallet</h5>
+                                                    <span
+                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['ewallet']}}</span>
+                                                </div>
+                                                <div class="relative w-auto pl-4 flex-initial">
+                                                    <div
+                                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
+                                                        <i class="fas fa-users"></i></div>
+                                                </div>
                                             </div>
-                                            <div class="relative w-auto pl-4 flex-initial">
-                                                <div
-                                                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
-                                                    <i class="fas fa-users"></i></div>
-                                            </div>
-                                        </div>
-                                        <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
-                                                    class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['ewallet']*100/$metodePembayaran['total_transaksi'])}}%</span><span
-                                                class="whitespace-no-wrap">Menggunakan pembayaran E-WALLET</span>
-                                        </p></div>
-                                </div>
-                            </div>
-                            <div class="w-full px-4 mb-3">
-                                <div
-                                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
-                                    <div class="flex-auto p-4">
-                                        <div class="flex flex-wrap">
-                                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
-                                                    class="text-gray-500 uppercase font-bold text-xs">QR Code</h5>
-                                                <span
-                                                    class="font-semibold text-xl text-gray-800">{{$metodePembayaran['qr']}}</span>
-                                            </div>
-                                            <div class="relative w-auto pl-4 flex-initial">
-                                                <div
-                                                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
-                                                    <i class="fas fa-percent"></i></div>
-                                            </div>
-                                        </div>
-                                        <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
-                                                    class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['qr']*100/$metodePembayaran['total_transaksi'])}}%</span><span
-                                                class="whitespace-no-wrap">Menggunakan pembayaran BARCODE</span>
-                                        </p>
+                                            <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
+                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['ewallet']*100/$metodePembayaran['total_transaksi'])}}%</span><span
+                                                    class="whitespace-no-wrap">Menggunakan pembayaran E-WALLET</span>
+                                            </p></div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+                            @if($metodePembayaran['qr'] !== 0)
+                                <div class="w-full px-4 mb-3">
+                                    <div
+                                        class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+                                        <div class="flex-auto p-4">
+                                            <div class="flex flex-wrap">
+                                                <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
+                                                        class="text-gray-500 uppercase font-bold text-xs">QR Code</h5>
+                                                    <span
+                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['qr']}}</span>
+                                                </div>
+                                                <div class="relative w-auto pl-4 flex-initial">
+                                                    <div
+                                                        class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
+                                                        <i class="fas fa-percent"></i></div>
+                                                </div>
+                                            </div>
+                                            <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
+                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['qr']*100/$metodePembayaran['total_transaksi'])}}%</span><span
+                                                    class="whitespace-no-wrap">Menggunakan pembayaran BARCODE</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

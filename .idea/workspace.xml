@@ -23,22 +23,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/modal_bukti_pembayaran.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PesananController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/alamat/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/alamat/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/bantuan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/bantuan/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/customer/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/detail-pesanan/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/kategori/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/kategori/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pegawai/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pengaturan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MetodePembayaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Pembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Pembayaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_28_122716_create_pembayarans_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_28_122716_create_pembayarans_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-bayar/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-bayar/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/status-pesanan/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/status-pesanan/form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pesanan/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/payment.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,14 +251,7 @@
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
       <workItem from="1606293200423" duration="24293000" />
-      <workItem from="1606402328829" duration="3401000" />
-    </task>
-    <task id="LOCAL-00021" summary="Sticky Navbar">
-      <created>1604716651635</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1604716651635</updated>
+      <workItem from="1606402328829" duration="11964000" />
     </task>
     <task id="LOCAL-00022" summary="Redesign Admin Layout">
       <created>1604805534949</created>
@@ -594,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606361124688</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Ganti update ke simpan &amp;&amp; add semua status pesanan di table operation">
+      <created>1606406152100</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1606406152100</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +625,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add admin middle ware and fix footer" />
     <MESSAGE value="Add Middleware for pegawai" />
     <MESSAGE value="Fix Route and add role on pegawai + migration" />
     <MESSAGE value="Add Slider on produk di pegawai" />
@@ -648,7 +649,8 @@
     <MESSAGE value="Dinamis metode pembayaran" />
     <MESSAGE value="Ganti Payment gateway dengan metode pembayaran manual" />
     <MESSAGE value="Penambahan metode pembayaran transfer dan upload bukti transfer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Penambahan metode pembayaran transfer dan upload bukti transfer" />
+    <MESSAGE value="Ganti update ke simpan &amp;&amp; add semua status pesanan di table operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ganti update ke simpan &amp;&amp; add semua status pesanan di table operation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -697,26 +699,26 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1920.987@0.23.1920.987" timestamp="1603935507915" />
-    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606358847130">
+    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606435674143">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
-    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606358847129" />
-    <state x="517" y="170" width="815" height="662" key="find.popup" timestamp="1606343475936">
+    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606435674143" />
+    <state x="517" y="170" width="815" height="662" key="find.popup" timestamp="1606443460667">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="517" y="169" width="770" height="668" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604968074950" />
-    <state x="517" y="170" width="815" height="662" key="find.popup/0.25.1920.978@0.25.1920.978" timestamp="1606343475936" />
+    <state x="517" y="170" width="815" height="662" key="find.popup/0.25.1920.978@0.25.1920.978" timestamp="1606443460667" />
     <state x="759" y="410" key="scopes" timestamp="1604801893906">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="759" y="410" key="scopes/0.23.1920.987@0.23.1920.987" timestamp="1604801893906" />
-    <state x="624" y="239" width="670" height="672" key="search.everywhere.popup" timestamp="1606359785480">
+    <state x="624" y="239" width="670" height="672" key="search.everywhere.popup" timestamp="1606437771552">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="624" y="240" width="670" height="676" key="search.everywhere.popup/0.23.1920.987@0.23.1920.987" timestamp="1604966571424" />
     <state x="624" y="238" width="670" height="665" key="search.everywhere.popup/0.25.1920.970@0.25.1920.970" timestamp="1605623448332" />
     <state x="624" y="239" width="670" height="670" key="search.everywhere.popup/0.25.1920.976@0.25.1920.976" timestamp="1606301546760" />
-    <state x="624" y="239" width="670" height="672" key="search.everywhere.popup/0.25.1920.978@0.25.1920.978" timestamp="1606359785480" />
+    <state x="624" y="239" width="670" height="672" key="search.everywhere.popup/0.25.1920.978@0.25.1920.978" timestamp="1606437771552" />
   </component>
 </project>

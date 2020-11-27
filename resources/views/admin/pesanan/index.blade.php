@@ -189,7 +189,7 @@
                                                 }} rounded">{{ $item->status_pesanan->status_pesanan }}</span><br>
                                         <small class="text-gray-500 text-sm">Pembayaran:</small><br>
                                         <span
-                                            class="px-2 py-1 text-white text-sm shadow-lg font-bold  uppercase {{$item->status_bayar->status_bayar=='belum bayar'?'bg-red-500':'bg-green-500'}} rounded">{{ $item->status_bayar->status_bayar }}</span>
+                                            class="px-2 py-1 text-white text-sm shadow-lg font-bold  uppercase {{$item->status_bayar->status_bayar=='belum bayar'?'bg-brown':($item->status_bayar->status_bayar == 'gagal bayar'?'bg-red-500':'bg-green-500')}} rounded">{{ $item->status_bayar->status_bayar }}</span>
                                     </td>
                                     <td class="px-4 py-4 whitespace-no-wrap">
                                         <div class="text-sm text-gray-500">#{{$item->id}}</div>

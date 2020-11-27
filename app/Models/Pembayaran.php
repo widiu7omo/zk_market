@@ -19,6 +19,7 @@ class Pembayaran extends Model
         'callback',
         'external_id',
         'pesanan_id',
+        'metode_id',
         'bukti',
         'status_expired',
         'qrstring'
@@ -26,6 +27,11 @@ class Pembayaran extends Model
 
     public function pesanan()
     {
-        return $this->belongsTo(Pesanan::class,'pesanan_id');
+        return $this->belongsTo(Pesanan::class, 'pesanan_id');
+    }
+
+    public function metode()
+    {
+        return $this->belongsTo(MetodePembayaran::class, 'metode_id');
     }
 }

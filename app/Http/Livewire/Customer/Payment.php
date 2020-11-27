@@ -17,7 +17,7 @@ class Payment extends Component
     {
         $this->payment = Pembayaran::findOrFail(session('payment'));
         $this->metode_pembayaran = MetodePembayaran::whereMetode($this->payment->metode_pembayaran)->first();
-        if ($this->metode_pembayaran->bukti !== '' || $this->metode_pembayaran->bukti !== null) {
+        if ($this->payment->bukti != null) {
             $this->isPaid = true;
         }
     }

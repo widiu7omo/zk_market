@@ -51,7 +51,7 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Status Pembayaran
                                 </th>
                                 <td class="px-4 py-2 leading-snug"><span
-                                        class="p-2 font-bold uppercase text-white rounded {{ $pembayaran->pesanan->pembayaran->status_pembayaran == 'PENDING'?'bg-red-500':'bg-brown'}}">{{ $pembayaran->pesanan->pembayaran->status_pembayaran}}</span>
+                                        class="p-2 font-bold uppercase text-white rounded {{ $pembayaran->pesanan->pembayaran->status_pembayaran == 'PENDING'?'bg-brown':($pembayaran->pesanan->pembayaran->status_pembayaran === 'FAILED'?'bg-red-500':'bg-green-500')}}">{{ $pembayaran->pesanan->pembayaran->status_pembayaran}}</span>
                                 </td>
                             </tr>
                             <tr>

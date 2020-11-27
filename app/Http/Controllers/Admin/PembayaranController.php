@@ -65,7 +65,7 @@ class PembayaranController extends Controller
         $eWallet = $pesanan->filter(function ($pesanan) {
             return $pesanan->pembayaran->metode_pembayaran != 'QRIS';
         })->pluck('id')->toArray();
-        $qrCode = $pesanan->filter(function ($pesanan){
+        $qrCode = $pesanan->filter(function ($pesanan) {
             return $pesanan->pembayaran->metode_pembayaran == 'QRIS';
         })->pluck('id')->toArray();
 
@@ -88,7 +88,7 @@ class PembayaranController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @return Response
      */
     public function store(Request $request)
@@ -123,13 +123,22 @@ class PembayaranController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param int $id
-     * @return Response
+     * @return void
      */
     public function update(Request $request, $id)
     {
-        //
+        if (isset($request->status)) {
+            $statusBayar = StatusBayar::whereStatusBayar($request->status)->first();
+            if ($statusBayar) {
+                $pesanan = Pesanan::whereId($id);
+                $dataPesanan = $pesanan->first();
+                $pesanan->update(['status_bayar_id' => $statusBayar->id]);
+                $statusPembayaran = $statusBayar->status_bayar === 'sudah bayar' ? 'SUCCESS' : 'FAILED';
+                Pembayaran::wherePesananId($dataPesanan->id)->update(['status_pembayaran' => $statusPembayaran]);
+            }
+        }
     }
 
     /**
@@ -138,7 +147,8 @@ class PembayaranController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public
+    function destroy($id)
     {
         //
     }

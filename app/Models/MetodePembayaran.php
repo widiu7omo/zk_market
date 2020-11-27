@@ -14,10 +14,10 @@ class MetodePembayaran extends Model
     protected $table = 'metode_pembayarans';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -25,7 +25,11 @@ class MetodePembayaran extends Model
      *
      * @var array
      */
-    protected $fillable = ['metode', 'desc', 'kode','icon','status','holder'];
+    protected $fillable = ['metode', 'desc', 'kode', 'icon', 'status', 'holder'];
 
+    public function pembayarans()
+    {
+        return $this->hasMany(Pembayaran::class);
+    }
 
 }

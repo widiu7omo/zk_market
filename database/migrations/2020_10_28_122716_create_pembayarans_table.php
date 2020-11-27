@@ -35,7 +35,9 @@ class CreatePembayaransTable extends Migration
             $table->text('bukti')->nullable();
             $table->string('external_id', 255)->nullable();
             $table->unsignedInteger('pesanan_id')->nullable();
+            $table->unsignedInteger('metode_id')->nullable();
             $table->foreign('pesanan_id')->references('id')->on('pesanans')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('metode_id')->references('id')->on('metode_pembayarans')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
