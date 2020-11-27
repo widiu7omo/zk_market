@@ -250,8 +250,10 @@
                 }
             }
             $(document).ready(function () {
+                @if(!$name)
                 if (localStorage.getItem('pemesan')) $('#pemesan').val(localStorage.getItem('pemesan'));
                 if (localStorage.getItem('nohppemesan')) $('#nohppemesan').val(localStorage.getItem('nohppemesan'));
+                @endif
                 if (localStorage.getItem('cart')) $('#cart').prop('readonly', false).val(localStorage.getItem('cart'));
                 if (localStorage.getItem('catatan')) $('#catatan').prop('readonly', false).val(localStorage.getItem('catatan'));
                 if (localStorage.getItem('pay_method')) {
@@ -274,7 +276,7 @@
                     checkoutHelper.retrieveAddress(localStorage.getItem('selected_address'))
                 }
                 if (localStorage.getItem('cart')) checkoutHelper.retrieveItems(localStorage.getItem('cart'))
-                if (localStorage.getItem('pay_option') && localStorage.getItem('metode_id')) checkoutHelper.setMethod(localStorage.getItem('metode_id'),localStorage.getItem('pay_option'))
+                if (localStorage.getItem('pay_option') && localStorage.getItem('metode_id')) checkoutHelper.setMethod(localStorage.getItem('metode_id'), localStorage.getItem('pay_option'))
                 if (localStorage.getItem('cart')) checkoutHelper.retrieveItems(localStorage.getItem('cart'))
 
             })
