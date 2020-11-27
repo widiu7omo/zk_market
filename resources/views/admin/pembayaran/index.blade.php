@@ -158,16 +158,16 @@
                                         </p></div>
                                 </div>
                             </div>
-                            @if($metodePembayaran['total_transaksi'] !== 0)
+                            @if($metodePembayaran['total_transaksi'] !== 0 && $metodePembayaran['transfer'])
                                 <div class="w-full px-4 mb-3">
                                     <div
                                         class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                                         <div class="flex-auto p-4">
                                             <div class="flex flex-wrap">
                                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
-                                                        class="text-gray-500 uppercase font-bold text-xs">E-wallet</h5>
+                                                        class="text-gray-500 uppercase font-bold text-xs">Pembayaran Transfer</h5>
                                                     <span
-                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['ewallet']}}</span>
+                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['transfer']}}</span>
                                                 </div>
                                                 <div class="relative w-auto pl-4 flex-initial">
                                                     <div
@@ -176,22 +176,22 @@
                                                 </div>
                                             </div>
                                             <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
-                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['ewallet']*100/$metodePembayaran['total_transaksi'])}}%</span><span
-                                                    class="whitespace-no-wrap">Menggunakan pembayaran E-WALLET</span>
+                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['transfer']*100/$metodePembayaran['total_transaksi'])}}%</span><span
+                                                    class="whitespace-no-wrap">Menggunakan pembayaran Transfer Bank</span>
                                             </p></div>
                                     </div>
                                 </div>
                             @endif
-                            @if($metodePembayaran['qr'] !== 0)
+                            @if($metodePembayaran['total_transaksi'] !== 0 && $metodePembayaran['cod'])
                                 <div class="w-full px-4 mb-3">
                                     <div
                                         class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                                         <div class="flex-auto p-4">
                                             <div class="flex flex-wrap">
                                                 <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
-                                                        class="text-gray-500 uppercase font-bold text-xs">QR Code</h5>
+                                                        class="text-gray-500 uppercase font-bold text-xs">Bayar ditempat</h5>
                                                     <span
-                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['qr']}}</span>
+                                                        class="font-semibold text-xl text-gray-800">{{$metodePembayaran['cod']}}</span>
                                                 </div>
                                                 <div class="relative w-auto pl-4 flex-initial">
                                                     <div
@@ -200,8 +200,8 @@
                                                 </div>
                                             </div>
                                             <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
-                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['qr']*100/$metodePembayaran['total_transaksi'])}}%</span><span
-                                                    class="whitespace-no-wrap">Menggunakan pembayaran BARCODE</span>
+                                                        class="fas fa-arrow-up"></i> {{(int)($metodePembayaran['cod']*100/$metodePembayaran['total_transaksi'])}}%</span><span
+                                                    class="whitespace-no-wrap">Menggunakan pembayaran COD</span>
                                             </p>
                                         </div>
                                     </div>

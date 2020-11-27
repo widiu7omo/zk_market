@@ -63,7 +63,7 @@ class PembayaranController extends Controller
             'metode_id' => $metodePembayaran->id
         ];
         $statusPembayaran = Pembayaran::create($dataPembayaran);
-        $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Silahkan melakukan pembayaran.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
+        $status = $statusPembayaran ? ['type' => 'success', 'message' => 'Transaksi berhasil dibuat, Sediakan uang pas ya untuk memudahkan kurir ^ ^.'] : ['type' => 'error', 'message' => 'Transaksi gagal dilaksanakan, Silahkan coba lagi.'];
         DB::commit();
         $dataDetailPesanan = new PesananMasukEvent(url('admin/pesanan/' . $pesananId));
         event($dataDetailPesanan);

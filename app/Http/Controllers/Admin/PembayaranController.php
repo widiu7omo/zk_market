@@ -51,26 +51,27 @@ class PembayaranController extends Controller
         $pesanan = Pesanan::all();
         $sudahBayarId = StatusBayar::where('status_bayar', 'sudah bayar')->first()->id;
         $belumBayarId = StatusBayar::where('status_bayar', 'belum bayar')->first()->id;
+
         $sudahBayar = $pesanan->filter(function ($pesanan) use ($sudahBayarId) {
             return $pesanan->status_bayar_id == $sudahBayarId;
         })->pluck('total_bayar')->toArray();
         $belumBayar = $pesanan->filter(function ($pesanan) use ($belumBayarId) {
             return $pesanan->status_bayar_id == $belumBayarId;
         })->pluck('total_bayar')->toArray();
+
         $pesananDibayar['jumlah'] = count($sudahBayar);
         $pesananDibayar['total'] = array_sum($sudahBayar);
         $pesananTertunda['jumlah'] = count($belumBayar);
         $pesananTertunda['total'] = array_sum($belumBayar);
 
-        $eWallet = $pesanan->filter(function ($pesanan) {
-            return $pesanan->pembayaran->metode_pembayaran != 'QRIS';
+        $transfer = $pesanan->filter(function ($pesanan) {
+            return $pesanan->pembayaran->metode_pembayaran != 'COD';
         })->pluck('id')->toArray();
-        $qrCode = $pesanan->filter(function ($pesanan) {
-            return $pesanan->pembayaran->metode_pembayaran == 'QRIS';
+        $cod = $pesanan->filter(function ($pesanan) {
+            return $pesanan->pembayaran->metode_pembayaran == 'COD';
         })->pluck('id')->toArray();
-
-        $metodePembayaran['ewallet'] = count($eWallet);
-        $metodePembayaran['qr'] = count($qrCode);
+        $metodePembayaran['transfer'] = count($transfer);
+        $metodePembayaran['cod'] = count($cod);
         $metodePembayaran['total_transaksi'] = count($pesanan);
         return view('admin.pembayaran.index', compact('pembayaran'))->with(compact('pesananDibayar'))->with(compact('pesananTertunda'))->with(compact('metodePembayaran'));
     }

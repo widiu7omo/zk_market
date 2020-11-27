@@ -78,10 +78,9 @@
                             <li class="list-group-item">
                                 <label
                                     class="custom-control custom-radio d-flex align-items-center justify-content-start">
-                                    <input type="radio" value="{{$metode->metode}}-{{$metode->id}}" name="pay_method"
+                                    <input type="radio" data-id="{{$metode->id}}" data-op="{{$metode->metode}}"
+                                           value="{{$metode->metode}}-{{$metode->id}}" name="pay_method"
                                            class="custom-control-input">
-                                    <input type="hidden" name="pay_option" value="{{$metode->metode}}">
-                                    <input type="hidden" name="metode_id" value="{{$metode->id}}">
                                     <span class="custom-control-label font-weight-bold">
                                 <img height="28px" class="mr-4" src="{{asset('storage/'.$metode->icon)}}"
                                      alt="{{$metode->metode}}"></span>
@@ -97,6 +96,8 @@
                             </li>
                         @endforeach
                     </ul>
+                    <input type="hidden" name="pay_option">
+                    <input type="hidden" name="metode_id">
                     <div class="form-group px-3 mt-2">
                         <small class="text-muted text-justify font-weight-bold">Untuk pembayaran melalui bank, rekening
                             akan muncul setelah
@@ -175,6 +176,10 @@
                             }
                         })
                     }
+                },
+                setMethod(id, op) {
+                    $('input[name="pay_option"]').val(op);
+                    $('input[name="metode_id"]').val(id);
                 },
                 retrieveItems(items) {
                     const itemsCart = JSON.parse(items);
@@ -269,18 +274,16 @@
                     checkoutHelper.retrieveAddress(localStorage.getItem('selected_address'))
                 }
                 if (localStorage.getItem('cart')) checkoutHelper.retrieveItems(localStorage.getItem('cart'))
+                if (localStorage.getItem('pay_option') && localStorage.getItem('metode_id')) checkoutHelper.setMethod(localStorage.getItem('metode_id'),localStorage.getItem('pay_option'))
+                if (localStorage.getItem('cart')) checkoutHelper.retrieveItems(localStorage.getItem('cart'))
 
             })
 
             $(document).on('change', 'input[name="pay_method"]', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('name'), $(this).val());
-                if ($(this).val() !== 'qris') {
-                    $('#addtional-payment').show();
-                    $('#addtional-payment-qr').hide();
-                } else {
-                    $('#addtional-payment').hide();
-                    $('#addtional-payment-qr').show();
-                }
+                checkoutHelper.saveLocalStorage('pay_option', $(this).data('op'));
+                checkoutHelper.saveLocalStorage('metode_id', $(this).data('id'));
+                checkoutHelper.setMethod($(this).data('id'), $(this).data('op'));
             })
             $('input#pemesan,input#nohppemesan,textarea#catatan').on('blur', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('id'), $(this).val());

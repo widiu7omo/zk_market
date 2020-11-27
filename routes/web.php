@@ -24,6 +24,7 @@ use App\Http\Livewire\Customer\PickAddress;
 use App\Http\Livewire\Customer\Profile;
 use App\Http\Livewire\Customer\Search;
 use App\Http\Livewire\Customer\UserProfile;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +39,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('homepage');
+    if (Auth::user() && (Auth::user()->hasRole('Pegawai') || Auth::user()->hasRole('Admin'))) {
+        return redirect()->route('dashboard');
+    } else {
+        return redirect()->route('homepage');
+    }
 });
 
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
@@ -85,7 +90,7 @@ Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['customer'])->group(function(){
+Route::middleware(['customer'])->group(function () {
 //LiveWire Customer
     Route::get('/homepage', Home::class)->name('homepage');
     Route::get('/detail', DetailProduk::class)->name('detail');
