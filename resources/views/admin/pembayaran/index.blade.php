@@ -121,7 +121,7 @@
                                             <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
                                                     class="text-gray-500 uppercase font-bold text-xs">Pembayaran
                                                     Tertunda</h5><span
-                                                    class="font-semibold text-xl text-gray-800">Rp. {{number_format($pesananDibayar['total'],0,',','.')}}</span>
+                                                    class="font-semibold text-xl text-gray-800">Rp. {{number_format($pesananTertunda['total'],0,',','.')}}</span>
                                             </div>
                                             <div class="relative w-auto pl-4 flex-initial">
                                                 <div
@@ -130,7 +130,7 @@
                                             </div>
                                         </div>
                                         <p class="text-sm text-gray-500 mt-4"><span class="text-green-500 mr-2"><i
-                                                    class="fas fa-arrow-up"></i> {{number_format($pesananDibayar['jumlah'],0,',','.')}}</span><span
+                                                    class="fas fa-arrow-up"></i> {{number_format($pesananTertunda['jumlah'],0,',','.')}}</span><span
                                                 class="whitespace-no-wrap">Pembayaran</span>
                                         </p></div>
                                 </div>
@@ -144,7 +144,7 @@
                                                     class="text-gray-500 uppercase font-bold text-xs">Transaksi
                                                     Selesai</h5>
                                                 <span
-                                                    class="font-semibold text-xl text-gray-800">Rp. {{number_format($pesananTertunda['total'],0,',','.')}}</span>
+                                                    class="font-semibold text-xl text-gray-800">Rp. {{number_format($pesananDibayar['total'],0,',','.')}}</span>
                                             </div>
                                             <div class="relative w-auto pl-4 flex-initial">
                                                 <div
@@ -153,7 +153,30 @@
                                             </div>
                                         </div>
                                         <p class="text-sm text-gray-500 mt-4"><span class="text-red-500 mr-2"><i
-                                                    class="fas fa-arrow-down"></i> {{number_format($pesananTertunda['jumlah'],0,',','.')}}</span><span
+                                                    class="fas fa-arrow-down"></i> {{number_format($pesananDibayar['jumlah'],0,',','.')}}</span><span
+                                                class="whitespace-no-wrap">Pembayaran</span>
+                                        </p></div>
+                                </div>
+                            </div>
+                            <div class="w-full px-4 mb-3">
+                                <div
+                                    class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
+                                    <div class="flex-auto p-4">
+                                        <div class="flex flex-wrap">
+                                            <div class="relative w-full pr-4 max-w-full flex-grow flex-1"><h5
+                                                    class="text-gray-500 uppercase font-bold text-xs">Transaksi
+                                                    Gagal</h5>
+                                                <span
+                                                    class="font-semibold text-xl text-gray-800">Rp. {{number_format($pesananGagal['total'],0,',','.')}}</span>
+                                            </div>
+                                            <div class="relative w-auto pl-4 flex-initial">
+                                                <div
+                                                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500">
+                                                    <i class="fas fa-chart-pie"></i></div>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-500 mt-4"><span class="text-red-500 mr-2"><i
+                                                    class="fas fa-arrow-down"></i> {{number_format($pesananGagal['jumlah'],0,',','.')}}</span><span
                                                 class="whitespace-no-wrap">Pembayaran</span>
                                         </p></div>
                                 </div>

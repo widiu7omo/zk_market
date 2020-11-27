@@ -25,10 +25,7 @@
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +236,7 @@
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
       <workItem from="1606293200423" duration="24293000" />
-      <workItem from="1606402328829" duration="17783000" />
-    </task>
-    <task id="LOCAL-00025" summary="Perbaikan layout login">
-      <created>1604833969913</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1604833969913</updated>
+      <workItem from="1606402328829" duration="18227000" />
     </task>
     <task id="LOCAL-00026" summary="Add rincian pemesanan on page pesanan">
       <created>1604837239043</created>
@@ -584,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606446012808</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Perbaikan menu COD">
+      <created>1606449592313</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1606449592313</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +610,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix redirect address from list-address page" />
     <MESSAGE value="Ganti link redirect linkaja" />
     <MESSAGE value="Webhooks for ovo" />
     <MESSAGE value="Add status bayar &amp;&amp; callback linkaja" />
@@ -638,7 +634,8 @@
     <MESSAGE value="Merubah alur pembayaran" />
     <MESSAGE value="Tambah Kontak Whatsapp" />
     <MESSAGE value="Tambah pesanan selesai dan batal untuk kurir" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tambah pesanan selesai dan batal untuk kurir" />
+    <MESSAGE value="Perbaikan menu COD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Perbaikan menu COD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
