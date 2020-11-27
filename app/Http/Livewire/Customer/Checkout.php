@@ -19,7 +19,7 @@ class Checkout extends Component
             $this->name = $customer->nama;
             $this->nohp = $customer->no_hp;
         }
-        $this->pembayaran = MetodePembayaran::whereStatus('1')->orderBy('metode')->get();
+        $this->pembayaran = MetodePembayaran::whereStatus('1')->orderBy('metode')->orderBy('holder')->get();
     }
 
     public function render()

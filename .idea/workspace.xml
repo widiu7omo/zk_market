@@ -19,12 +19,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Add Slider on produk di pegawai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Customer/Checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Customer/Checkout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,14 +241,7 @@
       <workItem from="1605619824541" duration="2420000" />
       <workItem from="1606277066071" duration="1196000" />
       <workItem from="1606293200423" duration="24293000" />
-      <workItem from="1606402328829" duration="19207000" />
-    </task>
-    <task id="LOCAL-00027" summary="Center Login form on mobile">
-      <created>1604838049769</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1604838049770</updated>
+      <workItem from="1606402328829" duration="20842000" />
     </task>
     <task id="LOCAL-00028" summary="Fix Missed Condition for promo">
       <created>1604844148015</created>
@@ -580,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606450103947</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Add Slider on produk di pegawai">
+      <created>1606452711196</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1606452711196</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +607,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -609,7 +627,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Webhooks for ovo" />
     <MESSAGE value="Add status bayar &amp;&amp; callback linkaja" />
     <MESSAGE value="Change status color on pembayaran orders" />
     <MESSAGE value="Tambah tooltip untuk memerintah user melakukan reload halaman" />
@@ -634,7 +651,8 @@
     <MESSAGE value="Tambah pesanan selesai dan batal untuk kurir" />
     <MESSAGE value="Perbaikan menu COD" />
     <MESSAGE value="Perbaikan Chart di pembayaran" />
-    <option name="LAST_COMMIT_MESSAGE" value="Perbaikan Chart di pembayaran" />
+    <MESSAGE value="Add Slider on produk di pegawai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Slider on produk di pegawai" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
@@ -646,10 +664,11 @@
     </state>
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604994518067" />
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.978@0.25.1920.978" timestamp="1606444489972" />
-    <state x="100" y="123" width="1720" height="787" key="DiffContextDialog" timestamp="1604714752195">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog" timestamp="1606452867646">
+      <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="100" y="123" width="1720" height="787" key="DiffContextDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714752195" />
+    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog/0.25.1920.978@0.25.1920.978" timestamp="1606452867646" />
     <state x="612" y="302" key="EditFileWatcherDialog" timestamp="1604748531582">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -674,12 +693,12 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606450187410">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606452857180">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
     <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606450187410" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606452857180" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
