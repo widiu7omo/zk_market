@@ -4,6 +4,8 @@
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Detail Transaksi #{{$dataOrder->id}} </h6>
         <div class="header-right">
+            <a href="https://wa.me/{{$nowa??0}}">
+                <i data-eva="phone-call" data-eva-fill="#fff"></i></a>
         </div>
     </header> <!-- section-header.// -->
     <main class="app-content">
@@ -30,7 +32,9 @@
                    data-eva-width="18px"
                    data-eva-fill="#B09685"></i>
                 <small>&nbsp;{{$dataOrder->alamat->alamat_lengkap}}</small><br>
-                <small>Keterangan : <br>{{$dataOrder->alamat->rincian_alamat != ''?$dataOrder->alamat->rincian_alamat:'Tidak ada keterangan'}}</small>
+                <small>Keterangan :
+                    <br>{{$dataOrder->alamat->rincian_alamat != ''?$dataOrder->alamat->rincian_alamat:'Tidak ada keterangan'}}
+                </small>
             </div>
         </section>
         <hr class="divider">

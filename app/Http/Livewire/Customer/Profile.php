@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Customer;
 
 use App\Models\Alamat;
 use App\Models\Customer;
+use App\Models\Pengaturan;
 use App\Models\Pesanan;
 use App\Models\StatusBayar;
 use App\Models\StatusPesanan;
@@ -23,9 +24,11 @@ class Profile extends Component
     public $name;
     public $email;
 
-
+    public $nowa;
     public function mount()
     {
+        $pengaturan = Pengaturan::first();
+        $this->nowa = str_replace('+', '', $pengaturan->no_wa);
         $addresses = Alamat::whereCustomerId(session('customer_id'))->pluck('id');
         if (session('customer_id')) {
             $this->customer = Customer::findOrFail(session('customer_id'));
