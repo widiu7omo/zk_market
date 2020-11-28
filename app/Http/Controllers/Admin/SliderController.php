@@ -135,4 +135,18 @@ class SliderController extends Controller
 
         return redirect('admin/slider')->with('flash_message', 'Slider deleted!');
     }
+
+    public function aktif($id)
+    {
+        $metode = Slider::findOrFail($id);
+        $metode->update(['status' => '1']);
+        return redirect('admin/slider')->with('flash_message', 'Slider aktif!');
+    }
+
+    public function nonaktif($id)
+    {
+        $metode = Slider::findOrFail($id);
+        $metode->update(['status' => '0']);
+        return redirect('admin/slider')->with('flash_message', 'Slider tidak aktif!');
+    }
 }

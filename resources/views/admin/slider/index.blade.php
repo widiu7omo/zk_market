@@ -39,7 +39,10 @@
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
-                                <th class="px-4 py-2 w-8/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-2/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                    Status
+                                </th>
+                                <th class="px-4 py-2 w-6/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Keterangan
                                 </th>
                                 <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
@@ -79,14 +82,19 @@
                                                 </button>
                                             </form>
                                             <div class="h-0 my-2 border border-solid border-gray-200"></div>
-                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:bg-gray-300 m-2 rounded text-gray-800"
-                                               href="#">Another
-                                                Operation</a>
+                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:text-white uppercase font-bold hover:bg-green-500 m-2 rounded text-gray-800"
+                                               href="{{ url('/admin/slider/' . $item->id . '/aktif') }}">Aktifkan</a>
+                                            <a class="text-sm py-2 px-4 font-normal block whitespace-no-wrap bg-transparent hover:text-white uppercase font-bold hover:bg-red-500 m-2 rounded text-gray-800"
+                                               href="{{ url('/admin/slider/' . $item->id . '/nonaktif') }}">Non
+                                                Aktifkan</a>
                                         </div>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
+                                    <td class="px-4 py-4"><span class="p-2 rounded-full {{ $item->status == 1?'bg-green-100 text-green-500':'bg-red-100 text-red-500' }} font-bold">{{ $item->status == 1?'Aktif':'Non Aktif' }}</span></td>
                                     <td class="px-4 py-4">{{ $item->keterangan }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4"><img class="rounded-lg" height="200px" src="{{ $item->url }}" alt="{{ $item->file }}"></td>
+                                    <td class="whitespace-no-wrap px-4 py-4"><img class="rounded-lg" height="200px"
+                                                                                  src="{{ $item->url }}"
+                                                                                  alt="{{ $item->file }}"></td>
                                 </tr>
                             @empty
                                 <tr>

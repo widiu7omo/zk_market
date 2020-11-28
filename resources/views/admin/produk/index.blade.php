@@ -33,13 +33,17 @@
                                href="{{ url('/admin/produk/create') }}">Tambah Produk Baru</a>
                         </div>
                     </div>
-                    <div class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
+                    <div
+                        class="m-4 flex-auto rounded-t-2xl rounded-2xl bg-gray-100 shadow overflow-x-scroll border-gray-700 sm:rounded-lg">
                         <table class="table-responsive rounded-2xl w-full">
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
                                 <th class="px-4 py-2 w-4/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Nama
+                                </th>
+                                <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                    Status
                                 </th>
                                 <th class="px-4 py-2 w-3/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Kategori
@@ -91,9 +95,14 @@
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->nama }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4 text-left"><span
+                                            class="p-2 rounded-full {{ $item->status == 1?'bg-green-100 text-green-500':'bg-red-100 text-red-500' }} font-bold">{{ $item->status == 1?'Tersedia':'Tidak Tersedia' }}</span>
+                                    </td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->kategori->kategori }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">Rp. {{ number_format($item->harga,0,',','.') }}</td>
-                                    <td class="whitespace-no-wrap px-4 py-4">Rp. {{ number_format($item->harga_promo,0,',','.') }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">
+                                        Rp. {{ number_format($item->harga,0,',','.') }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4">
+                                        Rp. {{ number_format($item->harga_promo,0,',','.') }}</td>
                                 </tr>
                             @empty
                                 <tr>

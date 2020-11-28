@@ -14,10 +14,10 @@ class Slider extends Model
     protected $table = 'sliders';
 
     /**
-    * The database primary key value.
-    *
-    * @var string
-    */
+     * The database primary key value.
+     *
+     * @var string
+     */
     protected $primaryKey = 'id';
 
     /**
@@ -25,7 +25,7 @@ class Slider extends Model
      *
      * @var array
      */
-    protected $fillable = ['keterangan', 'url', 'file'];
+    protected $fillable = ['keterangan', 'url', 'file', 'status'];
 
-    
+
 }

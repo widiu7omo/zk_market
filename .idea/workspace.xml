@@ -29,12 +29,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/customer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Slider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_045049_create_sliders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_045049_create_sliders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,14 +250,7 @@
       <workItem from="1606293200423" duration="24293000" />
       <workItem from="1606402328829" duration="24259000" />
       <workItem from="1606523180976" duration="2382000" />
-      <workItem from="1606539348567" duration="1661000" />
-    </task>
-    <task id="LOCAL-00036" summary="Tambah edit peta bisnis di pengaturan">
-      <created>1604969951126</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1604969951126</updated>
+      <workItem from="1606539348567" duration="3230000" />
     </task>
     <task id="LOCAL-00037" summary="hapus tombol kembali di pengaturan index">
       <created>1604970148344</created>
@@ -592,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606540953314</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Add table engine type">
+      <created>1606549159544</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1606549159545</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +636,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Redesign Button Plus &amp; Minus Detail Produk" />
     <MESSAGE value="Add notifikasi untuk pesanan masuk" />
     <MESSAGE value="Handling error on pesanan" />
     <MESSAGE value="Add schematics" />
@@ -658,23 +660,25 @@
     <MESSAGE value="Fix Edit On slider" />
     <MESSAGE value="Penambahan icon upload untuk kategori" />
     <MESSAGE value="View Icon on table" />
-    <option name="LAST_COMMIT_MESSAGE" value="View Icon on table" />
+    <MESSAGE value="Add table engine type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add table engine type" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.987@0.23.1920.987" timestamp="1604659760907" />
-    <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606444489972">
-      <screen x="0" y="25" width="1920" height="978" />
+    <state x="697" y="277" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606550340445">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604994518067" />
+    <state x="697" y="277" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550340445" />
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.978@0.25.1920.978" timestamp="1606444489972" />
-    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog" timestamp="1606452867646">
+    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog" timestamp="1606549208260">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="100" y="123" width="1720" height="787" key="DiffContextDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714752195" />
-    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog/0.25.1920.978@0.25.1920.978" timestamp="1606452867646" />
+    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog/0.25.1920.978@0.25.1920.978" timestamp="1606549208260" />
     <state x="612" y="302" key="EditFileWatcherDialog" timestamp="1604748531582">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
@@ -699,21 +703,22 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606540955749">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606549161730">
       <screen x="0" y="25" width="1920" height="978" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
     <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606540955749" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606549161730" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1606523419411" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1920.987@0.23.1920.987" timestamp="1603935507915" />
-    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606435674143">
-      <screen x="0" y="25" width="1920" height="978" />
+    <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1606550052372">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
+    <state x="1168" y="100" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550052372" />
     <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606435674143" />
     <state x="517" y="170" width="815" height="662" key="find.popup" timestamp="1606443460667">
       <screen x="0" y="25" width="1920" height="978" />

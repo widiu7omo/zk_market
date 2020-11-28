@@ -18,8 +18,9 @@ class CreateSlidersTable extends Migration
             $table->string('keterangan')->nullable();
             $table->string('url')->nullable();
             $table->text('file')->nullable();
+            $table->enum('status', ['0', '1'])->default('1');
             $table->engine = 'InnoDB';
-            });
+        });
     }
 
     /**
