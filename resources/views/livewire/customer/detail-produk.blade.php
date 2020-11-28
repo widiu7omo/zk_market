@@ -121,13 +121,15 @@
         <div>
             <div class="input-group input-spinner">
                 <div class="input-group-prepend">
-                    <button id="btn-rem" class="btn btn-light" style="font-size: 14px" type="button">
+                    <button id="btn-rem" class="btn btn-light {!! $product->status == '1'?'':'disabled' !!}"
+                            style="font-size: 14px" type="button">
                         <i data-eva-height="20" data-eva-width="20" data-eva="minus-circle" data-eva-fill="#969696"></i>
                     </button>
                 </div>
-                <input type="text" id="total-cart" class="form-control" value="1">
+                <input type="text" id="total-cart" readonly class="form-control" value="1">
                 <div class="input-group-append">
-                    <button id="btn-add" class="btn btn-light" style="font-size: 14px" type="button">
+                    <button id="btn-add" class="btn btn-light {!! $product->status == '1'?'':'disabled' !!}"
+                            style="font-size: 14px" type="button">
                         <i data-eva-height="20" data-eva-width="20" data-eva="plus-circle" data-eva-fill="#969696"></i>
                     </button>
                 </div>
