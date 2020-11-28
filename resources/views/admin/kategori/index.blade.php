@@ -39,8 +39,11 @@
                             <thead class="bg-gray-300 border-gray-400 border-0">
                             <tr>
                                 <th class="px-4 py-2 w-1/12 text-gray-500 text-left font-light" colspan="2">#</th>
-                                <th class="px-4 py-2 w-10/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                <th class="px-4 py-2 w-8/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
                                     Kategori
+                                </th>
+                                <th class="px-4 py-2 w-1/12 text-gray-500 text-left tracking-wider font-light uppercase text-sm">
+                                    Icon
                                 </th>
                             </tr>
                             </thead>
@@ -82,10 +85,13 @@
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4 text-center">{{ $loop->iteration }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{ $item->kategori }}</td>
+                                    <td class="whitespace-no-wrap px-4 py-4"><img
+                                            src="{{ asset('storage/'.$item->icon) }}" height="40px"
+                                            alt="{{ $item->icon }}"></td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="3" class="p-4 text-center">Data Empty</td>
+                                    <td colspan="4" class="p-4 text-center">Data Empty</td>
                                 </tr>
                             @endforelse
                             </tbody>
