@@ -66,19 +66,6 @@
                     <a href="#">{!! $product->status == '1'?'<span class="badge badge-pill badge-success">Tersedia</span>':'<span class="badge badge-pill badge-danger">Tidak Tersedia</span>' !!}</a>
                 </dd>
             </dl>
-            {{--            <dl class="dlist-align">--}}
-            {{--                <dt class="text-muted">Color</dt>--}}
-            {{--                <dd>Orange</dd>--}}
-            {{--            </dl>--}}
-            {{--            <dl class="dlist-align">--}}
-            {{--                <dt class="text-muted">Size</dt>--}}
-            {{--                <dd>120sm x 300sm</dd>--}}
-            {{--            </dl>--}}
-            {{--            <dl class="dlist-align">--}}
-            {{--                <dt class="text-muted">Material</dt>--}}
-            {{--                <dd>Cotton</dd>--}}
-            {{--            </dl>--}}
-
             <article class="mt-3">
                 <p>
                     {{$product->deskripsi}}
@@ -147,7 +134,7 @@
             </div>
         </div>
         <div class="flex-grow-1"><a href="javascript:void(0)" id="btn-add-cart" data-id="{{$product->id}}"
-                                    class="btn w-100 btn-primary"
+                                    class="btn w-100 btn-primary {!! $product->status == '1'?'':'disabled' !!}"
                                     style="font-size: 14px">Tambah ke
                 keranjang</a></div>
     </nav> <!-- nav-bottom -->
