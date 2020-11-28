@@ -43,7 +43,7 @@
     <script src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"></script>
     <script>
         var upload = new FileUploadWithPreview("myUniqueUploadId", {
-            presetFiles: {{isset($slider->url)?'['.$slider->url.']':'[]'}}
+            presetFiles: {!!isset($slider->url)?'["'.$slider->url.'"]':'[]' !!}
         });
     </script>
 @endpush
