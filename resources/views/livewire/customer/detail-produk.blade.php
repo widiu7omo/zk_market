@@ -81,34 +81,34 @@
             <a href="{{url('list/terlaris')}}" class="title-section-end">Lebih banyak...</a>
         </div>
         <section class="scroll-horizontal padding-x mb-4">
-            @foreach($related_products ?? [] as $product)
+            @foreach($related_products ?? [] as $prod)
                 <div class="item">
-                    <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
+                    <a href="{{route('detail',['product'=>encrypt($prod->id)])}}" class="product-sm">
                         <div class="img-wrap" style="position: relative;height: 100px"><img
-                                src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                                src="{{asset('storage/'.json_decode($prod->gambar)[0])}}">
                             <div style="position: absolute;top:3px;left: 3px;"
                                  class="d-flex justify-content-start align-items-center">
-                                @if($product->promosi == 1)
+                                @if($prod->promosi == 1)
                                     <div class="badge badge-danger">Promo</div>
                                 @endif
                             </div>
                         </div>
                         <div class="text-wrap position-relative">
                             <p class="title text-truncate" style="font-size: 13px">
-                                @if($product->baru == 1)
+                                @if($prod->baru == 1)
                                     <img style="height: 30px;top:-20px" class="position-absolute"
                                          src="{{asset('images/new-label.svg')}}" alt="new-label">
                                 @endif
-                                {{$product->nama??'NULL'}}</p>
-                            @if($product->promosi == 1)
+                                {{$prod->nama??'NULL'}}</p>
+                            @if($prod->promosi == 1)
                                 <div class="price font-weight-bold" style="font-size: 12px">
-                                    Rp. {{number_format($product->harga_promo??0,0,',','.')}}</div>
+                                    Rp. {{number_format($prod->harga_promo??0,0,',','.')}}</div>
                                 <div class="price-promo" style="font-size: 12px">
-                                    <del>Rp. {{number_format($product->harga??0,0,',','.')}}</del>
+                                    <del>Rp. {{number_format($prod->harga??0,0,',','.')}}</del>
                                 </div>
                             @else
                                 <div class="price font-weight-bold" style="font-size: 12px">
-                                    Rp. {{number_format($product->harga??0,0,',','.')}}</div>
+                                    Rp. {{number_format($prod->harga??0,0,',','.')}}</div>
                         @endif
                         <!-- price-wrap.// -->
                         </div>
@@ -135,7 +135,7 @@
         </div>
         <div class="flex-grow-1"><a href="javascript:void(0)" id="btn-add-cart" data-id="{{$product->id}}"
                                     class="btn w-100 btn-primary {!! $product->status == '1'?'':'disabled' !!}"
-                                    style="font-size: 14px">{!! $product->status == '1'?'<span class="badge badge-pill badge-success">Tersedia</span>':'<span class="badge badge-pill badge-danger">Tidak Tersedia</span>' !!} Tambah ke
+                                    style="font-size: 14px">Tambah ke
                 keranjang</a></div>
     </nav> <!-- nav-bottom -->
     @push('script')
