@@ -134,8 +134,8 @@
             </div>
         </div>
         <div class="flex-grow-1"><a href="javascript:void(0)" id="btn-add-cart" data-id="{{$product->id}}"
-                                    class="btn w-100 btn-primary {!! $product->status == '0'?'disabled':null !!}"
-                                    style="font-size: 14px">Tambah ke
+                                    class="btn w-100 btn-primary {!! $product->status == '1'?'':'disabled' !!}"
+                                    style="font-size: 14px">{!! $product->status == '1'?'<span class="badge badge-pill badge-success">Tersedia</span>':'<span class="badge badge-pill badge-danger">Tidak Tersedia</span>' !!} Tambah ke
                 keranjang</a></div>
     </nav> <!-- nav-bottom -->
     @push('script')
