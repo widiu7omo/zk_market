@@ -26,6 +26,7 @@ class CreateProduksTable extends Migration
             $table->integer('baru')->nullable();
             $table->integer('status')->nullable();
             $table->foreign('kategori_id')->references('id')->on('kategoris')->onDelete('cascade')->onUpdate('cascade');
+            $table->engine = 'InnoDB';
         });
     }
 

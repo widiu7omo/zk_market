@@ -337,7 +337,7 @@
         setTimeout(function () {
             $('#toast-notification').addClass('hidden');
             $('#toast-component').removeClass('opacity-100').addClass('opacity-0');
-        }, 5000);
+        }, 10000);
     });
 </script>
 <script>

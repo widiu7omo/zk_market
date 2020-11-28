@@ -250,7 +250,7 @@
                 }
             }
             $(document).ready(function () {
-                @if(!$name)
+                @if(!$name && !Auth::user())
                 if (localStorage.getItem('pemesan')) $('#pemesan').val(localStorage.getItem('pemesan'));
                 if (localStorage.getItem('nohppemesan')) $('#nohppemesan').val(localStorage.getItem('nohppemesan'));
                 @endif

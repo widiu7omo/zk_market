@@ -17,6 +17,7 @@ class AddSocialLoginField extends Migration
             $table->string('social_id')->nullable();
             $table->string('social_type')->nullable();
             $table->text('avatar')->nullable();
+            $table->engine = 'InnoDB';
         });
     }
 

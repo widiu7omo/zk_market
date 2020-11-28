@@ -24,6 +24,7 @@ class CreatePengaturansTable extends Migration
             $table->string('lat')->nullable();
             $table->string('long')->nullable();
             $table->string('google_api')->nullable();
+            $table->engine = 'InnoDB';
             });
     }
 

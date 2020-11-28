@@ -72,11 +72,11 @@ class PembayaranController extends Controller
         $pesananGagal['total'] = array_sum($gagalBayar);
 
         $transfer = $pesanan->filter(function ($pesanan) {
-            return $pesanan->pembayaran->metode_pembayaran != 'COD';
+            return $pesanan->pembayaran->metode->metode != 'COD';
         })->pluck('id')->toArray();
 
         $cod = $pesanan->filter(function ($pesanan) {
-            return $pesanan->pembayaran->metode_pembayaran == 'COD';
+            return $pesanan->pembayaran->metode->metode == 'COD';
         })->pluck('id')->toArray();
 
         $metodePembayaran['transfer'] = count($transfer);

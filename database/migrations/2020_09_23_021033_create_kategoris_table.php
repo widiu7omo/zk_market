@@ -17,6 +17,7 @@ class CreateKategorisTable extends Migration
             $table->timestamps();
             $table->string('kategori')->nullable();
             $table->string('icon')->nullable();
+            $table->engine = 'InnoDB';
         });
     }
 

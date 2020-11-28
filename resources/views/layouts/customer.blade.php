@@ -61,6 +61,7 @@
 <script>
     const parser = new UAParser();
     const browserName = parser.getBrowser().name;
+    console.log(browserName)
     if (browserName !== 'Chrome') {
         $('#alert-browser').html(`<p class="m-0">Sangat direkomendasikan untuk menggunakan browser <strong>Google Chrome</strong> demi kelancaran bertransaksi.</p>`).show();
     }

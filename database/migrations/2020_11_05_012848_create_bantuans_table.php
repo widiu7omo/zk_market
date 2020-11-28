@@ -18,7 +18,8 @@ class CreateBantuansTable extends Migration
             $table->string('topic')->nullable();
             $table->string('title')->nullable();
             $table->string('content')->nullable();
-            });
+            $table->engine = 'InnoDB';
+        });
     }
 
     /**

@@ -28,6 +28,7 @@ class CreatePesanansTable extends Migration
             $table->integer('status_bayar_id')->unsigned();
             $table->foreign('status_pesanan_id')->references('id')->on('status_pesanans')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('status_bayar_id')->references('id')->on('status_bayars')->onDelete('cascade')->onUpdate('cascade');
+            $table->engine = 'InnoDB';
         });
     }
 

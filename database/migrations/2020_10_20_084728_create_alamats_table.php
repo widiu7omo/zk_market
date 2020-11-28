@@ -21,6 +21,7 @@ class CreateAlamatsTable extends Migration
             $table->string('long')->nullable();
             $table->integer('customer_id')->unsigned();
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade')->onUpdate('cascade');
+            $table->engine = 'InnoDB';
             });
     }
 

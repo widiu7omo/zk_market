@@ -16,6 +16,7 @@ class CreateStatusBayarsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('status_bayar')->nullable();
+            $table->engine = 'InnoDB';
             });
     }
 

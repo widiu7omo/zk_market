@@ -16,6 +16,7 @@ class CreateStatusPesanansTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('status_pesanan')->nullable();
+            $table->engine = 'InnoDB';
             });
     }
 

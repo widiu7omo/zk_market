@@ -21,6 +21,7 @@ class CreateMetodePembayaransTable extends Migration
             $table->text('icon')->nullable();
             $table->text('holder')->nullable();
             $table->enum('status',['0','1'])->default('1');
+            $table->engine = 'InnoDB';
         });
     }
 

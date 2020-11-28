@@ -106,8 +106,8 @@
                             <small class="title">Nama Akun</small>
                             <span class="text text-uppercase">{{Auth::user()->name}}</span>
                         </a>
-                        <a class="btn-list" href="#" id="email">
-                            <i class="icon-action fa fa-pen"></i>
+                        <a class="btn-list" href="javascript:void(0)">
+{{--                            <i class="icon-action fa fa-pen"></i>--}}
                             <small class="title">Email</small>
                             <span class="text">{{Auth::user()->email}}</span>
                         </a>
@@ -190,12 +190,6 @@
                         modalLabel.text('Edit Nama Akun');
                         name.show().val(currentValue);
                         email.hide();
-                        nohp.hide();
-                        break;
-                    case 'email':
-                        modalLabel.text('Edit E-Mail');
-                        name.hide();
-                        email.show().val(currentValue);
                         nohp.hide();
                         break;
                     case 'nohp':

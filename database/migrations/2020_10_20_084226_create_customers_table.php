@@ -19,6 +19,7 @@ class CreateCustomersTable extends Migration
             $table->string('no_hp')->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->engine = 'InnoDB';
         });
     }
 

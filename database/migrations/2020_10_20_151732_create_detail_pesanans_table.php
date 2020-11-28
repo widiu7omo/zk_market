@@ -21,6 +21,7 @@ class CreateDetailPesanansTable extends Migration
             $table->string('subtotal')->nullable();
             $table->foreign('pesanan_id')->references('id')->on('pesanans')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('produk_id')->references('id')->on('produks')->onDelete('cascade')->onUpdate('cascade');
+            $table->engine = 'InnoDB';
             });
     }
 

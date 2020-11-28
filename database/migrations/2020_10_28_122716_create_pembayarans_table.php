@@ -39,6 +39,7 @@ class CreatePembayaransTable extends Migration
             $table->foreign('pesanan_id')->references('id')->on('pesanans')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('metode_id')->references('id')->on('metode_pembayarans')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 
