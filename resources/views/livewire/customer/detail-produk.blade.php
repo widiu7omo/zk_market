@@ -147,7 +147,7 @@
             </div>
         </div>
         <div class="flex-grow-1"><a href="javascript:void(0)" id="btn-add-cart" data-id="{{$product->id}}"
-                                    class="btn w-100 btn-primary {{$product->status == '1'?'':'disabled'}}"
+                                    class="btn w-100 btn-primary"
                                     style="font-size: 14px">Tambah ke
                 keranjang</a></div>
     </nav> <!-- nav-bottom -->
