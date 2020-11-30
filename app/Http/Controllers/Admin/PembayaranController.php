@@ -19,7 +19,7 @@ class PembayaranController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|\Illuminate\Http\JsonResponse|View
      */
     public function index(Request $request)
     {
@@ -49,11 +49,16 @@ class PembayaranController extends Controller
 
         //widget
         $pesanan = Pesanan::all();
-        $sudahBayarId = StatusBayar::where('status_bayar', 'sudah bayar')->first()->id;
-        $belumBayarId = StatusBayar::where('status_bayar', 'belum bayar')->first()->id;
-        $gagalBayarId = StatusBayar::where('status_bayar', 'gagal bayar')->first()->id;
+        $sudahBayarId = StatusBayar::where('status_bayar', 'sudah bayar')->first();
+        $belumBayarId = StatusBayar::where('status_bayar', 'belum bayar')->first();
+        $gagalBayarId = StatusBayar::where('status_bayar', 'gagal bayar')->first();
 
-//        dd($sudahBayarId,$belumBayarId,$gagalBayarId);
+        if (!isset($sudahBayarId->id) || !isset($belumBayarId->id) || !isset($gagalBayarId->id)) {
+            return response()->json(['status' => 'error', 'message' => "Status bayar tidak sesuai. Pastikan status bayar memiliki nama 'sudah bayar','belum bayar' dan 'gagal bayar'"]);
+        }
+        $sudahBayarId = $sudahBayarId->id;
+        $belumBayarId = $belumBayarId->id;
+        $gagalBayarId = $gagalBayarId->id;
         $sudahBayar = $pesanan->filter(function ($pesanan) use ($sudahBayarId) {
             return $pesanan->status_bayar_id == $sudahBayarId;
         })->pluck('total_bayar')->toArray();

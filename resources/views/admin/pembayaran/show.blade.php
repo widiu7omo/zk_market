@@ -4,7 +4,8 @@
     <div class="px-4 md:px-10 mx-auto w-full h-full -mt-24">
         <div class="flex flex-wrap">
             <div class="w-full xl:m-auto flex flex-wrap xl:flex-no-wrap xl:w-full xl:mb-20 mb-16 px-4 h-full">
-                <div class="relative flex flex-col min-w-0 break-words h-full w-full max-w-screen-lg xl:mx-auto mb-6 shadow-lg rounded-lg bg-gray-100 mr-0 ">
+                <div
+                    class="relative flex flex-col min-w-0 break-words h-full w-full max-w-screen-lg xl:mx-auto mb-6 shadow-lg rounded-lg bg-gray-100 mr-0 ">
                     <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                         <div class="flex flex-wrap items-center">
                             <div class="relative w-full max-w-full flex-grow flex-1">
@@ -51,7 +52,7 @@
                                 <th class="w-12/12 text-left mr-2 font-bold tracking-wider uppercase"> Status Pembayaran
                                 </th>
                                 <td class="px-4 py-2 leading-snug"><span
-                                        class="p-2 font-bold uppercase text-white rounded {{ $pembayaran->pesanan->pembayaran->status_pembayaran == 'PENDING'?'bg-brown':($pembayaran->pesanan->pembayaran->status_pembayaran === 'FAILED'?'bg-red-500':'bg-green-500')}}">{{ $pembayaran->pesanan->pembayaran->status_pembayaran}}</span>
+                                        class="p-2 font-bold uppercase text-white rounded {{ $pembayaran->pesanan->status_bayar->status_bayar == 'belum bayar'?'bg-brown':($pembayaran->pesanan->status_bayar->status_bayar === 'gagal bayar'?'bg-red-500':'bg-green-500')}}">{{ $pembayaran->pesanan->status_bayar->status_bayar}}</span>
                                 </td>
                             </tr>
                             <tr>

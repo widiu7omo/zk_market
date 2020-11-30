@@ -93,7 +93,7 @@
                                     <td class="whitespace-no-wrap px-4 py-4">Pesanan #{{ $item->pesanan->id }}</td>
                                     <td class="whitespace-no-wrap px-4 py-4">{{$item->created_at->isoFormat('DD MMMM YYYY')}}</td>
                                     <td class="whitespace-no-wrap px-4 py-4"><span
-                                            class="p-2 text-white text-sm rounded-lg shadow-lg font-bold leading-5 {{ $item->status_pembayaran=='PENDING'?'bg-brown':($item->status_pembayaran === 'SUCCESS'?'bg-green-500':'bg-red-500') }}">{{ $item->status_pembayaran }}</span>
+                                            class="p-2 text-white text-sm rounded-lg shadow-lg font-bold uppercase leading-5 {{ $item->pesanan->status_bayar->status_bayar=='belum bayar'?'bg-brown':($item->pesanan->status_bayar->status_bayar === 'sudah bayar'?'bg-green-500':'bg-red-500') }}">{{ $item->pesanan->status_bayar->status_bayar }}</span>
                                     </td>
                                     <td class="whitespace-no-wrap px-4 py-4">
                                         Rp. {{ number_format($item->amount,0,',','.') }}</td>

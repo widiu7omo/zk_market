@@ -29,15 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Slider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_20_045049_create_sliders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_20_045049_create_sliders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/produk/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PembayaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,98 +244,8 @@
       <workItem from="1606293200423" duration="24293000" />
       <workItem from="1606402328829" duration="24259000" />
       <workItem from="1606523180976" duration="2382000" />
-      <workItem from="1606539348567" duration="3230000" />
-    </task>
-    <task id="LOCAL-00037" summary="hapus tombol kembali di pengaturan index">
-      <created>1604970148344</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1604970148344</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Dynamic AlertModal dan penambahan shortcut action ganti status pemesanan">
-      <created>1604971937270</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1604971937270</updated>
-    </task>
-    <task id="LOCAL-00039" summary="halaman customer, penambahan melihat transaksi dan alamat per customer">
-      <created>1604974056091</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1604974056091</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Halaman Customer">
-      <created>1604979341960</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1604979341960</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Fix View Pegawai">
-      <created>1604979533197</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1604979533197</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Add Ongkir">
-      <created>1604979917815</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1604979917815</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Add admin middle ware and fix footer">
-      <created>1604982024455</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1604982024455</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Add Middleware for pegawai">
-      <created>1604992376953</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1604992376953</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Fix Route and add role on pegawai + migration">
-      <created>1605000012444</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1605000012444</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Add Slider on produk di pegawai">
-      <created>1605001113273</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1605001113273</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Fix redirect address from list-address page">
-      <created>1605050883885</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1605050883885</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Ganti link redirect linkaja">
-      <created>1605057375313</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1605057375313</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Webhooks for ovo">
-      <created>1605059764261</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1605059764261</updated>
+      <workItem from="1606539348567" duration="5664000" />
+      <workItem from="1606775987420" duration="1872000" />
     </task>
     <task id="LOCAL-00050" summary="Add status bayar &amp;&amp; callback linkaja">
       <created>1605060705107</created>
@@ -595,7 +499,98 @@
       <option name="project" value="LOCAL" />
       <updated>1606549159545</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Tambah status aktif non aktif di slider">
+      <created>1606550417135</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550417135</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Remove Create Customer from admin">
+      <created>1606550489696</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550489696</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Change status string to integer">
+      <created>1606550735133</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550735134</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Change status string to integer">
+      <created>1606550810130</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550810130</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Change status string to integer">
+      <created>1606550907376</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550907376</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Change status string to integer">
+      <created>1606550986581</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1606550986581</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Change status string to integer">
+      <created>1606551051186</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551051186</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Change status string to integer">
+      <created>1606551402650</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551402650</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Change status string to integer">
+      <created>1606551583941</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551583941</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Change status string to integer">
+      <created>1606551672295</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551672295</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Improve add rem products">
+      <created>1606551772340</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551772340</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Improve add rem products">
+      <created>1606551830088</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1606551830088</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Improve Table Metode Pembayaran">
+      <created>1606552361657</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1606552361657</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,11 +631,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add notifikasi untuk pesanan masuk" />
-    <MESSAGE value="Handling error on pesanan" />
-    <MESSAGE value="Add schematics" />
-    <MESSAGE value="Alert untuk mengisi nomor hp di profil" />
-    <MESSAGE value="Notif untuk browser bukan chrome" />
     <MESSAGE value="Improve search untuk algolia" />
     <MESSAGE value="Penambahan peringantan untuk browser di halaman lain" />
     <MESSAGE value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
@@ -661,23 +651,30 @@
     <MESSAGE value="Penambahan icon upload untuk kategori" />
     <MESSAGE value="View Icon on table" />
     <MESSAGE value="Add table engine type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add table engine type" />
+    <MESSAGE value="Tambah status aktif non aktif di slider" />
+    <MESSAGE value="Remove Create Customer from admin" />
+    <MESSAGE value="Change status string to integer" />
+    <MESSAGE value="Improve add rem products" />
+    <MESSAGE value="Improve Table Metode Pembayaran" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve Table Metode Pembayaran" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604659760907">
-      <screen x="0" y="23" width="1920" height="987" />
+    <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606777101492">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.987@0.23.1920.987" timestamp="1604659760907" />
+    <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1920.976@0.25.1920.976" timestamp="1606777101492" />
     <state x="697" y="277" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606550340445">
       <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604994518067" />
     <state x="697" y="277" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550340445" />
     <state x="697" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1920.978@0.25.1920.978" timestamp="1606444489972" />
-    <state x="100" y="124" width="1720" height="780" key="DiffContextDialog" timestamp="1606549208260">
-      <screen x="0" y="25" width="1920" height="978" />
+    <state x="100" y="124" width="1720" height="779" key="DiffContextDialog" timestamp="1606550699856">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="100" y="123" width="1720" height="787" key="DiffContextDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714752195" />
+    <state x="100" y="124" width="1720" height="779" key="DiffContextDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550699856" />
     <state x="100" y="124" width="1720" height="780" key="DiffContextDialog/0.25.1920.978@0.25.1920.978" timestamp="1606549208260" />
     <state x="612" y="302" key="EditFileWatcherDialog" timestamp="1604748531582">
       <screen x="0" y="23" width="1920" height="987" />
@@ -703,11 +700,12 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606549161730">
-      <screen x="0" y="25" width="1920" height="978" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606552364069">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
     <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.976@0.25.1920.976" timestamp="1606552364069" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606549161730" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1606523419411" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
@@ -720,10 +718,11 @@
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
     <state x="1168" y="100" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550052372" />
     <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606435674143" />
-    <state x="517" y="170" width="815" height="662" key="find.popup" timestamp="1606443460667">
-      <screen x="0" y="25" width="1920" height="978" />
+    <state x="517" y="170" width="815" height="661" key="find.popup" timestamp="1606778416891">
+      <screen x="0" y="25" width="1920" height="976" />
     </state>
     <state x="517" y="169" width="770" height="668" key="find.popup/0.23.1920.987@0.23.1920.987" timestamp="1604968074950" />
+    <state x="517" y="170" width="815" height="661" key="find.popup/0.25.1920.976@0.25.1920.976" timestamp="1606778416891" />
     <state x="517" y="170" width="815" height="662" key="find.popup/0.25.1920.978@0.25.1920.978" timestamp="1606443460667" />
     <state x="759" y="410" key="scopes" timestamp="1604801893906">
       <screen x="0" y="23" width="1920" height="987" />
