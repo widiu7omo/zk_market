@@ -35,7 +35,7 @@
     <script src="https://unpkg.com/eva-icons"></script>
     <script src="{{asset('js/script.js')}}" type="text/javascript"></script>
 </head>
-<body>
+<body style="max-width: 35rem;margin:auto;background-color: #e6d6c4;background-image:url('images/food.svg')">
 
 
 <!-- =============== screen-wrap =============== -->

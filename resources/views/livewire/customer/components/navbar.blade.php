@@ -1,5 +1,5 @@
 <div>
-    <nav class="nav-bottom">
+    <nav style="max-width: 35rem;margin:auto;left:auto" class="nav-bottom">
         <a href="{{route('homepage')}}" class="nav-link {{$active== 'homepage'?'active':null}}">
             <i data-eva="shopping-bag" data-eva-fill="{{$active== 'homepage'?'#B09685':'#969696'}}"></i><span
                 class="text">Beranda</span>

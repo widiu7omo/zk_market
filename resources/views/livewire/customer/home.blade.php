@@ -8,6 +8,7 @@
                    onfocus="window.location.href='{{route('search')}}'" class="form-control input-dark border-0">
         </div>
         @include('livewire.customer.components.alertbrowser')
+        @include('livewire.customer.components.alertsurvey')
         @if(session('status'))
             <div
                 class="p-2 bg-red-100 rounded text-sm text-center font-bold text-red-500 my-2">{{session('status')}}</div>

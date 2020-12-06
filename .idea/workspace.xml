@@ -30,7 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pembayaran/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,14 +243,8 @@
       <workItem from="1606402328829" duration="24259000" />
       <workItem from="1606523180976" duration="2382000" />
       <workItem from="1606539348567" duration="5664000" />
-      <workItem from="1606775987420" duration="3346000" />
-    </task>
-    <task id="LOCAL-00051" summary="Add status bayar &amp;&amp; callback linkaja">
-      <created>1605060855401</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1605060855401</updated>
+      <workItem from="1606775987420" duration="3891000" />
+      <workItem from="1607087043111" duration="815000" />
     </task>
     <task id="LOCAL-00052" summary="Change status color on pembayaran orders">
       <created>1605061164137</created>
@@ -589,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606778739679</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Fix Layout pembayaran">
+      <created>1606781525309</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1606781525310</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +630,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Penambahan peringantan untuk browser di halaman lain" />
     <MESSAGE value="Sekarang, yang bisa mengakses halaman customer cuma free user dan role customer" />
     <MESSAGE value="Dinamis metode pembayaran" />
     <MESSAGE value="Ganti Payment gateway dengan metode pembayaran manual" />
@@ -655,7 +654,8 @@
     <MESSAGE value="Improve add rem products" />
     <MESSAGE value="Improve Table Metode Pembayaran" />
     <MESSAGE value="Memberikan handler untuk pembayaran" />
-    <option name="LAST_COMMIT_MESSAGE" value="Memberikan handler untuk pembayaran" />
+    <MESSAGE value="Fix Layout pembayaran" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix Layout pembayaran" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606777101492">
@@ -699,11 +699,12 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606778746704">
-      <screen x="0" y="25" width="1920" height="976" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606781528693">
+      <screen x="0" y="25" width="1920" height="974" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
     <state x="560" y="254" key="Vcs.Push.Dialog.v2/0.25.1920.970@0.25.1920.970" timestamp="1605623618932" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.974@0.25.1920.974" timestamp="1606781528693" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.976@0.25.1920.976" timestamp="1606778746704" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606549161730" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1606523419411" />
