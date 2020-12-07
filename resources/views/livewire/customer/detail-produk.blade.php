@@ -85,8 +85,14 @@
             @foreach($related_products ?? [] as $prod)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($prod->id)])}}" class="product-sm">
-                        <div class="img-wrap" style="position: relative;height: 100px"><img
-                                src="{{asset('storage/'.json_decode($prod->gambar)[0])}}">
+                        <div class="img-wrap" style="position: relative;height: 100px">
+                            @if($prod->gambar != null)
+                                <img
+                                    src="{{asset('storage/'.json_decode($prod->gambar)[0])}}">
+                            @else
+                                <img alt="Tidak ada gambar"
+                                                                                                   src="#">
+                            @endif
                             <div style="position: absolute;top:3px;left: 3px;"
                                  class="d-flex justify-content-start align-items-center">
                                 @if($prod->promosi == 1)
