@@ -6,7 +6,7 @@
         <div class="header-right"><a href="#alamatModal" class="btn btn-outline-light btn-sm"
                                      data-toggle="modal">Tambah</a></div>
     </header> <!-- section-header.// -->
-    <main class="app-content">
+    <main class="app-content vh-100">
         <section class="padding-top">
             @if(count($addresses) == 0)
                 <h5 class="title-section padding-x mb-2">Belum ada alamat</h5>
@@ -47,7 +47,7 @@
                     </label>
                 </div>
             @endforeach
-            <button id="btn-choose-address" class="btn rounded-0 mb-0 btn-primary btn-block fixed-bottom" type="button">
+            <button id="btn-choose-address" style="max-width: 35rem;margin:auto;" class="btn rounded-0 mb-0 btn-primary btn-block fixed-bottom" type="button">
                 <i data-eva-fill="#fff" data-eva="checkmark-outline"></i> Konfirmasi
             </button>
         </section>

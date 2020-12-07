@@ -118,7 +118,7 @@
                 </div>
             </nav>
         </section>
-        <button id="proses_pesanan" class="btn btn-block btn-primary fixed-bottom rounded-0 mb-0"><i
+        <button id="proses_pesanan" style="max-width: 35rem;margin:auto;" class="btn btn-block btn-primary fixed-bottom rounded-0 mb-0"><i
                 data-eva="credit-card"
                 data-eva-fill="#fff"></i>&nbsp;Proses Pesanan
         </button>
