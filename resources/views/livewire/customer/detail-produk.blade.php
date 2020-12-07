@@ -4,10 +4,11 @@
         <a href="javascript:history.go(-1)" class="btn-header"><i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h5 class="title-header ml-2">Detail </h5>
         <div class="header-right">
-            <a href="{{route('cart')}}" class="btn-header relative"> <i data-eva="shopping-cart"
-                                                                        data-eva-fill="#fff"></i></a>
-            <span style="top:13px;right: 20px;font-size: 10px" id="item-header-count"
-                  class="badge badge-pill badge-danger absolute">0</span>
+            <a href="{{route('cart')}}" class="btn-header relative">
+                <i data-eva="shopping-cart" data-eva-fill="#fff"></i>
+                <span style="top:13px;right: 0px;font-size: 10px" id="item-header-count"
+                      class="badge badge-pill badge-danger absolute">0</span>
+            </a>
         </div>
     </header>
     <main class="app-content">
@@ -122,14 +123,14 @@
             <div class="input-group input-spinner">
                 <div class="input-group-prepend">
                     <button id="btn-rem" class="btn btn-light" {!! $product->status == '1'?'':'disabled' !!}
-                            style="font-size: 14px" type="button">
+                    style="font-size: 14px" type="button">
                         <i data-eva-height="20" data-eva-width="20" data-eva="minus-circle" data-eva-fill="#969696"></i>
                     </button>
                 </div>
                 <input type="text" id="total-cart" readonly class="form-control" value="1">
                 <div class="input-group-append">
                     <button id="btn-add" class="btn btn-light" {!! $product->status == '1'?'':'disabled' !!}
-                            style="font-size: 14px" type="button">
+                    style="font-size: 14px" type="button">
                         <i data-eva-height="20" data-eva-width="20" data-eva="plus-circle" data-eva-fill="#969696"></i>
                     </button>
                 </div>
