@@ -29,6 +29,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,6 +246,7 @@
       <workItem from="1606539348567" duration="5664000" />
       <workItem from="1606775987420" duration="3891000" />
       <workItem from="1607087043111" duration="815000" />
+      <workItem from="1607325143015" duration="1806000" />
     </task>
     <task id="LOCAL-00052" summary="Change status color on pembayaran orders">
       <created>1605061164137</created>
