@@ -8,8 +8,13 @@
     </header> <!-- section-header.// -->
     <main class="app-content">
         <section class="padding-top">
-            <h5 class="title-section padding-x mb-2">Pilih Alamat</h5>
-            <small class="padding-x text-muted mb-2"><i>Sentuh kotak untuk memilih alamat</i></small>
+            @if(count($addresses) == 0)
+                <h5 class="title-section padding-x mb-2">Belum ada alamat</h5>
+                <small class="padding-x text-muted mb-2"><i>Klik tombol Tambah di pojok kanan atas</i></small>
+            @else
+                <h5 class="title-section padding-x mb-2">Pilih Alamat</h5>
+                <small class="padding-x text-muted mb-2"><i>Sentuh kotak untuk memilih alamat</i></small>
+            @endif
             @if(session('status'))
                 <div class="alert alert-{{session('status')['type']}} alert-dismissible fade show m-4" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

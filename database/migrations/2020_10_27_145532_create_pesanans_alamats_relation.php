@@ -26,7 +26,7 @@ class CreatePesanansAlamatsRelation extends Migration
     public function up()
     {
         Schema::table('pesanans', static function (Blueprint $table) {
-            $table->foreign('alamat_id')->references('id')->on('alamats');
+            $table->foreign('alamat_id')->references('id')->on('alamats')->onDelete('set null');
         });
     }
 
