@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Customer;
 
 use App\Events\PesananMasukEvent;
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
+use App\Models\Alamat;
 use App\Models\DetailPesanan;
 use App\Models\MetodePembayaran;
 use App\Models\Pembayaran;
@@ -74,7 +76,18 @@ class PembayaranController extends Controller
     public function pay(Request $request)
     {
         $pembayaranBank = MetodePembayaran::all()->pluck('metode')->toArray();
-
+        //verifikasi alamatid dan userid
+        $alamatId = $request->alamat;
+        if (session('customer_id')) {
+            $currentAlamat = Alamat::findOrFail($request->alamat);
+            $currentCustomer = Customer::findOrFail(session('customer_id'));
+            if ($currentAlamat->customer_id != $currentCustomer->id) {
+                $arrayAlamat = $currentAlamat->toArray();
+                $arrayAlamat['customer_id'] = session('customer_id');
+                $newAlamat = Alamat::create($arrayAlamat);
+                $alamatId = $newAlamat->id;
+            }
+        }
         if (isset($request->cart)) {
             DB::beginTransaction();
             try {
@@ -111,7 +124,7 @@ class PembayaranController extends Controller
                     'catatan' => $request->catatan,
                     'status_pesanan_id' => StatusPesanan::whereStatusPesanan('pemesanan')->first()->id,
                     'status_bayar_id' => StatusBayar::whereStatusBayar('belum bayar')->first()->id,
-                    'alamat_id' => $request->alamat,
+                    'alamat_id' => $alamatId,
                     'pegawai_id' => null
                 ];
                 $newPesanan = Pesanan::create($dataPesanan);
