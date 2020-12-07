@@ -26,7 +26,13 @@
                     <div class="col-6 col-sm-6 col-md-4">
                         <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm mb-3">
                             <div class="img-wrap">
-                                <img src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                                @if($product->gambar != null)
+                                    <img alt="{{json_decode($product->gambar)[0]}}"
+                                         src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                                @else
+                                    <img alt="Tidak ada foto"
+                                         src="#">
+                                @endif
                             </div>
                             <div class="text-wrap">
                                 <p class="title text-truncate">{{$product->nama}}</p>

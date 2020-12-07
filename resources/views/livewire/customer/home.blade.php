@@ -52,8 +52,14 @@
             @foreach($newestProducts as $product)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
-                        <div class="img-wrap"><img style="position: relative"
-                                                   src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                        <div class="img-wrap">
+                            @if($product->gambar != null)
+                                <img alt="{{json_decode($product->gambar)[0]}}"
+                                     src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            @else
+                                <img alt="Tidak ada foto"
+                                     src="#">
+                            @endif
                             <div style="position: absolute;top:3px;left: 3px;"
                                  class="d-flex justify-content-start align-items-center">
                                 @if($product->promosi == 1)
@@ -95,8 +101,14 @@
             @foreach($mostBuyProducts as $product)
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
-                        <div class="img-wrap" style="position: relative"><img
-                                src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                        <div class="img-wrap" style="position: relative">
+                            @if($product->gambar != null)
+                                <img alt="{{json_decode($product->gambar)[0]}}"
+                                     src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            @else
+                                <img alt="Tidak ada foto"
+                                     src="#">
+                            @endif
                             <div style="position: absolute;top:3px;left: 3px;"
                                  class="d-flex justify-content-start align-items-center">
                                 @if($product->promosi == 1)
@@ -139,8 +151,13 @@
                 <div class="item">
                     <a href="{{route('detail',['product'=>encrypt($product->id)])}}" class="product-sm">
                         <div class="img-wrap">
-                            <img style="position: relative"
-                                 src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            @if($product->gambar != null)
+                                <img alt="{{json_decode($product->gambar)[0]}}"
+                                     src="{{asset('storage/'.json_decode($product->gambar)[0])}}">
+                            @else
+                                <img alt="Tidak ada foto"
+                                     src="#">
+                            @endif
                             @if($product->promosi == 1)
                                 <span style="position: absolute;top:3px;left: 3px;" class="badge badge-danger">Promo
                                 </span>
