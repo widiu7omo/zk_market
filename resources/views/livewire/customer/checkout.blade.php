@@ -19,29 +19,17 @@
                     <small>{{session('status')['message']}}</small>
                 </div>
             @endif
-            @if($nohp == '-')
-                <div class="alert alert-warning alert-dismissible rounded-0 fade show"
-                     role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Informasi</strong><br>
-                    <small>Bagi pelanggan yang mempunyai akun, untuk mengganti nomor handphone, silahkan edit melalui
-                        menu
-                        profil.</small>
-                </div>
-            @endif
             <section class="padding-top">
                 <h5 class="title-section">Data Pemesan</h5>
                 <div class="form-group px-3">
                     <input type="text" id="pemesan" name="pemesan" class="form-control" placeholder="Nama Pemesan"
-                           value="{{$name}}">
+                           value="{{Auth::user()?Auth::user()->customer->nama:$name}}" {{Auth::user()?'readonly':''}}>
                     <input type="hidden" id="cart" name="cart">
                 </div>
                 <div class="form-group px-3">
-                    <input type="text" id="nohppemesan" name="nohppemesan" data-mask="0000-0000-0000"
-                           class="form-control" value="{{$nohp}}"
-                           placeholder="Nomor Telepon">
+                    <input type="text" id="nohppemesan" name="nohppemesan" data-mask="0000-0000-00000"
+                           class="form-control" value="{{Auth::user()?Auth::user()->customer->no_hp:$nohp}}"
+                           placeholder="Nomor Telepon" {{Auth::user()?'readonly':''}}>
                 </div>
             </section>
             <hr class="divider">
@@ -233,7 +221,7 @@
                     $('#total-ongkir').text('Rp. ' + $.number(checkoutHelper.shippingFee, 0, ',', '.'));
                 },
                 validationCheckout() {
-                    const payOption = $('input[name="pay_method"]:checked').val();
+                    const payOption = $('input[name="pay_method"]:checked');
                     if ($('input[name="pemesan"]').val() === '' && $('input[name="nohppemesan"]').val() === '') {
                         Snackbar.show({actionTextColor: '#B09685', text: 'Data Pemesan tidak boleh kosong'});
                         return false;
@@ -242,7 +230,7 @@
                         Snackbar.show({actionTextColor: '#B09685', text: 'Alamat belum di pilih'});
                         return false;
                     }
-                    if (payOption === '') {
+                    if (payOption.length === 0) {
                         Snackbar.show({actionTextColor: '#B09685', text: 'Metode Pembayaran belum dipilih'});
                         return false;
                     }
@@ -287,12 +275,28 @@
                 checkoutHelper.saveLocalStorage('metode_id', $(this).data('id'));
                 checkoutHelper.setMethod($(this).data('id'), $(this).data('op'));
             })
-            $('input#pemesan,input#nohppemesan,textarea#catatan').on('blur', function () {
+            $('input#pemesan,input#nohppemesan').on('blur', function () {
+                var pemesan = $('input#pemesan').val();
+                var nohp = $('input#nohppemesan').val();
+                if (pemesan !== '' && nohp !== '') {
+                    $.ajax({
+                        url: '{{url('savepemesan')}}',
+                        method: 'POST',
+                        data: {
+                            pemesan, nohp
+                        },
+                        success(res) {
+                            console.log(res);
+                        }
+                    })
+                }
+            })
+            $('textarea#catatan').on('blur', function () {
                 checkoutHelper.saveLocalStorage($(this).prop('id'), $(this).val());
             });
             $('#proses_pesanan').on('click', function () {
                 $(this).prop('disabled', true);
-                checkoutHelper.validationCheckout() && $('#form-checkout').submit();
+                checkoutHelper.validationCheckout() ? $('#form-checkout').submit() : $(this).prop('disabled', false);
             })
         </script>
     @endpush

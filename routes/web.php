@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\GoogleSocialiteController;
 use App\Http\Controllers\Customer\AddressController;
 use App\Http\Controllers\Customer\CartController;
+use App\Http\Controllers\Customer\CheckoutController;
 use App\Http\Controllers\Customer\OfflineController;
 use App\Http\Controllers\Customer\PaymentController;
 use App\Http\Controllers\Customer\PembayaranController;
@@ -123,3 +124,4 @@ Route::post('/webhooks/linkaja', [WebhooksController::class, 'linkaja']);
 Route::post('/webhooks/qris', [WebhooksController::class, 'qris']);
 Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
 Route::post('/profile/set', [UpdateProfileController::class, 'setProfile'])->name('updateprofile');
+Route::post('/savepemesan', [CheckoutController::class, 'savePemesan'])->name('savepemesan');

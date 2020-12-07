@@ -2,7 +2,7 @@
 <dataSource name="@Server">
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.19">
     <root id="1">
-      <ServerVersion>10.3.25</ServerVersion>
+      <ServerVersion>10.3.27</ServerVersion>
       <DefaultEngine>MyISAM</DefaultEngine>
       <DefaultCasing>exact</DefaultCasing>
     </root>
@@ -1828,6 +1828,7 @@ model_type</ColNames>
       <ColNames>alamat_id</ColNames>
       <RefTableName>alamats</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>set-null</OnDelete>
     </foreign-key>
     <foreign-key id="502" parent="342" name="pesanans_pegawai_id_foreign">
       <ColNames>pegawai_id</ColNames>
@@ -2035,6 +2036,7 @@ role_id</ColNames>
     <column id="546" parent="347" name="status">
       <Position>7</Position>
       <DataType>enum(&apos;0&apos;, &apos;1&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
     </column>
     <key id="547" parent="347" name="PRIMARY">

@@ -4,7 +4,7 @@
         <h6 class="title-header"> Profil</h6>
         <div class="header-right">
             @if(Auth::user())
-                <form action="{{route('logout')}}" method="post">
+                <form action="{{route('logout')}}" method="post" onsubmit="localStorage.clear()">
                     @csrf
                     <button class="btn btn-sm btn-outline-light">Logout</button>
                 </form>
