@@ -124,7 +124,7 @@
             @endforeach
         </section>
     </main>
-    <nav class="bar-bottom">
+    <nav style="max-width: 35rem;margin:auto;left:auto" class="bar-bottom">
         <div>
             <div class="input-group input-spinner">
                 <div class="input-group-prepend">

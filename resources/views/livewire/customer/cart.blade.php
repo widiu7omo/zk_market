@@ -6,7 +6,7 @@
         <div class="header-right"></div>
     </header> <!-- section-header.// -->
     @include('livewire.customer.components.alertbrowser')
-    <main class="app-content">
+    <main class="app-content vh-100">
         <section class="section-products padding-around">
             <h4>Keranjang Kosong</h4>
         </section> <!-- section-products  .// -->
@@ -18,8 +18,7 @@
                 <dt>Total Belanja</dt>
                 <dd class="text-right" id="price-item">Rp.</dd>
             </dl>
-
-            <a href="{{route('checkout')}}" class="btn rounded-0 mb-0 btn-block btn-primary bottom-sticky fixed-bottom"> <span
+            <a style="max-width: 35rem;margin:auto;" href="{{route('checkout')}}" class="btn rounded-0 mb-0 btn-block btn-primary bottom-sticky fixed-bottom"> <span
                     class="text"> Proses Pesanan </span>
                 <i data-eva="arrow-ios-forward" data-eva-fill="#fff"></i></a>
         </section>

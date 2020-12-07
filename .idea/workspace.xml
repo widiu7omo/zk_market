@@ -29,13 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/30453e77-617f-41bf-8319-0d6f4730e72e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7367fcc-16d5-4f75-8eaf-4c88e96d5b79.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/detail-produk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/detail-produk.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,21 +249,7 @@
       <workItem from="1606539348567" duration="5664000" />
       <workItem from="1606775987420" duration="3891000" />
       <workItem from="1607087043111" duration="815000" />
-      <workItem from="1607325143015" duration="23167000" />
-    </task>
-    <task id="LOCAL-00057" summary="Redesign Button Plus &amp; Minus Detail Produk">
-      <created>1605068543294</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1605068543294</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Add notifikasi untuk pesanan masuk">
-      <created>1605154541487</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1605154541489</updated>
+      <workItem from="1607325143015" duration="23792000" />
     </task>
     <task id="LOCAL-00059" summary="Handling error on pesanan">
       <created>1605620104375</created>
@@ -598,7 +580,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607377054391</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Validasi alamat dan customer">
+      <created>1607384675280</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1607384675281</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Handling ganti nama saat checkout ketika user tidak login">
+      <created>1607384706316</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1607384706317</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,8 +635,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ganti update ke simpan &amp;&amp; add semua status pesanan di table operation" />
-    <MESSAGE value="Merubah alur pembayaran" />
     <MESSAGE value="Tambah Kontak Whatsapp" />
     <MESSAGE value="Tambah pesanan selesai dan batal untuk kurir" />
     <MESSAGE value="Perbaikan menu COD" />
@@ -664,7 +658,9 @@
     <MESSAGE value="Perbaikan Badge offset" />
     <MESSAGE value="Handle produk tidak ada foto" />
     <MESSAGE value="Handle petunjuk ketika tidak ada alamat, set on delete set null on alamat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle petunjuk ketika tidak ada alamat, set on delete set null on alamat" />
+    <MESSAGE value="Validasi alamat dan customer" />
+    <MESSAGE value="Handling ganti nama saat checkout ketika user tidak login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handling ganti nama saat checkout ketika user tidak login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606777101492">
@@ -721,7 +717,7 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607328461874">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607384716803">
       <screen x="0" y="25" width="1920" height="980" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
@@ -729,17 +725,18 @@
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.974@0.25.1920.974" timestamp="1606781528693" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.976@0.25.1920.976" timestamp="1606778746704" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606549161730" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1607328461874" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1607384716803" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1920.987@0.23.1920.987" timestamp="1603935507915" />
-    <state x="905" y="84" width="663" height="470" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607376967741">
-      <screen x="0" y="25" width="1920" height="981" />
+    <state x="905" y="84" width="663" height="470" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1607384820407">
+      <screen x="0" y="25" width="1920" height="980" />
     </state>
     <state x="788" y="98" width="306" height="811" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1920.987@0.23.1920.987" timestamp="1604714523016" />
     <state x="1168" y="100" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.976@0.25.1920.976" timestamp="1606550052372" />
     <state x="1168" y="100" width="500" height="804" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.978@0.25.1920.978" timestamp="1606435674143" />
+    <state x="905" y="84" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.980@0.25.1920.980" timestamp="1607384820407" />
     <state x="905" y="84" width="663" height="470" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.25.1920.981@0.25.1920.981" timestamp="1607376967741" />
     <state x="517" y="170" width="815" height="661" key="find.popup" timestamp="1606778590562">
       <screen x="0" y="25" width="1920" height="976" />
