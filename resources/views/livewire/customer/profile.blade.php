@@ -31,7 +31,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <strong>Informasi</strong><br>
-                    Mohon mengisi nomor <i>handphone</i> anda demi kemudahan bertransaksi
+                    <small>Mohon mengisi nomor <i>handphone</i> anda demi kemudahan bertransaksi</small>
                 </div>
             @endif
             @if(Auth::user())

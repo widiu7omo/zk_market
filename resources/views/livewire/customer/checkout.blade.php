@@ -19,6 +19,15 @@
                     <small>{{session('status')['message']}}</small>
                 </div>
             @endif
+            @if(Auth::user() && Auth::user()->customer->no_hp == '-')
+                <div class="alert alert-warning rounded-0 alert-dismissible fade show mb-0" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Informasi</strong><br>
+                    <small>Mohon melengkapi nomor <i>handphone</i> pada menu profil. <a href="{{url('profile')}}">Klik disini</a></small>
+                </div>
+            @endif
             <section class="padding-top">
                 <h5 class="title-section">Data Pemesan</h5>
                 <div class="form-group px-3">
