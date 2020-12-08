@@ -1,6 +1,6 @@
 <div>
     <header class="app-header bg-primary">
-        <a href="javascript:history.go(-1)" class="btn-header">
+        <a href="{{url('orders')}}" class="btn-header">
             <i data-eva="arrow-back" data-eva-fill="#fff"></i></a>
         <h6 class="title-header"> Detail Transaksi #{{$dataOrder->id}} </h6>
         <div class="header-right">

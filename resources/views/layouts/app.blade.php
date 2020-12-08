@@ -334,6 +334,17 @@
         $('#toast-notification').removeClass('hidden');
         $('#toast-component').removeClass('opacity-0').addClass('opacity-100');
         $('#toast-action-view').prop('href', data.uri);
+        $('#toast-content').text(data.message);
+        setTimeout(function () {
+            $('#toast-notification').addClass('hidden');
+            $('#toast-component').removeClass('opacity-100').addClass('opacity-0');
+        }, 10000);
+    });
+    channel.bind('pesanan-batal', function (data) {
+        $('#toast-notification').removeClass('hidden');
+        $('#toast-component').removeClass('opacity-0').addClass('opacity-100');
+        $('#toast-action-view').prop('href', data.uri);
+        $('#toast-content').text(data.message);
         setTimeout(function () {
             $('#toast-notification').addClass('hidden');
             $('#toast-component').removeClass('opacity-100').addClass('opacity-0');

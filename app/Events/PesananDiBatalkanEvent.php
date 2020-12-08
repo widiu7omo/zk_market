@@ -4,11 +4,13 @@ namespace App\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class PesananMasukEvent implements ShouldBroadcast
+class PesananDiBatalkanEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -23,7 +25,7 @@ class PesananMasukEvent implements ShouldBroadcast
     public function __construct($uri)
     {
         $this->uri = $uri;
-        $this->message = 'Pesanan baru masuk klik untuk melihat detail';
+        $this->message = 'Pesanan dibatalkan oleh customer';
     }
 
     public function shouldDiscoverEvents()
@@ -39,9 +41,8 @@ class PesananMasukEvent implements ShouldBroadcast
     {
         return ['pesanan'];
     }
-
     public function broadcastAs()
     {
-        return 'pesanan-masuk';
+        return 'pesanan-batal';
     }
 }

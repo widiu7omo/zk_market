@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\Events\PesananDiBatalkanEvent;
 use App\Events\PesananMasukEvent;
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
@@ -168,6 +169,9 @@ class PembayaranController extends Controller
         if (strtoupper($pesanan->status_pesanan->status_pesanan) == 'PEMESANAN') {
             $statusPesanan = StatusPesanan::whereStatusPesanan('batal')->first();
             Pesanan::where(['id' => $id])->update(['status_pesanan_id' => $statusPesanan->id]);
+            $dataDetailPesanan = new PesananDiBatalkanEvent(url('admin/pesanan/' . $id));
+            event($dataDetailPesanan);
+            return redirect()->to('detail_order/' . $id)->with('status', ['type' => 'success', 'message' => 'Pesanan berhasil dibatalkan']);
         } else {
             return redirect()->to('detail_order/' . $id)->with('status', ['type' => 'danger', 'message' => 'Pesanan tidak bisa dibatalkan karena pesanan sudah diproses']);
         }

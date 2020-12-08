@@ -30,9 +30,11 @@
   <component name="ChangeListManager">
     <list default="true" id="70acbac4-7b2c-4ba4-9344-c3cd4811861d" name="Default Changelist" comment="Cancel build APK">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Events/PesananMasukEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/PesananMasukEvent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Customer/PembayaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/detail-order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/customer/list-order.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,14 +252,7 @@
       <workItem from="1606539348567" duration="5664000" />
       <workItem from="1606775987420" duration="3891000" />
       <workItem from="1607087043111" duration="815000" />
-      <workItem from="1607325143015" duration="25909000" />
-    </task>
-    <task id="LOCAL-00062" summary="Notif untuk browser bukan chrome">
-      <created>1606302321553</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1606302321554</updated>
+      <workItem from="1607325143015" duration="27301000" />
     </task>
     <task id="LOCAL-00063" summary="Improve search untuk algolia">
       <created>1606302352699</created>
@@ -595,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607385799575</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Handle pembatan pesanan dari customer">
+      <created>1607387348203</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1607387348204</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +638,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Perbaikan menu COD" />
     <MESSAGE value="Perbaikan Chart di pembayaran" />
     <MESSAGE value="Add Slider on produk di pegawai" />
     <MESSAGE value="Order pembayaran asc" />
@@ -661,7 +662,8 @@
     <MESSAGE value="Handling ganti nama saat checkout ketika user tidak login" />
     <MESSAGE value="Fix offset navbar" />
     <MESSAGE value="Alert saat checkout nomor hp kosong" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alert saat checkout nomor hp kosong" />
+    <MESSAGE value="Handle pembatan pesanan dari customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle pembatan pesanan dari customer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="559" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606777101492">
@@ -718,7 +720,7 @@
       <screen x="0" y="23" width="1920" height="987" />
     </state>
     <state x="720" y="175" key="RollbackChangesDialog/0.23.1920.987@0.23.1920.987" timestamp="1604916354890" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607385801753">
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2" timestamp="1607387350766">
       <screen x="0" y="25" width="1920" height="980" />
     </state>
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.23.1920.987@0.23.1920.987" timestamp="1605154545277" />
@@ -726,7 +728,7 @@
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.974@0.25.1920.974" timestamp="1606781528693" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.976@0.25.1920.976" timestamp="1606778746704" />
     <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.978@0.25.1920.978" timestamp="1606549161730" />
-    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1607385801753" />
+    <state x="560" y="256" key="Vcs.Push.Dialog.v2/0.25.1920.980@0.25.1920.980" timestamp="1607387350766" />
     <state x="793" y="23" width="343" height="987" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603935507915">
       <screen x="0" y="23" width="1920" height="987" />
     </state>
