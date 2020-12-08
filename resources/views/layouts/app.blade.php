@@ -326,7 +326,8 @@
     Pusher.logToConsole = true;
 
     var pusher = new Pusher('b0027c9771ffa6e14a00', {
-        cluster: 'ap1'
+        cluster: 'ap1',
+        forceTLS: true,
     });
 
     var channel = pusher.subscribe('pesanan');
