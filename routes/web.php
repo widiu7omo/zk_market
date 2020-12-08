@@ -125,3 +125,4 @@ Route::post('/webhooks/qris', [WebhooksController::class, 'qris']);
 Route::get('/offline', [OfflineController::class, 'index'])->name('offline');
 Route::post('/profile/set', [UpdateProfileController::class, 'setProfile'])->name('updateprofile');
 Route::post('/savepemesan', [CheckoutController::class, 'savePemesan'])->name('savepemesan');
+Route::get('/cancel/{id}', [PembayaranController::class, 'cancel'])->name('cancel/{id}');

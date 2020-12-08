@@ -8,7 +8,15 @@
                 <i data-eva="phone-call" data-eva-fill="#fff"></i></a>
         </div>
     </header> <!-- section-header.// -->
-    <main class="app-content">
+    <main class="app-content vh-100">
+        @if(session('status'))
+            <div class="alert alert-{{session('status')['type']}} alert-dismissible fade show rounded-0" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <small>{{session('status')['message']}}</small>
+            </div>
+        @endif
         <hr class="divider">
         <section class="padding-top px-3 py-0 m-3" id="status-pesanan">
             <h6 class="border-bottom pb-1">Status Pemesanan</h6>
@@ -75,9 +83,11 @@
                 <span class="text-medium text-muted">{{$dataOrder->catatan}}</span>
             </div>
         </section>
-        <div>
+        <div style="max-width: 35rem;margin:auto;" class="fixed-bottom row">
             <a href="{{strtoupper($dataOrder->status_bayar->status_bayar) == 'SUDAH BAYAR'?null:route('payment')}}"
-               class="btn btn-block btn-primary fixed-bottom mb-0 rounded-0">{{strtoupper($dataOrder->status_bayar->status_bayar)}}</a>
+               class="btn btn-primary col-6 mb-0 rounded-0">{{strtoupper($dataOrder->status_bayar->status_bayar)}}</a>
+            <a href="{{strtoupper($dataOrder->status_pesanan->status_pesanan) == 'PEMESANAN'?route('cancel/{id}',['id'=>Request::segment(2)]):null}}"
+               class="btn btn-danger col-6 mb-0 rounded-0 {{strtoupper($dataOrder->status_pesanan->status_pesanan) != 'PEMESANAN'?'disabled':''}}">{{strtoupper('batal')}}</a>
         </div>
     </main>
 </div>

@@ -161,4 +161,15 @@ class PembayaranController extends Controller
             }
         }
     }
+
+    public function cancel($id)
+    {
+        $pesanan = Pesanan::findOrFail($id);
+        if (strtoupper($pesanan->status_pesanan->status_pesanan) == 'PEMESANAN') {
+            $statusPesanan = StatusPesanan::whereStatusPesanan('batal')->first();
+            Pesanan::where(['id' => $id])->update(['status_pesanan_id' => $statusPesanan->id]);
+        } else {
+            return redirect()->to('detail_order/' . $id)->with('status', ['type' => 'danger', 'message' => 'Pesanan tidak bisa dibatalkan karena pesanan sudah diproses']);
+        }
+    }
 }
